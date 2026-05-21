@@ -105,6 +105,6 @@ bookHidden: false
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/steam.design"> | [Steam.Design](https://steam.design/) | Steam 资料背景展柜生成工具 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.steamcardexchange.net"> | [Steam Card Exchange](https://www.steamcardexchange.net/) | Steam 集换卡交换 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/steam.tools"> | [Steam Tools Hub](https://steam.tools/) | Steam 装扮、交易、社区相关工具集 |
-
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.lorenzostanco.com/lab/steam/"> | [Steam library filters](https://www.lorenzostanco.com/lab/steam/) | Steam 库存分析导出 |
 
 {{< tables-style >}}

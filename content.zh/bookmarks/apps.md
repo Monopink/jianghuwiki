@@ -70,6 +70,7 @@ headCustom: |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/photodemon.org"> | [PhotoDemon](https://photodemon.org/)<span class="oldline">｜</span>[GitHub](https://github.com/tannerhelland/PhotoDemon) | 开源图像编辑软件 | {{< lists-svg "w" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/github.com"> | [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm/) | Steam 挂卡工具 | {{< lists-svg "w" >}}{{< lists-svg "m" >}}{{< lists-svg "l" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/steampp.net"> | [Watt Toolkit](https://steampp.net/) | 本地 Steam 客户端工具箱 | {{< lists-svg "w" >}}{{< lists-svg "m" >}}{{< lists-svg "l" >}}{{< lists-svg "a" >}} |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/github.com"> | [Stelicas](https://github.com/0wn3dg0d/Stelicas) | Steam 游戏分组导出 | {{< lists-svg "w" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/u.tools"> | [uTools](https://u.tools/) | 效率插件集合 | {{< lists-svg "w" >}}{{< lists-svg "m" >}}{{< lists-svg "l" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/calibre-ebook.com"> | [Calibre](https://calibre-ebook.com/) | 电子书管理 | {{< lists-svg "w" >}}{{< lists-svg "m" >}}{{< lists-svg "l" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/github.com"> | [WSABuilds](https://github.com/MustardChef/WSABuilds) | 更好用全面的 WSA | {{< lists-svg "w" >}} |
@@ -84,6 +85,8 @@ headCustom: |
 | :----: | ---- | ---- | ---- |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.lanzou.com"> | [流氓软件清理](https://free.lanzoux.com/b0cpu1guf) | 中国流氓软件清理工具 | {{< lists-svg "w" >}} |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.bcuninstaller.com"> | [BC Uninstaller](https://www.bcuninstaller.com/)<span class="oldline">｜</span>[GitHub](https://github.com/Klocman/Bulk-Crap-Uninstaller) | 软件卸载工具 | {{< lists-svg "w" >}} |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/github.com"> | [SpaceSniffer](https://github.com/redtrillix/SpaceSniffer) | 磁盘占用可视化展示 | {{< lists-svg "w" >}} |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/github.com"> | [DriverStore Explorer](https://github.com/lostindark/DriverStoreExplorer) | 无用驱动清理 | {{< lists-svg "w" >}} |
 
 ## 工具
 

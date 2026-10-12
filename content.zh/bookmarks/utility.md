@@ -59,7 +59,7 @@ bookHidden: false
 |  |  |  |
 | :----: | ---- | ---- |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/en.savefrom.net"> | [savefrom.net](https://savefrom.net/) | 下载网站视频 |
-| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/besticon.herokuapp.com"> | [TheFaviconFinder](https://besticon-demo.herokuapp.com/)<span class="oldline">｜</span>[GitHub](https://github.com/mat/besticon) | 获取网站图标 |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/favicondl.com"> | [favicondl](https://favicondl.com/)<span class="oldline">｜</span>[besticon GitHub](https://github.com/mat/besticon) | 获取网站图标 |
 
 
 ## 其他

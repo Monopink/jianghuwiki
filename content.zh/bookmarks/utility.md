@@ -26,8 +26,7 @@ bookHidden: false
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/linggle.com"> | [Linggle](https://linggle.com/) | 英语语料库 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.english-corpora.org"> | [English Corpora](https://www.english-corpora.org/) | 英语语料库 需注册|
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.allscrabblewords.com"> | [All Scrabble Words](http://www.allscrabblewords.com/) | 按特征找单词 |
-| <img loading="lazy" width="18px" alt="💔" src="https://favicon.im/www.anytexteditor.com"> | [AnyTextEditor](https://anytexteditor.com/) | 文字工具集合 英文为主 |
-| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/shenyandayi.com"> | [深言达意](https://www.shenyandayi.com/) | 根据描述找中英文词 |
+| <img loading="lazy" width="18px" alt="💔" src="https://favicon.im/www.thesaurus.com"> | [Thesaurus](http://www.thesaurus.com/) | 英文同义词词典 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.xcz.im"> | [中国诗词数据库](http://www.xcz.im/library/) | 西窗烛的诗词数据库 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/baka-invade.org"> | [中國侵略資料庫](https://invade.tw/) | 中国侵略数据库 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/shapecatcher.com"> | [Shapecatcher](https://shapecatcher.com/) | 手绘查找字符 |
@@ -52,6 +51,8 @@ bookHidden: false
 |  |  |  |
 | :----: | ---- | ---- |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.mail-tester.com"> | [Newsletters spam test by mail](https://www.mail-tester.com/) | 测试你发出邮件的垃圾邮件匹配度 |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/namecheckly.com"> | [namecheckly](https://namecheckly.com) | 域名和社交平台用户名可用性检查 |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/namecheck.com"> | [namecheck](https://www.namecheck.com/) | 域名和社交平台用户名可用性检查 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/hardwaretester.com"> | [Hardware Tester](https://hardwaretester.com/) | 手柄、麦克风、MIDI 等电脑外设测试 |
 
 ## 获取

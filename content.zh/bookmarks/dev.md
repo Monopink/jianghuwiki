@@ -77,7 +77,7 @@ bookHidden: false
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/namebeta.com"> | [NameBeta](https://namebeta.com/) | 域名查询 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.namesilo.com"> | [NameSilo](https://www.namesilo.com/) | 域名注册 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/www.gandi.net"> | [Gandi](https://gandi.net/) | 小众域名注册 |
-| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/csstools.chinaz.com"> | [域名删除时间](https://tool.chinaz.com/DomainDel/) | 站长工具 域名删除时间查询 |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/namelix.com"> | [namelix](https://namelix.com/) | AI 驱动的取名工具 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/wee.domains"> | [wee.domains](https://wee.domains/) | 简短的可注册域名 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/tld-list.com"> | [TLD List](https://tld-list.com/) | 可注册域名检索 |
 

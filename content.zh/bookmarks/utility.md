@@ -46,6 +46,13 @@ bookHidden: false
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/hackmd.io"> | [HackMD](https://hackmd.io/) | 在线 Markdown 编辑器 可以协同 |
 | <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/stackedit.io"> | [StackEdit](https://stackedit.io/app) | 在线 Markdown 编辑器 |
 
+## 云工具
+
+|  |  |  |
+| :----: | ---- | ---- |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/cloud.browser-use.com"> | [Browser Use](https://cloud.browser-use.com/) | 云浏览器 |
+| <img loading="lazy" width="32px" alt="💔" src="https://favicon.im/browser.lexmount.com"> | [Lexmount Console](https://browser.lexmount.com/) | 云浏览器 |
+
 ## 检测
 
 |  |  |  |

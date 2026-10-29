@@ -30,6 +30,13 @@ if (searchColumns.length || quickDialRows.length) {
 }
 
 if (input) {
+  const buildSearchUrl = (template, query) => {
+    const encodedQuery = encodeURIComponent(query);
+    return template
+      .replace(/\{query\}/gi, encodedQuery)
+      .replace(/%7Bquery%7D/gi, encodedQuery);
+  };
+
   document.querySelectorAll("[data-search-url]").forEach((button) => {
     button.addEventListener("click", () => {
       const query = input.value.trim();
@@ -38,7 +45,7 @@ if (input) {
         return;
       }
 
-      const target = button.dataset.searchUrl.replace("{query}", encodeURIComponent(query));
+      const target = buildSearchUrl(button.dataset.searchUrl, query);
       window.open(target, "_blank", "noopener,noreferrer");
     });
   });

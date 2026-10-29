@@ -1,46 +1,46 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy to GitHub Pages
 
-name: DEPLOY
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
-      - master  # 这里的意思是当分支发生push的时候，运行下面的jobs
-  pull_request:
-    branches: 
       - master
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-24.04	# 在什么环境运行任务
-    steps:
-      - uses: actions/checkout@v7.0.1	# 引用actions/checkout这个action，与所在的github仓库同名
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive) 获取submodule主题
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+permissions:
+  contents: read
 
-      - name: setup book	# 步骤名
-        uses: peaceiris/actions-hugo@v3.2.1	# hugo官方提供的action，用于在任务环境中获取hugo
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: 0.169.0
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
         with:
-          hugo-version: '0.169.0'	# 获取指定版本的hugo
+          fetch-depth: 0
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3.2.1
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
-      - name: Build
-        run: hugo --minify	# 使用hugo构建静态网页
+      - name: Build site
+        run: hugo --gc --minify --printPathWarnings --printUnusedTemplates --destination public
+        env:
+          HUGO_ENVIRONMENT: production
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4.1.0	# 一个自动发布github pages的action
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }} 该项适用于发布到源码相同repo的情况，不能用于发布到其他repo
-          external_repository: monopink/jianghu-wiki	# 发布到哪个repo
-          personal_token: ${{ secrets.ACTION_ACCESS_TOKEN }}	# 发布到其他repo需要提供上面生成的personal access token
-          publish_dir: ./public	# 注意这里指的是要发布哪个文件夹的内容，而不是指发布到目的仓库的什么位置，因为hugo默认生成静态网页到public文件夹，所以这里发布public文件夹里的内容
-          publish_branch: gh-pages	# 发布到哪个branch
+          external_repository: Monopink/jianghuwiki-pages
+          personal_token: ${{ secrets.ACTION_ACCESS_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages

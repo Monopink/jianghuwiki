@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.1
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v3.2.1
@@ -23,7 +23,23 @@ jobs:
           extended: true
 
       - name: Check whitespace
-        run: git diff --check HEAD^ HEAD -- . ':!themes/hugo-book/static/**'
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            base_sha="$(jq -r '.pull_request.base.sha' "$GITHUB_EVENT_PATH")"
+          elif [[ -n "$GITHUB_EVENT_BEFORE" && ! "$GITHUB_EVENT_BEFORE" =~ ^0+$ ]]; then
+            base_sha="$GITHUB_EVENT_BEFORE"
+          else
+            base_sha=""
+          fi
+
+          if [[ -n "$base_sha" ]]; then
+            git diff --check "$base_sha" "$GITHUB_SHA" -- . ':!themes/hugo-book/static/**'
+          elif git rev-parse "${GITHUB_SHA}^" >/dev/null 2>&1; then
+            git diff --check "${GITHUB_SHA}^" "$GITHUB_SHA" -- . ':!themes/hugo-book/static/**'
+          else
+            git diff-tree --check --root -r "$GITHUB_SHA" -- . ':!themes/hugo-book/static/**'
+          fi
 
       - name: Build site
         run: hugo --gc --minify --printPathWarnings --printUnusedTemplates

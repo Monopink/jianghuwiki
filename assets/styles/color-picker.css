@@ -1,0 +1,29 @@
+.color-picker-page .color-picker-layout {
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.color-picker-page .color-picker-brand {
+  flex: 0 1 220px;
+  min-width: 180px;
+}
+
+.color-picker-page .color-picker-brand svg {
+  display: block;
+  fill: var(--body-font-color);
+  height: auto;
+  max-width: 100%;
+}
+
+.color-picker-page .picker {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .color-picker-page .color-picker-layout {
+    align-items: center;
+    flex-direction: column;
+  }
+}

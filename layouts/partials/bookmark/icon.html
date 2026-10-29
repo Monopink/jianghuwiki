@@ -1,0 +1,4 @@
+{{ $host := .iconHost }}
+{{ if not $host }}{{ with urls.Parse .url }}{{ $host = .Host }}{{ end }}{{ end }}
+{{ $provider := site.Params.favicon.provider | default "https://favicon.im/%s" }}
+{{ if .icon }}<img loading="lazy" width="32" height="32" alt="" src="{{ .icon }}">{{ else if $host }}<img loading="lazy" width="32" height="32" alt="" src="{{ printf $provider $host }}">{{ else }}<img loading="lazy" width="32" height="32" alt="" src="{{ site.Params.favicon.fallback | default ("favicon.png" | relURL) }}">{{ end }}

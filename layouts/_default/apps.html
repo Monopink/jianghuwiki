@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="markdown book-article">
+  <h1>{{ partial "docs/title" . }}</h1>
+  {{ partial "bookmark/platform-symbols.html" . }}
+  {{ partial "bookmark/apps-legend.html" . }}
+  {{ range site.Data.apps.groups }}{{ if gt (len .items) 0 }}
+    <h2 id="{{ .name | urlize }}">{{ .name }}</h2>
+    {{ partial "bookmark/table.html" (dict "group" . "kind" "app") }}
+  {{ end }}{{ end }}
+</article>
+{{ end }}

@@ -132,6 +132,10 @@ defaultContentLanguageInSubdir = false
   # Configuration for indexing can be adjusted in i18n folder per language.
   BookSearch = true
 
+  [params.favicon]
+    provider = "https://favicon.im/%s"
+    fallback = "favicon.png"
+
   # (Optional, default true) Enables comments template on pages
   # By default partals/docs/comments.html includes Disqus template
   # See https://gohugo.io/content-management/comments/#configure-disqus
@@ -154,10 +158,10 @@ defaultContentLanguageInSubdir = false
 
 # The third party search service by Algolia
 [params.DocSearch]
-  enabled = true
+  enabled = false
   appId = "TR1JS5XUQQ"
   apiKey = "65b41088a6c64941a701a3170fee3899"
   indexName = "jhcom"
   insights = true # Optional, automatically send insights when user interacts with search results
   container = "#docsearch"
-  debug = true # Set debug to true if you want to inspect the modal
+  debug = false # Set debug to true if you want to inspect the modal

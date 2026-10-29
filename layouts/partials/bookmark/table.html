@@ -1,0 +1,15 @@
+{{ $kind := .kind }}
+<div class="bookmark-table-wrapper">
+  <table class="bookmark-table {{ if eq $kind "app" }}bookmark-table-apps{{ end }}">
+    <tbody>
+      {{ range .group.items }}
+      <tr id="{{ .id }}">
+        <td>{{ partial "bookmark/icon.html" . }}</td>
+        <td><a href="{{ .url }}">{{ .name }}</a>{{ range .links }}<span class="bookmark-extra-link">｜<a href="{{ .url }}">{{ .label }}</a></span>{{ end }}</td>
+        <td>{{ .description }}</td>
+        {{ if eq $kind "app" }}<td>{{ partial "bookmark/platforms.html" .platforms }}</td>{{ end }}
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>

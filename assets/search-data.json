@@ -1,0 +1,21 @@
+[
+{{- $records := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Draft) (not (in (slice "bookmarks" "apps") .Layout)) (ne .Params.bookSearchExclude true) (ne .Params.searchRecord false) -}}
+    {{- $records = $records | append (dict "type" "page" "title" (partial "docs/title" .) "section" (partial "docs/title" .Parent) "content" .Plain "href" .RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- range $sectionName, $section := site.Data.bookmarks -}}
+  {{- $sectionURL := printf "/bookmarks/%s/" $sectionName -}}
+  {{- if eq $sectionName "inspo" }}{{ $sectionURL = "/bookmarks/Inspo/" }}{{ end -}}
+  {{- range $group := $section.groups -}}{{ range $item := $group.items }}
+    {{- $text := printf "%s %s %s %s %s" $item.name $item.description $group.name (default "" $item.tags) (default "" $item.url) -}}
+    {{- $records = $records | append (dict "type" "bookmark" "title" $item.name "section" (printf "%s / %s" $sectionName $group.name) "content" $text "href" (printf "%s#%s" $sectionURL $item.id)) -}}
+  {{- end }}{{ end }}
+{{- end -}}
+{{- range $group := site.Data.apps.groups -}}{{ range $item := $group.items }}
+  {{- $text := printf "%s %s %s %s %s" $item.name $item.description $group.name (default "" $item.platforms) (default "" $item.url) -}}
+  {{- $records = $records | append (dict "type" "app" "title" $item.name "section" (printf "apps / %s" $group.name) "content" $text "href" (printf "/bookmarks/apps/#%s" $item.id)) -}}
+{{- end }}{{ end }}
+{{- range $i, $record := $records }}{{ if $i }},{{ end }}{{ $record | jsonify }}{{ end -}}
+]

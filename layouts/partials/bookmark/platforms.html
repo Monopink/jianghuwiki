@@ -1,0 +1,6 @@
+{{ $icons := dict "windows" "w" "macos" "m" "linux" "l" "ios" "i" "android" "a" }}
+{{ $labels := dict "windows" "Windows" "macos" "macOS" "linux" "Linux" "ios" "iOS" "android" "Android" "n/a" "N/A" }}
+{{ range . }}
+  {{ $id := . }}
+  {{ with index $icons $id }}<svg class="platform-icon" viewBox="0 0 42.5 42.5" aria-label="{{ index $labels $id | default $id }}"><use href="#{{ . }}-icon"></use></svg>{{ else }}<span class="platform-na">N/A</span>{{ end }}
+{{ end }}

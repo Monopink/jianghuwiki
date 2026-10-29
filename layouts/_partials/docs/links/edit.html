@@ -1,0 +1,12 @@
+{{- $path := strings.TrimPrefix hugo.WorkingDir .Page.File.Filename -}}
+{{- $url := partial "docs/text/template" (dict
+  "Path" $path
+  "Template" .Site.Params.BookEditLink
+  "Context" (dict
+    "Site" .Site
+    "Page" .Page
+    "Path" $path
+  )
+) -}}
+{{- $url = urls.JoinPath $url -}}
+{{- return $url -}}

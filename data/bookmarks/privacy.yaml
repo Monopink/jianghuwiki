@@ -1,0 +1,36 @@
+groups:
+  - id: awareness
+    name: 了解
+    items:
+      - id: have-i-been-pwned
+        name: have i been pwned?
+        url: https://haveibeenpwned.com/
+        description: 检查密码是否泄露
+      - id: amiunique
+        name: AmIUnique
+        url: https://amiunique.org/
+        description: 你在互联网的身份 浏览器指纹
+      - id: dns-leak-test
+        name: DNS Leak Test
+        url: https://dnsleaktest.org/dns-leak-test
+        description: DNS 泄露检测
+  - id: protection
+    name: 保护
+    items:
+      - id: firefox-relay
+        name: Firefox Relay
+        url: https://relay.firefox.com/accounts/profile/
+        description: Firefox 邮件转发
+      - id: adguard-mail
+        name: AdGuard Mail
+        url: https://app.adguard-mail.com/
+        description: AdGuard 邮件转发
+      - id: simplelogin
+        name: SimpleLogin
+        url: https://www.flickr.com/
+        description: 邮件转发
+        iconHost: www.staticflickr.com
+      - id: sharklasers
+        name: SharkLasers
+        url: https://www.sharklasers.com/
+        description: 临时邮箱

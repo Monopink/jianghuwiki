@@ -6,7 +6,7 @@
     {{ with $.Params.dataFile }}
       {{ $data := index $section . }}
       {{ range $data.groups }}{{ if gt (len .items) 0 }}
-        {{ $anchor := .name | urlize }}
+        {{ $anchor := default (.name | urlize) .id }}
         <h2 id="{{ $anchor }}">
           {{ .name }}
           <a class="anchor" href="#{{ $anchor }}" aria-label="{{ partial "docs/text/i18n" "Link" }}"></a>

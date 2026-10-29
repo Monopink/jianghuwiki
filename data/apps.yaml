@@ -1,0 +1,321 @@
+groups:
+  - id: legend
+    name: 图例
+    items: []
+  - id: download
+    name: 聚合下载
+    items:
+      - id: portableapps
+        name: PortableApps
+        url: https://portableapps.com/
+        description: 各种应用的便携版
+        platforms:
+          - n/a
+  - id: learning
+    name: 学习
+    items:
+      - id: toastfish
+        name: ToastFish
+        url: https://github.com/Uahh/ToastFish
+        description: 使用 Windows 通知偷偷地背单词
+        iconHost: pages.github.com
+        platforms:
+          - windows
+  - id: apps-group-4
+    name: 实用
+    items:
+      - id: zen-browser
+        name: Zen Browser
+        url: https://zen-browser.app/
+        description: 极简的 Firefox 衍生
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: chromium
+        name: Chromium
+        url: https://chromium.woolyss.com/
+        description: 各种版本的 Chromium
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: thorium
+        name: Thorium
+        url: https://thorium.rocks/
+        description: 精简化更快速的 Chromium
+        platforms:
+          - windows
+          - macos
+          - linux
+          - android
+      - id: donut-browser
+        name: Donut Browser
+        url: https://donutbrowser.com/
+        description: 开源指纹浏览器
+        iconHost: https://donutbrowser.com/
+        links:
+          - label: GitHub
+            url: https://github.com/donutbrowser/donutbrowser
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: geekez-browser
+        name: GeekEZ Browser
+        url: https://browser.geekez.net/
+        description: 开源指纹浏览器
+        links:
+          - label: GitHub
+            url: https://github.com/EchoHS/GeekezBrowser
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: hurl
+        name: Hurl
+        url: https://github.com/U-C-S/Hurl
+        description: 浏览器选择器
+        platforms:
+          - windows
+      - id: photodemon
+        name: PhotoDemon
+        url: https://photodemon.org/
+        description: 开源图像编辑软件
+        links:
+          - label: GitHub
+            url: https://github.com/tannerhelland/PhotoDemon
+        platforms:
+          - windows
+      - id: archisteamfarm
+        name: ArchiSteamFarm
+        url: https://github.com/JustArchiNET/ArchiSteamFarm/
+        description: Steam 挂卡工具
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: watt-toolkit
+        name: Watt Toolkit
+        url: https://steampp.net/
+        description: 本地 Steam 客户端工具箱
+        platforms:
+          - windows
+          - macos
+          - linux
+          - android
+      - id: stelicas
+        name: Stelicas
+        url: https://github.com/0wn3dg0d/Stelicas
+        description: Steam 游戏分组导出
+        platforms:
+          - windows
+      - id: utools
+        name: uTools
+        url: https://u.tools/
+        description: 效率插件集合
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: calibre
+        name: Calibre
+        url: https://calibre-ebook.com/
+        description: 电子书管理
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: wsabuilds
+        name: WSABuilds
+        url: https://github.com/MustardChef/WSABuilds
+        description: 更好用全面的 WSA
+        platforms:
+          - windows
+      - id: wsa-toolbox
+        name: WSA Toolbox
+        url: https://apps.microsoft.com/store/detail/9ppsp2mkvtgt
+        description: WSA 工具箱
+        platforms:
+          - windows
+      - id: psqredit
+        name: PsQREdit
+        url: https://www.psytec.co.jp/docomo.html
+        description: QR 码屏幕扫描/生成工具
+        platforms:
+          - windows
+      - id: snap2html
+        name: Snap2HTML
+        url: https://www.rlvision.com/snap2html/about.php
+        description: 保存硬盘的目录结构为网页
+        links:
+          - label: GitHub
+            url: https://github.com/rlv-dan/Snap2HTML
+        platforms:
+          - windows
+      - id: idescriptor
+        name: iDescriptor
+        url: https://github.com/iDescriptor/iDescriptor
+        description: 开源 iPhone 管理工具
+        platforms:
+          - windows
+          - macos
+          - linux
+  - id: apps-group-5
+    name: 清理
+    items:
+      - id: free-lanzoux-com-b0cpu1guf
+        name: 流氓软件清理
+        url: https://free.lanzoux.com/b0cpu1guf
+        description: 中国流氓软件清理工具
+        iconHost: www.lanzou.com
+        platforms:
+          - windows
+      - id: bc-uninstaller
+        name: BC Uninstaller
+        url: https://www.bcuninstaller.com/
+        description: 软件卸载工具
+        links:
+          - label: GitHub
+            url: https://github.com/Klocman/Bulk-Crap-Uninstaller
+        platforms:
+          - windows
+      - id: spacesniffer
+        name: SpaceSniffer
+        url: https://github.com/redtrillix/SpaceSniffer
+        description: 磁盘占用可视化展示
+        platforms:
+          - windows
+      - id: driverstore-explorer
+        name: DriverStore Explorer
+        url: https://github.com/lostindark/DriverStoreExplorer
+        description: 无用驱动清理
+        platforms:
+          - windows
+  - id: apps-group-6
+    name: 工具
+    items:
+      - id: eartrumpet
+        name: EarTrumpet
+        url: https://eartrumpet.app/
+        description: 为 Windows 增加软件音量合成器
+        iconHost: github.com
+        links:
+          - label: GitHub
+            url: https://github.com/File-New-Project/EarTrumpet
+        platforms:
+          - windows
+      - id: littlebigmouse
+        name: LittleBigMouse
+        url: https://github.com/mgth/LittleBigMouse
+        description: 在不同 DPI 的屏幕间顺畅移动鼠标
+        platforms:
+          - windows
+      - id: monitorian
+        name: Monitorian
+        url: https://github.com/emoacht/Monitorian
+        description: 单独调节每个输出显示器的亮度等参数
+        platforms:
+          - windows
+      - id: twinkle-tray
+        name: Twinkle Tray
+        url: https://twinkletray.com/
+        description: 系统中控制显示器参数
+        links:
+          - label: GitHub
+            url: https://github.com/xanderfrangos/twinkle-tray
+        platforms:
+          - windows
+      - id: autodarkmode
+        name: AutoDarkMode
+        url: https://github.com/AutoDarkMode/Windows-Auto-Night-Mode
+        description: 自动切换亮/暗模式
+        links:
+          - label: Microsoft Store
+            url: https://apps.microsoft.com/store/detail/auto-dark-mode/XP8JK4HZBVF435
+        platforms:
+          - windows
+  - id: system
+    name: 系统
+    items:
+      - id: servy
+        name: Servy
+        url: https://github.com/aelassas/servy
+        description: 将应用程序转为 Windows 服务运行
+        platforms:
+          - windows
+  - id: apps-group-8
+    name: 传输
+    items:
+      - id: landrop
+        name: LANDrop
+        url: https://landrop.app/
+        description: 跨平台局域网文件传输
+        links:
+          - label: GitHub
+            url: https://github.com/LANDrop/LANDrop
+        platforms:
+          - windows
+          - macos
+          - linux
+          - android
+  - id: apps-group-9
+    name: 浏览器扩展
+    items:
+      - id: airtab
+        name: Airtab
+        url: https://github.com/get-artab/artab
+        description: 新标签页随机一副艺术作品
+        platforms:
+          - n/a
+  - id: apps-group-10
+    name: 油猴脚本
+    items:
+      - id: greasyfork-org-en-scripts-456311-e6-90-9c-e7-b4-a2-e5-8a-a9-e6-89-8b
+        name: 搜索助手
+        url: https://greasyfork.org/en/scripts/456311-%E6%90%9C%E7%B4%A2%E5%8A%A9%E6%89%8B
+        description: 左侧悬浮按钮快速切换搜索引擎
+        platforms:
+          - n/a
+      - id: all-search
+        name: all-search
+        url: https://greasyfork.org/en/scripts/397993-all-search-%E5%85%A8%E6%90%9C-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B9%E8%BD%AC-%E6%94%AF%E6%8C%81%E4%BB%BB%E6%84%8F%E7%BD%91%E7%AB%99%E5%B1%95%E7%A4%BA
+        description: 顶部搜索引擎快捷跳转
+        links:
+          - label: GitHub
+            url: https://github.com/all-search/all-search
+        platforms:
+          - n/a
+      - id: html5
+        name: HTML5 快捷键
+        url: https://greasyfork.org/en/scripts/487825-html5%E5%BF%AB%E9%80%9F%E9%8D%B5hotkeys
+        description: 视频快捷键
+        platforms:
+          - n/a
+  - id: apps-group-11
+    name: Geek
+    items:
+      - id: tabby
+        name: Tabby
+        url: https://tabby.sh/
+        description: 精美的开源终端 XShell 的替代品
+        links:
+          - label: Github
+            url: https://github.com/Eugeny/tabby/
+        platforms:
+          - linux
+      - id: filter-repo-rs
+        name: filter-repo-rs
+        url: https://github.com/Cactusinhand/filter-repo-rs
+        description: 重写 Git 仓库历史记录
+        platforms:
+          - n/a
+  - id: apps-group-12
+    name: 无用但有趣
+    items:
+      - id: xpshadows
+        name: XPShadows
+        url: https://codeberg.org/ibulis/XPShadows
+        description: Windows 窗口重影效果
+        platforms:
+          - windows

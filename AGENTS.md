@@ -15,8 +15,8 @@
 
 ## Bookmarks
 
-- Regular bookmarks use `data/bookmarks/*.json` and the `bookmarks` layout.
-- Applications use `data/apps.json` and the `apps` layout.
+- Regular bookmarks use `data/bookmarks/*.yaml` and the `bookmarks` layout.
+- Applications use `data/apps.yaml` and the `apps` layout.
 - Keep stable item IDs.
 - Keep presentation logic in templates, not in data files.
 

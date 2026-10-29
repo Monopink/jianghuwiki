@@ -7,7 +7,7 @@ theme = "hugo-book"
 disablePathToLower = true
 enableGitInfo = true
 
-# Default language to use (if you setup multilingual support)
+# Site language
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 
@@ -42,10 +42,7 @@ defaultContentLanguageInSubdir = false
   noClasses = false
   noHl = false
 
-# Multi-lingual mode config
-# There are different options to translate files
-# See https://gohugo.io/content-management/multilingual/#translation-by-filename
-# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+# Chinese content configuration
 [languages]
 [languages.zh]
   languageName = "中文"
@@ -63,13 +60,6 @@ defaultContentLanguageInSubdir = false
     name = "萌 ICP 备 20246464 号"
     url = "https://icp.gov.moe/?keyword=20246464"
     icon = ""
-
-[languages.en]
-  languageName = "English"
-  languageCode = "en"
-  contentDir = "content.en"
-  title = "Jianghu Wiki"
-  weight = 2
 
 [menu]
 # [[menu.before]]
@@ -153,9 +143,6 @@ defaultContentLanguageInSubdir = false
   BookServiceWorker = true
 
   # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables a drop-down menu for translations only if a translation is present.
-  BookTranslatedOnly = false
-
 # The third party search service by Algolia
 [params.DocSearch]
   enabled = false

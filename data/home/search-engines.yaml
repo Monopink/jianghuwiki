@@ -9,7 +9,7 @@ groups:
       - { name: Qwen, icon: "🧶", color: "#6937F1", url: "https://chat.qwen.ai/", searchUrl: "https://chat.qwen.ai/?q={query}" }
       - { name: DeepSeek, icon: "🐋", color: "#446EFF", url: "https://chat.deepseek.com/", searchUrl: "https://chat.deepseek.com/?q={query}" }
       - { name: Z.ai, icon: "𝗭", color: "#1C7FF8", url: "https://chat.z.ai/", searchUrl: "https://chat.z.ai/?q={query}" }
-      - { name: Mistral, icon: "👾", color: "#FE7101", url: "https://chat.mistral.ai/", searchUrl: "https://chat.mistral.ai/chat?query={query}" }
+      - { name: Mistral, icon: "👾", color: "#FE7101", url: "https://chat.mistral.ai/", searchUrl: "https://chat.mistral.ai/chat?q={query}" }
       - { name: Dola AI, icon: "💁🏻‍♀️", color: "#A765D9", url: "https://www.dola.com/", searchUrl: "https://www.dola.com/chat/?q={query}" }
   - name: 大模型&搜索
     items:

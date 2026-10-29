@@ -5,8 +5,10 @@
 :root[data-theme="auto"] {
   --border-radius: 0;
   --menu-width: 16.4rem;
-  --color-link: #b00;
-  --color-visited-link: #b00;
+  --color-link: #e45d4f;
+  --color-visited-link: #e45d4f;
+  --color-link-glow: rgb(228 93 79 / 25%);
+  --color-link-shadow: rgb(228 93 79 / 18%);
   --body-background: #fff;
   --body-font-color: #000;
   --body-header-background: rgba(250, 251, 252, 0.8);
@@ -29,8 +31,10 @@
 :root[data-theme="dark"] {
   --border-radius: 0;
   --menu-width: 16.4rem;
-  --color-link: #f06275;
-  --color-visited-link: #f06275;
+  --color-link: #ff7066;
+  --color-visited-link: #ff7066;
+  --color-link-glow: rgb(255 112 102 / 25%);
+  --color-link-shadow: rgb(255 112 102 / 18%);
   --body-background: #202429;
   --body-font-color: #e9ecef;
   --body-header-background: rgba(31, 35, 39, 0.8);
@@ -55,8 +59,10 @@
     --body-background: #202429;
     --body-font-color: #e9ecef;
     --body-header-background: rgba(31, 35, 39, 0.8);
-    --color-link: #f06275;
-    --color-visited-link: #f06275;
+    --color-link: #ff7066;
+    --color-visited-link: #ff7066;
+    --color-link-glow: rgb(255 112 102 / 25%);
+    --color-link-shadow: rgb(255 112 102 / 18%);
     --gray-97: rgba(255, 255, 255, 0.02);
     --gray-95: rgba(255, 255, 255, 0.04);
     --gray-90: rgba(255, 255, 255, 0.08);
@@ -554,7 +560,7 @@ a.book-btn[href]:hover {
 .home-search-form input:focus {
   border-color: var(--gray-80);
   outline: none;
-  box-shadow: 0 0 0 1px var(--color-link), 0 0 10px rgb(187 0 0 / 25%);
+  box-shadow: 0 0 0 1px var(--color-link), 0 0 10px var(--color-link-glow);
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -636,7 +642,7 @@ a.book-btn[href]:hover {
 .quick-dial-links a:focus-visible {
   border-block-end-color: var(--color-link);
   color: var(--color-link);
-  text-shadow: 0 0 7px rgb(187 0 0 / 35%);
+  text-shadow: 0 0 7px var(--color-link-glow);
   outline: none;
 }
 
@@ -644,7 +650,7 @@ a.book-btn[href]:hover {
 .quick-dial-row:focus-within {
   border-color: var(--color-link);
   background: var(--home-surface-hover);
-  box-shadow: 0 0 10px rgb(187 0 0 / 18%);
+  box-shadow: 0 0 10px var(--color-link-shadow);
 }
 
 .quick-dial-more {
@@ -671,8 +677,8 @@ a.book-btn[href]:hover {
   }
 }
 
-html.home-effects-intro .home-search-link::after,
-html.home-effects-intro .quick-dial-row::after {
+.home-effects-intro .home-search-link::after,
+.home-effects-intro .quick-dial-row::after {
   position: absolute;
   inset: -1px;
   border: 1px solid transparent;
@@ -682,11 +688,11 @@ html.home-effects-intro .quick-dial-row::after {
   animation: home-neon-outline 900ms ease-out var(--intro-delay, 0ms) both;
 }
 
-html.home-effects-intro .home-search-link::after {
+.home-effects-intro .home-search-link::after {
   --intro-color: var(--search-color);
 }
 
-html.home-effects-intro .quick-dial-row::after {
+.home-effects-intro .quick-dial-row::after {
   --intro-color: var(--color-link);
 }
 
@@ -696,8 +702,8 @@ html.home-effects-intro .quick-dial-row::after {
     animation: none;
   }
 
-  html.home-effects-intro .home-search-link::after,
-  html.home-effects-intro .quick-dial-row::after {
+  .home-effects-intro .home-search-link::after,
+  .home-effects-intro .quick-dial-row::after {
     animation: none;
   }
 

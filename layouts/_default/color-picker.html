@@ -1,19 +1,41 @@
 {{ define "main" }}
   {{ $css := resources.Get "styles/color-picker.css" | resources.Minify | resources.Fingerprint }}
-  {{ $init := resources.Get "tools/color-picker.js" | resources.Minify | resources.Fingerprint }}
+  {{ $script := resources.Get "tools/color-picker.js" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   <article class="markdown book-article toolbox-page color-picker-page">
     <h1>{{ .Title }}</h1>
-    <div class="color-picker-layout">
-      <div class="color-picker-brand" aria-label="Jianghu Logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 324.08" aria-hidden="true">
-          <path class="filled-logo" d="M268.15,50.3c21.22,0,31.84,13.86,31.85,41.58V0h-57V63.15c5.77-8.57,14.15-12.85,25.15-12.85Z"/>
-          <path class="filled-logo" d="M270.38,195.6V95.28c0-12.48-4.1-18.72-12.29-18.72-10.06,0-15.09,7.64-15.09,22.91v96.12h-29.62V0h-21.79V149.21c0,31.67-14.91,47.5-44.71,47.5-5.96,0-10.71-.38-14.25-1.12v-27.94c2.79,.75,6.15,1.12,10.06,1.12,12.11,0,18.16-6.24,18.16-18.72V0H.52V274.82c.31,.07,.62,.15,.93,.22,8.01,1.89,15.58,3.68,31.13,3.68s23.12-1.79,31.13-3.68c8.39-1.98,17.06-4.03,34.14-4.03s25.76,2.05,34.14,4.03c8.01,1.89,15.58,3.68,31.13,3.68v13.1c-17.08,0-25.76-2.05-34.14-4.03-8.01-1.89-15.58-3.68-31.13-3.68s-23.12,1.79-31.13,3.68c-8.39,1.98-17.06,4.03-34.14,4.03-15.68,0-24.27-1.73-32.07-3.54v36.37H300V195.6h-29.62Z"/>
-        </svg>
+    <section class="color-picker-workbench" aria-label="颜色选择器">
+      <div class="color-picker-preview">
+        <div class="color-picker-swatches" aria-label="颜色预览">
+          <div class="color-picker-swatch color-picker-swatch-current"><span>当前颜色</span></div>
+          <div class="color-picker-swatch color-picker-swatch-new"><span>新颜色</span></div>
+        </div>
+        <label class="color-picker-hex"><span>HEX</span><input data-color-input="hex" type="text" value="#EFE9E7" spellcheck="false" maxlength="7" aria-label="HEX 颜色值"></label>
       </div>
-      <div class="picker" acp-color="#EFE9E7" acp-palette="PALETTE_MATERIAL_CHROME" acp-palette-editable></div>
-    </div>
+      <div class="color-picker-editor">
+        <div class="color-picker-canvas-wrap"><canvas class="color-picker-field" width="360" height="280" aria-label="二维颜色选择区域"></canvas><div class="color-picker-canvas-marker" aria-hidden="true"></div></div>
+        <div class="color-picker-strip-wrap"><canvas class="color-picker-strip" width="32" height="280" aria-label="当前通道颜色条"></canvas><div class="color-picker-strip-marker" aria-hidden="true"></div></div>
+      </div>
+      <div class="color-picker-controls">
+        <fieldset class="color-picker-group"><legend>HSB</legend>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="h" checked><span>H</span><input data-color-input="h" type="number" min="0" max="360" step="1" aria-label="色相"></label>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="s"><span>S</span><input data-color-input="s" type="number" min="0" max="100" step="1" aria-label="饱和度"></label>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="b"><span>B</span><input data-color-input="b" type="number" min="0" max="100" step="1" aria-label="明度"></label>
+        </fieldset>
+        <fieldset class="color-picker-group"><legend>RGB</legend>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="r"><span>R</span><input data-color-input="r" type="number" min="0" max="255" step="1" aria-label="红色"></label>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="g"><span>G</span><input data-color-input="g" type="number" min="0" max="255" step="1" aria-label="绿色"></label>
+          <label class="color-picker-channel"><input type="radio" name="color-channel" value="b-rgb"><span>B</span><input data-color-input="b-rgb" type="number" min="0" max="255" step="1" aria-label="蓝色"></label>
+        </fieldset>
+      </div>
+    </section>
+    <section class="color-picker-palette" aria-labelledby="color-picker-palette-title">
+      <div class="color-picker-palette-header">
+        <h2 id="color-picker-palette-title">我的色板</h2>
+        <button class="color-picker-palette-add" type="button" title="添加当前颜色" aria-label="添加当前颜色">+</button>
+      </div>
+      <div class="color-picker-palette-list" data-color-palette></div>
+    </section>
   </article>
-  <script src="{{ "js/acolorpicker.js" | relURL }}" defer></script>
-  <script src="{{ $init.RelPermalink }}" defer></script>
+  <script type="module" src="{{ $script.RelPermalink }}"></script>
 {{ end }}

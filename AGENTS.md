@@ -27,6 +27,13 @@
 - Algolia DocSearch configuration and styles are retained as an optional alternative search implementation.
 - DocSearch is disabled by default; keep `params.DocSearch.enabled = false` unless deliberately switching search implementations.
 
+## Visual direction
+
+- The site uses a flat, sharp Swedish-inspired visual style with restrained millennium-era color accents.
+- Prefer clear grids, compact spacing, square or minimally rounded controls, flat color blocks, and thin borders.
+- Avoid bevels, skeuomorphic controls, heavy shadows, gradients, glow effects, decorative textures, and excessive rounded cards.
+- Use icons sparingly and consistently; preserve meaningful section emoji where they are part of the site's identity.
+
 ## Commands
 
 - Development: `hugo server`

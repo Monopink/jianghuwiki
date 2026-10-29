@@ -1,0 +1,21 @@
+<section class="home-search home-effects-intro" aria-labelledby="home-search-title">
+  <h2 id="home-search-title">🔍搜索</h2>
+  <div class="home-search-form">
+    <input id="home-search-input" type="search" placeholder="Jianghu 搜索" aria-label="搜索关键词" autocomplete="off" />
+  </div>
+  <div class="home-search-groups">
+    {{ $data := index site.Data.home "search-engines" }}
+    {{ range $data.groups }}
+    <section class="home-search-group" aria-label="{{ .name }}">
+      <div class="home-search-links">
+        {{ range .items }}
+        <button type="button" class="home-search-link" data-search-url="{{ .url }}" style="--search-color: {{ .color }};"><span class="home-search-icon" aria-hidden="true">{{ .icon }}</span>{{ .name }}</button>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  </div>
+</section>
+{{ with resources.Get "home-search.js" | resources.Minify | resources.Fingerprint }}
+<script type="module" src="{{ .RelPermalink }}"></script>
+{{ end }}

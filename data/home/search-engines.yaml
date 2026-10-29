@@ -1,0 +1,41 @@
+groups:
+  - name: 通用搜索
+    items:
+      - { name: Google NCR, icon: "🔎", color: "#4285f4", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q={query}" }
+      - { name: DuckDuckGo, icon: "🦆", color: "#de5833", url: "https://duckduckgo.com/?q={query}" }
+      - { name: Bing, icon: "🅱️", color: "#0060df", url: "https://www.bing.com/search?q={query}" }
+      - { name: Yandex, icon: "🔴", color: "#fc3f1d", url: "https://yandex.com/search/?text={query}" }
+      - { name: 百度, icon: "🐾", color: "#4e6ef2", url: "https://www.baidu.com/s?wd={query}" }
+  - name: 内容与应用
+    items:
+      - { name: GitHub, icon: "◉", color: "#9370c6", url: "https://github.com/search?q={query}" }
+      - { name: Pinterest, icon: "📌", color: "#e60023", url: "https://www.pinterest.com/search/pins/?q={query}" }
+      - { name: NeoDB, icon: "🌱", color: "#a3c095", url: "https://neodb.social/search/?q={query}" }
+      - { name: 七麦, icon: "🍏", color: "#02b389", url: "https://www.qimai.cn/search/index/country/cn/search/{query}" }
+      - { name: SteamDB, icon: "🗃️", color: "#0366d6", url: "https://steamdb.info/search/?a=app&q={query}" }
+      - { name: Steam, icon: "🎮", color: "#1a9fff", url: "https://store.steampowered.com/search/?term={query}" }
+      - { name: GIPHY, icon: "🎞️", color: "#9933ff", url: "https://giphy.com/search/{query}" }
+      - { name: Forvo, icon: "🗣️", color: "#4c4cff", url: "https://forvo.com/search/{query}/en/" }
+  - name: 网络工具
+    items:
+      - { name: IAWM, icon: "🕰️", color: "#d5383f", url: "https://web.archive.org/web/*/{query}" }
+      - { name: Web Check, icon: "🩺", color: "#94D512", url: "https://web-check.xyz/results/{query}" }
+      - { name: Domainr, icon: "🌐", color: "#117ec8", url: "https://domainr.com/?q={query}" }
+      - { name: Whois, icon: "👤", color: "#91d117", url: "https://html.zone/whois/{query}" }
+      - { name: CNICP, icon: "🪪", color: "#e6bd04", url: "https://www.icpapi.com/{query}" }
+      - { name: IPSHU, icon: "📍", color: "#50b8fe", url: "https://ipshu.com/ipv4/{query}" }
+      - { name: bczs.net, icon: "🔢", color: "#0088cc", url: "http://ip.bczs.net/{query}" }
+      - { name: 百度IP, icon: "🧭", color: "#2469f3", url: "https://qifu.baidu.com/wise/#/?activeId=SEARCH_IP_ADDRESS&ip={query}" }
+  - name: 中文搜索
+    items:
+      - { name: V2EX, icon: "💬", color: "#aab0c6", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q=site:v2ex.com/t+{query}" }
+      - { name: 淘宝PC, icon: "🛒", color: "#ff4400", url: "https://s.taobao.com/search?q={query}" }
+      - { name: 知乎, icon: "❓", color: "#056de8", url: "https://www.zhihu.com/search?q={query}" }
+      - { name: 360搜索, icon: "🔍", color: "#0fb264", url: "https://www.so.com/s?q={query}" }
+      - { name: 搜狗, icon: "🐶", color: "#fd6853", url: "https://www.sogou.com/web?query={query}" }
+  - name: 翻译与词典
+    items:
+      - { name: Translate2ZH, icon: "中", color: "#4b8bf5", url: "https://translate.google.com/?sl=auto&tl=zh-CN&op=translate&text={query}" }
+      - { name: Translate2EN, icon: "英", color: "#4b8bf5", url: "https://translate.google.com/?sl=auto&tl=en&op=translate&text={query}" }
+      - { name: Webster, icon: "📖", color: "#d71920", url: "https://www.merriam-webster.com/dictionary/{query}" }
+      - { name: 粤语翻译, icon: "粤", color: "#5a62ff", url: "https://fanyi.baidu.com/#zh/yue/{query}" }

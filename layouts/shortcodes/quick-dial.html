@@ -1,0 +1,20 @@
+{{ $data := site.Data.home.quicklinks }}
+<section class="quick-dial home-effects-intro" aria-labelledby="quick-dial-title">
+  <h2 id="quick-dial-title">📞快速拨号</h2>
+  {{ range $data.groups }}
+  <section class="quick-dial-group" aria-label="{{ .name }}">
+    <h3>{{ .name }}</h3>
+    {{ range .sections }}
+    <div class="quick-dial-row">
+      <span class="quick-dial-label">{{ .name }}</span>
+      <span class="quick-dial-links">
+        {{ range .links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ end }}
+      </span>
+    </div>
+    {{ end }}
+    {{ with .more }}
+    <p class="quick-dial-more"><a href="{{ .url }}">{{ .name }}</a></p>
+    {{ end }}
+  </section>
+  {{ end }}
+</section>

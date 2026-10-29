@@ -1,0 +1,78 @@
+groups:
+  - name: 🏄‍♀️ 冲浪时间
+    sections:
+      - name: 订阅
+        links:
+          - { name: Inoreader, url: "https://www.inoreader.com/" }
+          - { name: Feedly, url: "https://feedly.com/i/my" }
+          - { name: The Old Reader, url: "https://theoldreader.com" }
+          - { name: Substack, url: "https://substack.com/home" }
+          - { name: Matters, url: "https://matters.town/" }
+      - name: 聚合
+        links:
+          - { name: Buzzing, url: "https://www.buzzing.cc/" }
+          - { name: 今日热榜, url: "https://tophub.today/" }
+          - { name: 有据, url: "https://chinafactcheck.com/" }
+          - { name: realtime.info, url: "http://realtime.info/" }
+      - name: 社区
+        links:
+          - { name: Reddit, url: "https://www.reddit.com/" }
+          - { name: 梦乡, url: "http://yume.ly/" }
+          - { name: 批踢踢實業坊, url: "https://www.ptt.cc/bbs/hotboards.html" }
+          - { name: Blind, url: "https://www.teamblind.com/" }
+          - { name: 通信人家园, url: "https://www.txrjy.com/forum.php" }
+          - { name: 253874, url: "https://www.253874.net" }
+          - { name: 虫部落, url: "https://www.chongbuluo.com/" }
+          - { name: 其乐, url: "https://keylol.com/forum.php?mod=guide&view=newthread" }
+          - { name: NodeSeek, url: "https://www.nodeseek.com/" }
+          - { name: LINUX DO, url: "https://linux.do/latest" }
+          - { name: 大佬论坛, url: "https://dalao.net/" }
+          - { name: 美卡论坛, url: "https://www.uscardforum.com/top?period=daily" }
+          - { name: V2EX, url: "https://www.v2ex.com/changes" }
+          - { name: 4414, url: "https://www.4414.cn/" }
+          - { name: 我爱卡, url: "https://bbs.51credit.com/" }
+          - { name: 过早客, url: "https://www.guozaoke.com/?tab=latest" }
+          - { name: 主机论坛, url: "https://hostloc.com/misc.php?mod=ranklist" }
+          - { name: 2047, url: "https://2047.one/" }
+          - { name: 中文印刷, url: "https://www.cnprint.org/bbs/index.php" }
+          - { name: 钢笔论坛, url: "http://www.penbbs.com/forum.php" }
+          - { name: 矿石收音机, url: "http://www.crystalradio.cn/forum.php?mod=guide&view=hot" }
+          - { name: 手电大家谈, url: "https://www.shoudian.org/forum.php?mod=guide&view=newthread" }
+      - name: Blog
+        links:
+          - { name: 十年之约, url: "https://www.foreverblog.cn/feeds.html" }
+          - { name: 笔墨迹, url: "https://blogscn.fun/" }
+          - { name: 个站商店, url: "https://storeweb.cn/rss" }
+          - { name: 酱紫表, url: "https://qust.me/" }
+          - { name: 栋哥的赛博空间, url: "https://liuyandong.com/" }
+          - { name: 高海鹏老师, url: "https://www.gaohaipeng.com/" }
+          - { name: docofcard, url: "https://docofcard.com/" }
+          - { name: VPS大玩家, url: "https://www.vpsdawanjia.com/" }
+          - { name: 谷姐靓号网, url: "https://www.goojie.eu/" }
+          - { name: 虚拟号, url: "https://xunihao.net/" }
+      - name: 随机
+        links:
+          - { name: 虫洞, url: "https://foreverblog.cn/go.html" }
+          - { name: 开往, url: "https://www.travellings.cn/go.html" }
+          - { name: 笔墨迹, url: "https://blogscn.fun/random.html" }
+          - { name: 中文博客列表, url: "https://zhblogs.ohyee.cc/go" }
+      - name: 学习
+        links:
+          - { name: TypingClub, url: "https://www.typingclub.com/sportal/program-3.game" }
+          - { name: Qwerty Learner, url: "https://qwerty.kaiyi.cool/" }
+      - name: 其他
+        links:
+          - { name: NameSilo marketplace, url: "https://www.namesilo.com/Marketplace" }
+    more: { name: 👉所有…, url: "/fav/surf/" }
+  - name: 🔨 工具
+    sections:
+      - name: 云机器
+        links:
+          - { name: 云手机, url: "https://cloudphoneh5.buy.139.com/#/cloudphone" }
+      - name: 工具
+        links:
+          - { name: 小鹤音形查询, url: "http://react.xhup.club/search" }
+          - { name: Wormhole, url: "https://wormhole.app/" }
+          - { name: Emailnator, url: "https://www.emailnator.com/" }
+          - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
+          - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }

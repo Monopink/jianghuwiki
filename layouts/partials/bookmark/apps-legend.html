@@ -1,4 +1,30 @@
 <div class="apps-legend">
-  <p>应用支持的平台：</p>
-  {{ partial "bookmark/platforms.html" (slice "windows" "macos" "linux" "ios" "android" "n/a") }}
+  <h2>图例</h2>
+  <table class="apps-legend-table">
+    <thead>
+      <tr>
+        <th scope="col">图标</th>
+        <th scope="col">系统</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range slice
+        (dict "id" "windows" "label" "Windows")
+        (dict "id" "macos" "label" "macOS")
+        (dict "id" "linux" "label" "Linux")
+        (dict "id" "ios" "label" "iOS")
+        (dict "id" "android" "label" "Android")
+      }}
+        <tr>
+          <td>{{ partial "bookmark/platforms.html" (slice .id) }}</td>
+          <td>{{ .label }}</td>
+        </tr>
+      {{ end }}
+      <tr>
+        <td><span class="platform-na">N/A</span></td>
+        <td>此项不适用</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>第四列图标表示该应用程序所支持的平台。</p>
 </div>

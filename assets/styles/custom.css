@@ -589,6 +589,37 @@ body:not(:has(.book-toc)) .book-page {
   margin-bottom: 1rem;
 }
 
+.apps-legend-table {
+  width: auto !important;
+  min-width: 18rem;
+}
+
+.apps-legend-table th,
+.apps-legend-table td {
+  min-width: 5rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.apps-legend-table th:first-child,
+.apps-legend-table td:first-child {
+  min-width: 4rem;
+}
+
+.apps-legend-table tr:nth-child(odd) {
+  background: var(--gray-95);
+}
+
+.apps-legend-table tr:nth-child(even) {
+  background: transparent;
+}
+
+.apps-legend-table .platform-icon {
+  margin: 0;
+}
+
 .fill-font-color {
   fill: var(--body-font-color);
 }

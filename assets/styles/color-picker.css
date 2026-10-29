@@ -5,35 +5,6 @@
   max-width: 70rem;
 }
 
-.color-picker-page .color-picker-preview {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(12rem, 1fr) minmax(14rem, 22rem);
-  gap: 1rem;
-  align-items: end;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-85);
-}
-
-.color-picker-page .color-picker-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  min-height: 4rem;
-  border: 1px solid var(--gray-80);
-}
-
-.color-picker-page .color-picker-swatch {
-  display: flex;
-  align-items: end;
-  min-height: 4rem;
-  padding: 0.35rem 0.5rem;
-  color: #fff;
-  font-size: 0.75rem;
-  text-shadow: 0 1px 2px rgb(0 0 0 / 55%);
-}
-
-.color-picker-page .color-picker-swatch-new { background: #ff0000; }
-
 .color-picker-page .color-picker-hex,
 .color-picker-page .color-picker-channel {
   display: grid;
@@ -129,25 +100,19 @@
   border-top: 1px solid var(--gray-85);
 }
 
-.color-picker-page .color-picker-palette-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.color-picker-page .color-picker-palette-header h2 {
-  margin: 0;
-  font-size: 1rem;
-}
-
 .color-picker-page .color-picker-palette-add {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 1.8rem;
   height: 1.8rem;
   padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
   font-size: 1.25rem;
   line-height: 1;
 }
@@ -156,7 +121,6 @@
 .color-picker-page .color-picker-palette-add:focus-visible,
 .color-picker-page .color-picker-palette-remove:hover,
 .color-picker-page .color-picker-palette-remove:focus-visible {
-  border-color: var(--color-link);
   color: var(--color-link-hover);
   outline: none;
 }
@@ -164,37 +128,74 @@
 .color-picker-page .color-picker-palette-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
   min-height: 2.2rem;
   margin-top: 0.75rem;
 }
 
-.color-picker-page .color-picker-palette-item {
-  display: inline-flex;
-  gap: 0.15rem;
+.color-picker-page .color-picker-palette-custom {
+  display: contents;
 }
 
-.color-picker-page .color-picker-palette-swatch {
-  width: 2.4rem;
-  height: 2.2rem;
-  border: 1px solid var(--gray-80);
+.color-picker-page .color-picker-palette-item {
+  position: relative;
+  display: grid;
+  align-content: end;
+  gap: 0.25rem;
+  width: 12rem;
+  min-height: 7rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: 0;
   border-radius: 0;
-  cursor: pointer;
+  color: #fff;
+  cursor: default;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 55%);
+}
+
+.color-picker-page .color-picker-palette-values {
+  display: grid;
+  justify-items: end;
+  gap: 0.1rem;
+  text-align: right;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.7rem;
 }
 
 .color-picker-page .color-picker-palette-remove {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: start;
-  width: 1rem;
-  height: 1rem;
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
   padding: 0;
-  font-size: 0.8rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
   line-height: 1;
+}
+
+.color-picker-page .color-picker-palette-actions {
+  display: contents;
+}
+
+.color-picker-page .color-picker-palette-item,
+.color-picker-page .color-picker-swatch-new {
+  text-shadow: 0 1px 2px rgb(0 0 0 / 55%);
+}
+
+.color-picker-page [data-copy-value] {
+  cursor: copy;
+}
+
+.color-picker-page .color-picker-palette-add,
+.color-picker-page .color-picker-palette-remove {
+  cursor: pointer;
+}
+
+.color-picker-page [data-copy-value].is-copied {
+  color: var(--color-link-hover);
 }
 
 @media (max-width: 48rem) {
   .color-picker-page .color-picker-workbench { grid-template-columns: 1fr; }
-  .color-picker-page .color-picker-preview { grid-template-columns: 1fr; }
 }

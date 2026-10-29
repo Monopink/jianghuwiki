@@ -5,13 +5,6 @@
   <article class="markdown book-article toolbox-page color-picker-page">
     <h1>{{ .Title }}</h1>
     <section class="color-picker-workbench" aria-label="颜色选择器">
-      <div class="color-picker-preview">
-        <div class="color-picker-swatches" aria-label="颜色预览">
-          <div class="color-picker-swatch color-picker-swatch-current"><span>当前颜色</span></div>
-          <div class="color-picker-swatch color-picker-swatch-new"><span>新颜色</span></div>
-        </div>
-        <label class="color-picker-hex"><span>HEX</span><input data-color-input="hex" type="text" value="#FF0000" spellcheck="false" maxlength="7" aria-label="HEX 颜色值"></label>
-      </div>
       <div class="color-picker-editor">
         <div class="color-picker-canvas-wrap"><canvas class="color-picker-field" width="360" height="280" aria-label="二维颜色选择区域"></canvas><div class="color-picker-canvas-marker" aria-hidden="true"></div></div>
         <div class="color-picker-strip-wrap"><canvas class="color-picker-strip" width="32" height="280" aria-label="当前通道颜色条"></canvas><div class="color-picker-strip-marker" aria-hidden="true"></div></div>
@@ -27,14 +20,17 @@
           <label class="color-picker-channel"><input type="radio" name="color-channel" value="g"><span>G</span><input data-color-input="g" type="number" min="0" max="255" step="1" aria-label="绿色"></label>
           <label class="color-picker-channel"><input type="radio" name="color-channel" value="b-rgb"><span>B</span><input data-color-input="b-rgb" type="number" min="0" max="255" step="1" aria-label="蓝色"></label>
         </fieldset>
+        <label class="color-picker-hex"><span>HEX</span><input data-color-input="hex" type="text" value="#FF0000" spellcheck="false" maxlength="7" aria-label="HEX 颜色值"></label>
       </div>
     </section>
-    <section class="color-picker-palette" aria-labelledby="color-picker-palette-title">
-      <div class="color-picker-palette-header">
-        <h2 id="color-picker-palette-title">我的色板</h2>
-        <button class="color-picker-palette-add button-secondary" type="button" title="添加当前颜色" aria-label="添加当前颜色">+</button>
+    <section class="color-picker-palette" aria-label="色板">
+      <div class="color-picker-palette-list">
+        <div class="color-picker-palette-item color-picker-swatch-new" data-preview-swatch="new">
+          <span class="color-picker-palette-values"><span data-copy-value="new-hex" tabindex="0" role="button"></span><span data-copy-value="new-rgb" tabindex="0" role="button"></span></span>
+          <button class="color-picker-palette-add" type="button" data-add-palette title="添加当前颜色" aria-label="添加当前颜色">+</button>
+        </div>
+        <div class="color-picker-palette-custom" data-color-palette></div>
       </div>
-      <div class="color-picker-palette-list" data-color-palette></div>
     </section>
   </article>
   <script type="module" src="{{ $script.RelPermalink }}"></script>

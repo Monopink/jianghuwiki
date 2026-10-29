@@ -8,10 +8,8 @@
   const stripContext = strip.getContext("2d");
   const fieldMarker = page.querySelector(".color-picker-canvas-marker");
   const stripMarker = page.querySelector(".color-picker-strip-marker");
-  const currentSwatch = page.querySelector(".color-picker-swatch-current");
-  const newSwatch = page.querySelector(".color-picker-swatch-new");
   const palette = page.querySelector("[data-color-palette]");
-  const addToPalette = page.querySelector(".color-picker-palette-add");
+  const addToPalette = page.querySelector("[data-add-palette]");
   const inputs = new Map(Array.from(page.querySelectorAll("[data-color-input]")).map((input) => [input.dataset.colorInput, input]));
   const limits = { h: [0, 360], s: [0, 100], b: [0, 100], r: [0, 255], g: [0, 255], "b-rgb": [0, 255] };
   const specs = {
@@ -26,7 +24,6 @@
   const currentColorKey = "strange-book-color-picker-current";
   const initialRgb = readCurrentColor() || [255, 0, 0];
   let rgb = [...initialRgb];
-  let previousRgb = [...initialRgb];
   let activeChannel = "h";
   let hsb;
   const paletteKey = "strange-book-color-picker-palette";
@@ -69,30 +66,93 @@
     paletteColors.forEach((color) => {
       const item = document.createElement("div");
       item.className = "color-picker-palette-item";
-      const swatch = document.createElement("button");
-      swatch.type = "button";
-      swatch.className = "color-picker-palette-swatch button-secondary";
-      swatch.style.backgroundColor = color;
-      swatch.title = `加载颜色 ${color}`;
-      swatch.setAttribute("aria-label", `加载颜色 ${color}`);
-      swatch.addEventListener("click", () => {
-        commitRgb(hexToRgb(color));
-        render();
-      });
+      item.style.backgroundColor = color;
+      item.setAttribute("role", "button");
+      item.tabIndex = 0;
+      item.setAttribute("aria-label", `加载颜色 ${color}`);
+      const values = document.createElement("span");
+      values.className = "color-picker-palette-values";
+      const hexValue = document.createElement("span");
+      hexValue.textContent = color;
+      hexValue.tabIndex = 0;
+      hexValue.setAttribute("role", "button");
+      const rgbValue = document.createElement("span");
+      rgbValue.textContent = rgbText(hexToRgb(color));
+      rgbValue.tabIndex = 0;
+      rgbValue.setAttribute("role", "button");
+      values.append(hexValue, rgbValue);
       const remove = document.createElement("button");
       remove.type = "button";
-      remove.className = "color-picker-palette-remove button-secondary";
+      remove.className = "color-picker-palette-remove";
       remove.textContent = "×";
       remove.title = `删除颜色 ${color}`;
       remove.setAttribute("aria-label", `删除颜色 ${color}`);
-      remove.addEventListener("click", () => {
+      remove.addEventListener("click", (event) => {
+        event.stopPropagation();
         paletteColors = paletteColors.filter((itemColor) => itemColor !== color);
         savePalette();
         renderPalette();
       });
-      item.append(swatch, remove);
+      const actions = document.createElement("span");
+      actions.className = "color-picker-palette-actions";
+      actions.append(remove);
+      hexValue.addEventListener("click", (event) => {
+        event.stopPropagation();
+        copyText(color, hexValue);
+      });
+      rgbValue.addEventListener("click", (event) => {
+        event.stopPropagation();
+        copyText(rgbText(hexToRgb(color)), rgbValue);
+      });
+      [hexValue, rgbValue].forEach((value, index) => value.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        event.stopPropagation();
+        copyText(index === 0 ? color : rgbText(hexToRgb(color)), value);
+      }));
+      const loadColor = () => {
+        commitRgb(hexToRgb(color));
+        render();
+      };
+      item.addEventListener("click", (event) => {
+        if (!event.target.closest("button, [role='button']")) loadColor();
+      });
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          loadColor();
+        }
+      });
+      item.append(values, actions);
       palette.append(item);
     });
+  }
+
+  async function copyText(text, target) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const fallback = document.createElement("textarea");
+      fallback.value = text;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.append(fallback);
+      fallback.select();
+      document.execCommand("copy");
+      fallback.remove();
+    }
+    const originalText = target.textContent;
+    target.textContent = "已复制";
+    target.classList.add("is-copied");
+    window.setTimeout(() => {
+      target.textContent = originalText;
+      target.classList.remove("is-copied");
+    }, 900);
+  }
+
+  function rgbText(values) {
+    return `rgb(${values.map((value) => Math.round(value)).join(", ")})`;
   }
 
   function rgbToHex(values) {
@@ -207,8 +267,11 @@
     inputs.forEach((input, key) => {
       if (document.activeElement !== input) input.value = key === "hex" ? current[key] : Math.round(current[key] * 100) / 100;
     });
-    currentSwatch.style.backgroundColor = rgbToHex(previousRgb);
-    newSwatch.style.backgroundColor = rgbToHex(rgb);
+    const newSwatch = page.querySelector("[data-preview-swatch='new']");
+    const newColor = rgbToHex(rgb);
+    newSwatch.style.backgroundColor = newColor;
+    newSwatch.querySelector("[data-copy-value='new-hex']").textContent = newColor;
+    newSwatch.querySelector("[data-copy-value='new-rgb']").textContent = rgbText(rgb);
   }
 
   function render() {
@@ -272,13 +335,26 @@
   window.addEventListener("resize", updateMarkers);
   addToPalette.addEventListener("click", () => {
     const color = rgbToHex(rgb);
-    previousRgb = [...rgb];
     saveCurrentColor(rgb);
     paletteColors = [color, ...paletteColors.filter((itemColor) => itemColor !== color)].slice(0, 24);
     savePalette();
     renderPalette();
     render();
   });
+  page.querySelector("[data-copy-value='new-hex']").addEventListener("click", (event) => {
+    event.stopPropagation();
+    copyText(rgbToHex(rgb), event.currentTarget);
+  });
+  page.querySelector("[data-copy-value='new-rgb']").addEventListener("click", (event) => {
+    event.stopPropagation();
+    copyText(rgbText(rgb), event.currentTarget);
+  });
+  page.querySelectorAll("[data-copy-value]").forEach((value, index) => value.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    event.stopPropagation();
+    copyText(index === 0 ? rgbToHex(rgb) : rgbText(rgb), value);
+  }));
   renderPalette();
   render();
 })();

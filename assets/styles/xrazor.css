@@ -1,0 +1,58 @@
+.xrazor-page {
+  --xrazor-panel: var(--home-surface);
+  --xrazor-line: var(--gray-85);
+  --xrazor-muted: var(--gray-50);
+}
+
+.xrazor-header,
+.xrazor-toolbar,
+.xrazor-footer {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.xrazor-header { margin-bottom: 1.5rem; }
+.xrazor-header h1 { margin: 0; }
+.xrazor-file-input input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.xrazor-file-input span,
+.xrazor-actions button,
+.xrazor-toolbar select {
+  background: var(--xrazor-panel);
+  border: 1px solid var(--gray-85);
+  color: var(--body-font-color);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  padding: .45rem .7rem;
+}
+.xrazor-file-input span:hover,
+.xrazor-file-input span:focus-within,
+.xrazor-actions button:hover,
+.xrazor-actions button:focus-visible,
+.xrazor-toolbar select:focus-visible {
+  border-color: var(--color-link);
+  color: var(--color-link);
+  outline: none;
+}
+.xrazor-toolbar { border-bottom: 1px solid var(--xrazor-line); padding-bottom: .9rem; }
+.xrazor-toolbar label { align-items: center; display: flex; gap: .6rem; }
+.xrazor-toolbar label > span { color: var(--xrazor-muted); font-size: .85rem; }
+.xrazor-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.xrazor-workspace { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
+.xrazor-panel { display: grid; gap: .45rem; min-width: 0; }
+.xrazor-panel-title { color: var(--xrazor-muted); font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.xrazor-panel textarea { background: var(--xrazor-panel); border: 1px solid var(--xrazor-line); box-sizing: border-box; color: var(--body-font-color); font: .86rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; min-height: 30rem; padding: .8rem; resize: vertical; width: 100%; }
+.xrazor-panel textarea:focus { border-color: var(--color-link); outline: 0; }
+.xrazor-footer { border-top: 1px solid var(--xrazor-line); margin-top: 1rem; padding-top: .9rem; }
+.xrazor-footer [data-xrazor-status] { color: var(--xrazor-muted); font-size: .8rem; }
+.xrazor-footer [data-xrazor-status].is-error { color: var(--color-link); }
+
+@media (max-width: 720px) {
+  .xrazor-header,
+  .xrazor-footer,
+  .xrazor-toolbar { align-items: flex-start; flex-direction: column; }
+  .xrazor-workspace { grid-template-columns: 1fr; }
+  .xrazor-panel textarea { min-height: 20rem; }
+}

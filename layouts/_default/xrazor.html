@@ -1,0 +1,51 @@
+{{ define "main" }}
+  {{ $css := resources.Get "styles/xrazor.css" | resources.Minify | resources.Fingerprint }}
+  {{ $core := resources.Get "vendor/xrazor/index.global.js" | resources.Fingerprint }}
+  {{ $script := resources.Get "tools/xrazor.js" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <article class="markdown book-article xrazor-page" data-xrazor>
+    <header class="xrazor-header">
+      <h1>{{ .Title }}</h1>
+      <label class="xrazor-file-input">
+        <span>打开文件</span>
+        <input type="file" accept=".html,.htm,.har,text/html,application/json" data-xrazor-file>
+      </label>
+    </header>
+
+    <section class="xrazor-toolbar" aria-label="处理设置">
+      <label>
+        <span>输入类型</span>
+        <select data-xrazor-mode>
+          <option value="auto">自动识别</option>
+          <option value="html">HTML</option>
+          <option value="har">HAR</option>
+        </select>
+      </label>
+      <div class="xrazor-actions">
+        <button type="button" class="xrazor-primary" data-xrazor-clean>处理</button>
+        <button type="button" data-xrazor-clear>清空</button>
+      </div>
+    </section>
+
+    <section class="xrazor-workspace">
+      <label class="xrazor-panel">
+        <span class="xrazor-panel-title">输入</span>
+        <textarea data-xrazor-input spellcheck="false" placeholder="粘贴 HTML 或 HAR 内容"></textarea>
+      </label>
+      <label class="xrazor-panel">
+        <span class="xrazor-panel-title">输出</span>
+        <textarea data-xrazor-output readonly spellcheck="false"></textarea>
+      </label>
+    </section>
+
+    <footer class="xrazor-footer">
+      <span data-xrazor-status aria-live="polite">等待输入</span>
+      <div class="xrazor-actions">
+        <button type="button" data-xrazor-copy>复制输出</button>
+        <button type="button" data-xrazor-download>下载输出</button>
+      </div>
+    </footer>
+  </article>
+  <script src="{{ $core.RelPermalink }}" defer></script>
+  <script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}

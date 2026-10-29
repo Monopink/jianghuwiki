@@ -83,6 +83,11 @@ body.book-kind-section.book-type-posts .book-footer {
   display: none;
 }
 
+body.book-layout-xrazor .book-footer,
+body.book-layout-color-picker .book-footer {
+  display: none;
+}
+
 .book-container {
   justify-content: space-between;
 }

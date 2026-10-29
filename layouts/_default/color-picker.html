@@ -2,7 +2,7 @@
   {{ $css := resources.Get "styles/color-picker.css" | resources.Minify | resources.Fingerprint }}
   {{ $init := resources.Get "tools/color-picker.js" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  <article class="markdown book-article color-picker-page">
+  <article class="markdown book-article toolbox-page color-picker-page">
     <h1>{{ .Title }}</h1>
     <div class="color-picker-layout">
       <div class="color-picker-brand" aria-label="Jianghu Logo">

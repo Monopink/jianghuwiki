@@ -31,8 +31,14 @@
     input.required = true;
     Promise.all([
       import(searchEngineURL),
-      fetch(searchDataURL).then(response => response.json())
-    ]).then(([, records]) => {
+      fetch(searchDataURL).then(response => {
+        if (!response.ok) throw new Error(`Search index request failed: ${response.status}`);
+        return response.json();
+      })
+    ]).then(([searchEngine, records]) => {
+      const MiniSearch = searchEngine.default || window.MiniSearch;
+      if (!MiniSearch) throw new Error('MiniSearch failed to load');
+
       index = new MiniSearch({
         fields: ['title', 'content', 'section'],
         storeFields: ['title', 'content', 'section', 'type', 'href'],
@@ -47,6 +53,9 @@
     }).then(() => {
       input.required = false;
       search();
+    }).catch(error => {
+      input.required = false;
+      console.error('Search initialization failed', error);
     });
   }
 

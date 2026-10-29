@@ -86,7 +86,6 @@ defaultContentLanguageInSubdir = false
   # (Optional, default none) Set the path to a logo for the book. If the logo is
   # /static/logo.png then the path would be logo.png
   # BookLogo = "logo.png"
-  BookLogo = "svg/jh-logo.svg"
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
@@ -97,21 +96,9 @@ defaultContentLanguageInSubdir = false
   # For backward compatibility you can set "*" to render all sections to menu. Acts same as "/"
   BookSection = "*"
 
-  # Set source repository location.
-  # Used for "Last Modified" and "Edit this page" links.
-  BookRepo = "https://github.com/Monopink/Strange-Book"
-
-  # (Optional, default "commit") Specifies commit portion of the link to the page"s last modified
-  # commit hash for "doc" page type.
-  # Requires "BookRepo" param.
-  # Value used to construct a URL consisting of BookRepo/BookCommitPath/<commit-hash>
-  # Github uses "commit", Bitbucket uses "commits"
-  # BookCommitPath = "commit"
-
-  # Enable "Edit this page" links for "doc" page type.
-  # Disabled by default. Uncomment to enable. Requires "BookRepo" param.
-  # Edit path must point to root directory of repo.
-  BookEditPath = "blob/master"
+  # Links used by the current theme for page metadata actions.
+  BookLastChangeLink = "https://github.com/Monopink/Strange-Book/commit/{{ .GitInfo.Hash }}"
+  BookEditLink = "https://github.com/Monopink/Strange-Book/blob/master/{{ .Path }}"
 
   # Configure the date format used on the pages
   # - In git information

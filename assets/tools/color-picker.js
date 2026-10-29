@@ -23,15 +23,20 @@
     "b-rgb": { min: 0, max: 255, axes: ["r", "g"] },
   };
 
-  let rgb = [239, 233, 231];
-  let previousRgb = [...rgb];
+  const currentColorKey = "strange-book-color-picker-current";
+  const initialRgb = readCurrentColor() || [255, 0, 0];
+  let rgb = [...initialRgb];
+  let previousRgb = [...initialRgb];
   let activeChannel = "h";
+  let hsb;
   const paletteKey = "strange-book-color-picker-palette";
   let paletteColors = readPalette();
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const maxFor = (channel) => limits[channel][1];
   const isHsb = (channel) => ["h", "s", "b"].includes(channel);
+
+  hsb = rgbToHsb(rgb);
 
   function readPalette() {
     try {
@@ -46,6 +51,19 @@
     localStorage.setItem(paletteKey, JSON.stringify(paletteColors));
   }
 
+  function readCurrentColor() {
+    try {
+      const stored = localStorage.getItem(currentColorKey);
+      return stored ? hexToRgb(stored) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveCurrentColor(color) {
+    localStorage.setItem(currentColorKey, rgbToHex(color));
+  }
+
   function renderPalette() {
     palette.replaceChildren();
     paletteColors.forEach((color) => {
@@ -53,17 +71,17 @@
       item.className = "color-picker-palette-item";
       const swatch = document.createElement("button");
       swatch.type = "button";
-      swatch.className = "color-picker-palette-swatch";
+      swatch.className = "color-picker-palette-swatch button-secondary";
       swatch.style.backgroundColor = color;
       swatch.title = `加载颜色 ${color}`;
       swatch.setAttribute("aria-label", `加载颜色 ${color}`);
       swatch.addEventListener("click", () => {
-        rgb = hexToRgb(color);
+        commitRgb(hexToRgb(color));
         render();
       });
       const remove = document.createElement("button");
       remove.type = "button";
-      remove.className = "color-picker-palette-remove";
+      remove.className = "color-picker-palette-remove button-secondary";
       remove.textContent = "×";
       remove.title = `删除颜色 ${color}`;
       remove.setAttribute("aria-label", `删除颜色 ${color}`);
@@ -86,7 +104,7 @@
     return /^[\da-f]{6}$/i.test(normalized) ? [0, 2, 4].map((offset) => Number.parseInt(normalized.slice(offset, offset + 2), 16)) : null;
   }
 
-  function rgbToHsb(values) {
+  function rgbToHsb(values, fallbackHue = 0) {
     const [r, g, b] = values.map((value) => value / 255);
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
@@ -97,7 +115,7 @@
       else if (max === g) hue = 60 * ((b - r) / delta + 2);
       else hue = 60 * ((r - g) / delta + 4);
     }
-    return [(hue + 360) % 360, max ? delta / max * 100 : 0, max * 100];
+    return [delta ? (hue + 360) % 360 : fallbackHue, max ? delta / max * 100 : 0, max * 100];
   }
 
   function hsbToRgb([hue, saturation, brightness]) {
@@ -113,23 +131,33 @@
     else if (hue < 240) values = [0, x, chroma];
     else if (hue < 300) values = [x, 0, chroma];
     else values = [chroma, 0, x];
-    return values.map((value) => Math.round((value + match) * 255));
+    return values.map((value) => (value + match) * 255);
   }
 
   function values() {
-    const hsb = rgbToHsb(rgb);
     return { h: hsb[0], s: hsb[1], b: hsb[2], r: rgb[0], g: rgb[1], "b-rgb": rgb[2] };
   }
 
-  function colorFrom(valuesToUse) {
-    return isHsb(activeChannel) ? hsbToRgb([valuesToUse.h, valuesToUse.s, valuesToUse.b]) : [valuesToUse.r, valuesToUse.g, valuesToUse["b-rgb"]];
+  function colorFrom(valuesToUse, useHsb = isHsb(activeChannel)) {
+    return useHsb ? hsbToRgb([valuesToUse.h, valuesToUse.s, valuesToUse.b]) : [valuesToUse.r, valuesToUse.g, valuesToUse["b-rgb"]];
+  }
+
+  function commitRgb(next) {
+    rgb = next;
+    hsb = rgbToHsb(rgb, hsb[0]);
+  }
+
+  function commitHsb(next) {
+    hsb = next;
+    rgb = hsbToRgb(hsb);
   }
 
   function setChannel(channel, value) {
     const next = values();
     const [min, max] = limits[channel];
     next[channel] = clamp(value, min, max);
-    rgb = colorFrom(next);
+    if (isHsb(channel)) commitHsb([next.h, next.s, next.b]);
+    else commitRgb([next.r, next.g, next["b-rgb"]]);
   }
 
   function drawField() {
@@ -198,7 +226,7 @@
   inputs.forEach((input, key) => input.addEventListener("change", () => {
     if (key === "hex") {
       const next = hexToRgb(input.value);
-      if (next) rgb = next;
+      if (next) commitRgb(next);
     } else setChannel(key, Number(input.value));
     render();
   }));
@@ -212,7 +240,8 @@
     const next = values();
     next[spec.axes[0]] = x * maxFor(spec.axes[0]);
     next[spec.axes[1]] = (1 - y) * maxFor(spec.axes[1]);
-    rgb = colorFrom(next);
+    if (isHsb(activeChannel)) commitHsb([next.h, next.s, next.b]);
+    else commitRgb([next.r, next.g, next["b-rgb"]]);
     render();
   }
 
@@ -226,16 +255,29 @@
   page.addEventListener("pointerdown", (event) => {
     if (event.target === field) dragging = pickField;
     else if (event.target === strip) dragging = pickStrip;
-    if (dragging) dragging(event);
+    if (!dragging) return;
+    event.preventDefault();
+    event.target.setPointerCapture?.(event.pointerId);
+    dragging(event);
   });
-  page.addEventListener("pointermove", (event) => dragging?.(event));
-  page.addEventListener("pointerup", () => { dragging = null; });
+  page.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+    event.preventDefault();
+    dragging(event);
+  });
+  page.addEventListener("pointerup", (event) => {
+    event.target.releasePointerCapture?.(event.pointerId);
+    dragging = null;
+  });
   window.addEventListener("resize", updateMarkers);
   addToPalette.addEventListener("click", () => {
     const color = rgbToHex(rgb);
+    previousRgb = [...rgb];
+    saveCurrentColor(rgb);
     paletteColors = [color, ...paletteColors.filter((itemColor) => itemColor !== color)].slice(0, 24);
     savePalette();
     renderPalette();
+    render();
   });
   renderPalette();
   render();

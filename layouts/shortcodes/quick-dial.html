@@ -8,7 +8,7 @@
     <div class="quick-dial-row">
       <span class="quick-dial-label">{{ .name }}</span>
       <span class="quick-dial-links">
-        {{ range .links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ end }}
+        {{ range .links }}<a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ end }}
       </span>
     </div>
     {{ end }}

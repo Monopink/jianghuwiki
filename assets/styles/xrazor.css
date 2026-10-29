@@ -17,7 +17,19 @@
 .xrazor-header h1 { margin: 0; }
 .xrazor-file-input input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
 .xrazor-file-input span { display: inline-block; }
-.xrazor-toolbar select { appearance: none; }
+.xrazor-toolbar select {
+  background: var(--xrazor-panel);
+  border: 1px solid var(--gray-85);
+  color: var(--body-font-color);
+  font: inherit;
+  min-height: 1.8rem;
+  padding: .18rem 1.8rem .18rem .5rem;
+}
+
+.xrazor-toolbar select:focus-visible {
+  border-color: var(--color-link-hover);
+  outline: none;
+}
 .xrazor-toolbar { border-bottom: 1px solid var(--xrazor-line); padding-bottom: .9rem; }
 .xrazor-toolbar label { align-items: center; display: flex; gap: .6rem; }
 .xrazor-toolbar label > span { color: var(--xrazor-muted); font-size: .85rem; }

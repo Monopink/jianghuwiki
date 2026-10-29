@@ -34,7 +34,7 @@ if (input) {
     button.addEventListener("click", () => {
       const query = input.value.trim();
       if (!query) {
-        input.focus();
+        window.open(button.dataset.homeUrl || button.dataset.searchUrl, "_blank", "noopener,noreferrer");
         return;
       }
 

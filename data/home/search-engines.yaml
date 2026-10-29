@@ -1,6 +1,22 @@
 groups:
-  - name: 通用搜索
+  - name: 大模型
     items:
+      - { name: ChatGPT, icon: "🌀", color: "#0A9D7B", url: "https://chatgpt.com/", searchUrl: "https://chatgpt.com/?q={query}" }
+      - { name: Gemini, icon: "✦", color: "#2B96EE", url: "https://gemini.google.com/", searchUrl: "https://gemini.google.com/app?prompt={query}" }
+      - { name: Claude, icon: "✳️", color: "#DD7B53", url: "https://claude.ai/", searchUrl: "https://claude.ai/new?q={query}" }
+      - { name: Grok, icon: "𝕏", color: "#7a7a7a", url: "https://grok.com/", searchUrl: "https://grok.com/?q={query}" }
+      - { name: Kimi, icon: "🌙", color: "#007AFD", url: "https://www.kimi.com/", searchUrl: "https://www.kimi.com/?q={query}" }
+      - { name: Qwen, icon: "🧶", color: "#6937F1", url: "https://chat.qwen.ai/", searchUrl: "https://chat.qwen.ai/?q={query}" }
+      - { name: DeepSeek, icon: "🐋", color: "#446EFF", url: "https://chat.deepseek.com/", searchUrl: "https://chat.deepseek.com/?q={query}" }
+      - { name: Z.ai, icon: "𝗭", color: "#1C7FF8", url: "https://chat.z.ai/", searchUrl: "https://chat.z.ai/?q={query}" }
+      - { name: Mistral, icon: "👾", color: "#FE7101", url: "https://chat.mistral.ai/", searchUrl: "https://chat.mistral.ai/chat?query={query}" }
+      - { name: Dola AI, icon: "💁🏻‍♀️", color: "#A765D9", url: "https://www.dola.com/", searchUrl: "https://www.dola.com/chat/?q={query}" }
+  - name: 大模型&搜索
+    items:
+      - { name: Perplexity, icon: "📖", color: "#1B8189", url: "https://www.perplexity.ai/", searchUrl: "https://www.perplexity.ai/?q={query}" }
+      - { name: 千问, icon: "🧶", color: "#2B47FE", url: "https://www.qianwen.com/", searchUrl: "https://www.qianwen.com/chat/?q={query}" }
+      - { name: 豆包, icon: "🙍🏻‍♀️", color: "#5d93df", url: "https://www.doubao.com/", searchUrl: "https://www.doubao.com/chat/?q={query}" }
+      - { name: 智谱清言, icon: "𝗭", color: "#1141F2", url: "https://chatglm.cn/", searchUrl: "https://chatglm.cn/main?prompt={query}" }
       - { name: Google NCR, icon: "🔎", color: "#4285f4", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q={query}" }
       - { name: DuckDuckGo, icon: "🦆", color: "#de5833", url: "https://duckduckgo.com/?q={query}" }
       - { name: Bing, icon: "🅱️", color: "#0060df", url: "https://www.bing.com/search?q={query}" }
@@ -8,14 +24,13 @@ groups:
       - { name: 百度, icon: "🐾", color: "#4e6ef2", url: "https://www.baidu.com/s?wd={query}" }
   - name: 内容与应用
     items:
-      - { name: GitHub, icon: "◉", color: "#9370c6", url: "https://github.com/search?q={query}" }
+      - { name: GitHub, icon: "🪼", color: "#9370c6", url: "https://github.com/search?q={query}" }
       - { name: Pinterest, icon: "📌", color: "#e60023", url: "https://www.pinterest.com/search/pins/?q={query}" }
       - { name: NeoDB, icon: "🌱", color: "#a3c095", url: "https://neodb.social/search/?q={query}" }
       - { name: 七麦, icon: "🍏", color: "#02b389", url: "https://www.qimai.cn/search/index/country/cn/search/{query}" }
       - { name: SteamDB, icon: "🗃️", color: "#0366d6", url: "https://steamdb.info/search/?a=app&q={query}" }
       - { name: Steam, icon: "🎮", color: "#1a9fff", url: "https://store.steampowered.com/search/?term={query}" }
       - { name: GIPHY, icon: "🎞️", color: "#9933ff", url: "https://giphy.com/search/{query}" }
-      - { name: Forvo, icon: "🗣️", color: "#4c4cff", url: "https://forvo.com/search/{query}/en/" }
   - name: 网络工具
     items:
       - { name: IAWM, icon: "🕰️", color: "#d5383f", url: "https://web.archive.org/web/*/{query}" }
@@ -33,9 +48,10 @@ groups:
       - { name: 知乎, icon: "❓", color: "#056de8", url: "https://www.zhihu.com/search?q={query}" }
       - { name: 360搜索, icon: "🔍", color: "#0fb264", url: "https://www.so.com/s?q={query}" }
       - { name: 搜狗, icon: "🐶", color: "#fd6853", url: "https://www.sogou.com/web?query={query}" }
-  - name: 翻译与词典
+  - name: 语言
     items:
       - { name: Translate2ZH, icon: "中", color: "#4b8bf5", url: "https://translate.google.com/?sl=auto&tl=zh-CN&op=translate&text={query}" }
       - { name: Translate2EN, icon: "英", color: "#4b8bf5", url: "https://translate.google.com/?sl=auto&tl=en&op=translate&text={query}" }
       - { name: Webster, icon: "📖", color: "#d71920", url: "https://www.merriam-webster.com/dictionary/{query}" }
       - { name: 粤语翻译, icon: "粤", color: "#5a62ff", url: "https://fanyi.baidu.com/#zh/yue/{query}" }
+      - { name: Forvo, icon: "🗣️", color: "#4c4cff", url: "https://forvo.com/search/{query}/en/" }

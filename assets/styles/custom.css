@@ -647,8 +647,8 @@ body:not(:has(.book-toc)) .book-page {
 
 .home-search-groups {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.35rem;
 }
 
 .home-search-links {
@@ -699,6 +699,7 @@ body:not(:has(.book-toc)) .book-page {
   padding: 0.35rem 0.45rem;
   border: 1px solid transparent;
   background: var(--home-surface);
+  min-width: 0;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -707,14 +708,18 @@ body:not(:has(.book-toc)) .book-page {
 }
 
 .quick-dial-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.25rem 0.35rem;
+  min-width: 0;
 }
 
 .quick-dial-links a {
-  flex: 0 0 auto;
+  min-width: 0;
   padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: color 160ms ease, text-shadow 160ms ease;
 }
 
@@ -798,6 +803,10 @@ body:not(:has(.book-toc)) .book-page {
   .home-search-groups {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .quick-dial-links {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
 @media screen and (max-width: 48rem) {
@@ -809,10 +818,18 @@ body:not(:has(.book-toc)) .book-page {
     grid-template-columns: 4em minmax(0, 1fr);
     gap: 0.4rem;
   }
+
+  .quick-dial-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media screen and (max-width: 32rem) {
   .home-search-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-dial-links {
     grid-template-columns: 1fr;
   }
 }

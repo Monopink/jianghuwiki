@@ -1,0 +1,175 @@
+/* You can add custom styles here. */
+
+/* Theme plugins are controlled by the upstream stylesheet pipeline. */
+
+:root,
+:root[data-theme="light"],
+:root[data-theme="auto"] {
+  --border-radius: 0;
+  --menu-width: 16.4rem;
+  --color-link: #b00;
+  --color-visited-link: #b00;
+  --body-header-background: rgba(250, 251, 252, 0.8);
+  --gray-97: #fafbfc;
+  --gray-95: #f5f8fa;
+  --gray-90: #edf2f5;
+  --gray-85: #e6eaed;
+  --gray-80: #c7ced2;
+  --gray-60: #9a9a9a;
+  --gray-50: #808080;
+  --gray-30: #515151;
+}
+
+:root[data-theme="dark"] {
+  --border-radius: 0;
+  --menu-width: 16.4rem;
+  --color-link: #f06275;
+  --color-visited-link: #f06275;
+  --body-header-background: rgba(31, 35, 39, 0.8);
+  --gray-97: rgba(255, 255, 255, 0.02);
+  --gray-95: rgba(255, 255, 255, 0.04);
+  --gray-90: rgba(255, 255, 255, 0.08);
+  --gray-85: rgba(255, 255, 255, 0.2);
+  --gray-80: rgba(255, 255, 255, 0.3);
+  --gray-60: #808080;
+  --gray-50: #969899;
+  --gray-30: #c3c5c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --color-link: #f06275;
+    --color-visited-link: #f06275;
+    --body-header-background: rgba(31, 35, 39, 0.8);
+    --gray-97: rgba(255, 255, 255, 0.02);
+    --gray-95: rgba(255, 255, 255, 0.04);
+    --gray-90: rgba(255, 255, 255, 0.08);
+    --gray-85: rgba(255, 255, 255, 0.2);
+    --gray-80: rgba(255, 255, 255, 0.3);
+    --gray-60: #808080;
+    --gray-50: #969899;
+    --gray-30: #c3c5c7;
+  }
+}
+/* Structured bookmark and application directory tables. */
+.bookmark-table-wrapper {
+  overflow-x: auto;
+}
+
+.bookmark-table {
+  width: 100%;
+}
+
+.bookmark-table thead {
+  display: none;
+}
+
+.bookmark-table tr th {
+  padding: 0 !important;
+  background: none !important;
+}
+
+.bookmark-table tr td:first-child {
+  width: 3rem;
+  padding: 0 0 0 0.5rem !important;
+  text-align: center;
+}
+
+.bookmark-table:not(.bookmark-table-apps) tr td:nth-child(2) {
+  width: 40%;
+  padding: 0.5rem 0.5rem 0.5rem 0.3rem;
+}
+
+.bookmark-table:not(.bookmark-table-apps) tr td:nth-child(3) {
+  width: 60%;
+}
+
+.bookmark-table-apps tr td:nth-child(2) {
+  width: 34%;
+  padding: 0.5rem 0.5rem 0.5rem 0.3rem;
+}
+
+.bookmark-table-apps tr td:nth-child(3) {
+  width: 47%;
+}
+
+.bookmark-table-apps tr td:nth-child(4) {
+  width: 19%;
+  min-width: 3rem;
+  padding: 0 0.5rem 0 0 !important;
+}
+
+.bookmark-table td:first-child,
+.bookmark-table th:first-child {
+  width: 3rem;
+  text-align: center;
+}
+
+.bookmark-table img {
+  display: inline-block;
+  max-width: 22px;
+  max-height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.bookmark-table .platform-icon {
+  max-width: 22px;
+  max-height: 22px;
+}
+
+.bookmark-extra-link {
+  white-space: nowrap;
+}
+
+.platform-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 0.15rem 0.25rem 0.15rem 0;
+  vertical-align: middle;
+  fill: var(--body-font-color);
+}
+
+.platform-na {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.apps-legend {
+  margin-bottom: 1rem;
+}
+
+a.book-btn {
+  display: inline-block;
+  padding: 0 1rem;
+  border: 3px solid transparent;
+  border-radius: 0;
+  background: var(--gray-95);
+  color: var(--color-link);
+  line-height: 1.8rem;
+}
+
+a.book-btn:hover {
+  border-color: var(--gray-80);
+  opacity: 1;
+  text-decoration: none;
+}
+
+.book-menu-footer {
+  color: var(--gray-500);
+}
+
+.book-post.book-post-list {
+  padding: 1.5rem;
+  background-color: var(--gray-100);
+}
+
+.oldline {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.fill-font-color {
+  fill: var(--body-font-color);
+}

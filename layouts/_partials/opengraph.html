@@ -1,0 +1,8 @@
+{{- $title := or .Title .Site.Title -}}
+{{- $description := or .Description .Summary .Site.Title | plainify | htmlUnescape -}}
+<meta property="og:title" content="{{ $title | htmlEscape }}">
+<meta property="og:description" content="{{ $description | htmlEscape }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title | htmlEscape }}">
+<meta property="og:locale" content="{{ .Site.Language.Locale }}">
+<meta property="og:type" content="{{ if eq .Kind "page" }}article{{ else }}website{{ end }}">

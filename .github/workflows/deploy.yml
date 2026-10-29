@@ -20,24 +20,24 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04	# 在什么环境运行任务
+    runs-on: ubuntu-24.04	# 在什么环境运行任务
     steps:
-      - uses: actions/checkout@v3	# 引用actions/checkout这个action，与所在的github仓库同名
+      - uses: actions/checkout@v7.0.1	# 引用actions/checkout这个action，与所在的github仓库同名
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive) 获取submodule主题
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: setup book	# 步骤名
-        uses: peaceiris/actions-hugo@v3	# hugo官方提供的action，用于在任务环境中获取hugo
+        uses: peaceiris/actions-hugo@v3.2.1	# hugo官方提供的action，用于在任务环境中获取hugo
         with:
-          hugo-version: '0.139.4'	# 获取最新版本的hugo
+          hugo-version: '0.169.0'	# 获取指定版本的hugo
           extended: true
 
       - name: Build
         run: hugo --minify	# 使用hugo构建静态网页
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3	# 一个自动发布github pages的action
+        uses: peaceiris/actions-gh-pages@v4.1.0	# 一个自动发布github pages的action
         with:
           # github_token: ${{ secrets.GITHUB_TOKEN }} 该项适用于发布到源码相同repo的情况，不能用于发布到其他repo
           external_repository: monopink/jianghu-wiki	# 发布到哪个repo

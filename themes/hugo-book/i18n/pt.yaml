@@ -1,5 +1,5 @@
 - id: Search
-  translation: Buscar
+  translation: Pesquisar
 
 - id: Edit this page
   translation: Editar página
@@ -7,8 +7,5 @@
 - id: Last modified by
   translation: Última modificação por
 
-- id: Expand
-  translation: Expandir
-
 - id: bookSearchConfig
-  translation: '{ cache: true }'
+  translation: '{}'

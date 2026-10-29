@@ -1,0 +1,21 @@
+{{ define "menu-container" }}
+<!-- -->
+{{ end }}
+
+{{ define "toc-container" }}
+<!-- -->
+{{ end }}
+
+{{ define "footer" }}
+<!-- -->
+{{ end }}
+
+{{ define "breadcrumbs" }}
+<!-- -->
+{{ end }}
+
+{{ define "header" }}
+<nav class="horizontal">
+  {{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.home) }}
+</nav>
+{{ end }}

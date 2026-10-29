@@ -7,9 +7,6 @@
 - id: Last modified by
   translation: آخرین بار ویرایش شده توسط
 
-- id: Expand
-  translation: بسط دادن
-
 - id: Categories
   translation: دسته بندی ها
 
@@ -17,4 +14,9 @@
   translation: تگ ها
 
 - id: bookSearchConfig
-  translation: '{ cache: true, encode: false, rtl: true, split: /\s+/, tokenize: "forward"}'
+  translation: |
+    {
+      tokenize: function (text) {
+        return text.split(/[\s\p{Z}\p{P}\u200c]+/u);
+      }
+    }

@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 2
 
       - name: Set up Hugo
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v3.2.1
         with:
-          hugo-version: 0.139.4
+          hugo-version: 0.169.0
           extended: true
 
       - name: Check whitespace
-        run: git diff --check HEAD^ HEAD
+        run: git diff --check HEAD^ HEAD -- . ':!themes/hugo-book/static/**'
 
       - name: Build site
         run: hugo --gc --minify --printPathWarnings --printUnusedTemplates

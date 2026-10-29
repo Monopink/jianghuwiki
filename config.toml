@@ -45,8 +45,8 @@ defaultContentLanguageInSubdir = false
 # Chinese content configuration
 [languages]
 [languages.zh]
-  languageName = "中文"
-  languageCode = "zh"
+  label = "中文"
+  locale = "zh"
   contentDir = "content.zh"
   title = "Jianghu Wiki"
   weight = 1
@@ -86,6 +86,7 @@ defaultContentLanguageInSubdir = false
   # (Optional, default none) Set the path to a logo for the book. If the logo is
   # /static/logo.png then the path would be logo.png
   # BookLogo = "logo.png"
+  BookLogo = "svg/jh-logo.svg"
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
@@ -117,7 +118,7 @@ defaultContentLanguageInSubdir = false
   # - In blog posts
   BookDateFormat = "January 2, 2006"
 
-  # (Optional, default true) Enables search function with flexsearch,
+  # (Optional, default true) Enables search function with MiniSearch,
   # Index is built on fly, therefore it might slowdown your website.
   # Configuration for indexing can be adjusted in i18n folder per language.
   BookSearch = true

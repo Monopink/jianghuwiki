@@ -1,0 +1,24 @@
+<nav>
+{{ partial "docs/brand" . }}
+{{ partial "docs/search" . }}
+{{ if hugo.IsMultilingual }}{{ partial "docs/languages" . }}{{ end }}
+
+{{ partial "docs/inject/menu-before" . }}
+{{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.before) }}
+{{ partial "docs/menu-filetree" . }}
+{{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.after) }}
+{{ partial "docs/inject/menu-after" . }}
+
+{{ with .Site.Params.menuFooter }}
+<div class="book-menu-footer">
+  <ul class="footer-links">
+    {{ range .links }}
+    <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+</nav>
+
+{{ $script := resources.Get "menu-reset.js" | resources.Minify }}
+{{ with $script.Content }}<script>{{ . | safeJS }}</script>{{ end }}

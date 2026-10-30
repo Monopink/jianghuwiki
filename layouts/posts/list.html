@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range sort .Paginator.Pages }}
+  {{ range sort .Pages "Date" "desc" }}
   <article class="book-post book-post-list markdown">
     <h3><a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a></h3>
     <div class="book-post-container flex gap">
@@ -24,4 +24,4 @@
 
 {{ define "toc" }}{{ partial "docs/taxonomy" . }}{{ end }}
 
-{{ define "footer" }}{{ partial "docs/pagination" . }}{{ end }}
+{{ define "footer" }}<!-- Post list has no footer. -->{{ end }}

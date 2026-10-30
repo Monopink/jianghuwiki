@@ -357,12 +357,19 @@ a.book-btn[href]:focus-visible {
 }
 
 .book-post.book-post-list {
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
   background: var(--gray-97);
 }
 
 .book-post-date {
   color: var(--gray-60);
+}
+
+@media screen and (max-width: 56rem) {
+  .book-post.book-post-list {
+    padding: 1rem;
+  }
 }
 
 .book-menu-footer {

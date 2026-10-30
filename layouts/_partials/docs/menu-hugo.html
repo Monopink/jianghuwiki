@@ -7,7 +7,7 @@
 {{- range .Menu -}}
   {{- $class := slice -}}
   {{- with .Params.class -}}{{- $class = $class | append . -}}{{- end -}}
-  {{- if $.Page.IsMenuCurrent .Menu . -}}{{- $class = $class | append "active" -}}{{- end -}}
+  {{- if or ($.Page.IsMenuCurrent .Menu .) (and .Page ($.Page.IsDescendant .Page)) -}}{{- $class = $class | append "active" -}}{{- end -}}
   <li>
     {{- $isRemote := default (urls.Parse .URL).IsAbs .Params.bookNewTab -}}
     <a href="{{ .URL }}"{{ with $class }} class="{{ delimit . " " }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank" rel="noopener"{{ end }}>

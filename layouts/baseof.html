@@ -22,13 +22,15 @@
       {{ template "main" . }}
       {{ partial "docs/inject/content-after" . }}
 
-      <footer class="book-footer">
-        {{ template "footer" . }}
-        {{ template "comments" . }}
-        {{ partial "docs/inject/footer" . }}
-        {{ template "copyright" . }}
-        {{ template "clipboard" . }}
-      </footer>
+      {{ if ne .Type "posts" }}
+        <footer class="book-footer">
+          {{ template "footer" . }}
+          {{ template "comments" . }}
+          {{ partial "docs/inject/footer" . }}
+          {{ template "copyright" . }}
+          {{ template "clipboard" . }}
+        </footer>
+      {{ end }}
     </main>
 
     {{ template "toc-container" . }}

@@ -1,0 +1,5 @@
+{{ with .Date }}
+  <time class="text-small book-post-date" datetime="{{ .Format "2006-01-02" }}">
+    {{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}
+  </time>
+{{ end }}

@@ -2,6 +2,7 @@
   <h2 id="home-search-title">🔍搜索</h2>
   <div class="home-search-form">
     <input id="home-search-input" type="search" placeholder="Jianghu 搜索" aria-label="搜索关键词" autocomplete="off" />
+    <a class="home-search-script-link" href="{{ "ai-fill.user.js" | relURL }}" aria-label="安装大模型输入框填充脚本">安装填充脚本</a>
   </div>
   <div class="home-search-groups">
     {{ $data := index site.Data.home "search-engines" }}

@@ -635,11 +635,14 @@ body:not(:has(.book-toc)) .book-page {
 }
 
 .home-search-form {
+  display: flex;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
 .home-search-form input {
   box-sizing: border-box;
+  flex: 1 1 auto;
   width: 100%;
   padding: 0.5rem;
   border: 3px solid var(--gray-85);
@@ -652,6 +655,26 @@ body:not(:has(.book-toc)) .book-page {
   border-color: var(--gray-80);
   outline: none;
   transition: border-color 160ms ease;
+}
+
+.home-search-script-link,
+.home-search-script-link:visited {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--gray-80);
+  border-radius: 0;
+  color: var(--body-font-color);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.home-search-script-link:hover,
+.home-search-script-link:focus-visible {
+  border-color: var(--color-link);
+  color: var(--color-link);
+  outline: none;
 }
 
 .home-search-groups {
@@ -877,6 +900,17 @@ body:not(:has(.book-toc)) .book-page {
   .quick-dial-links a:visited {
     display: inline-block;
     vertical-align: top;
+  }
+}
+
+@media screen and (max-width: 32rem) {
+  .home-search-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .home-search-script-link {
+    padding-inline: 0.5rem;
   }
 }
 

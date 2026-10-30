@@ -37,6 +37,9 @@
   </div>
 
   {{ partial "docs/inject/body" . }}
+  {{ with resources.Get "external-links.js" | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ .RelPermalink }}"></script>
+  {{ end }}
 </body>
 </html>
 

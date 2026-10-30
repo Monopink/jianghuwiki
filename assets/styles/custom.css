@@ -707,6 +707,7 @@ body:not(:has(.book-toc)) .book-page {
 
 .quick-dial-label {
   font-weight: bolder;
+  padding-top: 0.1rem;
 }
 
 .quick-dial-links {
@@ -849,39 +850,6 @@ body:not(:has(.book-toc)) .book-page {
     vertical-align: top;
   }
 
-  .book-header > div > label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-  }
-
-  .book-header > div > label .book-icon {
-    font-size: 1.5rem;
-  }
-
-  body.menu-open .book-menu {
-    visibility: initial;
-  }
-
-  body.menu-open .book-menu .book-menu-content {
-    transform: translateX(var(--menu-width));
-    box-shadow: 0 0 var(--space-8) rgba(0, 0, 0, 0.1);
-  }
-
-  body.menu-open .book-header,
-  body.menu-open .book-toc,
-  body.menu-open .book-page {
-    opacity: 0.25;
-  }
-
-  body.menu-open .book-menu-overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-  }
-
   .quick-dial-row {
     display: block;
   }
@@ -889,6 +857,7 @@ body:not(:has(.book-toc)) .book-page {
   .quick-dial-label {
     display: inline-block;
     margin-inline-end: 0.35rem;
+    padding-top: 0.28rem;
     vertical-align: top;
   }
 
@@ -901,6 +870,12 @@ body:not(:has(.book-toc)) .book-page {
   .quick-dial-links a:visited {
     display: inline-block;
     vertical-align: top;
+  }
+}
+
+@media screen and (max-width: 56rem) and (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] .book-toc {
+    background-color: rgb(32 36 41 / 94%);
   }
 }
 

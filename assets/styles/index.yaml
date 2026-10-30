@@ -1,0 +1,11 @@
+# Declares the order of theme and site style resources.
+- normalize.css
+- variables.css
+- utils.css
+- book.css
+- markdown.css
+- shortcodes.css
+- print.css
+- themes.css
+- custom.css
+- custom-navigation.css

@@ -1,18 +1,20 @@
-<div class="flex align-center justify-between gap">
+<div class="book-header-bar">
   <input type="checkbox" class="toggle" id="menu-control" />
-  <label for="menu-control" aria-label="{{ partial "docs/text/i18n" "Menu" }}">
-    <svg class="book-icon">{{ partial "docs/icon" "menu" }}</svg>
+  <label class="book-header-menu" for="menu-control" aria-label="{{ partial "docs/text/i18n" "Menu" }}">
+    {{ partial "docs/logo.svg.html" . }}
   </label>
 
-  {{ partial "docs/brand" . }}
+  <span class="book-header-title" aria-live="polite">{{ partial "docs/title" . }}</span>
 
   {{ if .Param "BookToC" | default true }}
-  <input type="checkbox" class="toggle" id="toc-control" />
-  <label for="toc-control" aria-label="{{ partial "docs/text/i18n" "Table of Contents" }}">
+  <button class="book-header-toc" id="toc-toggle" type="button" aria-controls="mobile-toc-panel" aria-expanded="false" aria-label="{{ partial "docs/text/i18n" "Table of Contents" }}">
     <svg class="book-icon">{{ partial "docs/icon" "toc" }}</svg>
-  </label>
+  </button>
   {{ else }}<div></div>{{ end }}
 </div>
-{{ with resources.Get "menu-toggle.js" | resources.Minify | resources.Fingerprint }}
+{{ if .Param "BookToC" | default true }}
+<div class="mobile-toc-backdrop" hidden></div>
+{{ end }}
+{{ with resources.Get "mobile-navigation.js" | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ .RelPermalink }}"></script>
 {{ end }}

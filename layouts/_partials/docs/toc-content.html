@@ -1,0 +1,44 @@
+{{ partial "docs/inject/toc-before" . }}
+{{ if and (eq .Layout "bookmarks") .Params.dataSection .Params.dataFile }}
+  {{ $data := index (index site.Data .Params.dataSection) .Params.dataFile }}
+  <nav id="TableOfContents"><ul>{{ range $data.groups }}{{ if gt (len .items) 0 }}{{ $anchor := default (.name | urlize) .id }}<li><a href="#{{ $anchor }}">{{ .name }}</a></li>{{ end }}{{ end }}</ul></nav>
+{{ else if eq .Layout "apps" }}
+  <nav id="TableOfContents"><ul>{{ range site.Data.apps.groups }}{{ if gt (len .items) 0 }}{{ $anchor := default (.name | urlize) .id }}<li><a href="#{{ $anchor }}">{{ .name }}</a></li>{{ end }}{{ end }}</ul></nav>
+{{ else }}
+  {{ .TableOfContents }}
+{{ end }}
+{{ partial "docs/inject/toc-after" . }}
+
+{{ with (.Scratch.Get "bookBacklinks") | uniq }}
+<div class="flex book-toc-section">
+<svg class="book-icon">{{ partial "docs/icon" "incoming" }}</svg>
+<nav class="flex">
+  <ul>
+  {{ range . }}
+    <li>
+    <a href="{{ .RelPermalink }}">
+      {{- partial "docs/title" .Page -}}
+    </a>
+    </li>
+  {{ end }}
+  </ul>
+</nav>
+</div>
+{{ end }}
+
+{{ with (.Scratch.Get "bookLinks") | uniq }}
+<div class="flex book-toc-section">
+<svg class="book-icon">{{ partial "docs/icon" "outgoing" }}</svg>
+<nav class="flex">
+  <ul>
+  {{ range . }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      {{- partial "docs/title" .Page -}}
+    </a>
+  </li>
+  {{ end }}
+  </ul>
+</nav>
+</div>
+{{ end }}

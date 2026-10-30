@@ -7,6 +7,7 @@
 {{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.before) }}
 {{ partial "docs/menu-filetree" . }}
 {{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.after) }}
+{{ partial "bookmarks-menu.html" . }}
 {{ partial "docs/inject/menu-after" . }}
 
 {{ with .Site.Params.menuFooter }}
@@ -22,3 +23,6 @@
 
 {{ $script := resources.Get "menu-reset.js" | resources.Minify }}
 {{ with $script.Content }}<script>{{ . | safeJS }}</script>{{ end }}
+{{ with resources.Get "bookmarks-menu.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ .RelPermalink }}"></script>
+{{ end }}

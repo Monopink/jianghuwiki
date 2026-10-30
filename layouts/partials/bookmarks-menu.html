@@ -1,0 +1,49 @@
+{{ with hugo.Data.bookmarks.sections }}
+<section class="bookmarks-menu" data-bookmarks-menu>
+  <button class="bookmarks-menu-trigger" type="button" aria-expanded="false" aria-controls="bookmarks-menu-panel" data-bookmarks-toggle>
+    <span>网址收藏</span>
+    <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
+  </button>
+  <div class="bookmarks-menu-panel" id="bookmarks-menu-panel" hidden>
+    {{ range . }}
+      <div class="bookmarks-menu-section">
+        <button class="bookmarks-menu-section-toggle" type="button" aria-expanded="false" data-bookmarks-section-toggle>
+          <span>{{ .name }}</span>
+          <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
+        </button>
+        <div class="bookmarks-menu-section-panel" hidden>
+          {{ range .categories }}
+            {{ if gt (len .items) 0 }}
+              <div class="bookmarks-menu-category">
+                <button class="bookmarks-menu-category-toggle" type="button" aria-expanded="false" data-bookmarks-category-toggle>
+                  <span>{{ .name }}</span>
+                  <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
+                </button>
+                <ul class="bookmarks-menu-items" hidden>
+                  {{ range .items }}
+                    {{ $item := . }}
+                    <li>
+                      <a href="{{ .url }}" target="_blank" rel="noopener">
+                        {{ partial "bookmark/icon.html" . }}
+                        <span class="bookmarks-menu-item-copy">
+                          <span class="bookmarks-menu-item-name">{{ .name }}</span>
+                          {{ with .description }}<small>{{ . }}</small>{{ end }}
+                        </span>
+                      </a>
+                      {{ with .links }}
+                        <div class="bookmarks-menu-item-links" aria-label="{{ $item.name }} 的附加链接">
+                          {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
+                        </div>
+                      {{ end }}
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

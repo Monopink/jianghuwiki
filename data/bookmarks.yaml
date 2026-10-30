@@ -1,0 +1,1332 @@
+sections:
+  - id: dev
+    name: Dev
+    categories:
+      - id: environment
+        name: 环境
+        items:
+          - id: amiunique
+            name: AmIUnique
+            url: https://amiunique.org/
+            description: 你在互联网的身份 浏览器指纹
+          - id: dns-leak-test
+            name: DNS Leak Test
+            url: https://dnsleaktest.org/dns-leak-test
+            description: DNS 泄露检测
+          - id: what-s-my-user-agent
+            name: What's my user agent?
+            url: https://www.whatsmyua.info/
+            description: 浏览器 UA 查询
+          - id: ip
+            name: 本机 IP 查询
+            url: https://html.zone/ip/
+            description: 本机访问不同网站的 IP 查询
+          - id: ip-zerosla-net
+            name: ip.zerosla.net
+            url: https://ip.zerosla.net/
+            description: 当前 IP 信息查询
+          - id: whoer
+            name: WHOER
+            url: https://whoer.net/
+            description: IP 伪装度查询
+          - id: ip-2
+            name: IP溯源
+            url: https://ip.sy/
+            description: IP 位置查询
+      - id: checking
+        name: 检测
+        items:
+          - id: pagespeed-insights
+            name: PageSpeed Insights
+            url: https://pagespeed.web.dev/
+            description: 网站性能测试
+          - id: newsletters-spam-test-by-mail
+            name: Newsletters spam test by mail
+            url: https://www.mail-tester.com/
+            description: 测试你发出邮件的垃圾邮件匹配度
+      - id: names
+        name: 名称
+        items:
+          - id: namecheckly
+            name: namecheckly
+            url: https://namecheckly.com
+            description: 域名和社交平台用户名可用性检查
+          - id: namecheck
+            name: namecheck
+            url: https://www.namecheck.com/
+            description: 域名和社交平台用户名可用性检查
+            iconHost: namecheck.com
+          - id: domain-research
+            name: Domain Research
+            url: https://domainr.com/
+            description: 域名查询
+          - id: namebeta
+            name: NameBeta
+            url: https://namebeta.com/
+            description: 域名查询
+          - id: gandi
+            name: Gandi
+            url: https://gandi.net/
+            description: 小众域名注册
+            iconHost: www.gandi.net
+          - id: namelix
+            name: namelix
+            url: https://namelix.com/
+            description: AI 驱动的取名工具
+          - id: wee-domains
+            name: wee.domains
+            url: https://wee.domains/
+            description: 简短的可注册域名
+          - id: tld-list
+            name: TLD List
+            url: https://tld-list.com/
+            description: 可注册域名检索
+      - id: cloud-tools
+        name: 云工具
+        items:
+          - id: browser-use
+            name: Browser Use
+            url: https://cloud.browser-use.com/
+            description: 云浏览器
+          - id: lexmount-console
+            name: Lexmount Console
+            url: https://browser.lexmount.com/
+            description: 云浏览器
+      - id: query
+        name: 查询
+        items:
+          - id: downdetecotor
+            name: Downdetecotor
+            url: https://downdetector.com/
+            description: 大平台故障和中断实时监控
+          - id: have-i-been-pwned
+            name: have i been pwned?
+            url: https://haveibeenpwned.com/
+            description: 检查密码是否泄露
+          - id: i-know
+            name: I KNOW
+            url: https://iknowwhatyoudownload.com/
+            description: 同 IP 下 BT 传输记录
+      - id: conversion
+        name: 转换
+        items:
+          - id: asciiflow
+            name: ASCIIFlow
+            url: https://asciiflow.com/
+            description: 流程图转 ASCII 字符
+          - id: table-convert
+            name: Table Convert
+            url: https://tableconvert.com/
+            description: 表格/Markdown 转换
+      - id: terminal
+        name: 终端
+        items:
+          - id: wipeclean
+            name: wipeclean
+            url: https://github.com/JeanJouliaCode/wipeClean
+            description: 把你的终端「擦」干净
+          - id: no-more-secrets
+            name: no-more-secrets
+            url: https://github.com/bartobri/no-more-secrets
+            description: 终端代码解密效果
+          - id: rust-stakeholder
+            name: rust-stakeholder
+            url: https://github.com/giacomo-b/rust-stakeholder
+            description: 让终端看起来很忙
+      - id: editing
+        name: 编辑
+        items:
+          - id: js-bin
+            name: JS Bin
+            url: https://jsbin.com/
+            description: HTML 编辑器
+          - id: regular101
+            name: regular101
+            url: https://regex101.com/
+            description: 正则表达式编辑器
+          - id: hexed-it
+            name: hexed.it
+            url: https://hexed.it/
+            description: 二进制编辑器
+          - id: uncss-online
+            name: UnCSS Online!
+            url: https://uncss-online.com/
+            description: 扫描无用 CSS
+      - id: learning
+        name: 学习
+        items:
+          - id: distro-chooser
+            name: Distro Chooser
+            url: https://distrochooser.de/
+            description: 选择适合你的 Linux
+          - id: regexlearn
+            name: RegexLearn
+            url: https://regexlearn.com/
+            description: 在测试中掌握正则表达式
+          - id: learn-css-layout
+            name: Learn CSS Layout
+            url: https://learnlayout.com/
+            description: 在测试中掌握基础 CSS
+          - id: flexbox-freggy
+            name: Flexbox Freggy
+            url: http://flexboxfroggy.com/
+            description: 学习 CSS 让小青蛙跳到荷叶上
+          - id: cssbattle
+            name: CSSBattle
+            url: https://cssbattle.dev/
+            description: CSS 挑战比拼
+  - id: inspo
+    name: 艺术
+    categories:
+      - id: design
+        name: 设计&创意
+        items:
+          - id: behance
+            name: Behance
+            url: https://www.behance.net/
+            description: 设计分享交流平台 平面、插画居多
+          - id: dribbble
+            name: Dribbble
+            url: https://dribbble.com/
+            description: 设计分享交流平台 UI、动效居多
+          - id: pinterest
+            name: Pinterest
+            url: https://www.pinterest.com/
+            description: Pinterest
+          - id: spotify-design
+            name: Spotify Design
+            url: https://spotify.design/
+            description: Spotify 设计主页
+          - id: fubiz-media
+            name: Fubiz Media
+            url: http://www.fubiz.net/
+            description: 设计分享交流平台
+          - id: www-zcool-com-cn
+            name: 站酷
+            url: https://www.zcool.com.cn/
+            description: 站酷
+          - id: tencent-isux-design
+            name: Tencent ISUX Design
+            url: https://isux.tencent.com/
+            description: 腾讯社交用户体验设计主页
+          - id: logopond
+            name: logopond
+            url: https://logopond.com/
+            description: 图标设计集
+      - id: awards
+        name: 奖项&活动
+        items:
+          - id: awwwards
+            name: awwwards.
+            url: https://www.awwwards.com
+            description: 关注互联网上优秀设计、创意的奖项
+          - id: cssdesignawards
+            name: CSSDesignAwards
+            url: https://www.cssdesignawards.com
+            description: 关注网页设计和开发的奖项
+      - id: resources
+        name: 素材集
+        items:
+          - id: creative-commons-search
+            name: Creative Commons Search
+            url: https://search.creativecommons.org/
+            description: 搜索可自由使用的创意作品
+          - id: ui-goodies
+            name: UI Goodies
+            url: https://uigoodies.com/
+            description: 设计资源导航
+          - id: openverse
+            name: Openverse
+            url: https://openverse.org/
+            description: 搜索开源图片、音乐
+      - id: colors
+        name: 颜色
+        items:
+          - id: adobe-color
+            name: Adobe Color
+            url: https://color.adobe.com/
+            description: Adobe 颜色辅助工具
+          - id: color-hunt
+            name: Color Hunt
+            url: https://www.colorhunt.co
+            description: 四个一组卡片配色
+          - id: webgradients
+            name: WebGradients
+            url: https://webgradients.com
+            description: 适合 Web 开发的渐变色
+          - id: uigradients
+            name: uiGradients
+            url: https://uigradients.com
+            description: 渐变色
+          - id: nippon-colors
+            name: NIPPON COLORS
+            url: https://nipponcolors.com/
+            description: 日本传统颜色
+          - id: zhongguose-com
+            name: 中国色
+            url: http://zhongguose.com
+            description: 中国传统颜色 风格模仿自 NIPPON COLORS
+      - id: gallery
+        name: 图库
+        items:
+          - id: unsplash
+            name: Unsplash
+            url: https://unsplash.com/
+            description: 免费无版权的摄影图库
+          - id: pexels
+            name: Pexels
+            url: https://www.pexels.com/
+            description: 免费无版权的图片视频库
+          - id: canva
+            name: Canva 版权图库
+            url: https://www.canva.com/photos/
+            description: 图片素材库 部分收费
+          - id: iconpark
+            name: IconPark
+            url: https://iconpark.oceanengine.com/illustrations
+            description: 字节跳动插画库
+          - id: illustrations-undraw
+            name: illustrations unDraw
+            url: https://undraw.co/illustrations
+            description: 开源可调主题色的插画库
+          - id: foter
+            name: Foter
+            url: https://foter.com/
+            description: 免费无版权的图库
+          - id: hippopx
+            name: Hippopx
+            url: https://www.hippopx.com/
+            description: 免费无版权的摄影图库
+          - id: pixabay
+            name: pixabay
+            url: https://pixabay.com/
+            description: 图片素材库 部分收费
+      - id: articles
+        name: 文章
+        items:
+          - id: vox
+            name: Vox 字体分类法
+            url: https://www.thetype.com/2021/04/25365/
+            description: Vox 字体分类法
+      - id: icons
+        name: 图标
+        items:
+          - id: icons8
+            name: ICONS8
+            url: https://icons8.com/
+            description: 矢量图标库 部分收费
+          - id: iconfinder
+            name: Iconfinder
+            url: https://www.iconfinder.com/
+            description: 矢量图标库 部分收费
+          - id: iconsvg
+            name: ICONSVG
+            url: https://iconsvg.xyz/
+            description: SVG 图标库
+          - id: iconpark-2
+            name: IconPark
+            url: https://iconpark.oceanengine.com/official
+            description: 字节跳动 SVG 图标库
+          - id: iconfont
+            name: IconFont
+            url: https://www.iconfont.cn
+            description: 阿里巴巴矢量图标库
+          - id: openmoji
+            name: OpenMoji
+            url: https://www.openmoji.org/
+            description: 开源 Emoji 图标库 简洁风格
+          - id: devicon
+            name: Devicon
+            url: https://devicon.dev/
+            description: 开发语言和工具图标集
+            links:
+              - label: GitHub
+                url: https://github.com/devicons/devicon
+          - id: brands-logos
+            name: Brands Logos
+            url: https://brandslogos.com/
+            description: 品牌商标图标集
+          - id: huhan-pictogram
+            name: Huhan Pictogram
+            url: https://pictogram2.com/
+            description: 「紧急出口小人」皮特托图标集
+          - id: noun-project
+            name: Noun Project
+            url: https://thenounproject.com/
+            description: 矢量图标库 有限授权 部分收费
+          - id: lucide-icons
+            name: Lucide Icons
+            url: https://lucide.dev/icons/
+            description: 开源线性图标库
+          - id: tdesign-icons
+            name: TDesign Icons
+            url: https://tdesign.tencent.com/icons
+            description: 腾讯 TDesign 图标库
+          - id: font-awesome-v4-icons
+            name: Font Awesome 4 Icons
+            url: https://fontawesome.com/v4/icons/
+            description: Font Awesome 4 图标库
+      - id: svg
+        name: SVG
+        items:
+          - id: svg-viewer
+            name: SVG Viewer
+            url: https://www.svgviewer.dev/
+            description: 在线查看和编辑 SVG 文件
+          - id: svg-hub
+            name: SVG Hub
+            url: https://svghub.vercel.app/
+            description: 可直接复制到项目中的 SVG 元素
+          - id: dddynamite
+            name: DDDynamite
+            url: https://www.ffuel.co/dddynamite/
+            description: 可自定义的装饰性 SVG 形状集合
+          - id: scribble-guru-collections
+            name: Scribble Guru Collections
+            url: https://www.scribbleguru.com/collection
+            description: 手绘风格 SVG 素材集合
+          - id: svg-repo-abstract
+            name: SVG Repo：Abstract
+            url: https://www.svgrepo.com/collections/abstract/
+            description: 抽象风格 SVG 集合
+      - id: fonts
+        name: 字体
+        items:
+          - id: dafont
+            name: DaFont
+            url: https://www.dafont.com/
+            description: 字体寻找预览
+          - id: whatfontis
+            name: WhatFontIs
+            url: https://www.whatfontis.com/
+            description: 图片搜索字体 以及找字体
+          - id: zhuanlan-zhihu-com-p-677725322
+            name: 京華老宋体
+            url: https://zhuanlan.zhihu.com/p/677725322
+            description: 旧风格宋体 可商用
+            iconHost: www.zhihu.com
+          - id: github-com-adobe-fonts-source-han-sans
+            name: 思源黑体
+            url: https://github.com/adobe-fonts/source-han-sans
+            description: 开源字体
+            iconHost: source.typekit.com
+          - id: github-com-adobe-fonts-source-han-serif
+            name: 思源宋体
+            url: https://github.com/adobe-fonts/source-han-serif
+            description: 开源字体
+            iconHost: source.typekit.com
+          - id: jikasei-me
+            name: 自家製フォント工房
+            url: http://jikasei.me/
+            description: 自制字体工作坊｜基于思源黑体制作的圆体
+            links:
+              - label: 思源柔黑
+                url: http://jikasei.me/font/genjyuu/
+          - id: github-com-cyanohao-resource-han-rounded
+            name: 资源黑体
+            url: https://github.com/CyanoHao/Resource-Han-Rounded
+            description: 基于思源黑体制作的圆体
+          - id: github-com-welai-glow-sans
+            name: 未来荧黑
+            url: https://github.com/welai/glow-sans
+            description: 基于思源黑体多字重可调宽度的黑体
+            links:
+              - label: 调参工具
+                url: https://welai.github.io/glow-sans/#
+          - id: github-com-be5invis-sarasa-gothic
+            name: 更纱黑体
+            url: https://github.com/be5invis/Sarasa-Gothic
+            description: 基于 Iosevka 与思源黑体 适用于中英混合的编程字体
+          - id: ioskeleymono
+            name: IoskeleyMono
+            url: https://github.com/ahatem/IoskeleyMono
+            description: 编程字体，Berkeley Mono 的免费替代
+          - id: lxgw
+            name: LXGW
+            url: https://lxgw.github.io/
+            description: 独立字体制作者｜开源楷体
+            iconHost: github.com
+            links:
+              - label: 霞鹜文楷
+                url: https://github.com/lxgw/LxgwWenKai
+          - id: www-maoken-com
+            name: 猫啃网
+            url: https://www.maoken.com/
+            description: 免费商用字体集
+          - id: 3type
+            name: 3type
+            url: https://3type.cn/
+            description: 国际化的字体公司  代表作：基本美术体、丁卯点阵体
+            links:
+              - label: 丁卯点阵体
+                url: https://3type.cn/fonts/dinkie_bitmap/index.html
+      - id: websites
+        name: 网站
+        items:
+          - id: web-design-museum
+            name: Web Design Museum
+            url: https://www.webdesignmuseum.org/
+            description: 网站设计博物馆
+          - id: web-design-clip
+            name: Web Design Clip
+            url: https://webdesignclip.com/
+            description: 日本优秀设计网站集
+          - id: muuuuu-org
+            name: MUUUUU.ORG
+            url: https://muuuuu.org/
+            description: 日本优秀设计网站集
+          - id: themes-templates
+            name: Themes & Templates
+            url: https://jamstackthemes.dev/
+            description: 众多开源网站模板
+          - id: html5-up
+            name: HTML5 UP
+            url: https://html5up.net/
+            description: 包含 HTML 5 特性的网站模板集
+          - id: 404s
+            name: 404s
+            url: https://www.404s.design/
+            description: 搜集各种有趣的 404 页面
+      - id: mockups
+        name: Mockup
+        items:
+          - id: freebiesbug
+            name: Freebiesbug
+            url: https://freebiesbug.com
+            description: 免费 Mockup、图标、UI 资源
+          - id: graphberry
+            name: Graphberry
+            url: https://www.graphberry.com
+            description: 免费 Mockup 资源
+          - id: vecteezy
+            name: Vecteezy
+            url: https://www.vecteezy.com
+            description: Mockup 资源
+          - id: premiumpixels
+            name: Premiumpixels
+            url: https://www.premiumpixels.com
+            description: Mockup/图标资源
+          - id: pixeden
+            name: Pixeden
+            url: https://www.pixeden.com
+            description: Mockup/网页资源
+          - id: pixelbuddha
+            name: Pixelbuddha
+            url: https://pixelbuddha.net/
+            description: Mockup 资源
+      - id: video
+        name: 视频
+        items:
+          - id: mixkit
+            name: mixkit
+            url: https://mixkit.co
+            description: 视频素材 部分收费
+      - id: tools
+        name: 在线工具
+        items:
+          - id: photopea
+            name: Photopea
+            url: https://www.photopea.com
+            description: 在线版 Photoshop
+          - id: kassel-labs
+            name: Kassel Labs
+            url: https://kassellabs.io/
+            description: 在线制作模仿的电影片头
+          - id: vector-halftone-maker
+            name: Vector Halftone Maker
+            url: https://xoihazard.com/tools/halftone/
+            description: 色彩半调生成
+          - id: smallpdf
+            name: Smallpdf
+            url: https://smallpdf.com/pdf-tools
+            description: 众多 PDF 相关工具
+          - id: duotone-effect-generator
+            name: Duotone Effect Generator
+            url: https://duotones.co
+            description: 将图片处理为双色调风格
+          - id: forensically
+            name: Forensically
+            url: https://29a.ch/photo-forensics/
+            description: 图片分析工具
+          - id: pixel-map-generator
+            name: Pixel Map Generator
+            url: https://pixelmap.amcharts.com/
+            description: 地图着色 可能不符合中国国标
+      - id: 3d
+        name: 3D 模型
+        items:
+          - id: cg
+            name: CG 爱好者
+            url: http://www.cgahz.com
+            description: 免费 CG、AE 模板、3D 模型资源
+          - id: pixelsquid
+            name: PixelSquid
+            url: https://www.pixelsquid.com/
+            description: PSD 格式的模型库，可导出 png
+            iconHost: assets.pixelsquid.com
+          - id: free3d
+            name: Free3D
+            url: https://free3d.com
+            description: 免费 3D 模型
+          - id: 3d
+            name: 3D 模型库
+            url: https://www.cgmodel.com/model/all_1_0_0_0_0_0_0_0_0_0_0_1_0_0_0_0_0_0_0_0
+            description: 3D 模型库
+      - id: music
+        name: 音乐
+        items:
+          - id: www-midivst-com
+            name: 音源网
+            url: https://www.midivst.com
+            description: 分享交流音源的社区
+          - id: ultimate-guitar
+            name: ULTIMATE GUITAR
+            url: https://www.ultimate-guitar.com
+            description: 吉他谱和吉他教程
+          - id: dashboard
+            name: Dashboard
+            url: https://musescore.com/
+            description: 找曲谱
+      - id: games
+        name: 电子游戏
+        items:
+          - id: unity
+            name: Unity 资源商店
+            url: https://assetstore.unity.com
+            description: Unity 资源商店
+            iconHost: unity-assetstorev2-prd.storage.googleapis.com
+  - id: lifestyle
+    name: 生活
+    categories:
+      - id: ecommerce
+        name: 综合电商
+        items:
+          - id: izhongchou-taobao-com
+            name: 造点新货
+            url: https://izhongchou.taobao.com
+            description: 淘宝众筹
+          - id: m-xiaomiyoupin-com-w-crowdfundv3
+            name: 小米有品众筹
+            url: https://m.xiaomiyoupin.com/w/crowdfundV3?_rt=weex&pageid=9433&sign=e50311198e28d0dff1c5d38d97ad1aee&pdl=jianyu&noDL=1
+            description: 小米有品众筹
+            iconHost: www.xiaomiyoupin.com
+      - id: vertical-ecommerce
+        name: 垂直电商
+        items:
+          - id: www-iliangcang-com
+            name: 良仓
+            url: https://www.iliangcang.com/
+            description: 设计不错的日用百货
+          - id: www-modian-com
+            name: 摩点
+            url: https://www.modian.com/
+            description: 文创商品
+            links:
+              - label: 摩点众筹
+                url: https://zhongchou.modian.com/
+          - id: www-duozhuayu-com
+            name: 多抓鱼
+            url: https://www.duozhuayu.com/
+            description: 二手书等交易
+            iconHost: asset.duozhuayu.com
+      - id: local-life
+        name: 本地生活
+        items:
+          - id: i-meituan-com-index
+            name: 美团
+            url: https://i.meituan.com/index/
+            description: 美团移动端
+            iconHost: www.meituan.com
+      - id: travel
+        name: 出行
+        items:
+          - id: "12306"
+            name: "12306"
+            url: https://www.12306.cn/
+            description: 中国火车高铁票唯一第一方
+      - id: movies
+        name: 电影票
+        items:
+          - id: www-taopiaopiao-com
+            name: 淘票票
+            url: https://www.taopiaopiao.com
+            description: 淘票票
+            links:
+              - label: 移动端
+                url: https://m.taopiaopiao.com
+          - id: www-maoyan-com
+            name: 猫眼电影
+            url: https://www.maoyan.com/
+            description: 猫眼 专业版是票房看板
+            links:
+              - label: 移动端
+                url: https://i.maoyan.com/
+              - label: 专业版
+                url: https://piaofang.maoyan.com/dashboard
+      - id: delivery
+        name: 快递
+        items:
+          - id: www-sf-express-com-chn-sc-ship-home
+            name: 顺丰快递
+            url: https://www.sf-express.com/chn/sc/ship/home
+            description: 网页寄顺丰
+      - id: cars
+        name: 汽车
+        items:
+          - id: m-autohome-com-cn
+            name: 汽车之家
+            url: https://m.autohome.com.cn/
+            description: 汽车之家移动版
+  - id: lounge
+    name: 冲浪
+    categories:
+      - id: rss
+        name: RSS
+        items:
+          - id: inoreader
+            name: Inoreader
+            url: https://www.inoreader.com/
+            description: 在线 RSS 阅读器
+          - id: feedly
+            name: Feedly
+            url: https://feedly.com/
+            description: 在线 RSS 阅读器
+          - id: the-old-reader
+            name: The Old Reader
+            url: https://theoldreader.com
+            description: 在线 RSS 阅读器
+          - id: rsshub
+            name: RSSHub
+            url: https://docs.rsshub.app/
+            description: 开源 RSS 生成器，包含众多订阅源
+            iconHost: rsshub.app
+          - id: feeddd
+            name: Feeddd
+            url: https://feeddd.org/feeds
+            description: 免费自由的微信公众号订阅源
+      - id: information
+        name: 信息
+        items:
+          - id: google-news
+            name: Google News
+            url: https://news.google.com/
+            description: Google News
+          - id: flipboard
+            name: Flipboard
+            url: https://flipboard.com/
+            description: Flipboard 需登录
+          - id: chinafactcheck-com
+            name: 有据
+            url: https://chinafactcheck.com/
+            description: 核查中文世界的国际资讯
+          - id: matters
+            name: Matters
+            url: https://matters.news/
+            description: 分布式内容平台
+          - id: substack
+            name: Substack
+            url: https://substack.com/
+            description: 新闻内容创作订阅平台 有中文自由创作者
+            iconHost: substackcdn.com
+          - id: tophub-today
+            name: 今日热榜
+            url: https://tophub.today/
+            description: 中国媒体、社交平台热点瀑布流聚合
+          - id: momoyu-cc
+            name: 摸摸鱼热榜
+            url: https://momoyu.cc
+            description: 中国媒体、社交平台热点聚合
+          - id: zeli
+            name: Zeli
+            url: https://zeli.app/zh
+            description: 用中文阅读 Hacker News
+          - id: dapanyuntu-com
+            name: 大盘云图
+            url: https://dapanyuntu.com/
+            description: A 股大盘云图
+      - id: general
+        name: 综合
+        items:
+          - id: theinitium-com
+            name: 端傳媒
+            url: https://theinitium.com
+            description: 独立深度中文媒体 部分付费
+          - id: www-wainao-me
+            name: 歪脑
+            url: https://www.wainao.me/
+            description: 多元的中文新闻
+            iconHost: www.wainao.me/
+          - id: global-udn-com
+            name: 轉角國際
+            url: https://global.udn.com/
+            description: 转角国际
+          - id: www-patreon-com
+            name: 追新闻
+            url: https://www.patreon.com
+            description: 独立新闻平台
+          - id: ground-news
+            name: Ground News
+            url: https://ground.news/
+            description: 给美国红蓝两派看对方立场的新闻
+            iconHost: ground.news/
+          - id: associated-press
+            name: Associated Press
+            url: https://www.ap.org
+            description: 美联社
+          - id: reuters
+            name: Reuters
+            url: https://www.reuters.com
+            description: 路透社
+          - id: bloomberg
+            name: Bloomberg
+            url: https://www.bloomberg.com/
+            description: 彭博社
+          - id: nytimes
+            name: NYTimes
+            url: https://www.nytimes.com/
+            description: 纽约时报
+          - id: bbc
+            name: BBC
+            url: https://www.bbc.com
+            description: BBC
+          - id: the-wall-street-journal
+            name: The Wall Street Journal
+            url: https://www.wsj.com/
+            description: 华尔街日报
+          - id: vox
+            name: Vox
+            url: https://www.vox.com/
+            description: Vox
+          - id: financial-times
+            name: Financial Times
+            url: https://www.ft.com/
+            description: 金融时报 需订阅
+      - id: technology
+        name: 科技
+        items:
+          - id: engadget
+            name: Engadget
+            url: https://www.engadget.com/
+            description: Engadget
+          - id: the-verge
+            name: The Verge
+            url: https://www.theverge.com/
+            description: The Verge
+          - id: macrumors
+            name: MacRumors
+            url: https://www.macrumors.com/
+            description: MacRumors
+            iconHost: images.macrumors.com
+          - id: sspai-com
+            name: 少数派
+            url: https://sspai.com
+            description: 科技、电子产品和生活
+          - id: www-huxiu-com
+            name: 虎嗅网
+            url: https://www.huxiu.com
+            description: 商业科技资讯
+      - id: art-culture
+        name: 艺术&文化
+        items:
+          - id: google
+            name: Google 艺术&文化
+            url: https://artsandculture.google.com/
+            description: 浏览艺术&文化内容
+          - id: www-goldenhorse-org-tw
+            name: 金马奖
+            url: https://www.goldenhorse.org.tw/
+            description: 华语电影最具影响力和代表性的奖项
+          - id: historymaps
+            name: HistoryMaps
+            url: https://history-maps.com/
+            description: 直观地学习历史
+          - id: the-type
+            name: The Type
+            url: https://thetype.com
+            description: 文字、设计、文化
+            iconHost: www.thetype.com
+          - id: www-dujingtou-com
+            name: 毒镜头
+            url: https://www.dujingtou.com
+            description: 摄影、相机
+          - id: topys
+            name: TOPYS.
+            url: https://www.topys.cn
+            description: 创意内容
+          - id: ptt
+            name: PTT 鄉民百科
+            url: https://pttpedia.fandom.com/zh/wiki/PTT鄉民百科
+            description: PTT 百科
+          - id: evchk-fandom-com-zh-wiki-e9-a6-96-e9-a0-81
+            name: 香港網絡大典
+            url: https://evchk.fandom.com/zh/wiki/首頁
+            description: 香港网络百科
+      - id: community
+        name: 社区
+        items:
+          - id: cpc
+            name: CPC 中文印刷社区
+            url: http://www.cnprint.org/
+            description: 设计排印社区
+          - id: hires
+            name: Hires 音乐
+            url: https://dsdlove.com
+            description: 讨论无损音乐与发烧器材
+          - id: www-penbbs-com
+            name: 钢笔论坛
+            url: http://www.penbbs.com/
+            description: 钢笔论坛
+          - id: letitfly-bbs
+            name: LetITFly BBS
+            url: https://bbs.letitfly.me
+            description: 讨论 Android
+          - id: chongbuluo
+            name: 虫部落
+            url: http://www.chongbuluo.com/
+            description: 快搜的用户社区
+          - id: 51ruyo
+            name: 如有乐享
+            url: https://51ruyo.net/
+            description: 如有乐享社区
+      - id: learning
+        name: 学习
+        items:
+          - id: doyoudo
+            name: doyoudo
+            url: https://www.doyoudo.com/
+            description: 创意软件学习教程
+          - id: qwerty-learner
+            name: Qwerty Learner
+            url: https://qwerty.liumingye.cn/
+            description: 单词输入练习
+          - id: monkeytype
+            name: Monkeytype
+            url: https://monkeytype.com/
+            description: 英文文章输入练习
+          - id: typingclub
+            name: TypingClub
+            url: https://www.typingclub.com/
+            description: 打字键位练习
+      - id: social
+        name: 社交&分享
+        items:
+          - id: flickr
+            name: Flickr
+            url: https://www.flickr.com/
+            description: 图片社交平台
+          - id: mastodon
+            name: Mastodon
+            url: https://mastodon.social/
+            description: 长毛象 分布式微博
+          - id: instafest
+            name: Instafest
+            url: https://www.snapmyfive.com/
+            description: 分析 Spotify 听歌记录
+          - id: instafest-2
+            name: Instafest
+            url: https://www.instafest.app
+            description: 生成 Spotify 听歌海报
+      - id: film-reviews
+        name: 影剧点评
+        items:
+          - id: rotten-tomatoes
+            name: Rotten Tomatoes
+            url: https://www.rottentomatoes.com/
+            description: 烂番茄
+          - id: tmdb
+            name: TMDB
+            url: https://www.themoviedb.org/
+            description: 由社区建设的影剧资料库
+      - id: crowdfunding
+        name: 众筹
+        items:
+          - id: kickstarter
+            name: Kickstarter
+            url: https://www.kickstarter.com/
+            description: 众筹网站
+          - id: indiegogo
+            name: Indiegogo
+            url: https://www.indiegogo.com/
+            description: 众筹网站
+      - id: blogs
+        name: 个人博客
+        items:
+          - id: program-think-blogspot-com
+            name: 编程随想的博客
+            url: https://program-think.blogspot.com/
+            description: 编程随想的博客
+          - id: blog-shuziyimin-org
+            name: 数字移民
+            url: https://blog.shuziyimin.org
+            description: 数字移民：肉体和精神，总要有一个是自由的
+            iconHost: shuziyimin.org
+          - id: www-williamlong-info
+            name: 月光博客
+            url: http://www.williamlong.info/
+            description: 月光博客：关注互联网和搜索引擎的IT科技博客
+          - id: www-gaohaipeng-com
+            name: 高海鹏老师的博客
+            url: https://www.gaohaipeng.com
+            description: 高海鹏老师的博客：一个热爱网络的小学教师
+          - id: xuying-org
+            name: 阁楼
+            url: http://xuying.org
+            description: 阁楼：我写作是为了光阴流逝使我心安
+          - id: frost-s-blog
+            name: Frost's Blog
+            url: https://frostming.com/
+            description: Frost 的博客
+          - id: melody-fallen
+            name: Melody Fallen
+            url: https://melodyfallen.github.io/
+            description: 脑子一热建博客的结果
+      - id: entertainment
+        name: 在线娱乐&游戏
+        items:
+          - id: game-maj-soul-com-1
+            name: 雀魂麻将
+            url: https://game.maj-soul.com/1/
+            description: 日本麻将
+          - id: wordle
+            name: Wordle
+            url: https://www.nytimes.com/games/wordle/index.html
+            description: 有意思的英文单词游戏
+          - id: poki
+            name: Poki
+            url: https://poki.com/
+            description: 游戏集 有很多经典手机游戏
+          - id: taiko-bui-pm
+            name: 太鼓ウェブ
+            url: https://taiko.bui.pm/
+            description: 免注册的太鼓达人 可以和好友联机
+            iconHost: taiko.uk
+          - id: townscaper
+            name: Townscaper
+            url: https://oskarstalberg.com/Townscaper/
+            description: 北欧小镇生成器
+          - id: pcol
+            name: PCOL
+            url: http://www.heyzxz.me/pcol/
+            description: 台球
+          - id: ager-io
+            name: Ager.io
+            url: https://agar.io/
+            description: 类似「球球大作战」
+          - id: iptv-org
+            name: iptv-org
+            url: https://iptv-org.github.io/
+            description: 各国 IPTV 直播源
+          - id: roamdial
+            name: RoamDial
+            url: https://roamdial.com/
+            description: 收听全世界的电台
+          - id: radio-garden
+            name: Radio Garden
+            url: http://radio.garden/
+            description: 收听全世界的电台
+          - id: chvin-github-io-react-tetris
+            name: 俄罗斯方块
+            url: https://chvin.github.io/react-tetris/
+            description: 复古游戏机俄罗斯方块
+            iconHost: github.com
+          - id: yikm-net
+            name: yikm.net
+            url: https://www.yikm.net/
+            description: 各类老街机和家用游戏机游戏
+      - id: useless-fun
+        name: 有趣但无用
+        items:
+          - id: daft-punk-cafe
+            name: Daft Punk Cafe
+            url: https://daftpunk.cafe/
+            description: 粉丝制作的 Daft Punk 纪念网站
+          - id: fakeupdate
+            name: FakeUpdate
+            url: https://fakeupdate.net/
+            description: 假装系统更新屏幕
+          - id: geektyper
+            name: GEEKTyper
+            url: https://geektyper.com/
+            description: 随便敲键盘就能出代码的黑客模拟器
+          - id: if-the-moon-were-only-1-pixel
+            name: If the Moon Were Only 1 Pixel
+            url: http://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html
+            description: 如果月球只有 1 像素的模拟宇宙
+          - id: infinite-mac
+            name: Infinite Mac
+            url: https://macos9.app/
+            description: 体验 macOS 9
+            iconHost: macos9.app/
+          - id: windows93
+            name: WINDOWS93
+            url: http://www.windows93.net/
+            description: 体验 Winodws 93
+          - id: drive-listen
+            name: Drive & Listen
+            url: https://driveandlisten.herokuapp.com/
+            description: 体验在某个城市里驾车的感觉
+          - id: strobe-illusion
+            name: Strobe Illusion
+            url: https://strobe.cool/
+            description: 会让你出现幻觉的图像
+          - id: the-useless-web
+            name: The Useless Web
+            url: https://theuselessweb.com/
+            description: 随机一个无用网站
+      - id: adult
+        name: 成人
+        items:
+          - id: porn-dude
+            name: Porn Dude
+            url: https://theporndude.com/
+            description: 色情网站集
+          - id: lululu-one
+            name: 擼擼擼
+            url: https://lululu.one/
+            description: 色情网站集
+          - id: xsliste
+            name: Xsliste
+            url: https://xslist.org/
+            description: 以图搜寻
+          - id: viva-la-vita-org
+            name: 生如夏花
+            url: https://viva-la-vita.org/
+            description: 探索美好而新奇的性体验
+  - id: utility
+    name: 实用
+    categories:
+      - id: find-things
+        name: 找东西
+        items:
+          - id: www-iplaysoft-com
+            name: 异次元软件世界
+            url: https://www.iplaysoft.com
+            description: 分享好用的软件
+          - id: www-appinn-com
+            name: 小众软件
+            url: https://www.appinn.com
+            description: 分享好用的软件
+          - id: www-jiumodiary-com
+            name: 鸠摩搜索
+            url: https://www.jiumodiary.com/
+            description: 找电子书
+          - id: "33"
+            name: 33台词
+            url: https://33.agilestudio.cn/
+            description: 找影视剧中出现的台词
+          - id: chongbuluo-search
+            name: 快搜
+            url: http://search.chongbuluo.com/
+            description: 虫部落搜索引擎聚合入口
+          - id: creative-commons-search
+            name: Creative Commons Search
+            url: https://search.creativecommons.org/
+            description: 搜索可自由使用的创意作品
+          - id: tineye
+            name: TinEye
+            url: https://tineye.com/
+            description: 反向图片搜索
+      - id: language
+        name: 文字&语言
+        items:
+          - id: merriam-webster
+            name: Merriam-Webster
+            url: https://www.merriam-webster.com/
+            description: 韦伯斯特英文词典
+          - id: urban
+            name: uRban
+            url: https://www.urbandictionary.com/
+            description: 不正经的美国俚语词典
+          - id: ludwig
+            name: Ludwig
+            url: https://ludwig.guru/
+            description: 英语语料库 有限免费
+          - id: linggle
+            name: Linggle
+            url: https://linggle.com/
+            description: 英语语料库
+          - id: english-corpora
+            name: English Corpora
+            url: https://www.english-corpora.org/
+            description: 英语语料库 需注册
+          - id: all-scrabble-words
+            name: All Scrabble Words
+            url: http://www.allscrabblewords.com/
+            description: 按特征找单词
+          - id: thesaurus
+            name: Thesaurus
+            url: http://www.thesaurus.com/
+            description: 英文同义词词典
+          - id: www-xcz-im-library
+            name: 中国诗词数据库
+            url: http://www.xcz.im/library/
+            description: 西窗烛的诗词数据库
+          - id: invade-tw
+            name: 中國侵略資料庫
+            url: https://invade.tw/
+            description: 中国侵略数据库
+            iconHost: baka-invade.org
+          - id: shapecatcher
+            name: Shapecatcher
+            url: https://shapecatcher.com/
+            description: 手绘查找字符
+          - id: egyptian-hieroglyphs
+            name: Egyptian Hieroglyphs
+            url: https://www.alanwood.net/unicode/egyptian-hieroglyphs.html
+            description: 埃及象形文字 Unicode 字符
+            iconHost: www.alanwood.net/unicode
+          - id: xiahe-code
+            name: 小鹤编码查询
+            url: http://ww.zhup.lub/
+            description: 小鹤音形编码查询
+      - id: making
+        name: 制作
+        items:
+          - id: imgflip
+            name: Imgflip
+            url: https://imgflip.com
+            description: 表情包制作工具
+      - id: conversion
+        name: 转换
+        items:
+          - id: pdf24
+            name: PDF24
+            url: https://tools.pdf24.org/en/rasterize-pdf#s=1792466019190
+            description: PDF 图片化
+      - id: getting
+        name: 获取
+        items:
+          - id: savefrom-net
+            name: savefrom.net
+            url: https://savefrom.net/
+            description: 下载网站视频
+            iconHost: en.savefrom.net
+          - id: mzu-favicondl
+            name: Mzu favicondl
+            url: https://favicondl.com/
+            description: 获取网站图标
+            iconHost: favicondl.com
+      - id: other
+        name: 其他
+        items:
+          - id: microsoft-math-solver
+            name: Microsoft Math Solver
+            url: https://math.microsoft.com/
+            description: 方程等数学问题自动求解
+            iconHost: mathsolver.microsoft.com
+          - id: gravator
+            name: Gravator
+            url: https://www.gravatar.com/
+            description: 在各个网站同步头像
+            iconHost: en.gravatar.com
+          - id: libravatar
+            name: Libravatar
+            url: https://www.libravatar.org/
+            description: 在各个网站同步头像 开源项目
+      - id: data
+        name: 数据
+        items:
+          - id: chinarailtransit
+            name: ChinaRailTransit
+            url: https://ivysauro.github.io/CNRT/
+            description: 另一角度看地铁
+            iconHost: github.com
+            links:
+              - label: 轨道交通支付方式
+                url: https://ivysauro.github.io/CNRT/data/Pay
+              - label: 公交支付方式
+                url: https://ivysauro.github.io/CNRT/data/BusPay
+          - id: flightrader24
+            name: Flightrader24
+            url: https://www.flightradar24.com/
+            description: 全球航班飞行情况
+          - id: binbase
+            name: BinBase
+            url: https://www.binbase.com/search.html
+            description: 信用卡 Bin 信息查询
+          - id: piaofang-maoyan-com-dashboard
+            name: 猫眼专业版
+            url: https://piaofang.maoyan.com/dashboard
+            description: 中国实时票房
+          - id: name-age-calculator
+            name: Name Age Calculator
+            url: http://rhiever.github.io/name-age-calculator/index.html?Gender=F&Name=Ashley
+            description: 美国生日与名字统计 或许对取英文名有帮助
+            iconHost: github.com
+          - id: freecarrierlookup
+            name: FreeCarrierLookup
+            url: https://freecarrierlookup.com/
+            description: 美国手机号运营商查询
+          - id: cost-of-living
+            name: Cost of Living
+            url: https://www.numbeo.com/cost-of-living/
+            description: 城市生活成本数据库 找到下一个定居地
+          - id: cn-colleges-chat
+            name: 大学生活质量指北
+            url: https://cn.colleges.chat/
+            description: 高校生活质量调查
+      - id: articles
+        name: 文章
+        items:
+          - id: windows-font
+            name: Windows 字体渲染
+            url: https://sspai.com/post/57729
+            description: 2019 年末，我们能采用什么方式改善 Windows 的字体渲染？
+          - id: yahei
+            name: 新雅黑
+            url: https://bbs.pcbeta.com/viewthread-1960120-1-1.html
+            description: 原版雅黑、修正版雅黑、鸿蒙替换雅黑（2025.3.24更新）
+          - id: windows-acl
+            name: Windows 账户隔离
+            url: https://sspai.com/post/58668
+            description: 新建一个账户就能隔离毒瘤应用：Windows 自带权限工具妙用
+      - id: for-apple
+        name: For Apple
+        items:
+          - id: app-so-xianmian
+            name: 鲜面连线
+            url: https://app.so/xianmian/
+            description: App Store 每日精品限免/促销应用
+          - id: apple-gift-card
+            name: Apple Gift Card
+            url: https://www.apple.com/shop/buy-giftcard/giftcard
+            description: Apple 礼品卡
+          - id: ipsw-downloads
+            name: IPSW Downloads
+            url: https://ipsw.me/
+            description: 下载 Apple 固件
+      - id: games-platforms
+        name: 游戏&平台
+        items:
+          - id: nexusmods
+            name: Nexusmods
+            url: https://www.nexusmods.com/
+            description: 游戏 Mods 分享
+          - id: steamdb
+            name: SteamDB
+            url: https://steamdb.info/
+            description: Steam 数据查询
+          - id: steam-design
+            name: Steam.Design
+            url: https://steam.design/
+            description: Steam 资料背景展柜生成工具
+          - id: steam-card-exchange
+            name: Steam Card Exchange
+            url: https://www.steamcardexchange.net/
+            description: Steam 集换卡交换
+          - id: steam-tools-hub
+            name: Steam Tools Hub
+            url: https://steam.tools/
+            description: Steam 装扮、交易、社区相关工具集
+          - id: steam-library-filters
+            name: Steam library filters
+            url: https://www.lorenzostanco.com/lab/steam/
+            description: Steam 库存分析导出
+            iconHost: www.lorenzostanco.com/lab/steam/
+      - id: government
+        name: 政务
+        items:
+          - id: cnipa-trademark
+            name: 中国商标注册与管理平台
+            url: http://oassbj.cnipa.gov.cn/toas-extra-prod/dashboard/analysis
+            description: 商标注册

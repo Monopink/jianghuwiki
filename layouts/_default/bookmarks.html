@@ -1,11 +1,9 @@
 {{ define "main" }}
 <article class="markdown book-article">
   <h1>{{ partial "docs/title" . }}</h1>
-  {{ with .Params.dataSection }}
-    {{ $section := index site.Data . }}
-    {{ with $.Params.dataFile }}
-      {{ $data := index $section . }}
-      {{ range $data.groups }}{{ if gt (len .items) 0 }}
+  {{ with .Params.dataFile }}
+    {{ $data := index (where hugo.Data.bookmarks.sections "id" .) 0 }}
+    {{ range $data.categories }}{{ if gt (len .items) 0 }}
         {{ $anchor := default (.name | urlize) .id }}
         <h2 id="{{ $anchor }}">
           {{ .name }}
@@ -13,7 +11,6 @@
         </h2>
         {{ partial "bookmark/table.html" (dict "group" . "kind" "bookmark") }}
       {{ end }}{{ end }}
-    {{ end }}
   {{ end }}
   {{ with .Content }}{{ . }}{{ end }}
 </article>

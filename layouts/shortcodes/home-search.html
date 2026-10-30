@@ -5,7 +5,7 @@
     <a class="home-search-script-link" href="{{ "ai-fill.user.js" | relURL }}" aria-label="安装大模型输入框填充脚本">安装填充脚本</a>
   </div>
   <div class="home-search-groups">
-    {{ $data := index site.Data.home "search-engines" }}
+    {{ $data := index hugo.Data.home "search-engines" }}
     {{ range $data.groups }}
     <section class="home-search-group" aria-label="{{ .name }}">
       <div class="home-search-links">

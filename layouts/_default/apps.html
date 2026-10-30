@@ -3,7 +3,7 @@
   <h1>{{ partial "docs/title" . }}</h1>
   {{ partial "bookmark/platform-symbols.html" . }}
   {{ partial "bookmark/apps-legend.html" . }}
-  {{ range site.Data.apps.groups }}{{ if gt (len .items) 0 }}
+  {{ range hugo.Data.apps.groups }}{{ if gt (len .items) 0 }}
     {{ $anchor := default (.name | urlize) .id }}
     <h2 id="{{ $anchor }}">{{ .name }}<a class="anchor" href="#{{ $anchor }}" aria-label="{{ partial "docs/text/i18n" "Link" }}"></a></h2>
     {{ partial "bookmark/table.html" (dict "group" . "kind" "app") }}

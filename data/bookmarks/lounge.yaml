@@ -331,6 +331,14 @@ groups:
         name: Ager.io
         url: https://agar.io/
         description: 类似「球球大作战」
+      - id: iptv-org
+        name: iptv-org
+        url: https://iptv-org.github.io/
+        description: 各国 IPTV 直播源
+      - id: roamdial
+        name: RoamDial
+        url: https://roamdial.com/
+        description: 收听全世界的电台
       - id: radio-garden
         name: Radio Garden
         url: http://radio.garden/

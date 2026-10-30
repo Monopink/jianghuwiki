@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: "ACL 命令"
+title: "Windows 用户隔离"
 bookFlatSection: false
 bookCollapseSection: false
 bookHidden: false
@@ -36,3 +36,6 @@ cd ~
 & '软件包路径'
 ```
 
+## 原文链接
+
+[新建一个账户就能隔离毒瘤应用：Windows 自带权限工具妙用 ](https://sspai.com/post/58668)

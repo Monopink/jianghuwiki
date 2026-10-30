@@ -208,6 +208,21 @@ groups:
         name: 大学生活质量指北
         url: https://cn.colleges.chat/
         description: 高校生活质量调查
+  - id: articles
+    name: 文章
+    items:
+      - id: windows-font
+        name: Windows 字体渲染
+        url: https://sspai.com/post/57729
+        description: 2019 年末，我们能采用什么方式改善 Windows 的字体渲染？
+      - id: yahei
+        name: 新雅黑
+        url: https://bbs.pcbeta.com/viewthread-1960120-1-1.html
+        description: 原版雅黑、修正版雅黑、鸿蒙替换雅黑（2025.3.24更新）
+      - id: windows-acl
+        name: Windows 账户隔离
+        url: https://sspai.com/post/58668
+        description: 新建一个账户就能隔离毒瘤应用：Windows 自带权限工具妙用
   - id: for-apple
     name: For Apple
     items:

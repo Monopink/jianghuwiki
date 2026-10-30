@@ -1,4 +1,23 @@
 groups:
+  - name: 🗽 日常
+    sections:
+      - name: 日常
+        links:
+          - { name: Gmail, url: "https://mail.google.com/mail/u/0/#inbox" }
+          - { name: Outlook, url: "https://outlook.live.com/mail/0/" }
+          - { name: Lark, url: "https://www.larksuite.com/messenger" }
+          - { name: 飞书, url: "https://www.feishu.cn/messenger" }
+          - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
+          - { name: Sporify, url: "https://open.spotify.com/" }
+          - { name: Radio Garden, url: "https://radio.garden/" }
+          - { name: RoamDial, url: "https://roamdial.com/" }
+      - name: 工具
+        links:
+          - { name: LocalSend, url: "https://localsend.org/" }
+          - { name: Wormhole, url: "https://wormhole.app/" }
+          - { name: Emailnator, url: "https://www.emailnator.com/" }
+          - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
+          - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }
   - name: 🏄‍♀️ 冲浪时间
     sections:
       - name: 订阅
@@ -63,15 +82,3 @@ groups:
         links:
           - { name: NameSilo marketplace, url: "https://www.namesilo.com/Marketplace" }
     more: { name: 👉所有…, url: "/bookmarks/lounge/" }
-  - name: 🔨 工具
-    sections:
-      - name: 云机器
-        links:
-          - { name: 云手机, url: "https://cloudphoneh5.buy.139.com/#/cloudphone" }
-      - name: 工具
-        links:
-          - { name: 小鹤音形查询, url: "http://react.xhup.club/search" }
-          - { name: Wormhole, url: "https://wormhole.app/" }
-          - { name: Emailnator, url: "https://www.emailnator.com/" }
-          - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
-          - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }

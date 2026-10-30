@@ -178,11 +178,3 @@ groups:
         name: TLD List
         url: https://tld-list.com/
         description: 可注册域名检索
-  - id: ip
-    name: IP
-    items:
-      - id: ip-3
-        name: 纯真 IP
-        url: https://update.cz88.net/favicon.ico
-        description: 纯真 IP 库
-        iconHost: cz88.net

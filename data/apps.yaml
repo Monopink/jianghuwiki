@@ -195,16 +195,6 @@ groups:
   - id: apps-group-6
     name: 工具
     items:
-      - id: eartrumpet
-        name: EarTrumpet
-        url: https://eartrumpet.app/
-        description: 为 Windows 增加软件音量合成器
-        iconHost: github.com
-        links:
-          - label: GitHub
-            url: https://github.com/File-New-Project/EarTrumpet
-        platforms:
-          - windows
       - id: littlebigmouse
         name: LittleBigMouse
         url: https://github.com/mgth/LittleBigMouse
@@ -244,6 +234,22 @@ groups:
         description: 将应用程序转为 Windows 服务运行
         platforms:
           - windows
+      - id: eartrumpet
+        name: EarTrumpet
+        url: https://eartrumpet.app/
+        description: 为 Windows 增加软件音量合成器
+        iconHost: github.com
+        links:
+          - label: GitHub
+            url: https://github.com/File-New-Project/EarTrumpet
+        platforms:
+          - windows
+      - id: sysfontreplacer
+        name: 系统字体替换工具
+        url: https://www.fishlee.net/soft/SysFontReplacer/
+        description: Windows 系统字体替换工具
+        platforms:
+          - windows
   - id: apps-group-8
     name: 传输
     items:
@@ -259,15 +265,6 @@ groups:
           - macos
           - linux
           - android
-  - id: apps-group-9
-    name: 浏览器扩展
-    items:
-      - id: airtab
-        name: Airtab
-        url: https://github.com/get-artab/artab
-        description: 新标签页随机一副艺术作品
-        platforms:
-          - n/a
   - id: apps-group-10
     name: 油猴脚本
     items:

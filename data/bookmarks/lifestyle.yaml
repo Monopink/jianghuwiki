@@ -2,16 +2,6 @@ groups:
   - id: ecommerce
     name: 综合电商
     items:
-      - id: main-m-taobao-com
-        name: 淘宝
-        url: https://main.m.taobao.com/
-        description: 淘宝移动版
-        iconHost: www.taobao.com
-      - id: paipai-m-jd-com-bjk
-        name: 京东备件库
-        url: https://paipai.m.jd.com/bjk/
-        description: 京东售后、破损商品销售
-        iconHost: www.jd.com
       - id: izhongchou-taobao-com
         name: 造点新货
         url: https://izhongchou.taobao.com
@@ -40,10 +30,6 @@ groups:
         url: https://www.duozhuayu.com/
         description: 二手书等交易
         iconHost: asset.duozhuayu.com
-      - id: h5-shuaishuaimai-com
-        name: 甩甩卖
-        url: http://h5.shuaishuaimai.com/#/
-        description: 自营临期零食
   - id: local-life
     name: 本地生活
     items:
@@ -52,14 +38,6 @@ groups:
         url: https://i.meituan.com/index/
         description: 美团移动端
         iconHost: www.meituan.com
-      - id: h5-waimai-meituan-com
-        name: 美团外卖
-        url: https://h5.waimai.meituan.com/
-        description: 美团外卖
-      - id: h5-ele-me
-        name: 淘宝闪购
-        url: https://h5.ele.me
-        description: 淘宝闪购
   - id: travel
     name: 出行
     items:
@@ -67,10 +45,6 @@ groups:
         name: "12306"
         url: https://www.12306.cn/
         description: 中国火车高铁票唯一第一方
-      - id: common-diditaxi-com-cn-general-webentry
-        name: 滴滴出行
-        url: http://common.diditaxi.com.cn/general/webEntry/?h=1#/
-        description: 滴滴出行
   - id: movies
     name: 电影票
     items:

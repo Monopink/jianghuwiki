@@ -122,6 +122,13 @@ groups:
         name: pixabay
         url: https://pixabay.com/
         description: 图片素材库 部分收费
+  - id: articles
+    name: 文章
+    items:
+      - id: vox
+        name: Vox 字体分类法
+        url: https://www.thetype.com/2021/04/25365/
+        description: Vox 字体分类法
   - id: icons
     name: 图标
     items:

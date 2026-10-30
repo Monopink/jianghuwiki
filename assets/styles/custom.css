@@ -824,17 +824,83 @@ body:not(:has(.book-toc)) .book-page {
   }
 
   .quick-dial-links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: block;
+  }
+
+  .quick-dial-links a,
+  .quick-dial-links a:visited {
+    display: inline-block;
+    padding: 0.28rem 0.35rem;
+    text-align: start;
+    white-space: normal;
   }
 }
 
-@media screen and (max-width: 32rem) {
-  .home-search-groups {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 56rem) {
+  .home-search-groups,
+  .home-search-links {
+    display: block;
+  }
+
+  .home-search-link {
+    display: inline-block;
+    width: auto;
+    margin: 0.12rem 0.18rem 0.12rem 0;
+    vertical-align: top;
+  }
+
+  .book-header > div > label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .book-header > div > label .book-icon {
+    font-size: 1.5rem;
+  }
+
+  body.menu-open .book-menu {
+    visibility: initial;
+  }
+
+  body.menu-open .book-menu .book-menu-content {
+    transform: translateX(var(--menu-width));
+    box-shadow: 0 0 var(--space-8) rgba(0, 0, 0, 0.1);
+  }
+
+  body.menu-open .book-header,
+  body.menu-open .book-toc,
+  body.menu-open .book-page {
+    opacity: 0.25;
+  }
+
+  body.menu-open .book-menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+  }
+
+  .quick-dial-row {
+    display: block;
+  }
+
+  .quick-dial-label {
+    display: inline-block;
+    margin-inline-end: 0.35rem;
+    vertical-align: top;
   }
 
   .quick-dial-links {
-    grid-template-columns: 1fr;
+    display: inline;
+    vertical-align: top;
+  }
+
+  .quick-dial-links a,
+  .quick-dial-links a:visited {
+    display: inline-block;
+    vertical-align: top;
   }
 }
 

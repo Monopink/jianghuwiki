@@ -6,7 +6,7 @@
   --border-radius: 0;
   --menu-width: 16.4rem;
   --color-link: #f04f2f;
-  --color-link-hover: #ff7048;
+  --color-link-hover: #c83f24;
   --color-visited-link: #f04f2f;
   --color-link-glow: rgb(255 112 72 / 32%);
   --color-link-shadow: rgb(255 112 72 / 22%);
@@ -683,6 +683,7 @@ body:not(:has(.book-toc)) .book-page {
 .home-search-link:focus-visible {
   border-color: var(--search-color);
   background: var(--button-hover-background);
+  color: var(--search-color);
   outline: none;
 }
 

@@ -42,7 +42,6 @@ groups:
         links:
           - { name: 十年之约, url: "https://www.foreverblog.cn/feeds.html" }
           - { name: 笔墨迹, url: "https://blogscn.fun/" }
-          - { name: 个站商店, url: "https://storeweb.cn/rss" }
           - { name: 酱紫表, url: "https://qust.me/" }
           - { name: 栋哥的赛博空间, url: "https://liuyandong.com/" }
           - { name: 高海鹏老师, url: "https://www.gaohaipeng.com/" }

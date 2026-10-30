@@ -5,17 +5,17 @@ groups:
       - { name: Gemini, icon: "🔷", color: "#2B96EE", url: "https://gemini.google.com/", searchUrl: "https://gemini.google.com/app?q={query}" }
       - { name: Claude, icon: "✴️", color: "#DD7B53", url: "https://claude.ai/", searchUrl: "https://claude.ai/new?q={query}" }
       - { name: Grok, icon: "𝕏", color: "#7a7a7a", url: "https://grok.com/", searchUrl: "https://grok.com/?q={query}" }
+      - { name: Mistral, icon: "👾", color: "#FE7101", url: "https://chat.mistral.ai/", searchUrl: "https://chat.mistral.ai/chat?q={query}" }
       - { name: Kimi, icon: "🌑", color: "#007AFD", url: "https://www.kimi.ai/", searchUrl: "https://www.kimi.ai/?q={query}" }
       - { name: Qwen, icon: "🧶", color: "#6937F1", url: "https://chat.qwen.ai/", searchUrl: "https://chat.qwen.ai/?q={query}" }
-      - { name: DeepSeek, icon: "🐋", color: "#446EFF", url: "https://chat.deepseek.com/", searchUrl: "https://chat.deepseek.com/?q={query}" }
       - { name: Z.ai, icon: "𝙕", color: "#1C7FF8", url: "https://chat.z.ai/", searchUrl: "https://chat.z.ai/?q={query}" }
-      - { name: Mistral, icon: "👾", color: "#FE7101", url: "https://chat.mistral.ai/", searchUrl: "https://chat.mistral.ai/chat?q={query}" }
       - { name: Dola AI, icon: "💁🏻‍♀️", color: "#A765D9", url: "https://www.dola.com/", searchUrl: "https://www.dola.com/chat/?q={query}" }
+      - { name: Perplexity, icon: "📖", color: "#1B8189", url: "https://www.perplexity.ai/", searchUrl: "https://www.perplexity.ai/?q={query}" }
   - name: 大模型&搜索
     items:
-      - { name: Perplexity, icon: "📖", color: "#1B8189", url: "https://www.perplexity.ai/", searchUrl: "https://www.perplexity.ai/?q={query}" }
       - { name: 千问, icon: "🧶", color: "#2B47FE", url: "https://www.qianwen.com/", searchUrl: "https://www.qianwen.com/chat/?q={query}" }
       - { name: 豆包, icon: "🙍🏻‍♀️", color: "#5d93df", url: "https://www.doubao.com/", searchUrl: "https://www.doubao.com/chat/?q={query}" }
+      - { name: DeepSeek, icon: "🐋", color: "#446EFF", url: "https://chat.deepseek.com/", searchUrl: "https://chat.deepseek.com/?q={query}" }
       - { name: 智谱清言, icon: "𝙕", color: "#1141F2", url: "https://chatglm.cn/", searchUrl: "https://chatglm.cn/main?q={query}" }
       - { name: Google NCR, icon: "🔎", color: "#4285f4", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q={query}" }
       - { name: DuckDuckGo, icon: "🦆", color: "#de5833", url: "https://duckduckgo.com/?q={query}" }

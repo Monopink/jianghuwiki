@@ -7,7 +7,6 @@ headless: true
   - [冲浪]({{< relref "/fav/surf" >}})
   - [工具]({{< relref "/fav/tool" >}})
   - [RSS]({{< relref "/fav/rss" >}})
-  - [隐私]({{< relref "/fav/priv" >}})
   - [Geek]({{< relref "/fav/geek" >}})
   - [应用软件]({{< relref "/fav/app" >}})
   - [云与建站]({{< relref "/fav/srvc" >}})

@@ -90,52 +90,13 @@ groups:
         name: Imgflip
         url: https://imgflip.com
         description: 表情包制作工具
-      - id: akarin-dev-wechatmomentscreenshot
-        name: 朋友圈生成器
-        url: https://akarin.dev/WechatMomentScreenshot/
-        description: 朋友圈转发截图生成工具
-  - id: writing
-    name: 写作
+  - id: conversion
+    name: 转换
     items:
-      - id: hackmd
-        name: HackMD
-        url: https://hackmd.io/
-        description: 在线 Markdown 编辑器 可以协同
-      - id: stackedit
-        name: StackEdit
-        url: https://stackedit.io/app
-        description: 在线 Markdown 编辑器
-  - id: cloud-tools
-    name: 云工具
-    items:
-      - id: browser-use
-        name: Browser Use
-        url: https://cloud.browser-use.com/
-        description: 云浏览器
-      - id: lexmount-console
-        name: Lexmount Console
-        url: https://browser.lexmount.com/
-        description: 云浏览器
-  - id: checking
-    name: 检测
-    items:
-      - id: newsletters-spam-test-by-mail
-        name: Newsletters spam test by mail
-        url: https://www.mail-tester.com/
-        description: 测试你发出邮件的垃圾邮件匹配度
-      - id: namecheckly
-        name: namecheckly
-        url: https://namecheckly.com
-        description: 域名和社交平台用户名可用性检查
-      - id: namecheck
-        name: namecheck
-        url: https://www.namecheck.com/
-        description: 域名和社交平台用户名可用性检查
-        iconHost: namecheck.com
-      - id: hardware-tester
-        name: Hardware Tester
-        url: https://hardwaretester.com/
-        description: 手柄、麦克风、MIDI 等电脑外设测试
+      - id: pdf24
+        name: PDF24 
+        url: https://tools.pdf24.org/en/rasterize-pdf#s=1792466019190
+        description: PDF 图片化
   - id: getting
     name: 获取
     items:

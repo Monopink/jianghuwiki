@@ -1,23 +1,19 @@
 groups:
-  - id: query
-    name: 查询
+  - id: environment
+    name: 环境
     items:
-      - id: webbrowsertools
-        name: WebBrowserTools
-        url: https://webbrowsertools.com/
-        description: Web 工具集
-      - id: downdetecotor
-        name: Downdetecotor
-        url: https://downdetector.com/
-        description: 大平台故障和中断实时监控
+      - id: amiunique
+        name: AmIUnique
+        url: https://amiunique.org/
+        description: 你在互联网的身份 浏览器指纹
+      - id: dns-leak-test
+        name: DNS Leak Test
+        url: https://dnsleaktest.org/dns-leak-test
+        description: DNS 泄露检测
       - id: what-s-my-user-agent
         name: What's my user agent?
         url: https://www.whatsmyua.info/
         description: 浏览器 UA 查询
-      - id: i-know
-        name: I KNOW
-        url: https://iknowwhatyoudownload.com/
-        description: 同 IP 下 BT 传输记录
       - id: ip
         name: 本机 IP 查询
         url: https://html.zone/ip/
@@ -26,45 +22,91 @@ groups:
         name: ip.zerosla.net
         url: https://ip.zerosla.net/
         description: 当前 IP 信息查询
+      - id: whoer
+        name: WHOER
+        url: https://whoer.net/
+        description: IP 伪装度查询
       - id: ip-2
         name: IP溯源
         url: https://ip.sy/
         description: IP 位置查询
-      - id: namelimit
-        name: Namelimit
-        url: https://namelimit.com/subdomain/
-        description: 网站子域查询
+  - id: checking
+    name: 检测
+    items:
       - id: pagespeed-insights
         name: PageSpeed Insights
         url: https://pagespeed.web.dev/
         description: 网站性能测试
-      - id: tool-chinaz-com
-        name: 站长之家
-        url: https://tool.chinaz.com/
-        description: 站长之家 站长工具
-        iconHost: tools.chinaz.com
-      - id: www-dute-org-webmaster
-        name: 站长工具
-        url: https://www.dute.org/webmaster
-        description: 独特工具箱 站长工具
-        links:
-          - label: DNS 查询
-            url: https://www.dute.org/dns
+      - id: newsletters-spam-test-by-mail
+        name: Newsletters spam test by mail
+        url: https://www.mail-tester.com/
+        description: 测试你发出邮件的垃圾邮件匹配度
+  - id: names
+    name: 名称
+    items:
+      - id: namecheckly
+        name: namecheckly
+        url: https://namecheckly.com
+        description: 域名和社交平台用户名可用性检查
+      - id: namecheck
+        name: namecheck
+        url: https://www.namecheck.com/
+        description: 域名和社交平台用户名可用性检查
+        iconHost: namecheck.com
+      - id: domain-research
+        name: Domain Research
+        url: https://domainr.com/
+        description: 域名查询
+      - id: namebeta
+        name: NameBeta
+        url: https://namebeta.com/
+        description: 域名查询
+      - id: gandi
+        name: Gandi
+        url: https://gandi.net/
+        description: 小众域名注册
+        iconHost: www.gandi.net
+      - id: namelix
+        name: namelix
+        url: https://namelix.com/
+        description: AI 驱动的取名工具
+      - id: wee-domains
+        name: wee.domains
+        url: https://wee.domains/
+        description: 简短的可注册域名
+      - id: tld-list
+        name: TLD List
+        url: https://tld-list.com/
+        description: 可注册域名检索
+  - id: cloud-tools
+    name: 云工具
+    items:
+      - id: browser-use
+        name: Browser Use
+        url: https://cloud.browser-use.com/
+        description: 云浏览器
+      - id: lexmount-console
+        name: Lexmount Console
+        url: https://browser.lexmount.com/
+        description: 云浏览器
+  - id: query
+    name: 查询
+    items:
+      - id: downdetecotor
+        name: Downdetecotor
+        url: https://downdetector.com/
+        description: 大平台故障和中断实时监控
+      - id: have-i-been-pwned
+        name: have i been pwned?
+        url: https://haveibeenpwned.com/
+        description: 检查密码是否泄露
+      - id: i-know
+        name: I KNOW
+        url: https://iknowwhatyoudownload.com/
+        description: 同 IP 下 BT 传输记录
   - id: conversion
     name: 转换
     items:
-      - id: url-decode
-        name: URL Decode
-        url: https://www.urldecoder.org/
-        description: URL 解码和编码
-      - id: base64-decode
-        name: Base64 Decode
-        url: https://www.base64decode.org/
-        description: Base64 解码和编码
-      - id: base64-decode-2
-        name: Base64 Decode
-        url: https://www.base64decode.net/
-        description: Base64 解码和编码 支持图片
       - id: asciiflow
         name: ASCIIFlow
         url: https://asciiflow.com/
@@ -73,6 +115,21 @@ groups:
         name: Table Convert
         url: https://tableconvert.com/
         description: 表格/Markdown 转换
+  - id: terminal
+    name: 终端
+    items:
+      - id: wipeclean
+        name: wipeclean
+        url: https://github.com/JeanJouliaCode/wipeClean
+        description: 把你的终端「擦」干净
+      - id: no-more-secrets
+        name: no-more-secrets
+        url: https://github.com/bartobri/no-more-secrets
+        description: 终端代码解密效果
+      - id: rust-stakeholder
+        name: rust-stakeholder
+        url: https://github.com/giacomo-b/rust-stakeholder
+        description: 让终端看起来很忙
   - id: editing
     name: 编辑
     items:
@@ -92,26 +149,6 @@ groups:
         name: UnCSS Online!
         url: https://uncss-online.com/
         description: 扫描无用 CSS
-      - id: codeif
-        name: CODEIF
-        url: https://unbug.github.io/codelf/
-        description: 搜索变量命名
-        iconHost: github.com
-  - id: terminal
-    name: 终端
-    items:
-      - id: wipeclean
-        name: wipeclean
-        url: https://github.com/JeanJouliaCode/wipeClean
-        description: 把你的终端「擦」干净
-      - id: no-more-secrets
-        name: no-more-secrets
-        url: https://github.com/bartobri/no-more-secrets
-        description: 终端代码解密效果
-      - id: rust-stakeholder
-        name: rust-stakeholder
-        url: https://github.com/giacomo-b/rust-stakeholder
-        description: 让终端看起来很忙
   - id: learning
     name: 学习
     items:
@@ -135,46 +172,3 @@ groups:
         name: CSSBattle
         url: https://cssbattle.dev/
         description: CSS 挑战比拼
-  - id: cloud
-    name: 云
-    items:
-      - id: backblaze
-        name: Backblaze
-        url: https://www.backblaze.com
-        description: 云存储服务
-  - id: domains
-    name: 域名
-    items:
-      - id: domain-research
-        name: Domain Research
-        url: https://domainr.com/
-        description: Whois 及类似域名查询
-      - id: whois-lookup
-        name: Whois Lookup
-        url: https://whois.domaintools.com/
-        description: 域名查询
-      - id: namebeta
-        name: NameBeta
-        url: https://namebeta.com/
-        description: 域名查询
-      - id: namesilo
-        name: NameSilo
-        url: https://www.namesilo.com/
-        description: 域名注册
-      - id: gandi
-        name: Gandi
-        url: https://gandi.net/
-        description: 小众域名注册
-        iconHost: www.gandi.net
-      - id: namelix
-        name: namelix
-        url: https://namelix.com/
-        description: AI 驱动的取名工具
-      - id: wee-domains
-        name: wee.domains
-        url: https://wee.domains/
-        description: 简短的可注册域名
-      - id: tld-list
-        name: TLD List
-        url: https://tld-list.com/
-        description: 可注册域名检索

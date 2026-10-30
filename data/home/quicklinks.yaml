@@ -8,13 +8,15 @@ groups:
           - { name: Lark, url: "https://www.larksuite.com/messenger" }
           - { name: 飞书, url: "https://www.feishu.cn/messenger" }
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
-          - { name: Sporify, url: "https://open.spotify.com/" }
+          - { name: Spotify, url: "https://open.spotify.com/" }
           - { name: Radio Garden, url: "https://radio.garden/" }
           - { name: RoamDial, url: "https://roamdial.com/" }
       - name: 工具
         links:
           - { name: LocalSend, url: "https://localsend.org/" }
           - { name: Wormhole, url: "https://wormhole.app/" }
+          - { name: AdGuard Mail, url: "https://app.adguard-mail.com/" }
+          - { name: SimpleLogin, url: "https://app.simplelogin.io/dashboard/" }
           - { name: Emailnator, url: "https://www.emailnator.com/" }
           - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
           - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }
@@ -66,7 +68,7 @@ groups:
           - { name: 高海鹏老师, url: "https://www.gaohaipeng.com/" }
           - { name: docofcard, url: "https://docofcard.com/" }
           - { name: VPS大玩家, url: "https://www.vpsdawanjia.com/" }
-          - { name: 谷姐靓号网, url: "https://www.goojie.eu/" }
+          - { name: 鱼的后花园, url: "https://blog.iccfish.com/" }
           - { name: 虚拟号, url: "https://xunihao.net/" }
       - name: 随机
         links:

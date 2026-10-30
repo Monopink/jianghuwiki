@@ -95,6 +95,7 @@
 {{ define "toc-container" }}
   {{ if .Param "BookToC" | default true }}
   <aside class="book-toc" aria-label="{{ partial "docs/text/i18n" "Table of Contents" }}">
+    <button type="button" class="book-toc-close" aria-label="关闭目录">&times;</button>
     <div class="book-toc-content">
       {{ template "toc" . }}
     </div>

@@ -4,6 +4,50 @@
   display: none;
 }
 
+/* Keep collapsible menu sections working on Safari versions without CSS nesting. */
+.book-menu input.toggle + label + ul {
+  display: none;
+}
+
+.book-menu input.toggle:checked + label + ul {
+  display: block;
+}
+
+.book-menu,
+.book-menu .book-menu-content,
+.book-menu nav,
+.book-menu nav ul,
+.book-menu nav li {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: var(--menu-width);
+}
+
+.book-menu .book-menu-content {
+  width: var(--menu-width);
+  overflow-x: hidden;
+}
+
+.book-menu nav a {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-menu nav label {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.book-menu nav label > a {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 56rem) {
   .book-header {
     position: fixed;
@@ -52,6 +96,16 @@
     height: 1.8rem;
   }
 
+  .book-header-menu {
+    appearance: none;
+  }
+
+  .book-header-menu .book-logo-default {
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
   .book-header-title {
     display: flex;
     align-items: center;
@@ -79,6 +133,14 @@
     padding-top: 4.5rem;
   }
 
+  .mobile-menu-backdrop:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background-color: rgb(0 0 0 / 45%);
+  }
+
   body.menu-open .book-menu {
     visibility: visible;
     z-index: 210;
@@ -86,14 +148,6 @@
 
   body.menu-open .book-menu .book-menu-content {
     transform: translateX(var(--menu-width));
-  }
-
-  body.menu-open .book-menu-overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background-color: rgb(0 0 0 / 45%);
   }
 
   .mobile-toc-backdrop:not([hidden]) {
@@ -114,12 +168,6 @@
 
   .book-menu nav ul li {
     margin: 1.15em 0;
-  }
-
-  .book-menu nav > ul > li > a,
-  .book-menu nav > ul > li > label {
-    font-size: 1.1rem;
-    font-weight: 700;
   }
 
   body.toc-open .book-toc {

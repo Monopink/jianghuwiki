@@ -1,8 +1,7 @@
 <div class="book-header-bar">
-  <input type="checkbox" class="toggle" id="menu-control" />
-  <label class="book-header-menu" for="menu-control" aria-label="{{ partial "docs/text/i18n" "Menu" }}">
+  <button class="book-header-menu" id="menu-toggle" type="button" aria-controls="mobile-menu-panel" aria-expanded="false" aria-label="{{ partial "docs/text/i18n" "Menu" }}">
     {{ partial "docs/logo.svg.html" . }}
-  </label>
+  </button>
 
   <span class="book-header-title" aria-live="polite">{{ partial "docs/title" . }}</span>
 
@@ -12,6 +11,7 @@
   </button>
   {{ else }}<div></div>{{ end }}
 </div>
+<div class="mobile-menu-backdrop" hidden></div>
 {{ if .Param "BookToC" | default true }}
 <div class="mobile-toc-backdrop" hidden></div>
 {{ end }}

@@ -1,4 +1,9 @@
 {{- $path := strings.TrimPrefix hugo.WorkingDir .Page.File.Filename -}}
+{{- if eq .Page.Layout "apps" -}}
+  {{- $path = "data/apps.yaml" -}}
+{{- else if and (eq .Page.Layout "bookmarks") .Page.Params.dataSection .Page.Params.dataFile -}}
+  {{- $path = printf "data/%s/%s.yaml" .Page.Params.dataSection .Page.Params.dataFile -}}
+{{- end -}}
 {{- $url := partial "docs/text/template" (dict
   "Path" $path
   "Template" .Site.Params.BookEditLink

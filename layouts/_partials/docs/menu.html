@@ -7,7 +7,6 @@
 {{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.before) }}
 {{ partial "docs/menu-filetree" . }}
 {{ partial "docs/menu-hugo" (dict "Page" .Page "Menu" .Site.Menus.after) }}
-{{ partial "bookmarks-menu.html" . }}
 {{ partial "docs/inject/menu-after" . }}
 
 {{ with .Site.Params.menuFooter }}

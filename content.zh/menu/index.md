@@ -8,7 +8,7 @@ headless: true
   - [工具]({{< relref "/fav/tool" >}})
   - [RSS]({{< relref "/fav/rss" >}})
   - [Geek]({{< relref "/fav/geek" >}})
-  - [应用软件]({{< relref "/fav/app" >}})
+  - [软件下载]({{< relref "/apps" >}})
   - [云与建站]({{< relref "/fav/srvc" >}})
 <br />
 

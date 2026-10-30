@@ -1,49 +1,64 @@
 {{ with hugo.Data.bookmarks.sections }}
-<section class="bookmarks-menu" data-bookmarks-menu>
-  <button class="bookmarks-menu-trigger" type="button" aria-expanded="false" aria-controls="bookmarks-menu-panel" data-bookmarks-toggle>
-    <span>网址收藏</span>
-    <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
-  </button>
-  <div class="bookmarks-menu-panel" id="bookmarks-menu-panel" hidden>
-    {{ range . }}
-      <div class="bookmarks-menu-section">
-        <button class="bookmarks-menu-section-toggle" type="button" aria-expanded="false" data-bookmarks-section-toggle>
-          <span>{{ .name }}</span>
-          <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
-        </button>
-        <div class="bookmarks-menu-section-panel" hidden>
-          {{ range .categories }}
+{{ $sections := . }}
+{{ $order := slice "inspo" "lounge" "utility" "dev" "lifestyle" }}
+<div class="sb-bookmarks" data-sb-bookmarks>
+  <button class="sb-bookmarks-trigger" type="button" aria-expanded="false" aria-controls="sb-bookmarks-popover" data-sb-toggle>网址收藏</button>
+
+  <div class="sb-bookmarks sb-bookmarks-popover" id="sb-bookmarks-popover" data-sb-popover hidden>
+    <div class="sb-bookmarks-mobile-bar">
+      <a href="#" class="sb-bookmarks-back" data-sb-back hidden>返回</a>
+    </div>
+
+    <div class="sb-bookmarks-grid">
+      <ul class="sb-bookmarks-column sb-bookmarks-sections" data-sb-level="sections" role="menu">
+        {{ range $order }}
+          {{ $section := index (where $sections "id" .) 0 }}
+          <li><a href="#" class="sb-bookmarks-row" data-sb-section="{{ $section.id }}" role="menuitem">{{ $section.name }}</a></li>
+        {{ end }}
+      </ul>
+
+      <div class="sb-bookmarks-column sb-bookmarks-categories" data-sb-level="categories">
+        {{ range $order }}
+          {{ $section := index (where $sections "id" .) 0 }}
+          <ul class="sb-bookmarks-category-list" data-sb-section-panel="{{ $section.id }}" role="menu" hidden>
+            {{ range $section.categories }}
+              {{ if gt (len .items) 0 }}
+                <li><a href="#" class="sb-bookmarks-row" data-sb-category="{{ $section.id }}-{{ .id }}" data-sb-parent-section="{{ $section.id }}" role="menuitem">{{ .name }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+
+      <div class="sb-bookmarks-column sb-bookmarks-items" data-sb-level="items">
+        {{ range $order }}
+          {{ $section := index (where $sections "id" .) 0 }}
+          {{ range $section.categories }}
             {{ if gt (len .items) 0 }}
-              <div class="bookmarks-menu-category">
-                <button class="bookmarks-menu-category-toggle" type="button" aria-expanded="false" data-bookmarks-category-toggle>
-                  <span>{{ .name }}</span>
-                  <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "chevron-right" }}</svg>
-                </button>
-                <ul class="bookmarks-menu-items" hidden>
-                  {{ range .items }}
-                    {{ $item := . }}
-                    <li>
-                      <a href="{{ .url }}" target="_blank" rel="noopener">
-                        {{ partial "bookmark/icon.html" . }}
-                        <span class="bookmarks-menu-item-copy">
-                          <span class="bookmarks-menu-item-name">{{ .name }}</span>
-                          {{ with .description }}<small>{{ . }}</small>{{ end }}
-                        </span>
-                      </a>
-                      {{ with .links }}
-                        <div class="bookmarks-menu-item-links" aria-label="{{ $item.name }} 的附加链接">
-                          {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
-                        </div>
-                      {{ end }}
-                    </li>
-                  {{ end }}
-                </ul>
-              </div>
+              <ul class="sb-bookmarks-item-list" data-sb-category-panel="{{ $section.id }}-{{ .id }}" role="menu" hidden>
+                {{ range .items }}
+                  {{ $item := . }}
+                  <li>
+                    <a href="{{ .url }}" class="sb-bookmarks-item" target="_blank" rel="noopener" role="menuitem">
+                      {{ partial "bookmark/icon.html" . }}
+                      <span class="sb-bookmarks-item-copy">
+                        <span class="sb-bookmarks-item-name">{{ .name }}</span>
+                        {{ with .description }}<small>{{ . }}</small>{{ end }}
+                      </span>
+                    </a>
+                    {{ with .links }}
+                      <div class="sb-bookmarks-extra" aria-label="{{ $item.name }} 的附加链接">
+                        {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
+                      </div>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
             {{ end }}
           {{ end }}
-        </div>
+        {{ end }}
       </div>
-    {{ end }}
+    </div>
   </div>
-</section>
+</div>
 {{ end }}

@@ -1,7 +1,7 @@
 ---
-weight: 50
+weight: 25
 title: "笔记"
 bookFlatSection: false
-bookCollapseSection: true
+bookCollapseSection: false
 bookHidden: false
 ---

@@ -4,9 +4,15 @@
 <div class="sb-bookmarks" data-sb-bookmarks>
   <button class="sb-bookmarks-trigger" type="button" aria-expanded="false" aria-controls="sb-bookmarks-popover" data-sb-toggle>网址收藏</button>
 
+  <div class="sb-bookmarks-backdrop" data-sb-backdrop hidden></div>
   <div class="sb-bookmarks sb-bookmarks-popover" id="sb-bookmarks-popover" data-sb-popover hidden>
     <div class="sb-bookmarks-mobile-bar">
-      <a href="#" class="sb-bookmarks-back" data-sb-back hidden>返回</a>
+      <a href="#" class="sb-bookmarks-back" data-sb-back hidden aria-label="返回上一级" title="返回上一级">
+        <svg class="sb-bookmarks-control-icon" aria-hidden="true">{{ partial "docs/icon" "backward" }}</svg>
+      </a>
+      <a href="#" class="sb-bookmarks-close" data-sb-close aria-label="关闭网址收藏菜单" title="关闭网址收藏菜单">
+        <span class="sb-bookmarks-close-icon" aria-hidden="true">×</span>
+      </a>
     </div>
 
     <div class="sb-bookmarks-grid">

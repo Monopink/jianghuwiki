@@ -144,6 +144,11 @@ groups:
         url: https://savefrom.net/
         description: 下载网站视频
         iconHost: en.savefrom.net
+      - id: mzu-favicondl
+        name: Mzu favicondl
+        url: https://favicondl.com/
+        description: 获取网站图标
+        iconHost: favicondl.com
   - id: other
     name: 其他
     items:

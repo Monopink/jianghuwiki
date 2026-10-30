@@ -1,7 +1,7 @@
 [
 {{- $records := slice -}}
 {{- range site.RegularPages -}}
-  {{- if and (not .Draft) (not (in (slice "bookmarks" "apps") .Layout)) (ne .Params.bookSearchExclude true) (ne .Params.searchRecord false) -}}
+  {{- if and (not .Draft) (not (in (slice "apps") .Layout)) (ne .Params.bookSearchExclude true) (ne .Params.searchRecord false) -}}
     {{- $records = $records | append (dict "id" (printf "page:%s" .RelPermalink) "type" "page" "title" (partial "docs/title" .) "section" (partial "docs/title" .Parent) "content" .Plain "href" .RelPermalink) -}}
   {{- end -}}
 {{- end -}}

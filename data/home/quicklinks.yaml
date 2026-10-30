@@ -83,4 +83,3 @@ groups:
       - name: 其他
         links:
           - { name: NameSilo marketplace, url: "https://www.namesilo.com/Marketplace" }
-    more: { name: 👉所有…, url: "/bookmarks/lounge/" }

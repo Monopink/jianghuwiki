@@ -1,8 +1,6 @@
 {{- $path := strings.TrimPrefix hugo.WorkingDir .Page.File.Filename -}}
 {{- if eq .Page.Layout "apps" -}}
   {{- $path = "data/apps.yaml" -}}
-{{- else if eq .Page.Layout "bookmarks" -}}
-  {{- $path = "data/bookmarks.yaml" -}}
 {{- end -}}
 {{- $url := partial "docs/text/template" (dict
   "Path" $path

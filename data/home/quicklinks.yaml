@@ -7,13 +7,13 @@ groups:
           - { name: Outlook, url: "https://outlook.live.com/mail/0/" }
           - { name: Lark, url: "https://www.larksuite.com/messenger" }
           - { name: 飞书, url: "https://www.feishu.cn/messenger" }
+          - { name: Yandex.Mail, url: "https://mail.yandex.com/" }
+          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
           - { name: Spotify, url: "https://open.spotify.com/" }
           - { name: Radio Garden, url: "https://radio.garden/" }
-          - { name: Boss Online Radio, url: "https://www.bossonlineradio.com/" }
-          - { name: Yandex.Mail, url: "https://mail.yandex.com/" }
-          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
           - { name: RoamDial, url: "https://roamdial.com/" }
+          - { name: Boss Online Radio, url: "https://www.bossonlineradio.com/" }
       - name: 工具
         links:
           - { name: LocalSend, url: "https://localsend.org/" }

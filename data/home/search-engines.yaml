@@ -25,7 +25,9 @@ groups:
   - name: 内容与应用
     items:
       - { name: GitHub, icon: "🪼", color: "#9370c6", url: "https://github.com/search?q={query}" }
+      - { name: Behance, icon: "Bē", color: "#1C60F0", url: "https://www.behance.net/search/projects?search={query}" }
       - { name: Pinterest, icon: "📌", color: "#e60023", url: "https://www.pinterest.com/search/pins/?q={query}" }
+      - { name: Dribbble, icon: "🏀", color: "#E64785", url: "https://dribbble.com/search/{query}" }
       - { name: NeoDB, icon: "🌱", color: "#a3c095", url: "https://neodb.social/search/?q={query}" }
       - { name: 七麦, icon: "🍏", color: "#02b389", url: "https://www.qimai.cn/search/index/country/cn/search/{query}" }
       - { name: SteamDB, icon: "🗃️", color: "#0366d6", url: "https://steamdb.info/search/?a=app&q={query}" }

@@ -67,6 +67,10 @@ sections:
             name: OpenUserJS
             url: https://openuserjs.org/
             description: 用户脚本发布与安装平台
+          - id: mycroft-project
+            name: Mycroft Project
+            url: https://mycroftproject.com/
+            description: 浏览器搜索引擎的搜索引擎
       - id: names
         name: 名称
         items:
@@ -219,10 +223,6 @@ sections:
             name: BOOOOOOOM!
             url: https://www.booooooom.com/
             description: 艺术、摄影与创意文化内容
-          - id: spotify-design
-            name: Spotify Design
-            url: https://spotify.design/
-            description: Spotify 设计主页
           - id: fubiz-media
             name: Fubiz Media
             url: http://www.fubiz.net/
@@ -231,6 +231,10 @@ sections:
             name: 站酷
             url: https://www.zcool.com.cn/
             description: 站酷
+          - id: ui-cn
+            name: UI 中国
+            url: https://www.ui.cn/
+            description: 设计作品与交流社区
       - id: awards
         name: 奖项&活动
         items:
@@ -242,21 +246,6 @@ sections:
             name: CSSDesignAwards
             url: https://www.cssdesignawards.com
             description: 关注网页设计和开发的奖项
-      - id: resources
-        name: 素材集
-        items:
-          - id: creative-commons-search
-            name: Creative Commons Search
-            url: https://search.creativecommons.org/
-            description: 搜索可自由使用的创意作品
-          - id: ui-goodies
-            name: UI Goodies
-            url: https://uigoodies.com/
-            description: 设计资源导航
-          - id: openverse
-            name: Openverse
-            url: https://openverse.org/
-            description: 搜索开源图片、音乐
       - id: colors
         name: 颜色
         items:
@@ -284,6 +273,49 @@ sections:
             name: 中国色
             url: http://zhongguose.com
             description: 中国传统颜色 风格模仿自 NIPPON COLORS
+      - id: resources
+        name: 素材资源
+        items:
+          - id: creative-commons-search
+            name: Creative Commons Search
+            url: https://search.creativecommons.org/
+            description: 搜索可自由使用的创意作品
+          - id: pixabay
+            name: pixabay
+            url: https://pixabay.com/
+            description: 查找免版权图片、音乐、视频、模型等素材
+          - id: ui-goodies
+            name: UI Goodies
+            url: https://uigoodies.com/
+            description: 设计资源导航
+          - id: openverse
+            name: Openverse
+            url: https://openverse.org/
+            description: 搜索开源图片、音乐
+          - id: freebiesbug
+            name: Freebiesbug
+            url: https://freebiesbug.com
+            description: 免费 设计、图标、UI 资源
+          - id: vecteezy
+            name: Vecteezy
+            url: https://www.vecteezy.com
+            description: 图片、视频资源
+          - id: mixkit
+            name: mixkit
+            url: https://mixkit.co
+            description: 视频素材 部分收费
+          - id: pixeden
+            name: Pixeden
+            url: https://www.pixeden.com/free
+            description: 设计素材资源
+          - id: pixelbuddha
+            name: Pixelbuddha
+            url: https://pixelbuddha.net/
+            description: 设计资源
+          - id: graphberry
+            name: Graphberry
+            url: https://www.graphberry.com
+            description: 免费 Mockup 资源
       - id: gallery
         name: 图画
         items:
@@ -307,10 +339,6 @@ sections:
             name: Hippopx
             url: https://www.hippopx.com/
             description: 免费无版权的摄影图库
-          - id: pixabay
-            name: pixabay
-            url: https://pixabay.com/
-            description: 图片素材库 部分收费
       - id: illustration
         name: 插画社区
         items:
@@ -330,13 +358,6 @@ sections:
             name: ArtStation 
             url: https://www.artstation.com/
             description: 数字艺术作品展示
-      - id: articles
-        name: 文章
-        items:
-          - id: vox
-            name: Vox 字体分类法
-            url: https://www.thetype.com/2021/04/25365/
-            description: Vox 字体分类法
       - id: logos
         name: Logo
         items:
@@ -543,40 +564,6 @@ sections:
             name: 404s
             url: https://www.404s.design/
             description: 搜集各种有趣的 404 页面
-      - id: mockups
-        name: Mockup
-        items:
-          - id: freebiesbug
-            name: Freebiesbug
-            url: https://freebiesbug.com
-            description: 免费 Mockup、图标、UI 资源
-          - id: graphberry
-            name: Graphberry
-            url: https://www.graphberry.com
-            description: 免费 Mockup 资源
-          - id: vecteezy
-            name: Vecteezy
-            url: https://www.vecteezy.com
-            description: Mockup 资源
-          - id: premiumpixels
-            name: Premiumpixels
-            url: https://www.premiumpixels.com
-            description: Mockup/图标资源
-          - id: pixeden
-            name: Pixeden
-            url: https://www.pixeden.com/free
-            description: 设计素材资源
-          - id: pixelbuddha
-            name: Pixelbuddha
-            url: https://pixelbuddha.net/
-            description: Mockup 资源
-      - id: video
-        name: 视频
-        items:
-          - id: mixkit
-            name: mixkit
-            url: https://mixkit.co
-            description: 视频素材 部分收费
       - id: tools
         name: 在线工具
         items:
@@ -628,6 +615,10 @@ sections:
             name: Free3D
             url: https://free3d.com
             description: 免费 3D 模型
+          - id: turbosquid
+            name: TurboSquid
+            url: https://www.turbosquid.com/
+            description: 专业 3D 模型与数字素材市场
           - id: 3d
             name: 3D 模型库
             url: https://www.cgmodel.com/model/all_1_0_0_0_0_0_0_0_0_0_0_1_0_0_0_0_0_0_0_0
@@ -656,8 +647,15 @@ sections:
             name: Dashboard
             url: https://musescore.com/
             description: 找曲谱
+      - id: articles
+        name: 文章
+        items:
+          - id: vox
+            name: Vox 字体分类法
+            url: https://www.thetype.com/2021/04/25365/
+            description: Vox 字体分类法
       - id: others
-        name: 其他
+        name: 协议
         items:
           - id: bookmark-991ef877f7bb
             name: Creative Commons
@@ -1211,61 +1209,6 @@ sections:
   - id: utility
     name: 实用
     categories:
-      - id: find-things
-        name: 找东西
-        items:
-          - id: www-iplaysoft-com
-            name: 异次元软件世界
-            url: https://www.iplaysoft.com
-            description: 分享好用的软件
-          - id: www-appinn-com
-            name: 小众软件
-            url: https://www.appinn.com
-            description: 分享好用的软件
-          - id: bookmark-ace6562fe142
-            name: Crx4Chrome
-            url: https://www.crx4chrome.com/
-            description: Chrome 扩展 CRX 文件下载
-          - id: bookmark-fe4e7896695d
-            name: 粉碎棱镜
-            url: https://prism-break.org/zh-CN/
-            description: 隐私与自由软件工具推荐
-          - id: bookmark-8678596f9fcd
-            name: MSDN, 我告诉你
-            url: https://msdn.itellyou.cn/
-            description: 微软系统镜像与软件资源索引
-          - id: www-jiumodiary-com
-            name: 鸠摩搜索
-            url: https://www.jiumodiary.com/
-            description: 找电子书
-          - id: bookmark-ff1f25ce15bd
-            name: GIPHY
-            url: https://giphy.com/
-            description: GIF 动图搜索与分享平台
-          - id: "33"
-            name: 33台词
-            url: https://33.agilestudio.cn/
-            description: 找影视剧中出现的台词
-          - id: chongbuluo-search
-            name: 快搜
-            url: http://search.chongbuluo.com/
-            description: 虫部落搜索引擎聚合入口
-          - id: tineye
-            name: TinEye
-            url: https://tineye.com/
-            description: 以图搜图
-          - id: bookmark-71a02cc48097
-            name: Visual Hunt
-            url: https://visualhunt.com/
-            description: 图片素材搜索
-          - id: bookmark-1a169d59fd5d
-            name: Versus
-            url: https://versus.com/cn
-            description: 万物皆可对比
-          - id: bookmark-7ff53ad6b89a
-            name: CheapAI
-            url: https://www.getcheapai.com/
-            description: AI 模型 API 价格对比
       - id: language
         name: 文字&语言
         items:
@@ -1335,6 +1278,61 @@ sections:
             url: https://math.microsoft.com/
             description: 方程等数学问题自动求解
             iconHost: mathsolver.microsoft.com
+      - id: find-things
+        name: 找东西
+        items:
+          - id: www-iplaysoft-com
+            name: 异次元软件世界
+            url: https://www.iplaysoft.com
+            description: 分享好用的软件
+          - id: www-appinn-com
+            name: 小众软件
+            url: https://www.appinn.com
+            description: 分享好用的软件
+          - id: bookmark-ace6562fe142
+            name: Crx4Chrome
+            url: https://www.crx4chrome.com/
+            description: Chrome 扩展 CRX 文件下载
+          - id: bookmark-fe4e7896695d
+            name: 粉碎棱镜
+            url: https://prism-break.org/zh-CN/
+            description: 隐私与自由软件工具推荐
+          - id: bookmark-8678596f9fcd
+            name: MSDN, 我告诉你
+            url: https://msdn.itellyou.cn/
+            description: 微软系统镜像与软件资源索引
+          - id: www-jiumodiary-com
+            name: 鸠摩搜索
+            url: https://www.jiumodiary.com/
+            description: 找电子书
+          - id: bookmark-ff1f25ce15bd
+            name: GIPHY
+            url: https://giphy.com/
+            description: GIF 动图搜索与分享平台
+          - id: "33"
+            name: 33台词
+            url: https://33.agilestudio.cn/
+            description: 找影视剧中出现的台词
+          - id: chongbuluo-search
+            name: 快搜
+            url: http://search.chongbuluo.com/
+            description: 虫部落搜索引擎聚合入口
+          - id: tineye
+            name: TinEye
+            url: https://tineye.com/
+            description: 以图搜图
+          - id: bookmark-71a02cc48097
+            name: Visual Hunt
+            url: https://visualhunt.com/
+            description: 图片素材搜索
+          - id: bookmark-1a169d59fd5d
+            name: Versus
+            url: https://versus.com/cn
+            description: 万物皆可对比
+          - id: bookmark-7ff53ad6b89a
+            name: CheapAI
+            url: https://www.getcheapai.com/
+            description: AI 模型 API 价格对比
       - id: getting
         name: 获取
         items:
@@ -1492,10 +1490,6 @@ sections:
             name: REG007
             url: https://www.reg007.com/
             description: 网站注册信息查询服务
-          - id: bookmark-de89a00fabdf
-            name: LetITFly BBS
-            url: https://bbs.letitfly.me/
-            description: 软件与技术交流论坛
           - id: bookmark-1ab686cfc2ff
             name: 新科社团
             url: https://blog.xk86.cn/010kp?tdsourcetag=s_pctim_aiomsg

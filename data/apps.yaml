@@ -161,6 +161,21 @@ groups:
           - windows
           - macos
           - linux
+      - id: neat-download-manager
+        name: Neat Download Manager
+        url: https://www.neatdownloadmanager.com/
+        description: 下载工具 IDM 平替
+        platforms:
+          - windows
+          - macos
+      - id: free-download-manager
+        name: Free Download Manager
+        url: https://www.freedownloadmanager.org/
+        description: 下载工具
+        platforms:
+          - windows
+          - macos
+          - linux
   - id: apps-group-5
     name: 清理
     items:
@@ -248,6 +263,12 @@ groups:
         name: 系统字体替换工具
         url: https://www.fishlee.net/soft/SysFontReplacer/
         description: Windows 系统字体替换工具
+        platforms:
+          - windows
+      - id: translucenttb
+        name: TranslucentTB
+        url: https://github.com/TranslucentTB/TranslucentTB/releases
+        description: Windows 任务栏透明与外观定制工具
         platforms:
           - windows
   - id: apps-group-8

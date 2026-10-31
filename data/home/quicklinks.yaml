@@ -10,6 +10,9 @@ groups:
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
           - { name: Spotify, url: "https://open.spotify.com/" }
           - { name: Radio Garden, url: "https://radio.garden/" }
+          - { name: Boss Online Radio, url: "https://www.bossonlineradio.com/" }
+          - { name: Yandex.Mail, url: "https://mail.yandex.com/" }
+          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
           - { name: RoamDial, url: "https://roamdial.com/" }
       - name: 工具
         links:
@@ -70,6 +73,9 @@ groups:
           - { name: VPS大玩家, url: "https://www.vpsdawanjia.com/" }
           - { name: 鱼的后花园, url: "https://blog.iccfish.com/" }
           - { name: 虚拟号, url: "https://xunihao.net/" }
+      - name: 电影
+        links:
+          - { name: 豆瓣电影, url: "https://movie.douban.com/" }
       - name: 随机
         links:
           - { name: 虫洞, url: "https://foreverblog.cn/go.html" }

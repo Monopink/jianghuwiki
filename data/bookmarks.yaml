@@ -190,6 +190,10 @@ sections:
             name: CSSBattle
             url: https://cssbattle.dev/
             description: CSS 挑战比拼
+          - id: bookmark-3b293488c9a0
+            name: Scratch
+            url: https://scratch.mit.edu/
+            description: 面向儿童与初学者的图形化编程社区
       - id: editing
         name: 编辑
         items:
@@ -219,6 +223,14 @@ sections:
       - id: design
         name: 设计&创意
         items:
+          - id: awwwards
+            name: awwwards.
+            url: https://www.awwwards.com
+            description: 关注互联网上优秀设计、创意的奖项
+          - id: cssdesignawards
+            name: CSSDesignAwards
+            url: https://www.cssdesignawards.com
+            description: 关注网页设计和开发的奖项
           - id: bookmark-abe7a56c4399
             name: BOOOOOOOM!
             url: https://www.booooooom.com/
@@ -235,17 +247,6 @@ sections:
             name: UI 中国
             url: https://www.ui.cn/
             description: 设计作品与交流社区
-      - id: awards
-        name: 奖项&活动
-        items:
-          - id: awwwards
-            name: awwwards.
-            url: https://www.awwwards.com
-            description: 关注互联网上优秀设计、创意的奖项
-          - id: cssdesignawards
-            name: CSSDesignAwards
-            url: https://www.cssdesignawards.com
-            description: 关注网页设计和开发的奖项
       - id: colors
         name: 颜色
         items:
@@ -296,29 +297,6 @@ sections:
             name: Freebiesbug
             url: https://freebiesbug.com
             description: 免费 设计、图标、UI 资源
-          - id: vecteezy
-            name: Vecteezy
-            url: https://www.vecteezy.com
-            description: 图片、视频资源
-          - id: mixkit
-            name: mixkit
-            url: https://mixkit.co
-            description: 视频素材 部分收费
-          - id: pixeden
-            name: Pixeden
-            url: https://www.pixeden.com/free
-            description: 设计素材资源
-          - id: pixelbuddha
-            name: Pixelbuddha
-            url: https://pixelbuddha.net/
-            description: 设计资源
-          - id: graphberry
-            name: Graphberry
-            url: https://www.graphberry.com
-            description: 免费 Mockup 资源
-      - id: gallery
-        name: 图画
-        items:
           - id: unsplash
             name: Unsplash
             url: https://unsplash.com/
@@ -339,8 +317,28 @@ sections:
             name: Hippopx
             url: https://www.hippopx.com/
             description: 免费无版权的摄影图库
+          - id: vecteezy
+            name: Vecteezy
+            url: https://www.vecteezy.com
+            description: 图片、视频资源
+          - id: mixkit
+            name: mixkit
+            url: https://mixkit.co
+            description: 视频素材 部分收费
+          - id: pixeden
+            name: Pixeden
+            url: https://www.pixeden.com/free
+            description: 设计素材资源
+          - id: pixelbuddha
+            name: Pixelbuddha
+            url: https://pixelbuddha.net/
+            description: 设计资源
+          - id: graphberry
+            name: Graphberry
+            url: https://www.graphberry.com
+            description: 免费 Mockup 资源
       - id: illustration
-        name: 插画社区
+        name: 插画
         items:
           - id: bookmark-8464b6a9668f
             name: 涂鸦王国
@@ -357,7 +355,11 @@ sections:
           - id: bookmark-3dd066732670
             name: ArtStation 
             url: https://www.artstation.com/
-            description: 数字艺术作品展示
+            description: 数字艺术作品社区
+          - id: bookmark-92e5ce9d6f83
+            name: DeviantArt
+            url: https://www.deviantart.com/
+            description: 数字艺术作品社区
       - id: logos
         name: Logo
         items:
@@ -583,22 +585,10 @@ sections:
             name: Vector Halftone Maker
             url: https://xoihazard.com/tools/halftone/
             description: 色彩半调生成
-          - id: smallpdf
-            name: Smallpdf
-            url: https://smallpdf.com/pdf-tools
-            description: 众多 PDF 相关工具
           - id: duotone-effect-generator
             name: Duotone Effect Generator
             url: https://duotones.co
             description: 将图片处理为双色调风格
-          - id: forensically
-            name: Forensically
-            url: https://29a.ch/photo-forensics/
-            description: 图片分析工具
-          - id: pixel-map-generator
-            name: Pixel Map Generator
-            url: https://pixelmap.amcharts.com/
-            description: 地图着色 可能不符合中国国标
       - id: 3d
         name: 3D 模型
         items:
@@ -621,7 +611,7 @@ sections:
             description: 专业 3D 模型与数字素材市场
           - id: 3d
             name: 3D 模型库
-            url: https://www.cgmodel.com/model/all_1_0_0_0_0_0_0_0_0_0_0_1_0_0_0_0_0_0_0_0
+            url: https://www.cgmodel.com/
             description: 3D 模型库
           - id: unity
             name: Unity 资源商店
@@ -801,6 +791,10 @@ sections:
             name: 5SING
             url: http://5sing.kugou.com/
             description: 原创音乐与翻唱音乐社区
+          - id: bookmark-be5c44f6105c
+            name: HD-Hall
+            url: http://www.hd-hall.com/
+            description: 高解析度数字音乐资源
       - id: information
         name: 信息
         items:
@@ -933,10 +927,6 @@ sections:
             name: 金马奖
             url: https://www.goldenhorse.org.tw/
             description: 华语电影最具影响力和代表性的奖项
-          - id: bookmark-c4fcafc496f2
-            name: 豆瓣电影
-            url: https://movie.douban.com/
-            description: 电影资料、评分与影评
           - id: historymaps
             name: HistoryMaps
             url: https://history-maps.com/
@@ -958,7 +948,7 @@ sections:
             name: PTT 鄉民百科
             url: https://pttpedia.fandom.com/zh/wiki/PTT鄉民百科
             description: PTT 百科
-          - id: evchk-fandom-com-zh-wiki-e9-a6-96-e9-a0-81
+          - id: evchk-fandom-com
             name: 香港網絡大典
             url: https://evchk.fandom.com/zh/wiki/首頁
             description: 香港网络百科
@@ -1047,6 +1037,10 @@ sections:
       - id: film-reviews
         name: 影剧点评
         items:
+          - id: bookmark-c4fcafc496f2
+            name: 豆瓣电影
+            url: https://movie.douban.com/
+            description: 电影资料、评分与影评
           - id: rotten-tomatoes
             name: Rotten Tomatoes
             url: https://www.rottentomatoes.com/
@@ -1055,10 +1049,6 @@ sections:
             name: TMDB
             url: https://www.themoviedb.org/
             description: 由社区建设的影剧资料库
-          - id: bookmark-afcb46423e0c
-            name: 电影FM
-            url: http://dianying.fm/
-            description: 电影信息搜索
       - id: crowdfunding
         name: 众筹
         items:
@@ -1278,6 +1268,18 @@ sections:
             url: https://math.microsoft.com/
             description: 方程等数学问题自动求解
             iconHost: mathsolver.microsoft.com
+          - id: forensically
+            name: Forensically
+            url: https://29a.ch/photo-forensics/
+            description: 图片分析工具
+          - id: fotoforensically
+            name: FotoForensically
+            url: https://fotoforensics.com/
+            description: 图片分析工具
+          - id: blindwatermark
+            name: 图片盲水印在线工具
+            url: https://tools.qwerto.cc/blind_watermark/
+            description: 图片暗水印检测
       - id: find-things
         name: 找东西
         items:
@@ -1300,7 +1302,7 @@ sections:
           - id: bookmark-8678596f9fcd
             name: MSDN, 我告诉你
             url: https://msdn.itellyou.cn/
-            description: 微软系统镜像与软件资源索引
+            description: 微软系统镜像
           - id: www-jiumodiary-com
             name: 鸠摩搜索
             url: https://www.jiumodiary.com/
@@ -1387,6 +1389,10 @@ sections:
             name: EarthExplorer
             url: https://earthexplorer.usgs.gov/
             description: 美国地质调查局卫星地图下载
+          - id: pixel-map-generator
+            name: Pixel Map Generator
+            url: https://pixelmap.amcharts.com/
+            description: 地图着色 可能不符合中国国标
           - id: cost-of-living
             name: Cost of Living
             url: https://www.numbeo.com/cost-of-living/
@@ -1395,6 +1401,10 @@ sections:
             name: 大学生活质量指北
             url: https://cn.colleges.chat/
             description: 高校生活质量调查
+          - id: bookmark-af988880afc0
+            name: Google 数据洞察
+            url: https://datastudio.google.com/navigation/reporting
+            description: Google 数据可视化工具
       - id: articles
         name: 文章
         items:
@@ -1464,10 +1474,6 @@ sections:
             name: Steam library filters
             url: https://www.lorenzostanco.com/lab/steam/
             description: Steam 库存分析导出
-          - id: bookmark-3555d3c8e158
-            name: Steam社区等级升级美化服务
-            url: http://steamdj.com/
-            description: 付费 Steam 社区升级
       - id: government
         name: 政务
         items:
@@ -1480,8 +1486,16 @@ sections:
             url: https://beian.miit.gov.cn/
             description: 工信部 ICP 系统
       - id: archive
-        name: 存档
+        name: 归档
         items:
+          - id: bookmark-3555d3c8e158
+            name: Steam社区等级升级美化服务
+            url: http://steamdj.com/
+            description: 付费 Steam 社区升级
+          - id: bookmark-afcb46423e0c
+            name: 电影FM
+            url: http://dianying.fm/
+            description: 电影信息搜索
           - id: bookmark-f81cb4005565
             name: 川大智锐科创
             url: https://covariant.cn/scu/
@@ -1494,4 +1508,11 @@ sections:
             name: 新科社团
             url: https://blog.xk86.cn/010kp?tdsourcetag=s_pctim_aiomsg
             description: 科技与计算机相关内容博客
-
+          - id: bookmark-95750fef93e8
+            name: CoinCola
+            url: https://www.coincola.com/
+            description: 加密货币交易与钱包服务主页
+          - id: bookmark-952acc291446 打不开
+            name: Web Design Bookmarking
+            url: http://bm.straightline.jp/
+            description: 网页设计灵感与书签收藏

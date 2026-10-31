@@ -22,7 +22,12 @@
   document.body.appendChild(backdrop);
 
   function firstCategory(sectionId) {
-    return categories.find((category) => category.dataset.sbParentSection === sectionId);
+    const sectionIndex = sections.findIndex((section) => section.dataset.sbSection === sectionId);
+    const sectionCategories = categories.filter((category) => category.dataset.sbParentSection === sectionId);
+
+    if (sectionIndex < 0 || sectionCategories.length === 0) return undefined;
+
+    return sectionCategories[Math.min(sectionIndex, sectionCategories.length - 1)];
   }
 
   function activateCategory(categoryId) {

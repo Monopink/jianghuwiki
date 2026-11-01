@@ -964,6 +964,10 @@ sections:
             name: TOPYS.
             url: https://www.topys.cn
             description: 创意内容
+          - id: indienova
+            name: 独立精神
+            url: https://indienova.com/
+            description: 游戏资讯与开发者社区
           - id: ptt
             name: PTT 鄉民百科
             url: https://pttpedia.fandom.com/zh/wiki/PTT鄉民百科
@@ -975,18 +979,14 @@ sections:
       - id: community
         name: 社区
         items:
-          - id: indienova
-            name: 独立精神
-            url: https://indienova.com/
-            description: 游戏资讯与开发者社区
           - id: cpc
             name: CPC 中文印刷社区
             url: http://www.cnprint.org/
             description: 设计排印社区
-          - id: hires
-            name: Hires 音乐
-            url: https://dsdlove.com
-            description: 讨论无损音乐与发烧器材
+          - id: nmbxd1
+            name: X 岛
+            url: https://www.nmbxd1.com/
+            description: 亚文化论坛
           - id: www-penbbs-com
             name: 钢笔论坛
             url: http://www.penbbs.com/
@@ -1390,6 +1390,14 @@ sections:
       - id: utility-email
         name: 邮箱
         items:
+          - id: simplelogin
+            name: SimpleLogin
+            url: https://app.simplelogin.io/dashboard/
+            description: 隐私邮箱别名
+          - id: adguard-mail
+            name: AdGuard Mail
+            url: https://app.adguard-mail.com/
+            description: 隐私邮箱别名
           - id: mail-163
             name: 163 邮箱
             url: https://mail.163.com/
@@ -1430,14 +1438,6 @@ sections:
             name: 沃邮箱
             url: https://mail.wo.cn/
             description: 中国联通沃邮箱
-          - id: simplelogin
-            name: SimpleLogin
-            url: https://app.simplelogin.io/dashboard/
-            description: 隐私邮箱别名
-          - id: adguard-mail
-            name: AdGuard Mail
-            url: https://app.adguard-mail.com/
-            description: 隐私邮箱别名
       - id: data
         name: 资料
         items:

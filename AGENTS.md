@@ -17,8 +17,21 @@
 
 - Regular bookmarks use `data/bookmarks/*.yaml` and the `bookmarks` layout.
 - Applications use `data/apps.yaml` and the `apps` layout.
-- Keep stable item IDs.
-- Keep presentation logic in templates, not in data files.
+- Keep item IDs stable after publication; changing an existing ID can break links, references, caches, or external integrations.
+- IDs must be unique across the whole data file, not only within one section or category.
+- Use lowercase kebab-case IDs based on the item's name or domain, for example `streetvoice`, `mail-yandex`, or `vox-news`.
+- Do not create opaque IDs such as `bookmark-<hash>`, numeric-only IDs, IDs containing spaces, or IDs containing status notes.
+- When the same category or item name appears in multiple sections, add a meaningful context prefix or suffix, such as `utility-email` or `vox-font-classification`.
+- Preserve existing IDs when editing bookmark metadata; only assign a new ID when adding an item or deliberately repairing an invalid ID.
+- Keep URLs, names, descriptions, and optional fields aligned with the surrounding entries. Put presentation logic in templates, not in data files.
+- After editing structured data, parse the YAML and check for duplicate IDs before handing off the change.
+
+## Structured data changes
+
+- Prefer small, targeted edits to YAML files; do not reorder unrelated entries or reformat the whole file.
+- Use the repository's existing field names and indentation style.
+- Keep homepage quick links in `data/home/quicklinks.yaml`; do not duplicate them in bookmark data unless the user asks for both.
+- When a user asks for an item in a named group, place it in that existing group when possible; create a new subgroup only when no suitable group exists.
 
 ## Search
 
@@ -38,3 +51,5 @@
 
 - Development: `hugo server`
 - Production build: `hugo --gc --minify`
+- Run production validation with `hugo --gc --minify` when Hugo is available.
+- If Hugo is unavailable, still run a YAML parse and targeted consistency checks, and report the limitation.

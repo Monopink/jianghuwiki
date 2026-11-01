@@ -7,8 +7,9 @@ groups:
           - { name: Outlook, url: "https://outlook.live.com/mail/0/" }
           - { name: Lark, url: "https://www.larksuite.com/messenger" }
           - { name: 飞书, url: "https://www.feishu.cn/messenger" }
-          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
+          - { name: brandportal, url: "https://brandportal.tiktokshop.com/" }
+          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
       - name: 收听
         links:    
           - { name: Spotify, url: "https://open.spotify.com/" }

@@ -1,5 +1,13 @@
 /* Project visual overrides for the current Hugo Book markup. */
 
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/InterVariable.woff2") format("woff2");
+}
+
 :root,
 :root[data-theme="light"],
 :root[data-theme="auto"] {
@@ -92,6 +100,7 @@
 body {
   background: var(--body-background);
   color: var(--body-font-color);
+  font-family: Inter, system-ui, sans-serif;
 }
 
 body.book-kind-section.book-type-posts .book-footer {
@@ -268,7 +277,7 @@ a.book-btn[href]:focus-visible {
   width: 1.5em;
   height: 1.5em;
   flex: 0 0 auto;
-  margin-inline-end: 0.5em;
+  margin-inline-end: 0;
   fill: currentColor;
 }
 

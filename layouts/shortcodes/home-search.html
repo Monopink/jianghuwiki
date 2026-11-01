@@ -1,8 +1,11 @@
-<section class="home-search home-effects-intro" aria-labelledby="home-search-title">
+{{ $searchDataFile := printf "%s.home-search-data.json" .Page.Language.Name }}
+{{ $searchData := resources.Get "home-search-data.json" | resources.ExecuteAsTemplate $searchDataFile .Page | resources.Minify | resources.Fingerprint }}
+<section class="home-search home-effects-intro" aria-labelledby="home-search-title" data-search-data-url="{{ partial "docs/links/resource-precache" $searchData }}">
   <h2 id="home-search-title">🔍搜索</h2>
   <div class="home-search-form">
     <input id="home-search-input" type="search" placeholder="Jianghu 搜索" aria-label="搜索关键词" autocomplete="off" />
     <a class="home-search-script-link" href="{{ "ai-fill.user.js" | relURL }}" aria-label="安装大模型输入框填充脚本">安装填充脚本</a>
+    <div id="home-search-results" class="home-search-results" role="listbox" aria-label="搜索结果" hidden></div>
   </div>
   <div class="home-search-groups">
     {{ $data := index hugo.Data.home "search-engines" }}

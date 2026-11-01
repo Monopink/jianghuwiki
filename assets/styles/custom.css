@@ -274,7 +274,7 @@ a.book-btn[href]:focus-visible {
 
 .book-search {
   margin: 1rem 0;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0;
 }
 
 .book-search input {
@@ -301,12 +301,13 @@ a.book-btn[href]:focus-visible {
   position: absolute;
   top: 100%;
   inset-inline: 0;
-  z-index: 100;
+  z-index: 1300;
   max-height: 18.4rem;
   overflow-y: auto;
+  border: 1px solid var(--gray-80);
   background: var(--body-background);
   border-radius: 0;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 18%);
 }
 
 .book-search #book-search-results li {
@@ -319,12 +320,17 @@ a.book-btn[href]:focus-visible {
 
 .book-search #book-search-results a {
   display: block;
-  color: var(--body-font-color);
+  margin: 0;
+  color: var(--body-font-color) !important;
+}
+
+.book-search #book-search-results a:visited {
+  color: var(--body-font-color) !important;
 }
 
 .book-search #book-search-results mark {
   background: none;
-  color: var(--color-link);
+  color: inherit;
 }
 
 .book-header {
@@ -635,6 +641,7 @@ body:not(:has(.book-toc)) .book-page {
 }
 
 .home-search-form {
+  position: relative;
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
@@ -655,6 +662,63 @@ body:not(:has(.book-toc)) .book-page {
   border-color: var(--gray-80);
   outline: none;
   transition: border-color 160ms ease;
+}
+
+.home-search {
+  position: relative;
+}
+
+.home-search-results {
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  inset-inline: 0;
+  max-height: 24rem;
+  overflow-y: auto;
+  border: 1px solid var(--gray-80);
+  background: var(--body-background);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+}
+
+.home-search-result,
+.home-search-result:visited {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  color: var(--body-font-color) !important;
+  text-decoration: none;
+}
+
+.home-search-result-icon {
+  display: inline-block;
+  width: 1.25em;
+  margin-inline-end: 0.2rem;
+  color: inherit;
+}
+
+.home-search-result.is-selected {
+  background: var(--button-hover-background);
+  outline: none;
+}
+
+.home-search-result:hover,
+.home-search-result:focus-visible {
+  background: var(--button-hover-background);
+  outline: none;
+}
+
+.home-search-result strong,
+.home-search-result small {
+  display: block;
+}
+
+.home-search-result small,
+.home-search-empty {
+  color: var(--gray-60);
+  font-size: 0.8rem;
+}
+
+.home-search-empty {
+  padding: 0.75rem;
 }
 
 .home-search-script-link,

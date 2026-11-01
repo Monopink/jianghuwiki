@@ -1,0 +1,24 @@
+[
+{{- $records := slice -}}
+{{- range $section := hugo.Data.bookmarks.sections -}}
+  {{- range $category := $section.categories -}}
+    {{- range $item := $category.items -}}
+      {{- $context := printf "bookmark / %s / %s" $section.name $category.name -}}
+      {{- $records = $records | append (dict "id" (printf "bookmark:%s" $item.id) "type" "bookmark" "title" $item.name "section" $context "searchText" (printf "%s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url)) "href" $item.url) -}}
+      {{- range $link := $item.links -}}
+        {{- $records = $records | append (dict "id" (printf "bookmark:%s:%s" $item.id $link.label) "type" "bookmark" "title" (printf "%s · %s" $item.name $link.label) "section" $context "searchText" (printf "%s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url)) "href" $link.url) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $group := hugo.Data.apps.groups -}}
+  {{- range $item := $group.items -}}
+    {{- $context := printf "app / %s / %s" $group.name (delimit (default (slice) $item.platforms) " ") -}}
+    {{- $records = $records | append (dict "id" (printf "app:%s" $item.id) "type" "app" "title" $item.name "section" $context "searchText" (printf "%s %s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url) (default "" $item.platforms)) "href" $item.url) -}}
+    {{- range $link := $item.links -}}
+      {{- $records = $records | append (dict "id" (printf "app:%s:%s" $item.id $link.label) "type" "app" "title" (printf "%s · %s" $item.name $link.label) "section" $context "searchText" (printf "%s %s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url) (default "" $item.platforms)) "href" $link.url) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $i, $record := $records }}{{ if $i }},{{ end }}{{ $record | jsonify }}{{ end -}}
+]

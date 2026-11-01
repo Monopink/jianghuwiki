@@ -32,7 +32,9 @@ if (searchColumns.length || quickDialRows.length) {
 if (input) {
   const homeSearch = input.closest(".home-search");
   const results = homeSearch?.querySelector("#home-search-results");
+  const toggle = homeSearch?.querySelector(".home-search-toggle");
   const searchDataURL = homeSearch?.dataset.searchDataUrl;
+  const iconsetURL = homeSearch?.dataset.iconsetUrl;
   let records;
   let active = false;
   let visibleResults = [];
@@ -67,22 +69,24 @@ if (input) {
   };
 
   const renderResults = () => {
-    if (!results || !active || !records || !input.value.trim()) {
+    if (!results || !active || !records) {
       if (results) {
         results.replaceChildren();
         results.hidden = true;
       }
       visibleResults = [];
+      results?.classList.remove("has-overflow");
+      toggle?.setAttribute("aria-expanded", "false");
       return;
     }
 
     results.replaceChildren();
-    visibleResults = search(input.value);
+    visibleResults = input.value.trim() ? search(input.value) : [];
     selectedIndex = 0;
     if (!visibleResults.length) {
       const empty = document.createElement("div");
       empty.className = "home-search-empty";
-      empty.textContent = "没有找到匹配结果";
+      empty.textContent = input.value.trim() ? "没有找到匹配结果" : "搜索网址收藏...";
       results.appendChild(empty);
     } else {
       visibleResults.forEach((hit, index) => {
@@ -94,20 +98,25 @@ if (input) {
         anchor.setAttribute("role", "option");
         anchor.setAttribute("aria-selected", index === selectedIndex ? "true" : "false");
         if (index === selectedIndex) anchor.classList.add("is-selected");
-        const icon = document.createElement("span");
-        icon.className = "home-search-result-icon";
-        icon.setAttribute("aria-hidden", "true");
-        icon.textContent = "↗";
         const title = document.createElement("strong");
         title.textContent = hit.title;
         const meta = document.createElement("small");
-        meta.textContent = `${hit.type === "app" ? "应用" : "书签"} · ${hit.section}`;
-        title.prepend(icon);
-        anchor.append(title, meta);
+        meta.textContent = [hit.location, hit.description].filter(Boolean).join(" · ");
+        const content = document.createElement("span");
+        content.className = "home-search-result-content";
+        content.append(title, meta);
+        anchor.append(createOutgoingIcon(), content);
         results.appendChild(anchor);
       });
     }
     results.hidden = false;
+    results.classList.toggle("has-overflow", results.scrollHeight > results.clientHeight);
+    toggle?.setAttribute("aria-expanded", "true");
+  };
+
+  const openResults = () => {
+    active = true;
+    loadRecords().then(renderResults).catch((error) => console.error("Home search initialization failed", error));
   };
 
   const updateSelection = () => {
@@ -115,7 +124,20 @@ if (input) {
       const selected = index === selectedIndex;
       result.classList.toggle("is-selected", selected);
       result.setAttribute("aria-selected", selected ? "true" : "false");
+      if (selected) result.scrollIntoView({ block: "nearest" });
     });
+  };
+
+  const createOutgoingIcon = () => {
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.classList.add("home-search-result-icon");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("viewBox", "0 0 24 24");
+    icon.setAttribute("fill", "currentColor");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `${iconsetURL}#outgoing`);
+    icon.appendChild(use);
+    return icon;
   };
 
   input.addEventListener("input", () => {
@@ -126,10 +148,22 @@ if (input) {
     if (active) renderResults();
   });
 
+  toggle?.addEventListener("click", () => {
+    if (active && results && !results.hidden) {
+      active = false;
+      results.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      return;
+    }
+    openResults();
+    input.focus();
+  });
+
   document.addEventListener("click", (event) => {
     if (!homeSearch?.contains(event.target)) {
       active = false;
       if (results) results.hidden = true;
+      toggle?.setAttribute("aria-expanded", "false");
     }
   });
 
@@ -169,8 +203,7 @@ if (input) {
         window.open(target.href, "_blank", "noopener,noreferrer");
         return;
       }
-      active = true;
-      loadRecords().then(renderResults).catch((error) => console.error("Home search initialization failed", error));
+      openResults();
     }
   });
 

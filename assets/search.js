@@ -61,20 +61,25 @@
 
   function search() {
     results.replaceChildren();
+    results.hidden = true;
     if (!input.value || !index) return;
 
     index.search(input.value).slice(0, 10).forEach(hit => {
-      const li = document.createElement('li');
       const anchor = document.createElement('a');
       const title = document.createElement('span');
       const content = document.createElement('small');
       anchor.href = hit.href;
+      anchor.className = 'book-search-result';
+      anchor.setAttribute('role', 'option');
       title.textContent = hit.title;
       content.textContent = `${label(hit.type)} · ${hit.section}`;
-      anchor.appendChild(title);
-      li.append(anchor, content);
-      results.appendChild(li);
+      const resultContent = document.createElement('span');
+      resultContent.className = 'book-search-result-content';
+      resultContent.append(title, content);
+      anchor.append(resultContent);
+      results.appendChild(anchor);
     });
+    results.hidden = false;
   }
 
   function label(type) {

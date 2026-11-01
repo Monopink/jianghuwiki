@@ -3,20 +3,34 @@
 {{- range $section := hugo.Data.bookmarks.sections -}}
   {{- range $category := $section.categories -}}
     {{- range $item := $category.items -}}
-      {{- $context := printf "bookmark / %s / %s" $section.name $category.name -}}
-      {{- $records = $records | append (dict "id" (printf "bookmark:%s" $item.id) "type" "bookmark" "title" $item.name "section" $context "searchText" (printf "%s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url)) "href" $item.url) -}}
+      {{- $context := printf "%s · %s" $section.name $category.name -}}
+      {{- $records = $records | append (dict "id" (printf "bookmark:%s" $item.id) "type" "bookmark" "title" $item.name "description" (default "" $item.description) "location" (printf "网址收藏 · %s · %s" $section.name $category.name) "searchText" (printf "%s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url)) "href" $item.url) -}}
       {{- range $link := $item.links -}}
-        {{- $records = $records | append (dict "id" (printf "bookmark:%s:%s" $item.id $link.label) "type" "bookmark" "title" (printf "%s · %s" $item.name $link.label) "section" $context "searchText" (printf "%s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url)) "href" $link.url) -}}
+        {{- $records = $records | append (dict "id" (printf "bookmark:%s:%s" $item.id $link.label) "type" "bookmark" "title" (printf "%s · %s" $item.name $link.label) "description" (default "" $item.description) "location" (printf "网址收藏 · %s · %s" $section.name $category.name) "searchText" (printf "%s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url)) "href" $link.url) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- range $group := hugo.Data.apps.groups -}}
   {{- range $item := $group.items -}}
-    {{- $context := printf "app / %s / %s" $group.name (delimit (default (slice) $item.platforms) " ") -}}
-    {{- $records = $records | append (dict "id" (printf "app:%s" $item.id) "type" "app" "title" $item.name "section" $context "searchText" (printf "%s %s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url) (default "" $item.platforms)) "href" $item.url) -}}
+    {{- $context := printf "%s · %s" $group.name (delimit (default (slice) $item.platforms) " · ") -}}
+    {{- $records = $records | append (dict "id" (printf "app:%s" $item.id) "type" "app" "title" $item.name "description" (default "" $item.description) "location" (printf "软件下载 · %s" $group.name) "searchText" (printf "%s %s %s %s %s" $item.name (default "" $item.description) $context (default "" $item.url) (default "" $item.platforms)) "href" $item.url) -}}
     {{- range $link := $item.links -}}
-      {{- $records = $records | append (dict "id" (printf "app:%s:%s" $item.id $link.label) "type" "app" "title" (printf "%s · %s" $item.name $link.label) "section" $context "searchText" (printf "%s %s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url) (default "" $item.platforms)) "href" $link.url) -}}
+      {{- $records = $records | append (dict "id" (printf "app:%s:%s" $item.id $link.label) "type" "app" "title" (printf "%s · %s" $item.name $link.label) "description" (default "" $item.description) "location" (printf "软件下载 · %s" $group.name) "searchText" (printf "%s %s %s %s %s %s" $item.name $link.label (default "" $item.description) $context (default "" $link.url) (default "" $item.platforms)) "href" $link.url) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $group := (index hugo.Data.home "search-engines").groups -}}
+  {{- range $item := $group.items -}}
+    {{- $location := printf "搜索引擎 · %s" $group.name -}}
+    {{- $records = $records | append (dict "id" (printf "search-engine:%s:%s" $group.name $item.name) "title" $item.name "description" "" "location" $location "searchText" (printf "%s %s %s %s" $item.name $group.name $location (default "" $item.url)) "href" $item.url) -}}
+  {{- end -}}
+{{- end -}}
+{{- range $group := hugo.Data.home.quicklinks.groups -}}
+  {{- range $section := $group.sections -}}
+    {{- range $item := $section.links -}}
+      {{- $location := printf "快速拨号 · %s · %s" $group.name $section.name -}}
+      {{- $records = $records | append (dict "id" (printf "quicklink:%s:%s:%s" $group.name $section.name $item.name) "title" $item.name "description" (default "" $item.description) "location" $location "searchText" (printf "%s %s %s %s %s" $item.name (default "" $item.description) $location $group.name $section.name) "href" $item.url) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

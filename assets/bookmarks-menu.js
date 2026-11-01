@@ -14,7 +14,19 @@
   const columns = [...root.querySelectorAll('[data-sb-level]')];
   const back = root.querySelector('[data-sb-back]');
   const closeButton = root.querySelector('[data-sb-close]');
-  const hoverDevice = window.matchMedia('(hover: hover) and (pointer: fine)');
+  // iPadOS Safari may report hover/fine-pointer support, especially in
+  // landscape mode or with a keyboard/trackpad attached. Touch capability
+  // should take precedence so the menu keeps using the touch interaction.
+  const touchDevice =
+    window.matchMedia('(pointer: coarse)').matches ||
+    navigator.maxTouchPoints > 0 ||
+    'ontouchstart' in window;
+  const compactLayout = window.matchMedia('(max-width: 56rem)');
+  const hoverDevice = {
+    get matches() {
+      return !touchDevice && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    },
+  };
   let portalActive = true;
   let mobileLevel = 'sections';
 
@@ -76,11 +88,11 @@
   function openMenu() {
     trigger.setAttribute('aria-expanded', 'true');
     popover.hidden = false;
-    backdrop.hidden = hoverDevice.matches;
-    document.body.classList.toggle('sb-bookmarks-open', !hoverDevice.matches);
+    backdrop.hidden = !compactLayout.matches;
+    document.body.classList.toggle('sb-bookmarks-open', compactLayout.matches);
     if (sections[0]) activateSection(sections[0].dataset.sbSection);
     setMobileLevel('sections');
-    if (portalActive && hoverDevice.matches) window.requestAnimationFrame(placePopover);
+    if (portalActive && !compactLayout.matches) window.requestAnimationFrame(placePopover);
   }
 
   function activateFromHover(element, callback) {
@@ -140,7 +152,12 @@
     }
   });
   window.addEventListener('resize', () => {
-    if (portalActive && hoverDevice.matches && trigger.getAttribute('aria-expanded') === 'true') placePopover();
+    if (portalActive && !compactLayout.matches && trigger.getAttribute('aria-expanded') === 'true') {
+      placePopover();
+    }
+  });
+  compactLayout.addEventListener('change', () => {
+    if (trigger.getAttribute('aria-expanded') === 'true') closeMenu();
   });
 
   setMobileLevel('sections');

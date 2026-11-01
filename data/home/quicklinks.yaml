@@ -7,36 +7,32 @@ groups:
           - { name: Outlook, url: "https://outlook.live.com/mail/0/" }
           - { name: Lark, url: "https://www.larksuite.com/messenger" }
           - { name: 飞书, url: "https://www.feishu.cn/messenger" }
-          - { name: Yandex.Mail, url: "https://mail.yandex.com/" }
           - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
+      - name: 收听
+        links:    
           - { name: Spotify, url: "https://open.spotify.com/" }
           - { name: Radio Garden, url: "https://radio.garden/" }
           - { name: RoamDial, url: "https://roamdial.com/" }
           - { name: Boss Online Radio, url: "https://www.bossonlineradio.com/" }
       - name: 工具
         links:
-          - { name: LocalSend, url: "https://localsend.org/" }
           - { name: Wormhole, url: "https://wormhole.app/" }
-          - { name: AdGuard Mail, url: "https://app.adguard-mail.com/" }
-          - { name: SimpleLogin, url: "https://app.simplelogin.io/dashboard/" }
           - { name: Emailnator, url: "https://www.emailnator.com/" }
           - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
           - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }
+          - { name: NameSilo marketplace, url: "https://www.namesilo.com/Marketplace" }
   - name: 🏄‍♀️ 冲浪时间
     sections:
-      - name: 订阅
+      - name: 媒体
         links:
           - { name: Inoreader, url: "https://www.inoreader.com/" }
-          - { name: Feedly, url: "https://feedly.com/i/my" }
-          - { name: The Old Reader, url: "https://theoldreader.com" }
+          - { name: Trancy, url: "https://learn.trancy.org/" }
+          - { name: 豆瓣电影, url: "https://movie.douban.com/" }
           - { name: Substack, url: "https://substack.com/home" }
           - { name: Matters, url: "https://matters.town/" }
-      - name: 聚合
-        links:
           - { name: Buzzing, url: "https://www.buzzing.cc/" }
           - { name: 今日热榜, url: "https://tophub.today/" }
-          - { name: 有据, url: "https://chinafactcheck.com/" }
           - { name: realtime.info, url: "http://realtime.info/" }
       - name: 社区
         links:
@@ -45,7 +41,7 @@ groups:
           - { name: 批踢踢實業坊, url: "https://www.ptt.cc/bbs/hotboards.html" }
           - { name: Blind, url: "https://www.teamblind.com/" }
           - { name: 通信人家园, url: "https://www.txrjy.com/forum.php" }
-          - { name: 253874, url: "https://www.253874.net" }
+          - { name: 里屋, url: "https://www.253874.net" }
           - { name: 虫部落, url: "https://www.chongbuluo.com/" }
           - { name: 其乐, url: "https://keylol.com/forum.php?mod=guide&view=newthread" }
           - { name: NodeSeek, url: "https://www.nodeseek.com/" }
@@ -65,6 +61,10 @@ groups:
       - name: Blog
         links:
           - { name: 十年之约, url: "https://www.foreverblog.cn/feeds.html" }
+          - { name: 虫洞, url: "https://foreverblog.cn/go.html" }
+          - { name: 开往, url: "https://www.travellings.cn/go.html" }
+          - { name: 笔墨迹, url: "https://blogscn.fun/random.html" }
+          - { name: 中文博客列表, url: "https://zhblogs.ohyee.cc/go" }
           - { name: 笔墨迹, url: "https://blogscn.fun/" }
           - { name: 酱紫表, url: "https://qust.me/" }
           - { name: 栋哥的赛博空间, url: "https://liuyandong.com/" }
@@ -73,19 +73,3 @@ groups:
           - { name: VPS大玩家, url: "https://www.vpsdawanjia.com/" }
           - { name: 鱼的后花园, url: "https://blog.iccfish.com/" }
           - { name: 虚拟号, url: "https://xunihao.net/" }
-      - name: 电影
-        links:
-          - { name: 豆瓣电影, url: "https://movie.douban.com/" }
-      - name: 随机
-        links:
-          - { name: 虫洞, url: "https://foreverblog.cn/go.html" }
-          - { name: 开往, url: "https://www.travellings.cn/go.html" }
-          - { name: 笔墨迹, url: "https://blogscn.fun/random.html" }
-          - { name: 中文博客列表, url: "https://zhblogs.ohyee.cc/go" }
-      - name: 学习
-        links:
-          - { name: TypingClub, url: "https://www.typingclub.com/sportal/program-3.game" }
-          - { name: Qwerty Learner, url: "https://qwerty.kaiyi.cool/" }
-      - name: 其他
-        links:
-          - { name: NameSilo marketplace, url: "https://www.namesilo.com/Marketplace" }

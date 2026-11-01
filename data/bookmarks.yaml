@@ -130,8 +130,8 @@ sections:
             name: Table Convert
             url: https://tableconvert.com/
             description: 表格/Markdown 转换
-      - id: terminal
-        name: 终端
+      - id: repo
+        name: 开源仓库
         items:
           - id: wipeclean
             name: wipeclean
@@ -145,6 +145,14 @@ sections:
             name: rust-stakeholder
             url: https://github.com/giacomo-b/rust-stakeholder
             description: 让终端看起来很忙
+          - id: servy
+            name: Servy
+            url: https://github.com/aelassas/servy
+            description: 将应用程序转为 Windows 服务运行
+          - id: filter-repo-rs
+            name: filter-repo-rs
+            url: https://github.com/Cactusinhand/filter-repo-rs
+            description: 重写 Git 仓库历史记录
       - id: email
         name: 邮箱
         items:
@@ -666,6 +674,10 @@ sections:
             url: https://m.xiaomiyoupin.com/w/crowdfundV3?_rt=weex&pageid=9433&sign=e50311198e28d0dff1c5d38d97ad1aee&pdl=jianyu&noDL=1
             description: 小米有品众筹
             iconHost: www.xiaomiyoupin.com
+          - id: smzdm
+            name: 什么值得买
+            url: https://www.smzdm.com/
+            description: 消费优惠与购物资讯
       - id: vertical-ecommerce
         name: 垂直电商
         items:
@@ -775,14 +787,22 @@ sections:
             name: Bandcamp
             url: https://bandcamp.com/
             description: 独立音乐发行与购买
-          - id: roamdial
-            name: RoamDial
-            url: https://roamdial.com/
+          - id: streetvoice
+            name: 街声
+            url: https://www.streetvoice.cn/
+            description: 独立音乐作品平台
+          - id: fmstream
+            name: FMSTREAM
+            url: https://fmstream.org/
             description: 收听全世界的电台
           - id: radio-garden
             name: Radio Garden
             url: http://radio.garden/
-            description: 收听全世界的电台
+            description: 收听全世界的电台 网页较占资源
+          - id: roamdial
+            name: RoamDial
+            url: https://roamdial.com/
+            description: 收听全世界的电台 网页很占资源
           - id: di-fm
             name: DI.FM
             url: https://www.di.fm/
@@ -795,6 +815,10 @@ sections:
             name: HD-Hall
             url: http://www.hd-hall.com/
             description: 高解析度数字音乐资源
+          - id: sonyselect
+            name: 索尼精选
+            url: https://music.sonyselect.net/
+            description: 索尼精选 Hi-Res 音乐购买平台
       - id: information
         name: 信息
         items:
@@ -927,10 +951,6 @@ sections:
             name: 金马奖
             url: https://www.goldenhorse.org.tw/
             description: 华语电影最具影响力和代表性的奖项
-          - id: historymaps
-            name: HistoryMaps
-            url: https://history-maps.com/
-            description: 直观地学习历史
           - id: the-type
             name: The Type
             url: https://thetype.com
@@ -1002,6 +1022,14 @@ sections:
             name: TypingClub
             url: https://www.typingclub.com/
             description: 打字键位练习
+          - id: historymaps
+            name: HistoryMaps
+            url: https://history-maps.com/
+            description: 直观地学习历史
+          - id: trancy
+            name: Trancy
+            url: https://learn.trancy.org/
+            description: AI 驱动的语言学习工具
       - id: social
         name: 社交&分享
         items:
@@ -1348,8 +1376,70 @@ sections:
             url: https://favicondl.com/
             description: 获取网站图标
             iconHost: favicondl.com
+      - id: voice-tools
+        name: 语音处理
+        items:
+          - id: elevenlabs
+            name: ElevenLabs
+            url: https://elevenlabs.io/app/home
+            description: AI 语音生成
+          - id: turboscribe
+            name: TurboScribe
+            url: https://turboscribe.ai/dashboard
+            description: AI 音频转录
+      - id: utility-email
+        name: 邮箱
+        items:
+          - id: mail-163
+            name: 163 邮箱
+            url: https://mail.163.com/
+            description: 网易 163 邮箱
+          - id: mail-126
+            name: 126 邮箱
+            url: https://mail.126.com/
+            description: 网易 126 邮箱
+          - id: mail-cock-li
+            name: Cock.li Mail
+            url: https://mail.cock.li/
+            description: 注重隐私的邮箱服务
+          - id: mail-yahoo
+            name: Yahoo Mail
+            url: https://mail.yahoo.com/
+            description: Yahoo 邮箱
+          - id: mail-yandex
+            name: Yandex Mail
+            url: https://mail.yandex.com/
+            description: Yandex 邮箱
+          - id: mail-sina
+            name: 新浪邮箱
+            url: https://m1.mail.sina.com.cn/classic/index.php
+            description: 新浪邮箱经典版
+          - id: mail-sohu
+            name: 搜狐邮箱
+            url: https://mail.sohu.com/
+            description: 搜狐邮箱
+          - id: mail-111
+            name: 111 邮箱
+            url: https://mail.111.com/
+            description: 111 邮箱
+          - id: mail-88
+            name: 88 邮箱
+            url: https://mail.88.com/
+            description: 88 邮箱
+          - id: mail-wo
+            name: 沃邮箱
+            url: https://mail.wo.cn/
+            description: 中国联通沃邮箱
+          - id: simplelogin
+            name: SimpleLogin
+            url: https://app.simplelogin.io/dashboard/
+            description: 隐私邮箱别名
+          - id: adguard-mail
+            name: AdGuard Mail
+            url: https://app.adguard-mail.com/
+            description: 隐私邮箱别名
       - id: data
-        name: 数据
+        name: 资料
         items:
           - id: chinarailtransit
             name: ChinaRailTransit
@@ -1401,6 +1491,10 @@ sections:
             name: 大学生活质量指北
             url: https://cn.colleges.chat/
             description: 高校生活质量调查
+          - id: wenshu
+            name: 裁判文书网
+            url: https://wenshu.court.gov.cn/website/wenshu/181029CR4M5A62CH/index.html?
+            description: 判决书网站
           - id: google-data-studio
             name: Google 数据洞察
             url: https://datastudio.google.com/navigation/reporting

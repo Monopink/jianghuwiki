@@ -21,8 +21,8 @@ groups:
         iconHost: pages.github.com
         platforms:
           - windows
-  - id: apps-group-4
-    name: 实用
+  - id: internet
+    name: 网络浏览
     items:
       - id: zen-browser
         name: Zen Browser
@@ -78,6 +78,24 @@ groups:
         description: 浏览器选择器
         platforms:
           - windows
+      - id: neat-download-manager
+        name: Neat Download Manager
+        url: https://www.neatdownloadmanager.com/
+        description: 下载工具 IDM 平替
+        platforms:
+          - windows
+          - macos
+      - id: free-download-manager
+        name: Free Download Manager
+        url: https://www.freedownloadmanager.org/
+        description: 下载工具
+        platforms:
+          - windows
+          - macos
+          - linux
+  - id: tools
+    name: 工具
+    items:
       - id: photodemon
         name: PhotoDemon
         url: https://photodemon.org/
@@ -87,6 +105,13 @@ groups:
             url: https://github.com/tannerhelland/PhotoDemon
         platforms:
           - windows
+      - id: 94xy-ai
+        name: 鲜艺抠图
+        url: https://kt.94xy.com/
+        description: 免费 AI 在线抠图工具
+        platforms:
+          - windows
+          - macos
       - id: archisteamfarm
         name: ArchiSteamFarm
         url: https://github.com/JustArchiNET/ArchiSteamFarm/
@@ -126,31 +151,10 @@ groups:
           - windows
           - macos
           - linux
-      - id: wsabuilds
-        name: WSABuilds
-        url: https://github.com/MustardChef/WSABuilds
-        description: 更好用全面的 WSA
-        platforms:
-          - windows
-      - id: wsa-toolbox
-        name: WSA Toolbox
-        url: https://apps.microsoft.com/store/detail/9ppsp2mkvtgt
-        description: WSA 工具箱
-        platforms:
-          - windows
       - id: psqredit
         name: PsQREdit
         url: https://www.psytec.co.jp/docomo.html
         description: QR 码屏幕扫描/生成工具
-        platforms:
-          - windows
-      - id: snap2html
-        name: Snap2HTML
-        url: https://www.rlvision.com/snap2html/about.php
-        description: 保存硬盘的目录结构为网页
-        links:
-          - label: GitHub
-            url: https://github.com/rlv-dan/Snap2HTML
         platforms:
           - windows
       - id: idescriptor
@@ -161,22 +165,7 @@ groups:
           - windows
           - macos
           - linux
-      - id: neat-download-manager
-        name: Neat Download Manager
-        url: https://www.neatdownloadmanager.com/
-        description: 下载工具 IDM 平替
-        platforms:
-          - windows
-          - macos
-      - id: free-download-manager
-        name: Free Download Manager
-        url: https://www.freedownloadmanager.org/
-        description: 下载工具
-        platforms:
-          - windows
-          - macos
-          - linux
-  - id: apps-group-5
+  - id: cleaner
     name: 清理
     items:
       - id: free-lanzoux-com-b0cpu1guf
@@ -207,8 +196,8 @@ groups:
         description: 无用驱动清理
         platforms:
           - windows
-  - id: apps-group-6
-    name: 工具
+  - id: system
+    name: 系统
     items:
       - id: littlebigmouse
         name: LittleBigMouse
@@ -240,15 +229,6 @@ groups:
             url: https://apps.microsoft.com/store/detail/auto-dark-mode/XP8JK4HZBVF435
         platforms:
           - windows
-  - id: system
-    name: 系统
-    items:
-      - id: servy
-        name: Servy
-        url: https://github.com/aelassas/servy
-        description: 将应用程序转为 Windows 服务运行
-        platforms:
-          - windows
       - id: eartrumpet
         name: EarTrumpet
         url: https://eartrumpet.app/
@@ -271,9 +251,28 @@ groups:
         description: Windows 任务栏透明与外观定制工具
         platforms:
           - windows
+      - id: snap2html
+        name: Snap2HTML
+        url: https://www.rlvision.com/snap2html/about.php
+        description: 保存硬盘的目录结构为网页
+        links:
+          - label: GitHub
+            url: https://github.com/rlv-dan/Snap2HTML
+        platforms:
+          - windows
   - id: apps-group-8
     name: 传输
     items:
+      - id: localsend
+        name: LocalSend
+        url: https://localsend.org/download
+        description: 跨平台局域网文件传输
+        platforms:
+          - windows
+          - macos
+          - linux
+          - android
+          - ios
       - id: landrop
         name: LANDrop
         url: https://landrop.app/
@@ -313,6 +312,18 @@ groups:
   - id: apps-group-11
     name: Geek
     items:
+      - id: wsabuilds
+        name: WSABuilds
+        url: https://github.com/MustardChef/WSABuilds
+        description: 更好用全面的 WSA
+        platforms:
+          - windows
+      - id: wsa-toolbox
+        name: WSA Toolbox
+        url: https://apps.microsoft.com/store/detail/9ppsp2mkvtgt
+        description: WSA 工具箱
+        platforms:
+          - windows
       - id: tabby
         name: Tabby
         url: https://tabby.sh/
@@ -322,12 +333,6 @@ groups:
             url: https://github.com/Eugeny/tabby/
         platforms:
           - linux
-      - id: filter-repo-rs
-        name: filter-repo-rs
-        url: https://github.com/Cactusinhand/filter-repo-rs
-        description: 重写 Git 仓库历史记录
-        platforms:
-          - n/a
   - id: apps-group-12
     name: 无用但有趣
     items:

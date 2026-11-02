@@ -153,13 +153,6 @@ sections:
             name: filter-repo-rs
             url: https://github.com/Cactusinhand/filter-repo-rs
             description: 重写 Git 仓库历史记录
-      - id: email
-        name: 邮箱
-        items:
-          - id: ifread
-            name: 阅否
-            url: http://www.ifread.com/?l=zh-cn
-            description: 邮件阅读追踪服务
       - id: monofont
         name: 编程字体
         items:
@@ -192,7 +185,7 @@ sections:
             description: 在测试中掌握基础 CSS
           - id: flexbox-freggy
             name: Flexbox Freggy
-            url: http://flexboxfroggy.com/
+            url: https://flexboxfroggy.com/
             description: 学习 CSS 让小青蛙跳到荷叶上
           - id: cssbattle
             name: CSSBattle
@@ -245,7 +238,7 @@ sections:
             description: 艺术、摄影与创意文化内容
           - id: fubiz-media
             name: Fubiz Media
-            url: http://www.fubiz.net/
+            url: https://www.fubiz.net/
             description: 设计分享交流平台
           - id: www-zcool-com-cn
             name: 站酷
@@ -280,7 +273,7 @@ sections:
             description: 日本传统颜色
           - id: zhongguose-com
             name: 中国色
-            url: http://zhongguose.com
+            url: https://zhongguose.com
             description: 中国传统颜色 风格模仿自 NIPPON COLORS
       - id: resources
         name: 素材资源
@@ -354,7 +347,7 @@ sections:
             description: 插画与原创艺术交流社区
           - id: 13cg
             name: 插画家园
-            url: http://www.13cg.com/
+            url: https://www.13cg.com/
             description: 插画作品展示与交流
           - id: pixiv
             name: pixiv
@@ -381,7 +374,7 @@ sections:
             description: 品牌商标图标集
           - id: instant-logo-search
             name: Instant Logo Search
-            url: http://instantlogosearch.com/
+            url: https://instantlogosearch.com/
             description: 检索品牌 Logo 的设计资源
           - id: logolounge
             name: LogoLounge
@@ -485,7 +478,7 @@ sections:
             description: 图片搜索字体 以及找字体
           - id: hellofont
             name: 字由
-            url: http://www.hellofont.cn/home
+            url: https://www.hellofont.cn/home
             description: 字体查找和工具
           - id: zhuanlan-zhihu-com-p-677725322
             name: 京華老宋体
@@ -504,11 +497,11 @@ sections:
             iconHost: source.typekit.com
           - id: jikasei-me
             name: 自家製フォント工房
-            url: http://jikasei.me/
+            url: https://jikasei.me/
             description: 自制字体工作坊｜基于思源黑体制作的圆体
             links:
               - label: 思源柔黑
-                url: http://jikasei.me/font/genjyuu/
+                url: https://jikasei.me/font/genjyuu/
           - id: github-com-cyanohao-resource-han-rounded
             name: 资源黑体
             url: https://github.com/CyanoHao/Resource-Han-Rounded
@@ -541,11 +534,11 @@ sections:
                 url: https://3type.cn/fonts/dinkie_bitmap/index.html
           - id: hanyi
             name: 汉仪字库
-            url: http://hanyi.com.cn/
+            url: https://hanyi.com.cn/
             description: 商业字体公司
           - id: foundertype
             name: 方正字库
-            url: http://www.foundertype.com/
+            url: https://www.foundertype.com/
             description: 商业字体公司
       - id: websites
         name: 网站
@@ -602,7 +595,7 @@ sections:
         items:
           - id: cg
             name: CG 爱好者
-            url: http://www.cgahz.com
+            url: https://www.cgahz.com
             description: 免费 CG、AE 模板、3D 模型资源
           - id: pixelsquid
             name: PixelSquid
@@ -635,7 +628,7 @@ sections:
             description: 分享交流音源的社区
           - id: bianquzy
             name: 编曲资源网
-            url: http://www.bianquzy.com/
+            url: https://www.bianquzy.com/
             description: 编曲资源
           - id: ultimate-guitar
             name: ULTIMATE GUITAR
@@ -797,7 +790,7 @@ sections:
             description: 收听全世界的电台
           - id: radio-garden
             name: Radio Garden
-            url: http://radio.garden/
+            url: https://radio.garden/
             description: 收听全世界的电台 网页较占资源
           - id: roamdial
             name: RoamDial
@@ -809,11 +802,11 @@ sections:
             description: 根据类型找电子音乐
           - id: 5sing
             name: 5SING
-            url: http://5sing.kugou.com/
+            url: https://5sing.kugou.com/
             description: 原创音乐与翻唱音乐社区
           - id: hd-hall
             name: HD-Hall
-            url: http://www.hd-hall.com/
+            url: https://www.hd-hall.com/
             description: 高解析度数字音乐资源
           - id: sonyselect
             name: 索尼精选
@@ -981,7 +974,7 @@ sections:
         items:
           - id: cpc
             name: CPC 中文印刷社区
-            url: http://www.cnprint.org/
+            url: https://www.cnprint.org/
             description: 设计排印社区
           - id: nmbxd1
             name: X 岛
@@ -989,7 +982,7 @@ sections:
             description: 亚文化论坛
           - id: www-penbbs-com
             name: 钢笔论坛
-            url: http://www.penbbs.com/
+            url: https://www.penbbs.com/
             description: 钢笔论坛
           - id: letitfly-bbs
             name: LetITFly BBS
@@ -997,7 +990,7 @@ sections:
             description: 讨论 Android
           - id: chongbuluo
             name: 虫部落
-            url: http://www.chongbuluo.com/
+            url: https://www.chongbuluo.com/
             description: 快搜的用户社区
           - id: 51ruyo
             name: 如有乐享
@@ -1043,7 +1036,7 @@ sections:
             description: 长毛象 分布式微博
           - id: wear
             name: WEAR
-            url: http://wear.net/
+            url: https://wear.net/
             description: 时尚穿搭分享社区
           - id: instafest
             name: Instafest
@@ -1102,7 +1095,7 @@ sections:
             iconHost: shuziyimin.org
           - id: www-williamlong-info
             name: 月光博客
-            url: http://www.williamlong.info/
+            url: https://www.williamlong.info/
             description: 月光博客：关注互联网和搜索引擎的IT科技博客
           - id: www-gaohaipeng-com
             name: 高海鹏老师的博客
@@ -1146,7 +1139,7 @@ sections:
             description: 北欧小镇生成器
           - id: pcol
             name: PCOL
-            url: http://www.heyzxz.me/pcol/
+            url: https://www.heyzxz.me/pcol/
             description: 台球
           - id: ager-io
             name: Ager.io
@@ -1182,7 +1175,7 @@ sections:
             description: 随便敲键盘就能出代码的黑客模拟器
           - id: if-the-moon-were-only-1-pixel
             name: If the Moon Were Only 1 Pixel
-            url: http://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html
+            url: https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html
             description: 如果月球只有 1 像素的模拟宇宙
           - id: infinite-mac
             name: Infinite Mac
@@ -1191,7 +1184,7 @@ sections:
             iconHost: macos9.app/
           - id: windows93
             name: WINDOWS93
-            url: http://www.windows93.net/
+            url: https://www.windows93.net/
             description: 体验 Winodws 93
           - id: drive-listen
             name: Drive & Listen
@@ -1224,6 +1217,37 @@ sections:
             name: 生如夏花
             url: https://viva-la-vita.org/
             description: 探索美好而新奇的性体验
+      - id: archive
+        name: 归档
+        items:
+          - id: steamdj
+            name: Steam社区等级升级美化服务
+            url: https://steamdj.com/
+            description: 付费 Steam 社区升级
+          - id: dianying-fm
+            name: 电影FM
+            url: https://dianying.fm/
+            description: 电影信息搜索
+          - id: covariant-scu
+            name: 川大智锐科创
+            url: https://covariant.cn/scu/
+            description: 四川大学学生科技社团网站
+          - id: reg007
+            name: REG007
+            url: https://www.reg007.com/
+            description: 网站注册信息查询服务
+          - id: xk86
+            name: 新科社团
+            url: https://blog.xk86.cn/010kp?tdsourcetag=s_pctim_aiomsg
+            description: 科技与计算机相关内容博客
+          - id: coincola
+            name: CoinCola
+            url: https://www.coincola.com/
+            description: 加密货币交易与钱包服务主页
+          - id: straightline-bookmarks
+            name: Web Design Bookmarking
+            url: https://bm.straightline.jp/
+            description: 网页设计灵感与书签收藏
   - id: utility
     name: 实用
     categories:
@@ -1252,11 +1276,11 @@ sections:
             description: 英语语料库 需注册
           - id: all-scrabble-words
             name: All Scrabble Words
-            url: http://www.allscrabblewords.com/
+            url: https://www.allscrabblewords.com/
             description: 按特征找单词
           - id: thesaurus
             name: Thesaurus
-            url: http://www.thesaurus.com/
+            url: https://www.thesaurus.com/
             description: 英文同义词词典
           - id: www-xcz-im-library
             name: 中国诗词数据库
@@ -1345,7 +1369,7 @@ sections:
             description: 找影视剧中出现的台词
           - id: chongbuluo-search
             name: 快搜
-            url: http://search.chongbuluo.com/
+            url: https://search.chongbuluo.com/
             description: 虫部落搜索引擎聚合入口
           - id: tineye
             name: TinEye
@@ -1390,6 +1414,18 @@ sections:
       - id: utility-email
         name: 邮箱
         items:
+          - id: resend
+            name: Resend
+            url: https://resend.com/
+            description: 面向开发者的邮件发送服务
+          - id: infomaniak-mail
+            name: Infomaniak Mail
+            url: https://mail.infomaniak.com/
+            description: 瑞士隐私邮箱服务
+          - id: proton-mail
+            name: Proton Mail
+            url: https://proton.me/mail
+            description: 端到端加密邮箱服务 一年不用删除账号
           - id: simplelogin
             name: SimpleLogin
             url: https://app.simplelogin.io/dashboard/
@@ -1398,6 +1434,10 @@ sections:
             name: AdGuard Mail
             url: https://app.adguard-mail.com/
             description: 隐私邮箱别名
+          - id: ifread
+            name: 阅否
+            url: https://www.ifread.com/?l=zh-cn
+            description: 邮件阅读追踪服务
           - id: mail-163
             name: 163 邮箱
             url: https://mail.163.com/
@@ -1438,6 +1478,77 @@ sections:
             name: 沃邮箱
             url: https://mail.wo.cn/
             description: 中国联通沃邮箱
+      - id: utility-file-transfer
+        name: 文件传输
+        items:
+          - id: wormhole
+            name: Wormhole
+            url: https://wormhole.app/
+            description: 端到端加密临时传文件，单次最大 10 GB
+          - id: tmp-link
+            name: 钛盘
+            url: https://www.tmp.link/filelist
+            description: 临时文件传输，单文件 50 GB
+          - id: jianguoyun
+            name: 坚果云
+            url: https://www.jianguoyun.com/d/home#/
+            description: 文件同步与分享 不限容量限制流量
+          - id: mega
+            name: MEGA
+            url: https://mega.nz/
+            description: 加密云存储，免费版 20 GB
+          - id: filen
+            name: Filen
+            url: https://app.filen.io/
+            description: 端到端加密云存储，免费版 10 GB
+          - id: wo-cloud-drive
+            name: 联通云盘
+            url: https://pan.wo.cn/
+            description: 中国联通云存储，默认容量 60 GB
+          - id: cloud-189
+            name: 天翼云盘
+            url: https://cloud.189.cn/
+            description: 中国电信云存储，默认容量 60 GB
+          - id: proton-drive
+            name: Proton Drive
+            url: https://proton.me/drive
+            description: 加密云存储，所有服务共享容量 5 GB，一年不用删除账号
+          - id: ys168
+            name: 永硕 E 盘
+            url: https://www.ys168.com/
+            description: 在线网盘与文件分享，免费空间 2GB
+          - id: xunlei-pan
+            name: 迅雷云盘
+            url: https://pan.xunlei.com/
+            description: 云盘与文件分享
+          - id: lanzou
+            name: 蓝奏云
+            url: https://www.lanzou.com/
+            description: 文件存储与分享，不限容量，单文件 100MB
+          - id: 123pan
+            name: 123 云盘
+            url: https://yun.123pan.cn/
+            description: 云存储与文件分享
+          - id: e-daixia
+            name: 易代下
+            url: https://e-daixia.com/
+            description: 文件中转提取服务
+          - id: suufun
+            name: Suufun
+            url: https://suufun.com/
+            description: 文件中转提取服务
+          - id: bangnixia
+            name: 帮你下
+            url: https://bangnixia.com/
+            description: 文件中转提取服务
+          - id: tuzipan
+            name: 兔子盘
+            url: https://tuzipan.com/
+            description: 文件中转提取服务
+          - id: vvload
+            name: VVLOAD
+            url: https://vvload.com/
+            description: 文件中转提取服务
       - id: data
         name: 资料
         items:
@@ -1583,34 +1694,3 @@ sections:
             name: 工信部 ICP
             url: https://beian.miit.gov.cn/
             description: 工信部 ICP 系统
-      - id: archive
-        name: 归档
-        items:
-          - id: steamdj
-            name: Steam社区等级升级美化服务
-            url: http://steamdj.com/
-            description: 付费 Steam 社区升级
-          - id: dianying-fm
-            name: 电影FM
-            url: http://dianying.fm/
-            description: 电影信息搜索
-          - id: covariant-scu
-            name: 川大智锐科创
-            url: https://covariant.cn/scu/
-            description: 四川大学学生科技社团网站
-          - id: reg007
-            name: REG007
-            url: https://www.reg007.com/
-            description: 网站注册信息查询服务
-          - id: xk86
-            name: 新科社团
-            url: https://blog.xk86.cn/010kp?tdsourcetag=s_pctim_aiomsg
-            description: 科技与计算机相关内容博客
-          - id: coincola
-            name: CoinCola
-            url: https://www.coincola.com/
-            description: 加密货币交易与钱包服务主页
-          - id: straightline-bookmarks
-            name: Web Design Bookmarking
-            url: http://bm.straightline.jp/
-            description: 网页设计灵感与书签收藏

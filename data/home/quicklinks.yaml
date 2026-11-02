@@ -9,7 +9,6 @@ groups:
           - { name: 飞书, url: "https://www.feishu.cn/messenger" }
           - { name: citynews, url: "https://szb1.ywcity.cn/layout/" }
           - { name: brandportal, url: "https://brandportal.tiktokshop.com/" }
-          - { name: 坚果云, url: "https://www.jianguoyun.com/d/home#/" }
       - name: 收听
         links:    
           - { name: Spotify, url: "https://open.spotify.com/" }
@@ -18,7 +17,6 @@ groups:
           - { name: Boss Online Radio, url: "https://www.bossonlineradio.com/" }
       - name: 工具
         links:
-          - { name: Wormhole, url: "https://wormhole.app/" }
           - { name: Emailnator, url: "https://www.emailnator.com/" }
           - { name: Voov, url: "https://voovmeeting.com/regist-email.html" }
           - { name: HW, url: "https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html" }
@@ -34,7 +32,7 @@ groups:
           - { name: Matters, url: "https://matters.town/" }
           - { name: Buzzing, url: "https://www.buzzing.cc/" }
           - { name: 今日热榜, url: "https://tophub.today/" }
-          - { name: realtime.info, url: "http://realtime.info/" }
+          - { name: realtime.info, url: "https://realtime.info/" }
       - name: 社区
         links:
           - { name: Reddit, url: "https://www.reddit.com/" }
@@ -56,7 +54,7 @@ groups:
           - { name: 主机论坛, url: "https://hostloc.com/misc.php?mod=ranklist" }
           - { name: 2047, url: "https://2047.one/" }
           - { name: 中文印刷, url: "https://www.cnprint.org/bbs/index.php" }
-          - { name: 钢笔论坛, url: "http://www.penbbs.com/forum.php" }
+          - { name: 钢笔论坛, url: "https://www.penbbs.com/forum.php" }
           - { name: 矿石收音机, url: "http://www.crystalradio.cn/forum.php?mod=guide&view=hot" }
           - { name: 手电大家谈, url: "https://www.shoudian.org/forum.php?mod=guide&view=newthread" }
       - name: Blog

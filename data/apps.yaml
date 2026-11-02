@@ -2,15 +2,6 @@ groups:
   - id: legend
     name: 图例
     items: []
-  - id: download
-    name: 聚合下载
-    items:
-      - id: portableapps
-        name: PortableApps
-        url: https://portableapps.com/
-        description: 各种应用的便携版
-        platforms:
-          - n/a
   - id: learning
     name: 学习
     items:
@@ -93,8 +84,8 @@ groups:
           - windows
           - macos
           - linux
-  - id: tools
-    name: 工具
+  - id: utilities
+    name: 实用
     items:
       - id: photodemon
         name: PhotoDemon
@@ -135,14 +126,6 @@ groups:
         description: Steam 游戏分组导出
         platforms:
           - windows
-      - id: utools
-        name: uTools
-        url: https://u.tools/
-        description: 效率插件集合
-        platforms:
-          - windows
-          - macos
-          - linux
       - id: calibre
         name: Calibre
         url: https://calibre-ebook.com/
@@ -164,6 +147,38 @@ groups:
         platforms:
           - windows
           - macos
+          - linux
+  - id: dev
+    name: 开发
+    items:
+      - id: magpie
+        name: Magpie
+        url: https://github.com/yetone/magpie
+        description: 统一管理 AI 编程代理的模型、账号与本地网关
+        platforms:
+          - windows
+          - macos
+          - linux
+      - id: wsabuilds
+        name: WSABuilds
+        url: https://github.com/MustardChef/WSABuilds
+        description: 更好用全面的 WSA
+        platforms:
+          - windows
+      - id: wsa-toolbox
+        name: WSA Toolbox
+        url: https://apps.microsoft.com/store/detail/9ppsp2mkvtgt
+        description: WSA 工具箱
+        platforms:
+          - windows
+      - id: tabby
+        name: Tabby
+        url: https://tabby.sh/
+        description: 精美的开源终端 XShell 的替代品
+        links:
+          - label: Github
+            url: https://github.com/Eugeny/tabby/
+        platforms:
           - linux
   - id: cleaner
     name: 清理
@@ -199,6 +214,20 @@ groups:
   - id: system
     name: 系统
     items:
+      - id: wintab
+        name: WinTab
+        url: https://github.com/OUBIGFA/WinTab
+        description: Windows 11 文件资源管理器标签页工具
+        platforms:
+          - windows
+      - id: utools
+        name: uTools
+        url: https://u.tools/
+        description: 效率插件集合
+        platforms:
+          - windows
+          - macos
+          - linux
       - id: littlebigmouse
         name: LittleBigMouse
         url: https://github.com/mgth/LittleBigMouse
@@ -309,30 +338,6 @@ groups:
         description: 视频快捷键
         platforms:
           - n/a
-  - id: apps-group-11
-    name: Geek
-    items:
-      - id: wsabuilds
-        name: WSABuilds
-        url: https://github.com/MustardChef/WSABuilds
-        description: 更好用全面的 WSA
-        platforms:
-          - windows
-      - id: wsa-toolbox
-        name: WSA Toolbox
-        url: https://apps.microsoft.com/store/detail/9ppsp2mkvtgt
-        description: WSA 工具箱
-        platforms:
-          - windows
-      - id: tabby
-        name: Tabby
-        url: https://tabby.sh/
-        description: 精美的开源终端 XShell 的替代品
-        links:
-          - label: Github
-            url: https://github.com/Eugeny/tabby/
-        platforms:
-          - linux
   - id: apps-group-12
     name: 无用但有趣
     items:

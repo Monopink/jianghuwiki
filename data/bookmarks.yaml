@@ -1335,6 +1335,10 @@ sections:
       - id: find-things
         name: 找东西
         items:
+          - id: portableapps
+            name: PortableApps
+            url: https://portableapps.com/
+            description: 各种应用的便携版
           - id: www-iplaysoft-com
             name: 异次元软件世界
             url: https://www.iplaysoft.com

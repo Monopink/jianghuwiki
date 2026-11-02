@@ -298,6 +298,10 @@ sections:
             name: Freebiesbug
             url: https://freebiesbug.com
             description: 免费 设计、图标、UI 资源
+          - id: ls-graphics-free-mockups
+            name: ls.graphics Free Mockups
+            url: https://www.ls.graphics/free-mockups
+            description: PSD、Figma 样机素材
           - id: unsplash
             name: Unsplash
             url: https://unsplash.com/
@@ -656,7 +660,7 @@ sections:
     name: 生活
     categories:
       - id: ecommerce
-        name: 综合电商
+        name: 电商
         items:
           - id: izhongchou-taobao-com
             name: 造点新货
@@ -671,9 +675,6 @@ sections:
             name: 什么值得买
             url: https://www.smzdm.com/
             description: 消费优惠与购物资讯
-      - id: vertical-ecommerce
-        name: 垂直电商
-        items:
           - id: www-iliangcang-com
             name: 良仓
             url: https://www.iliangcang.com/
@@ -705,6 +706,21 @@ sections:
             name: "12306"
             url: https://www.12306.cn/
             description: 中国火车高铁票唯一第一方
+          - id: skyscanner
+            name: Skyscanner
+            url: https://www.skyscanner.com/
+            description: 国际机票、酒店和租车比价
+            links:
+              - label: 大陆版 天巡
+                url: https://www.tianxun.com/
+          - id: klook
+            name: Klook
+            url: https://www.klook.com/
+            description: 旅行活动、景点门票和交通预订
+          - id: agoda
+            name: Agoda
+            url: https://www.agoda.com/
+            description: 酒店与住宿预订
       - id: movies
         name: 电影票
         items:
@@ -1332,6 +1348,10 @@ sections:
             name: 图片盲水印在线工具
             url: https://tools.qwerto.cc/blind_watermark/
             description: 图片暗水印检测
+          - id: heart-uselesses
+            name: 红心歌单助手
+            url: https://heart.uselesses.com/
+            description: 音乐平台之间歌单迁移
       - id: find-things
         name: 找东西
         items:
@@ -1533,6 +1553,10 @@ sections:
             name: 123 云盘
             url: https://yun.123pan.cn/
             description: 云存储与文件分享
+          - id: multcloud
+            name: MultCloud
+            url: https://www.multcloud.com/
+            description: 跨云盘文件传输
           - id: e-daixia
             name: 易代下
             url: https://e-daixia.com/
@@ -1640,6 +1664,10 @@ sections:
       - id: games-platforms
         name: 游戏&平台
         items:
+          - id: sonkwo
+            name: 杉果游戏
+            url: https://www.sonkwo.hk/
+            description: 游戏购买平台
           - id: fanatical
             name: Fanatical
             url: https://www.fanatical.com/

@@ -25,14 +25,15 @@ groups:
     sections:
       - name: 媒体
         links:
+          - { name: Design Scenes, url: "https://fenx.work/" }
+          - { name: 安妮薇看看, url: "https://anyway.fm/" }
+          - { name: AIGC Weekly, url: "https://quaily.com/op7418/?ref=fenx.work" }
           - { name: Inoreader, url: "https://www.inoreader.com/" }
           - { name: Trancy, url: "https://learn.trancy.org/" }
-          - { name: 豆瓣电影, url: "https://movie.douban.com/" }
-          - { name: Substack, url: "https://substack.com/home" }
-          - { name: Matters, url: "https://matters.town/" }
           - { name: Buzzing, url: "https://www.buzzing.cc/" }
           - { name: 今日热榜, url: "https://tophub.today/" }
           - { name: realtime.info, url: "https://realtime.info/" }
+          - { name: 豆瓣电影, url: "https://movie.douban.com/" }
       - name: 社区
         links:
           - { name: Reddit, url: "https://www.reddit.com/" }

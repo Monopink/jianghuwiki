@@ -11,7 +11,7 @@ bookHidden: false
 
 2027 年了，有什么方法依然可以用来改进 Windows 字体渲染效果？
 
-这些年，社区里出现过不少改善 Windows 字体显示效果的方案，例如 MacType、noMeiryoUI，以及移除字体中的 Hinting 信息等。
+这些年，社区里出现过不少改善 Windows 字体显示效果的方案，例如 MacType、noMeiryoUI，以及移除字体中的 hinting 信息等。
 
 ### Hinting 是什么？
 
@@ -19,17 +19,17 @@ bookHidden: false
 
 Hinting 会告诉渲染引擎如何微调这些笔画和端点，让字体在小尺寸下依然边缘清晰、易于阅读。
 
-微软雅黑的 Hinting 据说是逐字人工微调的，造价非常高。
+微软雅黑的 hinting 据说是逐字人工微调的，造价非常高。
 
 这项技术在低分辨率屏幕时代尤其重要，但同时也会让部分字形可能偏离原本的设计比例，出现笔画粗细不均、字形细节被改变等现象。
 
-### 如何移除 Hinting
+### 如何移除 hinting
 
-2019 年，少数派作者曾经发表过一篇关于 Windows 字体渲染优化的 [文章](https://sspai.com/post/57729)，其中介绍了一种通过处理系统字体、移除 Hinting 信息来改善显示效果的方案。
+2019 年，少数派作者曾经发表过一篇关于 Windows 字体渲染优化的 [文章](https://sspai.com/post/57729)，其中介绍了一种通过处理系统字体、移除 hinting 信息来改善显示效果的方案。
 
 文章讨论了 Windows 10 1909 的字体显示问题：在 150% 以下的缩放比例下，部分字号的字体渲染表现不理想。
 
-移除 Hinting 信息后，在一些显示环境下，这样能够获得更均匀的笔画和更自然的字形。
+移除 hinting 信息后，在一些显示环境下，这样能够获得更均匀的笔画和更自然的字形。
 
 文中推荐使用 [系统字体替换工具]( https://www.fishlee.net/soft/SysFontReplacer/) 替换系统字体。这也是本文采用的方案。
 
@@ -43,25 +43,33 @@ Hinting 会告诉渲染引擎如何微调这些笔画和端点，让字体在小
 
 远景论坛的 [@碧海潮声](https://bbs.pcbeta.com/viewthread-1960120-1-1.html) 在微软的测试版字体基础上补充和完善，持续迭代新雅黑。这也是本文字体来源。
 
+## Inter 字体
+
+我本来是不推荐替换非原装字体的，但是 Segoe 是 Vista 时代开始使用之后一直没有换过，现在看来效果是在是有些「古早味」，即使去除 hinting 后字体效果依然很毛糙，字形也不够现代。
+
+正好我偶然发现 Inter 在 Windows 11 的效果非常棒，非常接近苹果的 San Francisco 字体的观感，Inter 字体是一款现代的、专为 UI 设计的字体，所以用此字体替换 Segoe UI。
+
+使用原版 Inter 字体无需去除 hinting（因为原本就没有 hinting），替代字体制作方案来自 [ZH-Font-Replacement](https://github.com/ReRokutosei/ZH-Font-Replacement) 项目。
+
 ## 最终组合
 
 这次处理的字体主要分为三个部分。
 
 **第一部分：Windows 10 原版字体**
 
-从 Windows 10 最终版本中提取系统字体，按照上面少数派文章的思路去除 Hinting。
+从 Windows 10 最终版本中提取系统字体，按照上文的方案去除 hinting。
 
-得到一套 Windows 10 原版字体的无 Hinting 版本。
+得到一套 Windows 10 原版字体的无 hinting 版本。
 
 **第二部分：Noble Scarlet**
 
-获取微软雅黑 11.3 字体文件，移除 Hinting。
+获取微软雅黑 11.3 字体文件，同样移除 hinting。
 
-得到 Noble Scarlet 无 Hinting 版本。
+得到 Noble Scarlet 无 hinting 版本。
 
 **第三部分：Inter 生成 Segoe UI**
 
-使用 Inter 字体作为基础，按照 [ZH-Font-Replacement](https://github.com/ReRokutosei/ZH-Font-Replacement) 项目提供的方案生成 Segoe UI 替代字体。
+使用 Inter 字体作为基础，按照上文的方案生成 Segoe UI 替代字体。
 
 得到替换 Segoe UI 的 Inter 字体。
 

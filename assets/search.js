@@ -14,6 +14,11 @@
   const searchDataURL = '{{ partial "docs/links/resource-precache" $searchData }}';
   const searchEngineURL = '{{ "minisearch.min.js" | relURL }}';
   let index, loading, debounce, returnFocus;
+  const desktopMotion = window.matchMedia('(min-width: 56.001rem) and (prefers-reduced-motion: no-preference)');
+  const openingAnimations = [];
+  function clearOpeningAnimations() {
+    openingAnimations.splice(0).forEach(animation => animation.cancel());
+  }
   async function init() {
     if (index) return;
     if (!loading) loading = Promise.all([
@@ -62,14 +67,28 @@
   }
   function open() {
     if (dialog.open) return;
+    clearOpeningAnimations();
     returnFocus = document.activeElement;
+    const source = trigger.getBoundingClientRect();
     dialog.showModal();
-    input.focus();
+    input.focus({ preventScroll: true });
+    if (desktopMotion.matches && source.width > 0 && source.height > 0) {
+      const target = dialog.getBoundingClientRect();
+      const timing = { duration: 280, easing: 'cubic-bezier(.2, .8, .2, 1)' };
+      openingAnimations.push(dialog.animate([
+        { transformOrigin: 'top left', transform: `translate(${source.left - target.left}px, ${source.top - target.top}px) scale(${source.width / target.width}, ${source.height / target.height})` },
+        { transformOrigin: 'top left', transform: 'none' }
+      ], timing));
+      for (const child of dialog.children) {
+        openingAnimations.push(child.animate([{ opacity: 0 }, { opacity: 0, offset: .35 }, { opacity: 1 }], timing));
+      }
+    }
     search();
   }
   trigger.addEventListener('click', open);
   dialog.querySelector('[data-search-close]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => { returnFocus?.focus({ preventScroll: true }); });
+  dialog.addEventListener('close', () => { clearOpeningAnimations(); returnFocus?.focus({ preventScroll: true }); });
+  desktopMotion.addEventListener('change', clearOpeningAnimations);
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const rect = dialog.getBoundingClientRect();

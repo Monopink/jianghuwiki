@@ -1,4 +1,5 @@
 {{ define "main" }}
+  <header class="markdown jw-post-heading"><h1>{{ partial "docs/title" . }}</h1></header>
   {{ range sort .Pages "Date" "desc" }}
   <article class="jw-post jw-post-list markdown">
     <h3><a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a></h3>

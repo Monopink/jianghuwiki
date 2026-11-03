@@ -107,7 +107,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 .jw-footer { border-top: 1px solid var(--jw-color-border); margin-top: 3rem; padding-top: 1.5rem; color: var(--jw-color-muted); font-size: .875rem; }
 .jw-footer, .jw-footer a { color: var(--jw-color-muted); }
 .jw-footer svg { fill: currentColor; }
-.jw-post-list { padding-block: 1.5rem; margin: 0; border-top: 3px solid var(--jw-color-text); }
+.jw-post-list.markdown { padding: 1.5rem; margin: 0 0 1rem; background: var(--jw-color-surface); }
+.jw-post-heading.markdown { margin: 0 0 1.5rem; }
+.jw-post-meta { color: var(--jw-color-muted); font-size: .8125rem; line-height: 1.5; }
 .jw-post-container { display: flex; gap: 1.5rem; }
 .jw-post-thumbnail { flex: 0 0 25%; }
 .jw-post-thumbnail img { width: 100%; height: auto; }

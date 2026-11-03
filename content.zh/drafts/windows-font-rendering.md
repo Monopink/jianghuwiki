@@ -13,7 +13,7 @@ bookHidden: false
 
 这些年，社区里出现过不少改善 Windows 字体显示效果的方案，例如 MacType、noMeiryoUI，以及移除字体中的 hinting 信息等。
 
-### Hinting 是什么？
+## Hinting 是什么？
 
 在低屏幕分辨率或小字号下，矢量字体的线条常常会落在两个像素之间，导致笔画模糊、粗细不均或变形。
 

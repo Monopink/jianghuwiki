@@ -124,56 +124,27 @@ bookHidden: false
 {{< mermaid >}}
 gantt
     title 招投标时间轴
-    dateFormat  DDD
-    axisFormat  %j
+    dateFormat YYYY-MM-DD
+    axisFormat %m-%d
     section Bidding
-    招标文件出售时间≥5日	:b1, 001, 4d
-    可澄清、修改招标文件	:b2, 001, 4d
-    保留≥15日 可顺延	:active, b3, after b2, 15d
-    投标截止时间/开标时间	:crit, milestone, c1, after b3, 0d
-    招标人收到评标报告	:milestone, d1, 22, 0d
-    公示≥5日	:d2, after d1, 5d
-    确定中标人	:milestone, d3, after d2, 0d
-    15日内报行政监督部门	:d4, after d3, 10d
-    发出中标通知书	:milestone, d5, after d4, 0d
-    30日内缴纳10%履约保证金	:d6, after d5, 10d
-    签订合同	:milestone, d7, after d6, 0d
-    5日内退还投标保证金及利息	:d8, after d7, 5d
-    投标/投标保证金有效期90日	:active, d9, after c1, 26d
+    招标文件出售时间≥5日 :b1, 2024-01-01, 4d
+    可澄清、修改招标文件 :b2, 2024-01-01, 4d
+    保留≥15日 可顺延 :active, b3, after b2, 15d
+    投标截止时间/开标时间 :crit, milestone, c1, after b3, 0d
+    招标人收到评标报告 :milestone, d1, 2024-01-22, 0d
+    公示≥5日 :d2, after d1, 5d
+    确定中标人 :milestone, d3, after d2, 0d
+    15日内报行政监督部门 :d4, after d3, 10d
+    发出中标通知书 :milestone, d5, after d4, 0d
+    30日内缴纳10%履约保证金 :d6, after d5, 10d
+    签订合同 :milestone, d7, after d6, 0d
+    5日内退还投标保证金及利息 :d8, after d7, 5d
+    投标/投标保证金有效期90日 :active, d9, after c1, 26d
     section Tendering
-    编制投标文件时间≥20日	:a1, 001, 19d
-    可修改、撤回投标文件	:done, a2, 001, 19d
-    提出异议10日前	:a7, 001, 9d
-    截止日前撤回投标文件5日内退还保证金，不退利息	:a3, 020, 5d
-    投标截止时间/开标时间	:crit, milestone, a6, after c1, 0d
-    截止日后撤回投标文件，可以不退保证金	:milestone, a4, 021, 2d
+    编制投标文件时间≥20日 :a1, 2024-01-01, 19d
+    可修改、撤回投标文件 :done, a2, 2024-01-01, 19d
+    提出异议10日前 :a7, 2024-01-01, 9d
+    截止日前撤回投标文件5日内退还保证金，不退利息 :a3, 2024-01-20, 5d
+    投标截止时间/开标时间 :crit, milestone, a6, after c1, 0d
+    截止日后撤回投标文件，可以不退保证金 :milestone, a4, 2024-01-21, 2d
 {{< /mermaid >}}
-
-```mermaid
-gantt
-    title 招投标时间轴
-    dateFormat  DDD
-    axisFormat  %j
-    section Bidding
-    招标文件出售时间≥5日	:b1, 001, 4d
-    可澄清、修改招标文件	:b2, 001, 4d
-    保留≥15日 可顺延	:active, b3, after b2, 15d
-    投标截止时间/开标时间	:crit, milestone, c1, after b3, 0d
-    招标人收到评标报告	:milestone, d1, 22, 0d
-    公示≥5日	:d2, after d1, 5d
-    确定中标人	:milestone, d3, after d2, 0d
-    15日内报行政监督部门	:d4, after d3, 10d
-    发出中标通知书	:milestone, d5, after d4, 0d
-    30日内缴纳10%履约保证金	:d6, after d5, 10d
-    签订合同	:milestone, d7, after d6, 0d
-    5日内退还投标保证金及利息	:d8, after d7, 5d
-    投标/投标保证金有效期90日	:active, d9, after c1, 26d
-    section Tendering
-    编制投标文件时间≥20日	:a1, 001, 19d
-    可修改、撤回投标文件	:done, a2, 001, 19d
-    提出异议10日前	:a7, 001, 9d
-    截止日前撤回投标文件5日内退还保证金，不退利息	:a3, 020, 5d
-    投标截止时间/开标时间	:crit, milestone, a6, after c1, 0d
-    截止日后撤回投标文件，可以不退保证金	:milestone, a4, 021, 2d
-```
-

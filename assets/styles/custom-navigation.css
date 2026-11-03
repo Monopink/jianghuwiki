@@ -135,6 +135,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 }
 @media (max-width: 56rem) {
  :root { --jw-header-height: 60px; }
+ .jw-search-dialog { inset: 0; margin: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; padding: calc(1rem + env(safe-area-inset-top)) calc(1rem + env(safe-area-inset-right)) calc(1rem + env(safe-area-inset-bottom)) calc(1rem + env(safe-area-inset-left)); border: 0; }
+ .jw-search-dialog header { margin-bottom: .75rem; }
+ .jw-search-dialog .jw-search-results { overscroll-behavior: contain; }
  .jw-shell { display: block; padding-inline: 1rem; }
  .jw-main { padding-top: 5.5rem; }
  .jw-mobile-header { display: block; position: fixed; inset: 0 0 auto; height: 60px; padding: .5rem 1rem; background: var(--jw-color-canvas); border-bottom: 1px solid var(--jw-color-border); z-index: 500; }
@@ -148,12 +151,13 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
  .jw-primary-nav { display: none; position: fixed; inset: 0 auto 0 0; width: min(21rem,calc(100vw - 2rem)); padding: 1rem; z-index: 700; background: var(--jw-color-canvas); }
  .jw-toc { display: none; position: fixed; inset: 0 0 auto; height: auto; max-height: min(60dvh,32rem); padding: 1rem; z-index: 700; border-bottom: 3px solid var(--jw-color-text); }
  .jw-menu-open .jw-primary-nav, .jw-toc-open .jw-toc { display: flex; flex-direction: column; }
- .jw-toc-content { width: 100%; }
+ .jw-toc-content { width: 100%; min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
+ .jw-toc > .jw-panel-close { flex-shrink: 0; }
  .jw-toc-desktop { display: none; }
  .jw-toc-mobile:not([hidden]) { display: block; }
- .jw-toc-mobile ul { display: grid; grid-template-columns: 1fr; gap: .125rem; }
+ .jw-toc-mobile ul { display: grid; grid-template-columns: 1fr; gap: 0; }
  .jw-toc-mobile li { margin: 0; padding-inline-start: 0; }
- .jw-toc-mobile a { min-height: 44px; align-content: center; padding: .5rem .75rem; }
+ .jw-toc-mobile a { min-height: 44px; align-content: center; padding: .25rem .75rem; font-size: 1rem; line-height: 1.5; }
  .jw-primary-nav-content { min-height: 0; overflow-y: auto; }
  .jw-panel-close { display: block; align-self: end; min-width: 44px; min-height: 44px; }
  .jw-nav-link, .jw-section summary, .jw-toc a { min-height: 44px; }

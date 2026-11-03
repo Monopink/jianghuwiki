@@ -66,6 +66,11 @@
     mobileLevel = level;
     columns.forEach((column) => column.classList.toggle('is-mobile-active', column.dataset.jwLevel === level));
     back.hidden = level === 'sections';
+    if (compactLayout.matches && trigger.getAttribute('aria-expanded') === 'true' && !popover.hidden) {
+      const column = columns.find(column => column.dataset.jwLevel === level);
+      [...(column?.querySelectorAll('a') || [])].find(link => link.getClientRects().length)
+        ?.focus({ preventScroll: true });
+    }
   }
 
   function placePopover() {
@@ -78,11 +83,13 @@
   }
 
   function closeMenu() {
+    const restoreFocus = popover.contains(document.activeElement);
     trigger.setAttribute('aria-expanded', 'false');
     popover.hidden = true;
     backdrop.hidden = true;
     setMobileLevel('sections');
     document.body.classList.remove('jw-bookmarks-open');
+    if (restoreFocus) trigger.focus({ preventScroll: true });
   }
 
   function openMenu() {
@@ -148,6 +155,7 @@
   document.addEventListener('keydown', (event) => {
     if (document.querySelector('.jw-search-dialog[open]')) return;
     if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+      event.preventDefault();
       closeMenu();
       trigger.focus();
     }

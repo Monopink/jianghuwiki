@@ -17,7 +17,7 @@ const activeKind = () => document.body.classList.contains("jw-menu-open") ? "men
 const setBackgroundInert = (enabled) => {
   if (enabled) {
     const active = activeKind();
-    const candidates = [document.querySelector(".jw-main"), active === "menu" ? tocPanel : menuPanel, ...[...document.body.children].filter((node) => !node.matches(".jw-shell, .jw-menu-backdrop, .jw-toc-backdrop, .jw-search-dialog"))].filter(Boolean);
+    const candidates = [document.querySelector(".jw-main"), active === "menu" ? tocPanel : menuPanel, ...[...document.body.children].filter((node) => !node.matches(".jw-shell, .jw-menu-backdrop, .jw-toc-backdrop, .jw-search-dialog, [data-jw-popover], [data-jw-backdrop]"))].filter(Boolean);
     inerted = new Map(candidates.map((node) => [node, node.inert]));
     inerted.forEach((_, node) => { node.inert = true; });
   } else {
@@ -29,7 +29,7 @@ const setBackgroundInert = (enabled) => {
 const unlockScroll = () => {
   document.body.classList.remove("jw-panel-scroll-locked");
   document.body.style.removeProperty("top");
-  window.scrollTo(0, lockedScrollY);
+  window.scrollTo({ top: lockedScrollY, behavior: "instant" });
 };
 
 const closePanels = ({ restore = false, unlock = true } = {}) => {
@@ -39,7 +39,7 @@ const closePanels = ({ restore = false, unlock = true } = {}) => {
   [menuBackdrop, tocBackdrop].filter(Boolean).forEach((backdrop) => { backdrop.hidden = true; });
   setBackgroundInert(false);
   if (unlock && wasScrollLocked) unlockScroll();
-  if (restore && returnFocus?.isConnected) returnFocus.focus();
+  if (restore && returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
   returnFocus = null;
 };
 
@@ -67,7 +67,11 @@ tocBackdrop?.addEventListener("click", () => closePanels({ restore: true }));
 closeButtons.forEach((button) => button.addEventListener("click", () => closePanels({ restore: true })));
 
 document.addEventListener("keydown", (event) => {
+  if (event.defaultPrevented) return;
   if (document.querySelector(".jw-search-dialog[open]")) return;
+  const bookmarks = document.querySelector('[data-jw-popover]:not([hidden])');
+  // The bookmark menu owns Escape while it is above the navigation drawer.
+  if (bookmarks && event.key === "Escape") return;
   const kind = activeKind();
   if (!kind) return;
   if (event.key === "Escape") {
@@ -75,9 +79,9 @@ document.addEventListener("keydown", (event) => {
     return;
   }
   if (event.key !== "Tab") return;
-  const panel = panelFor(kind);
+  const panel = bookmarks || panelFor(kind);
   const focusable = [...(panel?.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])') || [])].filter((item) => !item.hidden && item.getClientRects().length);
-  if (!focusable.length) { event.preventDefault(); panel?.focus(); return; }
+  if (!focusable.length) { event.preventDefault(); panel?.focus({ preventScroll: true }); return; }
   const first = focusable[0];
   const last = focusable.at(-1);
   if (event.shiftKey && (document.activeElement === first || !panel.contains(document.activeElement))) { event.preventDefault(); last.focus(); }
@@ -87,17 +91,19 @@ document.addEventListener("keydown", (event) => {
 tocPanel?.addEventListener("click", (event) => {
   const link = event.target.closest(".jw-toc-mobile a[href^='#']");
   if (!link) return;
+  event.preventDefault();
   let target;
   try { target = document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return; }
   if (target) {
     if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
-    const destination = target.getBoundingClientRect().top + (document.body.classList.contains("jw-panel-scroll-locked") ? lockedScrollY : window.scrollY);
+    const destination = target.getBoundingClientRect().top + (document.body.classList.contains("jw-panel-scroll-locked") ? lockedScrollY : window.scrollY) - (document.querySelector('.jw-mobile-header')?.getBoundingClientRect().height || 0) - 16;
     closePanels({ unlock: false });
     if (document.body.classList.contains("jw-panel-scroll-locked")) {
       document.body.classList.remove("jw-panel-scroll-locked");
       document.body.style.removeProperty("top");
-      window.scrollTo(0, destination);
     }
+    history.pushState(null, '', link.hash);
+    window.scrollTo({ top: Math.max(0, destination), behavior: "instant" });
     target.focus({ preventScroll: true });
   } else closePanels();
 });

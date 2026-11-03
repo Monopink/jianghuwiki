@@ -13,7 +13,8 @@
   const status = dialog.querySelector('.jw-search-status');
   const searchDataURL = '{{ partial "docs/links/resource-precache" $searchData }}';
   const searchEngineURL = '{{ "minisearch.min.js" | relURL }}';
-  let index, loading, debounce, returnFocus;
+  const previewURL = '{{ (resources.Get "search-preview.js" | resources.Minify | resources.Fingerprint).RelPermalink }}';
+  let index, loading, debounce, returnFocus, previews;
   const desktopMotion = window.matchMedia('(min-width: 56.001rem) and (prefers-reduced-motion: no-preference)');
   const openingAnimations = [];
   function clearOpeningAnimations() {
@@ -23,11 +24,13 @@
     if (index) return;
     if (!loading) loading = Promise.all([
       import(searchEngineURL),
+      import(previewURL),
       fetch(searchDataURL).then(response => {
         if (!response.ok) throw new Error('Search index unavailable');
         return response.json();
       })
-    ]).then(async ([engine, records]) => {
+    ]).then(async ([engine, previewModule, records]) => {
+      previews = previewModule;
       const MiniSearch = engine.default || window.MiniSearch;
       const next = new MiniSearch({
         fields: ['title', 'content', 'section'],
@@ -55,9 +58,20 @@
         const title = document.createElement('strong');
         const meta = document.createElement('small');
         link.href = hit.href;
-        title.textContent = hit.title;
-        meta.textContent = `${hit.type === 'page' ? '文档' : hit.type === 'app' ? '应用' : '书签'} · ${hit.section || ''}`;
-        link.append(title, meta); row.append(link); results.append(row);
+        const termsFor = field => Object.entries(hit.match || {})
+          .filter(([, fields]) => fields.includes(field)).map(([term]) => term);
+        previews.appendHighlighted(title, hit.title, termsFor('title'));
+        meta.append(document.createTextNode(`${hit.type === 'page' ? '文档' : hit.type === 'app' ? '应用' : '书签'} · `));
+        previews.appendHighlighted(meta, hit.section || '', termsFor('section'));
+        const excerpt = previews.preview(hit.content, termsFor('content'));
+        const snippet = document.createElement('p');
+        snippet.className = 'jw-search-snippet';
+        if (excerpt.leading) snippet.append(document.createTextNode('…'));
+        previews.appendHighlighted(snippet, excerpt.text, termsFor('content'), excerpt.ranges);
+        if (excerpt.trailing) snippet.append(document.createTextNode('…'));
+        link.append(title, meta);
+        if (excerpt.text) link.append(snippet);
+        row.append(link); results.append(row);
       }
     } catch (error) {
       if (input.value.trim() !== query) return;

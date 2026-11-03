@@ -15,12 +15,12 @@
 .jw-search { position: relative; margin: .75rem 0; }
 
 
-.jw-search-trigger, .jw-search-dialog input { width: 100%; min-height: 44px; padding: .5rem .75rem; border: var(--jw-search-border-width) solid var(--jw-search-border-color); background: var(--jw-color-canvas); color: var(--jw-color-text); border-radius: 0; font: inherit; }
+.jw-search-trigger, .jw-search-dialog input { width: 100%; min-height: 44px; padding: .5rem .75rem; border: 3px solid var(--jw-search-border-color); background: var(--jw-color-canvas); color: var(--jw-color-text); border-radius: 0; font: inherit; }
 .jw-search-trigger { display: flex; justify-content: space-between; align-items: center; font-size: .875rem; color: var(--jw-color-muted); }
 .jw-search-trigger kbd { font-size: .7rem; font-family: inherit; }
 .jw-search-trigger:hover, .jw-search-trigger:focus-visible { border-color: var(--jw-color-search-hover); color: var(--jw-color-search-hover); }
 .jw-search-dialog input:focus { border-color: var(--jw-color-accent); }
-.jw-search-dialog { margin: 8dvh auto 0; height: min(80dvh, 48rem); overflow: hidden; width: min(44rem, calc(100vw - 2rem)); max-height: min(80dvh, 48rem); padding: 1.5rem; border: var(--jw-search-border-width) solid var(--jw-search-border-color); border-radius: 0; background: var(--jw-color-canvas); color: var(--jw-color-text); }
+.jw-search-dialog { margin: 8dvh auto 0; height: min(80dvh, 48rem); overflow: hidden; width: min(44rem, calc(100vw - 2rem)); max-height: min(80dvh, 48rem); padding: 1.5rem; border: var(--jw-search-dialog-border-width) solid var(--jw-search-border-color); border-radius: 0; background: var(--jw-color-canvas); color: var(--jw-color-text); }
 .jw-search-dialog[open] { display: flex; flex-direction: column; }
 .jw-search-dialog form, .jw-search-dialog header { flex-shrink: 0; }
 .jw-search-dialog input:focus { outline: none; box-shadow: none; }
@@ -34,6 +34,8 @@
 .jw-search-results a:hover, .jw-search-results a:focus-visible { background: var(--jw-color-surface-hover); color: var(--jw-color-accent); }
 .jw-search-results strong, .jw-search-results small { display: block; }
 .jw-search-results small { margin-top: .25rem; color: var(--jw-color-muted); }
+.jw-search-snippet { margin: .5rem 0 0; color: var(--jw-color-body); font-size: .8125rem; line-height: 1.65; overflow-wrap: anywhere; }
+.jw-search-results mark { padding: 0; background: var(--jw-color-selection); color: var(--jw-color-text); font-weight: 650; }
 html:has(.jw-search-dialog[open]) { overflow: hidden; }
 
 .jw-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }

@@ -541,7 +541,7 @@ a.book-btn[href]:focus-visible {
   border: 1px solid transparent;
   border-radius: 0;
   background: var(--home-surface);
-  color: var(--jw-color-text);
+  color: var(--search-color, var(--jw-color-text));
   cursor: pointer;
   text-shadow: none;
   -webkit-text-stroke: 0;

@@ -12,21 +12,16 @@
         const link = item.querySelector(":scope > a");
         if (!link) return;
         const row = document.createElement("li");
+        row.className = "jw-toc-mobile-level-2";
         row.append(link.cloneNode(true));
         list.append(row);
-        const children = item.querySelector(":scope > ul");
-        children?.querySelectorAll(":scope > li > a").forEach((childLink) => {
-          const child = document.createElement("li");
-          child.className = "jw-toc-mobile-child";
-          child.append(childLink.cloneNode(true));
-          list.append(child);
-        });
       });
       mobile.replaceChildren(list);
       mobile.hidden = false;
     }
   }
-  const links = [...(desktop?.querySelectorAll('#TableOfContents a[href*="#"]') || [])];
+  const tocRoot = desktop?.querySelector("#TableOfContents > ul");
+  const links = [...(tocRoot?.querySelectorAll(":scope > li > a, :scope > li > ul > li > a") || [])];
   const content = document.querySelector("[data-reading-content]");
   if (!panel || !desktop || !links.length || !content || !desktopQuery.matches) return;
 
@@ -47,21 +42,25 @@
   let current = null;
   let applyBranches = () => {};
 
-  const rootList = desktop.querySelector("#TableOfContents > ul");
+  const rootList = tocRoot;
   const branches = [];
   if (rootList) {
-    rootList.querySelectorAll("li").forEach((item, index) => {
+    rootList.querySelectorAll(":scope > li").forEach((item) => {
       const childList = [...item.children].find((child) => child.tagName === "UL");
-      const link = [...item.children].find((child) => child.tagName === "A");
-      if (!childList || !link) return;
-      branches.push({ item, childList, link });
+      if (!childList) return;
+      const branch = document.createElement("div");
+      branch.className = "jw-toc-branch is-collapsed";
+      item.insertBefore(branch, childList);
+      branch.append(childList);
+      branches.push({ item, branch });
     });
   }
   applyBranches = () => {
     const active = current?.link;
     branches.forEach((branch) => {
       const autoOpen = Boolean(active && branch.item.contains(active));
-      branch.childList.hidden = !autoOpen;
+      branch.branch.classList.toggle("is-collapsed", !autoOpen);
+      branch.branch.inert = !autoOpen;
     });
   };
 
@@ -112,6 +111,7 @@
     }
   };
   const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+  applyBranches();
   measure();
   update();
   window.addEventListener("scroll", schedule, { passive: true });

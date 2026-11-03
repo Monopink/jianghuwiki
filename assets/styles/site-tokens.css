@@ -16,6 +16,20 @@
   --jw-color-nav-nested: #9a9da1;
   --jw-color-border: #929491;
   --jw-color-selection: #fbe8e3;
+  --jw-color-content-surface: var(--jw-color-surface);
+  --jw-color-content-inset: var(--jw-color-surface-hover);
+  --jw-color-quote-surface: var(--jw-color-canvas);
+  --jw-color-border-soft: var(--jw-color-border);
+  --jw-color-border-subtle: var(--jw-color-surface-hover);
+  --jw-color-border-strong: #747872;
+  --jw-color-text-subtle: #777b75;
+  --jw-color-overlay: rgb(0 0 0 / 40%);
+  --jw-color-overlay-strong: rgb(0 0 0 / 60%);
+  --jw-shadow-popover: 0 .4rem 1rem rgb(0 0 0 / 16%);
+  --jw-color-picker-label: #fff;
+  --jw-color-picker-marker: #fff;
+  --jw-color-picker-marker-outline: #000;
+  --jw-shadow-picker-label: 0 1px 2px rgb(0 0 0 / 55%);
   --jw-color-focus: var(--jw-color-accent);
   --jw-search-dialog-border-width: 3px;
   --jw-search-border-color: var(--jw-color-border);
@@ -53,21 +67,10 @@
   --color-button-text: var(--jw-color-canvas);
   --border-radius: var(--jw-radius-control);
   --menu-width: var(--jw-nav-width);
-  --gray-97: var(--jw-color-canvas);
-  --gray-95: var(--jw-color-surface);
-  --gray-90: var(--jw-color-surface-hover);
-  --gray-85: var(--jw-color-border);
-  --gray-80: #747872;
-  --gray-60: #777b75;
-  --gray-50: var(--jw-color-muted);
-  --gray-30: #3f433e;
-  --gray-100: var(--jw-color-surface);
-  --gray-200: var(--jw-color-border);
+  --gray-100: var(--jw-color-content-surface);
+  --gray-200: var(--jw-color-border-soft);
   --gray-500: var(--jw-color-muted);
   --icon-filter: brightness(0);
-  --home-surface: var(--jw-color-surface);
-  --home-surface-hover: var(--jw-color-canvas);
-  --button-hover-background: var(--jw-color-surface-hover);
 }
 
 :root[data-theme="dark"] {
@@ -83,6 +86,13 @@
   --jw-color-nav-nested: #737a81;
   --jw-color-border: #626560;
   --jw-color-selection: #49312b;
+  --jw-color-content-surface: rgb(255 255 255 / 4%);
+  --jw-color-content-inset: rgb(255 255 255 / 8%);
+  --jw-color-quote-surface: rgb(255 255 255 / 2%);
+  --jw-color-border-soft: rgb(255 255 255 / 20%);
+  --jw-color-border-subtle: rgb(255 255 255 / 8%);
+  --jw-color-border-strong: rgb(255 255 255 / 30%);
+  --jw-color-text-subtle: #808080;
   --jw-color-focus: var(--jw-color-accent);
   --jw-search-dialog-border-width: 2px;
   --jw-search-border-color: #484d52;
@@ -91,21 +101,6 @@
   --jw-color-success: #83c99d;
   --jw-color-warning: #e7c46b;
   --jw-color-danger: #ff968a;
-  --body-header-background: var(--jw-color-canvas);
-  --color-link: var(--jw-color-text);
-  --color-link-hover: var(--jw-color-accent);
-  --color-button-text: var(--jw-color-canvas);
-  --gray-97: rgb(255 255 255 / 2%);
-  --gray-95: rgb(255 255 255 / 4%);
-  --gray-90: rgb(255 255 255 / 8%);
-  --gray-85: rgb(255 255 255 / 20%);
-  --gray-80: rgb(255 255 255 / 30%);
-  --gray-60: #808080;
-  --gray-50: #969899;
-  --gray-30: #c3c5c7;
-  --gray-100: rgb(255 255 255 / 4%);
-  --gray-200: rgb(255 255 255 / 20%);
-  --gray-500: #969899;
   --icon-filter: brightness(0) invert(0.93);
 }
 
@@ -123,29 +118,21 @@
     --jw-color-nav-nested: #737a81;
     --jw-color-border: #626560;
     --jw-color-selection: #49312b;
+    --jw-color-content-surface: rgb(255 255 255 / 4%);
+    --jw-color-content-inset: rgb(255 255 255 / 8%);
+    --jw-color-quote-surface: rgb(255 255 255 / 2%);
+    --jw-color-border-soft: rgb(255 255 255 / 20%);
+    --jw-color-border-subtle: rgb(255 255 255 / 8%);
+    --jw-color-border-strong: rgb(255 255 255 / 30%);
+    --jw-color-text-subtle: #808080;
     --jw-color-focus: var(--jw-color-accent);
     --jw-search-dialog-border-width: 2px;
-  --jw-search-border-color: #484d52;
-  --jw-color-search-hover: #b39aff;
+    --jw-search-border-color: #484d52;
+    --jw-color-search-hover: #b39aff;
     --jw-color-bookmarks-hover: #63d99a;
     --jw-color-success: #83c99d;
     --jw-color-warning: #e7c46b;
     --jw-color-danger: #ff968a;
-    --body-header-background: var(--jw-color-canvas);
-    --color-link: var(--jw-color-text);
-    --color-link-hover: var(--jw-color-accent);
-    --color-button-text: var(--jw-color-canvas);
-    --gray-97: rgb(255 255 255 / 2%);
-    --gray-95: rgb(255 255 255 / 4%);
-    --gray-90: rgb(255 255 255 / 8%);
-    --gray-85: rgb(255 255 255 / 20%);
-    --gray-80: rgb(255 255 255 / 30%);
-    --gray-60: #808080;
-    --gray-50: #969899;
-    --gray-30: #c3c5c7;
-    --gray-100: rgb(255 255 255 / 4%);
-    --gray-200: rgb(255 255 255 / 20%);
-    --gray-500: #969899;
     --icon-filter: brightness(0) invert(0.93);
   }
 }

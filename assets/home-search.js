@@ -1,7 +1,6 @@
 const input = document.querySelector("#home-search-input");
 const searchColumns = document.querySelectorAll(".home-search-links");
 const quickDialRows = document.querySelectorAll(".quick-dial-row");
-const rainbowColors = ["#ff7048", "#ffb347", "#ffe66d", "#35c9a5", "#45aaf2", "#8f7cff", "#ff6fb5"];
 const delayStep = 70;
 const duration = 900;
 const searchRows = Math.max(...Array.from(searchColumns, (column) => column.children.length), 0);
@@ -17,7 +16,6 @@ searchColumns.forEach((column) => {
 quickDialRows.forEach((row, index) => {
   const delay = (searchRows + index) * delayStep;
   row.style.setProperty("--intro-delay", `${delay}ms`);
-  row.style.setProperty("--quick-dial-color", rainbowColors[index % rainbowColors.length]);
   introDuration = Math.max(introDuration, delay + duration);
 });
 

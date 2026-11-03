@@ -1,7 +1,7 @@
 .xrazor-page {
-  --xrazor-panel: var(--home-surface);
-  --xrazor-line: var(--gray-85);
-  --xrazor-muted: var(--gray-50);
+  --xrazor-panel: var(--jw-color-surface);
+  --xrazor-line: var(--jw-color-border-soft);
+  --xrazor-muted: var(--jw-color-muted);
 }
 
 .xrazor-header,
@@ -19,15 +19,15 @@
 .xrazor-file-input span { display: inline-block; }
 .xrazor-toolbar select {
   background: var(--xrazor-panel);
-  border: 1px solid var(--gray-85);
-  color: var(--body-font-color);
+  border: 1px solid var(--jw-color-border-soft);
+  color: var(--jw-color-text);
   font: inherit;
   min-height: 1.8rem;
   padding: .18rem 1.8rem .18rem .5rem;
 }
 
 .xrazor-toolbar select:focus-visible {
-  border-color: var(--color-link-hover);
+  border-color: var(--jw-color-accent);
   outline: none;
 }
 .xrazor-toolbar { border-bottom: 1px solid var(--xrazor-line); padding-bottom: .9rem; }
@@ -37,11 +37,11 @@
 .xrazor-workspace { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1rem; }
 .xrazor-panel { display: grid; gap: .45rem; min-width: 0; }
 .xrazor-panel-title { color: var(--xrazor-muted); font-size: var(--jw-text-caption); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.xrazor-panel textarea { background: var(--xrazor-panel); border: 1px solid var(--xrazor-line); box-sizing: border-box; color: var(--body-font-color); font: var(--jw-text-small)/1.5 var(--jw-font-mono); min-height: 30rem; padding: .8rem; resize: vertical; width: 100%; }
-.xrazor-panel textarea:focus { border-color: var(--color-link); outline: 0; }
+.xrazor-panel textarea { background: var(--xrazor-panel); border: 1px solid var(--xrazor-line); box-sizing: border-box; color: var(--jw-color-text); font: var(--jw-text-small)/1.5 var(--jw-font-mono); min-height: 30rem; padding: .8rem; resize: vertical; width: 100%; }
+.xrazor-panel textarea:focus { border-color: var(--jw-color-text); outline: 0; }
 .xrazor-footer { border-top: 1px solid var(--xrazor-line); margin-top: 1rem; padding-top: .9rem; }
 .xrazor-footer [data-xrazor-status] { color: var(--xrazor-muted); font-size: var(--jw-text-caption); }
-.xrazor-footer [data-xrazor-status].is-error { color: var(--color-link); }
+.xrazor-footer [data-xrazor-status].is-error { color: var(--jw-color-text); }
 
 @media (max-width: 720px) {
   .xrazor-header,

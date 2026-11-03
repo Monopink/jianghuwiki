@@ -9,8 +9,8 @@
 }
 html { font-size: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--body-background);
-  color: var(--body-font-color);
+  background: var(--jw-color-canvas);
+  color: var(--jw-color-text);
   font-family: var(--jw-font-body);
   font-size: var(--jw-text-body);
 }
@@ -46,8 +46,8 @@ input[type="submit"],
 .button-secondary {
   border: 1px solid transparent;
   border-radius: 0;
-  background: var(--home-surface);
-  color: var(--body-font-color);
+  background: var(--jw-color-surface);
+  color: var(--jw-color-text);
   cursor: pointer;
   text-shadow: none;
   -webkit-text-stroke: 0;
@@ -64,9 +64,9 @@ input[type="submit"]:hover,
 input[type="submit"]:focus-visible,
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: var(--button-hover-background);
-  border-color: var(--gray-80);
-  color: var(--body-font-color);
+  background: var(--jw-color-surface-hover);
+  border-color: var(--jw-color-border-strong);
+  color: var(--jw-color-text);
   opacity: 1;
   outline: none;
 }
@@ -74,10 +74,10 @@ input[type="submit"]:focus-visible,
 .button-primary,
 .book-btn[href],
 a.book-btn[href] {
-  border: 1px solid var(--color-link);
+  border: 1px solid var(--jw-color-text);
   border-radius: 0;
-  background: var(--color-link);
-  color: var(--color-button-text);
+  background: var(--jw-color-text);
+  color: var(--jw-color-canvas);
   cursor: pointer;
   text-shadow: none;
   -webkit-text-stroke: 0;
@@ -92,9 +92,9 @@ a.book-btn[href] {
 .book-btn[href]:focus-visible,
 a.book-btn[href]:hover,
 a.book-btn[href]:focus-visible {
-  background: var(--color-link-hover);
-  border-color: var(--color-link-hover);
-  color: var(--color-button-text);
+  background: var(--jw-color-accent);
+  border-color: var(--jw-color-accent);
+  color: var(--jw-color-canvas);
   opacity: 1;
   outline: none;
 }
@@ -188,10 +188,10 @@ a.book-btn[href]:focus-visible {
   padding: 0 0.25rem;
   border: 0;
   border-radius: 0;
-  background: var(--gray-90);
+  background: var(--jw-color-content-inset);
 }
 
-.jw-code-block { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2.75rem; margin-block: 1rem; background: var(--gray-95); }
+.jw-code-block { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2.75rem; margin-block: 1rem; background: var(--jw-color-content-surface); }
 .markdown .jw-code-block pre { min-width: 0; margin: 0; padding: 1rem; }
 .jw-code-copy { position: absolute; inset-block-start: .5rem; inset-inline-end: .375rem; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: .375rem; border: 1px solid transparent; background: transparent; color: var(--jw-color-muted); }
 .jw-code-copy svg { display: block; width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
@@ -202,15 +202,15 @@ a.book-btn[href]:focus-visible {
 .markdown pre {
   border: 0;
   border-radius: 0;
-  background: var(--gray-95);
+  background: var(--jw-color-content-surface);
 }
 
 .markdown blockquote {
   margin: 1rem 0;
   padding: 0.5rem 1rem 0.5rem 0.75rem;
-  border-inline-start: 4px solid var(--gray-80);
+  border-inline-start: 4px solid var(--jw-color-border-strong);
   border-radius: 0;
-  background: var(--gray-97);
+  background: var(--jw-color-quote-surface);
 }
 
 .markdown blockquote::before {
@@ -242,11 +242,11 @@ a.book-btn[href]:focus-visible {
 }
 
 .markdown table tbody tr:nth-child(even) {
-  background: var(--gray-95);
+  background: var(--jw-color-content-surface);
 }
 
 .jw-layout-apps .bookmark-table-apps tbody tr:nth-child(odd) {
-  background: var(--gray-95);
+  background: var(--jw-color-content-surface);
 }
 
 .jw-layout-apps .bookmark-table-apps tbody tr:nth-child(even) {
@@ -254,7 +254,7 @@ a.book-btn[href]:focus-visible {
 }
 
 .markdown hr {
-  background: var(--gray-90);
+  background: var(--jw-color-content-inset);
 }
 
 /* Structured bookmark and application directory tables. */
@@ -313,7 +313,7 @@ a.book-btn[href]:focus-visible {
   max-height: 22px;
   margin: 0.15rem 0.25rem 0.15rem 0;
   vertical-align: middle;
-  fill: var(--body-font-color);
+  fill: var(--jw-color-text);
 }
 
 .bookmark-extra-link {
@@ -352,7 +352,7 @@ a.book-btn[href]:focus-visible {
 }
 
 .fill-font-color {
-  fill: var(--body-font-color);
+  fill: var(--jw-color-text);
 }
 
 .home-search-form {
@@ -369,8 +369,8 @@ a.book-btn[href]:focus-visible {
   min-width: 0;
   height: var(--home-search-control-height);
   box-sizing: border-box;
-  border: 3px solid var(--gray-85);
-  background: var(--body-background);
+  border: 3px solid var(--jw-color-border-soft);
+  background: var(--jw-color-canvas);
 }
 
 .home-search-form input {
@@ -382,7 +382,7 @@ a.book-btn[href]:focus-visible {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: var(--body-font-color);
+  color: var(--jw-color-text);
 }
 
 .home-search-form input:focus {
@@ -403,25 +403,25 @@ a.book-btn[href]:focus-visible {
   appearance: none;
   -webkit-appearance: none;
   border: 0;
-  border-inline-start: 3px solid var(--gray-85);
+  border-inline-start: 3px solid var(--jw-color-border-soft);
   border-radius: 0;
   background: transparent;
-  color: var(--body-font-color);
+  color: var(--jw-color-text);
   cursor: pointer;
   outline: none;
   transition: background-color 160ms ease, color 160ms ease;
 }
 
 .home-search .home-search-toggle:hover {
-  background: var(--gray-95);
+  background: var(--jw-color-content-surface);
 }
 
 .home-search .home-search-toggle[aria-expanded="true"] {
-  background: var(--button-hover-background);
+  background: var(--jw-color-surface-hover);
 }
 
 .home-search .home-search-toggle:focus-visible {
-  background: var(--button-hover-background);
+  background: var(--jw-color-surface-hover);
 }
 
 .home-search .home-search-toggle-icon {
@@ -443,15 +443,15 @@ a.book-btn[href]:focus-visible {
   max-height: 30rem;
   overflow-y: auto;
   border: 2px solid var(--jw-color-border);
-  background: var(--body-background);
-  box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 16%);
+  background: var(--jw-color-canvas);
+  box-shadow: var(--jw-shadow-popover);
 }
 
 .home-search-result,
 .home-search-result:visited {
   display: block;
   padding: 0.35rem 0.65rem;
-  color: var(--body-font-color) !important;
+  color: var(--jw-color-text) !important;
   text-decoration: none;
 }
 
@@ -482,13 +482,13 @@ a.book-btn[href]:focus-visible {
 }
 
 .home-search-result.is-selected {
-  background: var(--button-hover-background);
+  background: var(--jw-color-surface-hover);
   outline: none;
 }
 
 .home-search-result:hover,
 .home-search-result:focus-visible {
-  background: var(--button-hover-background);
+  background: var(--jw-color-surface-hover);
   outline: none;
 }
 
@@ -504,7 +504,7 @@ a.book-btn[href]:focus-visible {
 
 .home-search-result small,
 .home-search-empty {
-  color: var(--gray-60);
+  color: var(--jw-color-text-subtle);
   font-size: var(--jw-text-caption);
 }
 
@@ -528,7 +528,7 @@ a.book-btn[href]:focus-visible {
   padding: 0.5rem 0.65rem;
   border: 1px solid var(--jw-color-border);
   border-radius: 0;
-  color: var(--body-font-color);
+  color: var(--jw-color-text);
   white-space: nowrap;
   text-decoration: none;
 }
@@ -557,7 +557,7 @@ a.book-btn[href]:focus-visible {
   padding: 0.18rem 0.5rem;
   border: 1px solid transparent;
   border-radius: 0;
-  background: var(--home-surface);
+  background: var(--jw-color-surface);
   color: var(--search-color, var(--jw-color-text));
   cursor: pointer;
   text-shadow: none;
@@ -577,7 +577,7 @@ a.book-btn[href]:focus-visible {
 .home-search-link:hover,
 .home-search-link:focus-visible {
   border-color: var(--search-color);
-  background: color-mix(in srgb, var(--search-color) 12%, var(--home-surface));
+  background: color-mix(in srgb, var(--search-color) 12%, var(--jw-color-surface));
   color: var(--search-color);
   outline: none;
 }
@@ -595,7 +595,7 @@ a.book-btn[href]:focus-visible {
   margin: 0;
   padding: 0.35rem 0.45rem;
   border: 1px solid transparent;
-  background: var(--home-surface);
+  background: var(--jw-color-surface);
   min-width: 0;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
@@ -634,8 +634,8 @@ a.book-btn[href]:focus-visible {
 
 .quick-dial-row:hover,
 .quick-dial-row:focus-within {
-  border-color: var(--quick-dial-color, var(--color-link));
-  background: var(--button-hover-background);
+  border-color: var(--quick-dial-color, var(--jw-color-text));
+  background: var(--jw-color-surface-hover);
 }
 
 /* Enter immediately; the base transition preserves the fade on exit. */
@@ -684,7 +684,7 @@ a.book-btn[href]:focus-visible {
 }
 
 .home-effects-intro .quick-dial-row::after {
-  --intro-color: var(--quick-dial-color, var(--color-link));
+  --intro-color: var(--quick-dial-color, var(--jw-color-text));
 }
 
 @media (prefers-reduced-motion: reduce) {

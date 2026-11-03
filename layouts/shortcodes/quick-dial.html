@@ -1,11 +1,14 @@
 {{ $data := hugo.Data.home.quicklinks }}
+{{ $palette := hugo.Data.design.quickDialPalette }}
+{{ $row := 0 }}
 <section class="quick-dial home-effects-intro" aria-labelledby="quick-dial-title">
   <h2 id="quick-dial-title">📞快速拨号</h2>
   {{ range $data.groups }}
   <section class="quick-dial-group" aria-label="{{ .name }}">
     <h3>{{ .name }}</h3>
     {{ range .sections }}
-    <div class="quick-dial-row">
+    <div class="quick-dial-row" style="--quick-dial-color: {{ index $palette (mod $row (len $palette)) }};">
+      {{ $row = add $row 1 }}
       <span class="quick-dial-label">{{ .name }}</span>
       <span class="quick-dial-links">
         {{ range .links }}<a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ end }}

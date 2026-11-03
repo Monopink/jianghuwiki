@@ -26,7 +26,7 @@
 .jw-search-dialog[open] { display: flex; flex-direction: column; }
 .jw-search-dialog form, .jw-search-dialog header { flex-shrink: 0; }
 .jw-search-dialog input:focus { outline: none; box-shadow: none; }
-.jw-search-dialog::backdrop { background: rgb(0 0 0 / 60%); }
+.jw-search-dialog::backdrop { background: var(--jw-color-overlay-strong); }
 .jw-search-dialog header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .jw-search-dialog h2 { margin: 0; font-size: var(--jw-text-heading-small); }
 .jw-search-status { min-height: 1.5em; flex-shrink: 0; color: var(--jw-color-muted); font-size: var(--jw-text-caption); }
@@ -163,7 +163,7 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
  .jw-primary-nav-content { min-height: 0; overflow-y: auto; }
  .jw-panel-close { display: block; align-self: end; min-width: 44px; min-height: 44px; }
  .jw-nav-link, .jw-section summary, .jw-toc a { min-height: 44px; }
- .jw-menu-backdrop:not([hidden]), .jw-toc-backdrop:not([hidden]) { display: block; position: fixed; inset: 0; background: rgb(0 0 0 / 40%); z-index: 600; }
+ .jw-menu-backdrop:not([hidden]), .jw-toc-backdrop:not([hidden]) { display: block; position: fixed; inset: 0; background: var(--jw-color-overlay); z-index: 600; }
 .jw-panel-scroll-locked { position: fixed; inset-inline: 0; width: 100%; overflow: hidden; }
  .jw-post-container { flex-direction: column; }
 }

@@ -18,10 +18,10 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  border: 1px solid var(--gray-80);
+  border: 1px solid var(--jw-color-border-strong);
   border-radius: 0;
   background: transparent;
-  color: var(--body-font-color);
+  color: var(--jw-color-text);
   font: inherit;
   padding: 0.3rem 0.4rem;
 }
@@ -40,7 +40,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--gray-80);
+  border: 1px solid var(--jw-color-border-strong);
   cursor: crosshair;
   touch-action: none;
 }
@@ -53,8 +53,8 @@
   z-index: 1;
   pointer-events: none;
   box-sizing: border-box;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 1px #000;
+  border: 2px solid var(--jw-color-picker-marker);
+  box-shadow: 0 0 0 1px var(--jw-color-picker-marker-outline);
 }
 
 .color-picker-page .color-picker-canvas-marker {
@@ -84,20 +84,20 @@
   margin: 0;
   padding: 0.75rem 0;
   border: 0;
-  border-top: 1px solid var(--gray-85);
+  border-top: 1px solid var(--jw-color-border-soft);
 }
 
 .color-picker-page .color-picker-group legend { padding: 0 0.35rem 0 0; font-weight: bold; }
 
 .color-picker-page .color-picker-channel { grid-template-columns: 1.1rem 1.5rem minmax(0, 1fr); }
-.color-picker-page .color-picker-channel input[type="radio"] { accent-color: var(--color-link); }
+.color-picker-page .color-picker-channel input[type="radio"] { accent-color: var(--jw-color-text); }
 .color-picker-page .color-picker-channel span { font-weight: bold; }
 
 .color-picker-page .color-picker-palette {
   max-width: 70rem;
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--gray-85);
+  border-top: 1px solid var(--jw-color-border-soft);
 }
 
 .color-picker-page .color-picker-palette-add {
@@ -121,7 +121,7 @@
 .color-picker-page .color-picker-palette-add:focus-visible,
 .color-picker-page .color-picker-palette-remove:hover,
 .color-picker-page .color-picker-palette-remove:focus-visible {
-  color: var(--color-link-hover);
+  color: var(--jw-color-accent);
   outline: none;
 }
 
@@ -148,9 +148,8 @@
   padding: 0.5rem;
   border: 0;
   border-radius: 0;
-  color: #fff;
+  color: var(--jw-color-picker-label);
   cursor: default;
-  text-shadow: 0 1px 2px rgb(0 0 0 / 55%);
 }
 
 .color-picker-page .color-picker-palette-values {
@@ -180,7 +179,7 @@
 
 .color-picker-page .color-picker-palette-item,
 .color-picker-page .color-picker-swatch-new {
-  text-shadow: 0 1px 2px rgb(0 0 0 / 55%);
+  text-shadow: var(--jw-shadow-picker-label);
 }
 
 .color-picker-page [data-copy-value] {
@@ -193,7 +192,7 @@
 }
 
 .color-picker-page [data-copy-value].is-copied {
-  color: var(--color-link-hover);
+  color: var(--jw-color-accent);
 }
 
 @media (max-width: 48rem) {

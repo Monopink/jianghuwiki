@@ -13,7 +13,7 @@
 .jw-bookmarks {
   position: relative;
   z-index: 1000;
-  color: var(--body-font-color);
+  color: var(--jw-color-text);
   font-family: var(--jw-font-body);
   font-size: var(--jw-text-navigation);
   line-height: var(--jw-leading-control);
@@ -34,7 +34,7 @@
 .jw-bookmarks a,
 .jw-bookmarks a[href],
 .jw-bookmarks a:visited {
-  color: var(--body-font-color) !important;
+  color: var(--jw-color-text) !important;
 }
 
 .jw-bookmarks ul:not(.jw-bookmarks-column) {
@@ -72,8 +72,8 @@
   z-index: 1200;
   width: min(38rem, calc(100vw - 1rem));
   overflow: hidden;
-  border: 1px solid var(--gray-80);
-  background: var(--body-background);
+  border: 1px solid var(--jw-color-border-strong);
+  background: var(--jw-color-canvas);
   box-shadow: none;
 }
 
@@ -97,13 +97,13 @@
   min-width: 0;
   max-height: calc(100vh - 1rem);
   overflow-y: auto;
-  border-inline-end: 1px solid var(--gray-90);
+  border-inline-end: 1px solid var(--jw-color-border-subtle);
   padding: 0.25rem;
 }
 
 .jw-bookmarks ul.jw-bookmarks-column {
   padding: 0.25rem !important;
-  border-inline-end: 1px solid var(--gray-90) !important;
+  border-inline-end: 1px solid var(--jw-color-border-subtle) !important;
 }
 
 .jw-bookmarks-column:last-child {
@@ -167,7 +167,7 @@
 
 .jw-bookmarks-item-copy small {
   overflow: hidden;
-  color: var(--gray-50);
+  color: var(--jw-color-muted);
   font-size: var(--jw-text-caption);
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -182,7 +182,7 @@
 
 .jw-bookmarks-extra a {
   padding: 0.25rem 0 !important;
-  color: var(--body-font-color) !important;
+  color: var(--jw-color-text) !important;
   font-size: var(--jw-text-caption);
 }
 
@@ -204,7 +204,7 @@ body.jw-bookmarks-open {
     position: fixed;
     z-index: 1190;
     inset: 0;
-    background: rgb(0 0 0 / 45%);
+    background: var(--jw-color-overlay);
   }
 
   .jw-bookmarks-popover {
@@ -227,8 +227,8 @@ body.jw-bookmarks-open {
     height: 3rem;
     min-height: 3rem;
     border: 0;
-    border-bottom: 1px solid var(--gray-90) !important;
-    background: var(--body-background);
+    border-bottom: 1px solid var(--jw-color-border-subtle) !important;
+    background: var(--jw-color-canvas);
   }
 
   .jw-bookmarks-back:not([hidden]),

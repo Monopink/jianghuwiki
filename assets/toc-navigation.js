@@ -1,27 +1,25 @@
 (() => {
   const panel = document.querySelector(".jw-toc");
   const links = [...(panel?.querySelectorAll('#TableOfContents a[href*="#"]') || [])];
-  const progress = panel?.querySelector(".jw-reading-progress");
-  const fill = progress?.querySelector("span");
   const content = document.querySelector("[data-reading-content]");
-  if (!panel || panel.hasAttribute("data-no-progress") || !links.length || !progress || !fill || !content || document.body.matches(".jw-kind-section.jw-type-posts")) {
-    if (panel && (!links.length || panel.hasAttribute("data-no-progress"))) progress?.remove();
-    return;
-  }
+  if (!panel || !links.length || !content) return;
 
   const entries = [];
   for (const link of links) {
     let id;
-    try { id = decodeURIComponent(new URL(link.href, location.href).hash.slice(1)); }
+    try {
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search) continue;
+      id = decodeURIComponent(url.hash.slice(1));
+    }
     catch { continue; }
     const target = document.getElementById(id);
-    if (!target || !content.contains(target) || entries.some((item) => item.target === target)) continue;
+    if (!target || !target.getClientRects().length || !content.contains(target) || entries.some((item) => item.target === target)) continue;
     entries.push({ link, target });
   }
-  if (!entries.length) { progress.remove(); return; }
+  if (!entries.length) return;
 
-  progress.classList.add("is-ready");
-  let bounds = { top: 0, bottom: 0 };
+  let bottom = 0;
   let frame = 0;
   let current = null;
   let pointerInside = false;
@@ -37,10 +35,7 @@
     const scrollY = window.scrollY;
     entries.forEach((entry) => { entry.top = entry.target.getBoundingClientRect().top + scrollY; });
     entries.sort((a, b) => a.top - b.top);
-    bounds = {
-      top: content.getBoundingClientRect().top + scrollY,
-      bottom: content.getBoundingClientRect().bottom + scrollY,
-    };
+    bottom = content.getBoundingClientRect().bottom + scrollY;
   };
   const alignCurrent = () => {
     if (!current || pointerInside) return;
@@ -60,7 +55,7 @@
         else break;
       }
     }
-    if (y + window.innerHeight >= bounds.bottom - 1) selected = entries.at(-1);
+    if (y + window.innerHeight >= bottom - 1) selected = entries.at(-1);
     if (selected !== current) {
       for (const entry of entries) {
         if (entry === selected) entry.link.setAttribute("aria-current", "location");
@@ -69,12 +64,6 @@
       current = selected;
       alignCurrent();
     }
-    const start = Math.max(0, bounds.top - offset() - 24);
-    const end = Math.max(start, bounds.bottom - window.innerHeight);
-    const value = y + window.innerHeight >= bounds.bottom - 1 ? 100 : end > start ? Math.max(0, Math.min(100, ((y - start) / (end - start)) * 100)) : 0;
-    const rounded = Math.round(value);
-    fill.style.transform = `scaleX(${value / 100})`;
-    if (progress.getAttribute("aria-valuenow") !== String(rounded)) progress.setAttribute("aria-valuenow", String(rounded));
   };
   const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
   measure();

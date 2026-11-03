@@ -146,6 +146,7 @@
     if (!root.contains(event.target) && !popover.contains(event.target)) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
+    if (document.querySelector('.jw-search-dialog[open]')) return;
     if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
       closeMenu();
       trigger.focus();

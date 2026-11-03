@@ -18,7 +18,7 @@
 
 {{ define "toc-container" }}
 {{ if .Param "BookToC" | default true }}
-<aside class="jw-toc jw-taxonomy-nav" id="page-toc" aria-label="分类导航" tabindex="-1"><button class="jw-panel-close" type="button" data-close-panel aria-label="关闭分类导航">关闭 ×</button><div class="jw-toc-heading">分类</div><div class="jw-toc-content">{{ template "toc" . }}</div></aside>
+<aside class="jw-toc jw-taxonomy-nav" id="page-toc" aria-label="分类导航" tabindex="-1"><button class="jw-panel-close" type="button" data-close-panel aria-label="关闭分类导航">关闭 ×</button><div class="jw-toc-content">{{ template "toc" . }}</div></aside>
 {{ end }}
 {{ end }}
 

@@ -34,7 +34,7 @@ a[href]:not([role="button"]) {
 
 a[href]:not([role="button"]):hover,
 a[href]:not([role="button"]):focus-visible {
-  color: var(--jw-color-accent-hover);
+  color: var(--jw-color-accent);
   text-decoration-color: currentColor;
 }
 
@@ -47,6 +47,8 @@ input[type="submit"],
   background: var(--home-surface);
   color: var(--body-font-color);
   cursor: pointer;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
   font: inherit;
   line-height: 1.4;
   padding: 0.18rem 0.5rem;
@@ -75,6 +77,8 @@ a.book-btn[href] {
   background: var(--color-link);
   color: var(--color-button-text);
   cursor: pointer;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
   font: inherit;
   line-height: 1.4;
   padding: 0.18rem 0.5rem;
@@ -91,75 +95,6 @@ a.book-btn[href]:focus-visible {
   color: var(--color-button-text);
   opacity: 1;
   outline: none;
-}
-
-.jw-search {
-  margin: 1rem 0;
-  border-bottom: 0;
-}
-
-.jw-search input {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.5rem;
-  border: 3px solid var(--gray-85);
-  border-radius: 0;
-  background: none;
-  color: var(--body-font-color);
-}
-
-.jw-search input:hover,
-.jw-search input:focus {
-  border-color: var(--gray-80);
-  outline: none;
-}
-
-.jw-search input::placeholder {
-  color: var(--gray-60);
-}
-
-.jw-search #book-search-results {
-  position: absolute;
-  top: 100%;
-  inset-inline: 0;
-  z-index: 1300;
-  max-height: 18.4rem;
-  overflow-y: auto;
-  border: 1px solid var(--gray-80);
-  background: var(--body-background);
-  border-radius: 0;
-}
-
-.jw-search #book-search-results a {
-  display: block;
-  margin: 0;
-  padding: 0.55rem 0.75rem;
-  color: var(--body-font-color) !important;
-  text-decoration: none;
-}
-
-.jw-search #book-search-results a:visited {
-  color: var(--body-font-color) !important;
-}
-
-.jw-search-result:hover,
-.jw-search-result:focus-visible {
-  background: var(--button-hover-background);
-  outline: none;
-}
-
-.jw-search-result-content {
-  display: block;
-}
-
-.jw-search-result-content span,
-.jw-search-result-content small {
-  display: block;
-}
-
-.jw-search-result-content small {
-  color: var(--gray-60);
-  font-size: 0.8rem;
 }
 
 .markdown {
@@ -213,7 +148,7 @@ a.book-btn[href]:focus-visible {
 }
 
 .markdown a[href]:hover {
-  color: var(--jw-color-accent-hover);
+  color: var(--jw-color-accent);
   opacity: 1;
   text-decoration-color: currentColor;
 }
@@ -273,23 +208,23 @@ a.book-btn[href]:focus-visible {
   border-collapse: collapse;
 }
 
-.markdown table th,
-.markdown table td {
+.markdown table tr th,
+.markdown table tr td {
   padding: 0.5rem 1rem;
   border: 0;
   text-align: start;
 }
 
-.markdown table th {
-  border-bottom: 2px solid var(--jw-color-text);
+.markdown table thead th {
+  border-bottom: 3px solid var(--jw-color-text);
   background: var(--gray-90);
 }
 
-.markdown table tr:nth-child(odd) {
+.markdown table tbody tr:nth-child(odd) {
   background: var(--gray-95);
 }
 
-.markdown table tr:nth-child(even) {
+.markdown table tbody tr:nth-child(even) {
   background: transparent;
 }
 
@@ -304,23 +239,6 @@ a.book-btn[href]:focus-visible {
 
 .bookmark-table {
   width: 100%;
-}
-
-.bookmark-table thead {
-  display: none;
-}
-
-.bookmark-table th,
-.bookmark-table td {
-  border: 0 !important;
-}
-
-.bookmark-table tr:nth-child(odd) {
-  background: var(--gray-95);
-}
-
-.bookmark-table tr:nth-child(even) {
-  background: transparent;
 }
 
 .bookmark-table tr td:first-child {
@@ -395,7 +313,6 @@ a.book-btn[href]:focus-visible {
 .apps-legend-table td {
   min-width: 5rem;
   padding: 0.5rem 1rem;
-  border: 0;
   text-align: center;
   vertical-align: middle;
 }
@@ -403,14 +320,6 @@ a.book-btn[href]:focus-visible {
 .apps-legend-table th:first-child,
 .apps-legend-table td:first-child {
   min-width: 4rem;
-}
-
-.apps-legend-table tr:nth-child(odd) {
-  background: var(--gray-95);
-}
-
-.apps-legend-table tr:nth-child(even) {
-  background: transparent;
 }
 
 .apps-legend-table .platform-icon {
@@ -594,8 +503,8 @@ a.book-btn[href]:focus-visible {
 
 .home-search-script-link:hover,
 .home-search-script-link:focus-visible {
-  border-color: var(--color-link);
-  color: var(--color-link);
+  border-color: var(--jw-color-accent);
+  color: var(--jw-color-accent);
   outline: none;
 }
 
@@ -617,8 +526,10 @@ a.book-btn[href]:focus-visible {
   border: 1px solid transparent;
   border-radius: 0;
   background: var(--home-surface);
-  color: var(--search-color);
+  color: var(--jw-color-text);
   cursor: pointer;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
   font: inherit;
   text-align: start;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
@@ -633,9 +544,9 @@ a.book-btn[href]:focus-visible {
 
 .home-search-link:hover,
 .home-search-link:focus-visible {
-  border-color: var(--search-color);
+  border-color: var(--jw-color-accent);
   background: var(--button-hover-background);
-  color: var(--search-color);
+  color: var(--jw-color-accent);
   outline: none;
 }
 
@@ -684,7 +595,7 @@ a.book-btn[href]:focus-visible {
 
 .quick-dial-links a:hover,
 .quick-dial-links a:focus-visible {
-  color: var(--jw-color-accent-hover) !important;
+  color: var(--jw-color-accent) !important;
   outline: none;
 }
 
@@ -835,3 +746,5 @@ a.book-btn[href]:focus-visible {
     padding-inline: 0.5rem;
   }
 }
+
+a[role="button"], .button-secondary, .home-search-script-link { text-shadow: none; -webkit-text-stroke: 0; }

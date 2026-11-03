@@ -28,8 +28,9 @@
     </main>
     {{ template "toc-container" . }}
   </div>
+  {{ partial "docs/search-dialog" . }}
   {{ partial "docs/inject/body" . }}
-  {{ with resources.Get "toc-progress.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
+  {{ with resources.Get "toc-navigation.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ with resources.Get "external-links.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
 </body>
 </html>
@@ -56,12 +57,8 @@
   {{ $hasCustomToc := eq .Layout "apps" }}
   {{ $hasRelated := or (.Scratch.Get "bookBacklinks") (.Scratch.Get "bookLinks") }}
   {{ if or $hasHeadings $hasCustomToc $hasRelated $isTaxonomyList }}
-  <aside class="jw-toc" id="page-toc" aria-label="本页目录" tabindex="-1"{{ if not $hasHeadings }} data-no-progress{{ end }}>
+  <aside class="jw-toc" id="page-toc" aria-label="章节导航" tabindex="-1">
     <button class="jw-panel-close" type="button" data-close-panel aria-label="关闭目录">关闭 ×</button>
-    {{ if or $hasHeadings $hasCustomToc $isTaxonomyList }}
-    <div class="jw-toc-heading">本页目录</div>
-    {{ if $hasHeadings }}<div class="jw-reading-progress" role="progressbar" aria-label="正文阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>{{ end }}
-    {{ end }}
     <div class="jw-toc-content">{{ template "toc" . }}</div>
   </aside>
   {{ end }}

@@ -17,7 +17,7 @@ const activeKind = () => document.body.classList.contains("jw-menu-open") ? "men
 const setBackgroundInert = (enabled) => {
   if (enabled) {
     const active = activeKind();
-    const candidates = [document.querySelector(".jw-main"), active === "menu" ? tocPanel : menuPanel, ...[...document.body.children].filter((node) => !node.matches(".jw-shell, .jw-menu-backdrop, .jw-toc-backdrop"))].filter(Boolean);
+    const candidates = [document.querySelector(".jw-main"), active === "menu" ? tocPanel : menuPanel, ...[...document.body.children].filter((node) => !node.matches(".jw-shell, .jw-menu-backdrop, .jw-toc-backdrop, .jw-search-dialog"))].filter(Boolean);
     inerted = new Map(candidates.map((node) => [node, node.inert]));
     inerted.forEach((_, node) => { node.inert = true; });
   } else {
@@ -66,6 +66,7 @@ tocBackdrop?.addEventListener("click", () => closePanels({ restore: true }));
 closeButtons.forEach((button) => button.addEventListener("click", () => closePanels({ restore: true })));
 
 document.addEventListener("keydown", (event) => {
+  if (document.querySelector(".jw-search-dialog[open]")) return;
   const kind = activeKind();
   if (!kind) return;
   if (event.key === "Escape") {

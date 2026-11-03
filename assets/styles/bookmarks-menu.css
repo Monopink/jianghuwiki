@@ -67,14 +67,13 @@
   display: block;
   width: 100%;
   min-height: 0;
-  padding: 0 !important;
-  font-weight: 700 !important;
+  font-weight: 650;
   text-align: left;
 }
 
 .jw-bookmarks-trigger:focus-visible {
   color: inherit;
-  outline: none;
+  outline: 2px solid var(--jw-color-focus);
 }
 
 .jw-bookmarks-popover {

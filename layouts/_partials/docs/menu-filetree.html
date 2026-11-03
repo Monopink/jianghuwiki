@@ -10,7 +10,7 @@
           {{ partial "bookmarks-menu.html" . }}
         </li>
       {{ else if .IsSection }}
-        <li class="jw-section{{ if .Params.BookFlatSection }} jw-section-flat{{ end }}">
+        <li class="jw-section{{ if .Params.BookFlatSection }} jw-section-flat{{ end }}{{ if not .Params.BookCollapseSection }} is-expanded{{ end }}">
           {{ if .Params.BookCollapseSection }}
           <details {{ if or (eq . $.CurrentPage) (.IsAncestor $.CurrentPage) }}open{{ end }}>
             <summary>

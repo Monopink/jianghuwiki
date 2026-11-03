@@ -10,18 +10,17 @@
           {{ partial "bookmarks-menu.html" . }}
         </li>
       {{ else if .IsSection }}
-        <li class="jw-section{{ if .Params.BookFlatSection }} jw-section-flat{{ end }}{{ if not .Params.BookCollapseSection }} is-expanded{{ end }}">
-          {{ if .Params.BookCollapseSection }}
-          <details {{ if or (eq . $.CurrentPage) (.IsAncestor $.CurrentPage) }}open{{ end }}>
+        {{ $isHome := eq $.CurrentPage.Kind "home" }}
+        {{ $isCurrentPath := or (eq . $.CurrentPage) (.IsAncestor $.CurrentPage) }}
+        <li class="jw-section{{ if .Params.BookFlatSection }} jw-section-flat{{ end }}">
+          <details {{ if or $isCurrentPath (and $isHome (not .Params.BookCollapseSection)) }}open{{ end }}>
             <summary>
               {{ if or .Content .Params.dataFile (eq .Layout "apps") .Params.bookMenu }}<a class="jw-nav-link jw-nav-section-title" href="{{ .RelPermalink }}" {{ if eq . $.CurrentPage }}aria-current="page"{{ end }}>{{ template "jw-menu-title" . }}</a>{{ else }}<span>{{ partial "docs/title" . }}</span>{{ end }}
             </summary>
-            {{ template "jw-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+            <div class="jw-nav-branch">
+              {{ template "jw-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+            </div>
           </details>
-          {{ else }}
-            {{ template "jw-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
-            {{ template "jw-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
-          {{ end }}
         </li>
       {{ else if and .IsPage (or .Content .Params.dataFile (eq .Layout "apps") .Params.bookMenu) }}
         <li>

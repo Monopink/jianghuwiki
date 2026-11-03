@@ -225,14 +225,22 @@ a.book-btn[href]:focus-visible {
 
 .markdown table thead th {
   border-bottom: 3px solid var(--jw-color-text);
-  background: var(--gray-90);
+  background: transparent;
 }
 
 .markdown table tbody tr:nth-child(odd) {
-  background: var(--gray-95);
+  background: transparent;
 }
 
 .markdown table tbody tr:nth-child(even) {
+  background: var(--gray-95);
+}
+
+.jw-layout-apps .bookmark-table-apps tbody tr:nth-child(odd) {
+  background: var(--gray-95);
+}
+
+.jw-layout-apps .bookmark-table-apps tbody tr:nth-child(even) {
   background: transparent;
 }
 
@@ -619,6 +627,12 @@ a.book-btn[href]:focus-visible {
 .quick-dial-row:focus-within {
   border-color: var(--quick-dial-color, var(--color-link));
   background: var(--button-hover-background);
+}
+
+/* Enter immediately; the base transition preserves the fade on exit. */
+.home-search-link:is(:hover, :focus-visible),
+.quick-dial-row:is(:hover, :focus-within) {
+  transition-duration: 0s;
 }
 
 .quick-dial-more {

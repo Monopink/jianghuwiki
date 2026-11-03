@@ -1,7 +1,7 @@
 /* Fully isolated bookmark menu. It does not inherit Hugo Book menu styling. */
 .jw-bookmarks-host {
   position: static !important;
-  margin: 1em 0 !important;
+  margin: 0.75rem 0 !important;
   padding: 0 !important;
 }
 
@@ -64,15 +64,31 @@
 }
 
 .jw-bookmarks-trigger {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  min-height: 0;
+  min-height: 44px;
+  border: 1px solid var(--jw-color-border) !important;
+  padding: 0.5rem 0.75rem !important;
+  background: var(--jw-color-canvas) !important;
+  color: var(--jw-color-muted) !important;
   font-weight: 650;
   text-align: left;
 }
 
+.jw-bookmarks-trigger:hover,
 .jw-bookmarks-trigger:focus-visible {
-  color: inherit;
+  border-color: var(--jw-color-bookmarks-hover) !important;
+  color: var(--jw-color-bookmarks-hover) !important;
+}
+
+.jw-bookmarks-trigger[aria-expanded="true"] {
+  border-color: var(--jw-color-border) !important;
+  background: var(--jw-color-nav-hover) !important;
+  color: var(--jw-color-text) !important;
+}
+
+.jw-bookmarks-trigger:focus-visible {
   outline: 2px solid var(--jw-color-focus);
 }
 

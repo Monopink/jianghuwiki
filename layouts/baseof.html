@@ -31,6 +31,7 @@
   {{ with resources.Get "code-copy.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ partial "docs/inject/body" . }}
   {{ with resources.Get "toc-navigation.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
+  {{ with resources.Get "menu-navigation.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ with resources.Get "external-links.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
 </body>
 </html>

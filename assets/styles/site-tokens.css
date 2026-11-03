@@ -1,0 +1,120 @@
+/* jianghu wiki design tokens and the Hugo Book integration boundary. */
+
+:root,
+:root[data-theme="light"],
+:root[data-theme="auto"] {
+  color-scheme: light;
+  --jw-color-canvas: #fff;
+  --jw-color-surface: #f5f8fa;
+  --jw-color-surface-hover: #edf2f5;
+  --jw-color-text: #202429;
+  --jw-color-muted: #62686d;
+  --jw-color-border: #c7ced2;
+  --jw-color-accent: #f04f2f;
+  --jw-color-accent-hover: #c83f24;
+  --jw-color-selection: #fbe8e3;
+  --jw-color-focus: #c83f24;
+  --jw-color-success: #286b46;
+  --jw-color-warning: #795400;
+  --jw-color-danger: #a32d22;
+  --jw-radius-control: 0;
+  --jw-nav-width: 17rem;
+  --jw-font-body: Inter, system-ui, sans-serif;
+  --jw-leading-body: 1.8;
+
+  /* Content/shortcode compatibility tokens; shell ownership is independent. */
+  --body-background: var(--jw-color-canvas);
+  --body-font-color: var(--jw-color-text);
+  --body-header-background: var(--jw-color-canvas);
+  --color-link: var(--jw-color-text);
+  --color-link-hover: var(--jw-color-accent-hover);
+  --color-visited-link: var(--jw-color-text);
+  --color-link-glow: transparent;
+  --color-link-shadow: transparent;
+  --color-button-text: var(--jw-color-text);
+  --border-radius: var(--jw-radius-control);
+  --menu-width: var(--jw-nav-width);
+  --gray-97: var(--jw-color-canvas);
+  --gray-95: var(--jw-color-surface);
+  --gray-90: var(--jw-color-surface-hover);
+  --gray-85: var(--jw-color-border);
+  --gray-80: var(--jw-color-border);
+  --gray-60: var(--jw-color-muted);
+  --gray-50: var(--jw-color-muted);
+  --gray-30: var(--jw-color-text);
+  --gray-100: var(--jw-color-surface);
+  --gray-200: var(--jw-color-border);
+  --gray-500: var(--jw-color-muted);
+  --icon-filter: brightness(0);
+  --home-surface: var(--jw-color-surface);
+  --home-surface-hover: var(--jw-color-canvas);
+  --button-hover-background: var(--jw-color-surface-hover);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --jw-color-canvas: #202429;
+  --jw-color-surface: #292d31;
+  --jw-color-surface-hover: #353b42;
+  --jw-color-text: #e9ecef;
+  --jw-color-muted: #a2a7ab;
+  --jw-color-border: #62686d;
+  --jw-color-accent: #ff7048;
+  --jw-color-accent-hover: #ffad8f;
+  --jw-color-selection: #49312b;
+  --jw-color-focus: #ffad8f;
+  --jw-color-success: #83c99d;
+  --jw-color-warning: #e7c46b;
+  --jw-color-danger: #ff968a;
+  --body-header-background: var(--jw-color-canvas);
+  --color-link: var(--jw-color-text);
+  --color-link-hover: var(--jw-color-accent-hover);
+  --color-button-text: #202429;
+  --gray-97: rgb(255 255 255 / 2%);
+  --gray-95: rgb(255 255 255 / 4%);
+  --gray-90: rgb(255 255 255 / 8%);
+  --gray-85: rgb(255 255 255 / 20%);
+  --gray-80: rgb(255 255 255 / 30%);
+  --gray-60: #808080;
+  --gray-50: #969899;
+  --gray-30: #c3c5c7;
+  --gray-100: rgb(255 255 255 / 4%);
+  --gray-200: rgb(255 255 255 / 20%);
+  --gray-500: #969899;
+  --icon-filter: brightness(0) invert(0.93);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    color-scheme: dark;
+    --jw-color-canvas: #202429;
+    --jw-color-surface: #292d31;
+    --jw-color-surface-hover: #353b42;
+    --jw-color-text: #e9ecef;
+    --jw-color-muted: #a2a7ab;
+    --jw-color-border: #62686d;
+    --jw-color-accent: #ff7048;
+    --jw-color-accent-hover: #ffad8f;
+    --jw-color-selection: #49312b;
+    --jw-color-focus: #ffad8f;
+    --jw-color-success: #83c99d;
+    --jw-color-warning: #e7c46b;
+    --jw-color-danger: #ff968a;
+    --body-header-background: var(--jw-color-canvas);
+    --color-link: var(--jw-color-text);
+    --color-link-hover: var(--jw-color-accent-hover);
+    --color-button-text: #202429;
+    --gray-97: rgb(255 255 255 / 2%);
+    --gray-95: rgb(255 255 255 / 4%);
+    --gray-90: rgb(255 255 255 / 8%);
+    --gray-85: rgb(255 255 255 / 20%);
+    --gray-80: rgb(255 255 255 / 30%);
+    --gray-60: #808080;
+    --gray-50: #969899;
+    --gray-30: #c3c5c7;
+    --gray-100: rgb(255 255 255 / 4%);
+    --gray-200: rgb(255 255 255 / 20%);
+    --gray-500: #969899;
+    --icon-filter: brightness(0) invert(0.93);
+  }
+}

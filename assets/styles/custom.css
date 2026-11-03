@@ -1,4 +1,4 @@
-/* Project visual overrides for the current Hugo Book markup. */
+/* Shared content and page components for jianghu wiki. */
 
 @font-face {
   font-family: Inter;
@@ -7,129 +7,35 @@
   font-display: swap;
   src: url("/fonts/InterVariable.woff2") format("woff2");
 }
-
-:root,
-:root[data-theme="light"],
-:root[data-theme="auto"] {
-  --border-radius: 0;
-  --menu-width: 16.4rem;
-  --color-link: #f04f2f;
-  --color-link-hover: #c83f24;
-  --color-visited-link: #f04f2f;
-  --color-link-glow: rgb(255 112 72 / 32%);
-  --color-link-shadow: rgb(255 112 72 / 22%);
-  --color-button-text: #202429;
-  --body-background: #fff;
-  --body-font-color: #000;
-  --body-header-background: rgba(250, 251, 252, 0.8);
-  --gray-97: #fafbfc;
-  --gray-95: #f5f8fa;
-  --gray-90: #edf2f5;
-  --gray-85: #e6eaed;
-  --gray-80: #c7ced2;
-  --gray-60: #9a9a9a;
-  --gray-50: #808080;
-  --gray-30: #515151;
-  --gray-100: #f5f8fa;
-  --gray-200: #e6eaed;
-  --gray-500: #808080;
-  --icon-filter: brightness(0);
-  --home-surface: #f5f8fa;
-  --home-surface-hover: #ffffff;
-  --button-hover-background: #fbfcfd;
-}
-
-:root[data-theme="dark"] {
-  --border-radius: 0;
-  --menu-width: 16.4rem;
-  --color-link: #ff7048;
-  --color-link-hover: #ffad8f;
-  --color-visited-link: #ff7048;
-  --color-link-glow: rgb(255 173 143 / 36%);
-  --color-link-shadow: rgb(255 173 143 / 24%);
-  --color-button-text: #202429;
-  --body-background: #202429;
-  --body-font-color: #e9ecef;
-  --body-header-background: rgba(31, 35, 39, 0.8);
-  --gray-97: rgba(255, 255, 255, 0.02);
-  --gray-95: rgba(255, 255, 255, 0.04);
-  --gray-90: rgba(255, 255, 255, 0.08);
-  --gray-85: rgba(255, 255, 255, 0.2);
-  --gray-80: rgba(255, 255, 255, 0.3);
-  --gray-60: #808080;
-  --gray-50: #969899;
-  --gray-30: #c3c5c7;
-  --gray-100: rgba(255, 255, 255, 0.04);
-  --gray-200: rgba(255, 255, 255, 0.2);
-  --gray-500: #969899;
-  --icon-filter: brightness(0) invert(0.93);
-  --home-surface: #292d31;
-  --home-surface-hover: #353b42;
-  --button-hover-background: #353b42;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root[data-theme="auto"] {
-    --body-background: #202429;
-    --body-font-color: #e9ecef;
-    --body-header-background: rgba(31, 35, 39, 0.8);
-    --color-link: #ff7048;
-    --color-link-hover: #ffad8f;
-    --color-visited-link: #ff7048;
-    --color-link-glow: rgb(255 173 143 / 36%);
-    --color-link-shadow: rgb(255 173 143 / 24%);
-    --color-button-text: #202429;
-    --gray-97: rgba(255, 255, 255, 0.02);
-    --gray-95: rgba(255, 255, 255, 0.04);
-    --gray-90: rgba(255, 255, 255, 0.08);
-    --gray-85: rgba(255, 255, 255, 0.2);
-    --gray-80: rgba(255, 255, 255, 0.3);
-    --gray-60: #808080;
-    --gray-50: #969899;
-    --gray-30: #c3c5c7;
-    --gray-100: rgba(255, 255, 255, 0.04);
-    --gray-200: rgba(255, 255, 255, 0.2);
-    --gray-500: #969899;
-    --icon-filter: brightness(0) invert(0.93);
-    --home-surface: #292d31;
-    --home-surface-hover: #353b42;
-    --button-hover-background: #353b42;
-  }
-}
-
 body {
   background: var(--body-background);
   color: var(--body-font-color);
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--jw-font-body);
 }
 
-body.book-kind-section.book-type-posts .book-footer {
+body.jw-kind-section.jw-type-posts .jw-footer {
   display: none;
 }
 
-body.book-layout-xrazor .book-footer,
-body.book-layout-color-picker .book-footer {
+body.jw-layout-xrazor .jw-footer,
+body.jw-layout-color-picker .jw-footer {
   display: none;
-}
-
-.book-container {
-  justify-content: space-between;
-}
-
-.book-page,
-.book-toc {
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-}
-
-.book-page:last-child,
-.book-toc:last-child {
-  margin-inline-end: 0;
 }
 
 a[href],
 a[role="button"] {
-  color: var(--color-link);
+  color: var(--jw-color-text);
+}
+
+a[href]:not([role="button"]) {
+  text-decoration-color: var(--jw-color-border);
+  text-underline-offset: 0.16em;
+}
+
+a[href]:not([role="button"]):hover,
+a[href]:not([role="button"]):focus-visible {
+  color: var(--jw-color-accent-hover);
+  text-decoration-color: currentColor;
 }
 
 button,
@@ -137,7 +43,7 @@ input[type="button"],
 input[type="submit"],
 .button-secondary {
   border: 1px solid transparent;
-  border-radius: var(--border-radius);
+  border-radius: 0;
   background: var(--home-surface);
   color: var(--body-font-color);
   cursor: pointer;
@@ -165,7 +71,7 @@ input[type="submit"]:focus-visible,
 .book-btn[href],
 a.book-btn[href] {
   border: 1px solid var(--color-link);
-  border-radius: var(--border-radius);
+  border-radius: 0;
   background: var(--color-link);
   color: var(--color-button-text);
   cursor: pointer;
@@ -187,106 +93,12 @@ a.book-btn[href]:focus-visible {
   outline: none;
 }
 
-.book-menu .book-menu-content {
-  background: var(--body-background);
-  border-inline-end: 1px solid var(--gray-90);
-  padding: 2rem 1.4rem 2rem 1rem !important;
-}
-
-.book-menu a,
-.book-menu label {
-  color: inherit;
-  cursor: pointer;
-}
-
-.book-menu nav ul a:hover,
-.book-menu nav ul a:focus-visible {
-  color: inherit;
-  opacity: 1;
-}
-
-.book-menu nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.book-menu nav ul li {
-  position: relative;
-  margin: 1em 0;
-}
-
-.book-menu nav ul a {
-  display: block;
-  padding: 0;
-}
-
-.book-menu .book-content-tree {
-  margin-bottom: 2em;
-  color: var(--gray-30);
-}
-
-.book-menu .book-content-single {
-  margin-bottom: 2em;
-}
-
-.book-menu .book-content-tree ul {
-  padding-inline-start: 1rem;
-}
-
-.book-menu .book-section-flat > ul {
-  padding-inline-start: 0;
-}
-
-.book-menu .book-section-flat {
-  margin: 0;
-}
-
-.book-menu .book-menu-content > a,
-.book-menu .book-menu-content > span,
-.book-menu .book-menu-content > label,
-.book-menu .book-section-nested > a,
-.book-menu .book-section-nested > span,
-.book-menu .book-section-nested > label,
-.book-menu .book-section-flat > a,
-.book-menu .book-section-flat > span,
-.book-menu .book-section-flat > label,
-.book-menu .book-section-flat > label > a {
-  font-weight: bolder;
-}
-
-.book-menu .book-section-nested > span,
-.book-menu .book-section-nested > label {
-  color: var(--body-font-color);
-}
-
-.book-menu a.active {
-  color: var(--body-font-color);
-  opacity: 0.6;
-  background: var(--gray-95);
-  padding: 0.5rem;
-}
-
-.book-brand {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.book-brand .book-logo-default {
-  width: 1.5em;
-  height: 1.5em;
-  flex: 0 0 auto;
-  margin-inline-end: 0;
-  fill: currentColor;
-}
-
-.book-search {
+.jw-search {
   margin: 1rem 0;
   border-bottom: 0;
 }
 
-.book-search input {
+.jw-search input {
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem;
@@ -296,17 +108,17 @@ a.book-btn[href]:focus-visible {
   color: var(--body-font-color);
 }
 
-.book-search input:hover,
-.book-search input:focus {
+.jw-search input:hover,
+.jw-search input:focus {
   border-color: var(--gray-80);
   outline: none;
 }
 
-.book-search input::placeholder {
+.jw-search input::placeholder {
   color: var(--gray-60);
 }
 
-.book-search #book-search-results {
+.jw-search #book-search-results {
   position: absolute;
   top: 100%;
   inset-inline: 0;
@@ -316,10 +128,9 @@ a.book-btn[href]:focus-visible {
   border: 1px solid var(--gray-80);
   background: var(--body-background);
   border-radius: 0;
-  box-shadow: 3px 3px 0 rgb(0 0 0 / 18%);
 }
 
-.book-search #book-search-results a {
+.jw-search #book-search-results a {
   display: block;
   margin: 0;
   padding: 0.55rem 0.75rem;
@@ -327,87 +138,33 @@ a.book-btn[href]:focus-visible {
   text-decoration: none;
 }
 
-.book-search #book-search-results a:visited {
+.jw-search #book-search-results a:visited {
   color: var(--body-font-color) !important;
 }
 
-.book-search-result:hover,
-.book-search-result:focus-visible {
+.jw-search-result:hover,
+.jw-search-result:focus-visible {
   background: var(--button-hover-background);
   outline: none;
 }
 
-.book-search-result-content {
+.jw-search-result-content {
   display: block;
 }
 
-.book-search-result-content span,
-.book-search-result-content small {
+.jw-search-result-content span,
+.jw-search-result-content small {
   display: block;
 }
 
-.book-search-result-content small {
+.jw-search-result-content small {
   color: var(--gray-60);
   font-size: 0.8rem;
 }
 
-.book-header {
-  color: var(--gray-30);
-  background: var(--body-header-background);
-  -webkit-backdrop-filter: blur(25px);
-  backdrop-filter: blur(25px);
-}
-
-.book-header a {
-  color: var(--gray-50);
-}
-
-.book-header a:hover {
-  color: inherit;
-  opacity: 1;
-}
-
-.book-footer {
-  margin-top: 4.5rem;
-  padding: 1rem;
-  background: var(--gray-97);
-  color: var(--gray-60);
-}
-
-.book-footer a {
-  margin: 0;
-  padding: 0;
-  color: var(--gray-60);
-}
-
-.book-post.book-post-list {
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  background: var(--gray-97);
-}
-
-.book-post-date {
-  color: var(--gray-60);
-}
-
-@media screen and (max-width: 56rem) {
-  .book-post.book-post-list {
-    padding: 1rem;
-  }
-}
-
-.book-menu-footer {
-  color: var(--gray-80);
-}
-
-/* The old layout widened pages when the right table of contents was absent. */
-body:not(:has(.book-toc)) .book-page {
-  max-width: 69rem;
-}
-
 .markdown {
   margin-top: 2rem;
-  line-height: 2;
+  line-height: var(--jw-leading-body);
 }
 
 .markdown > :first-child,
@@ -447,13 +204,18 @@ body:not(:has(.book-toc)) .book-page {
 .markdown h6 { font-size: 0.75em; }
 
 .markdown a {
-  text-decoration: none;
+  color: var(--jw-color-text);
+  text-decoration: underline;
+}
+
+.markdown a:visited {
+  color: var(--jw-color-text);
 }
 
 .markdown a[href]:hover {
-  color: var(--color-link-hover);
+  color: var(--jw-color-accent-hover);
   opacity: 1;
-  text-decoration: none;
+  text-decoration-color: currentColor;
 }
 
 .markdown h1 a.anchor,
@@ -519,6 +281,7 @@ body:not(:has(.book-toc)) .book-page {
 }
 
 .markdown table th {
+  border-bottom: 2px solid var(--jw-color-text);
   background: var(--gray-90);
 }
 
@@ -748,18 +511,7 @@ body:not(:has(.book-toc)) .book-page {
   border: 1px solid var(--gray-80);
   border-top: 1px solid var(--gray-80);
   background: var(--body-background);
-  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
-}
 
-.home-search-results.has-overflow::after {
-  position: sticky;
-  bottom: 0;
-  display: block;
-  height: 1.5rem;
-  margin-top: -1.5rem;
-  background: linear-gradient(to bottom, transparent, var(--body-background));
-  content: "";
-  pointer-events: none;
 }
 
 .home-search-result,
@@ -922,7 +674,7 @@ body:not(:has(.book-toc)) .book-page {
   display: block;
   min-width: 0;
   padding: 0.1rem 0.3rem;
-  color: var(--color-link) !important;
+  color: var(--jw-color-text) !important;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
@@ -932,7 +684,7 @@ body:not(:has(.book-toc)) .book-page {
 
 .quick-dial-links a:hover,
 .quick-dial-links a:focus-visible {
-  color: var(--color-link-hover) !important;
+  color: var(--jw-color-accent-hover) !important;
   outline: none;
 }
 
@@ -1081,24 +833,5 @@ body:not(:has(.book-toc)) .book-page {
 
   .home-search-script-link {
     padding-inline: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 56rem) and (prefers-color-scheme: dark) {
-  :root[data-theme="auto"] .book-toc {
-    background-color: rgb(32 36 41 / 94%);
-  }
-}
-
-@media screen and (min-width: 85rem) {
-  .book-container {
-    gap: 0;
-    padding: 0;
-  }
-}
-
-@media screen and (min-width: 56rem) {
-  .book-page {
-    padding: 2rem 1rem;
   }
 }

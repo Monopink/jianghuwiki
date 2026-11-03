@@ -7,9 +7,8 @@
 {{ partial "docs/inject/toc-after" . }}
 
 {{ with (.Scratch.Get "bookBacklinks") | uniq }}
-<div class="flex book-toc-section">
-<svg class="book-icon">{{ partial "docs/icon" "incoming" }}</svg>
-<nav class="flex">
+<div class="jw-toc-related jw-toc-incoming">
+<nav>
   <ul>
   {{ range . }}
     <li>
@@ -24,9 +23,8 @@
 {{ end }}
 
 {{ with (.Scratch.Get "bookLinks") | uniq }}
-<div class="flex book-toc-section">
-<svg class="book-icon">{{ partial "docs/icon" "outgoing" }}</svg>
-<nav class="flex">
+<div class="jw-toc-related jw-toc-outgoing">
+<nav>
   <ul>
   {{ range . }}
   <li>

@@ -1,25 +1,19 @@
 {{- if .Menu -}}
-  {{- template "book-menu-hugo" . -}}
+{{ template "jw-menu-hugo" (dict "Page" .Page "Menu" .Menu "RootMenu" (index .Menu 0).Menu "Root" true) }}
 {{- end -}}
 
-{{ define "book-menu-hugo" }}
-<ul class="book-content-single">
+{{ define "jw-menu-hugo" }}
+<ul class="jw-nav-list{{ if .Root }} jw-nav-list-root{{ end }}">
 {{- range .Menu -}}
-  {{- $class := slice -}}
-  {{- with .Params.class -}}{{- $class = $class | append . -}}{{- end -}}
-  {{- if or ($.Page.IsMenuCurrent .Menu .) (and .Page ($.Page.IsDescendant .Page)) -}}{{- $class = $class | append "active" -}}{{- end -}}
+  {{- $current := and $.Page (or ($.Page.IsMenuCurrent $.RootMenu .) (and .Page (eq $.Page .Page))) -}}
+  {{- $ancestor := and $.Page ($.Page.HasMenuCurrent $.RootMenu .) -}}
+  {{- $isRemote := default (urls.Parse .URL).IsAbs .Params.bookNewTab -}}
   <li>
-    {{- $isRemote := default (urls.Parse .URL).IsAbs .Params.bookNewTab -}}
-    <a href="{{ .URL }}"{{ with $class }} class="{{ delimit . " " }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank" rel="noopener"{{ end }}>
-      {{- .Pre -}}{{- template "book-menu-title" . -}}{{- .Post -}}
+    <a href="{{ .URL }}" class="jw-nav-link{{ if $current }} is-current{{ else if $ancestor }} is-ancestor{{ end }}"{{ if $current }} aria-current="page"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank" rel="noopener"{{ end }}>
+      {{- .Pre -}}{{- with .Params.BookIcon -}}{{ partial "docs/menu-icon" . }}{{- end -}}{{- if .Name -}}{{ .Name }}{{ else if .Page -}}{{ partial "docs/title" .Page }}{{ end -}}{{- .Post -}}
     </a>
-    {{- with .Children -}}{{- template "book-menu-hugo" (dict "Page" $.Page "Menu" .) -}}{{- end -}}
+    {{- with .Children -}}{{ template "jw-menu-hugo" (dict "Page" $.Page "Menu" . "RootMenu" $.RootMenu) }}{{- end -}}
   </li>
 {{- end -}}
 </ul>
-{{ end }}
-
-{{ define "book-menu-title" }}
-{{- with .Params.BookIcon -}}{{ partial "docs/menu-icon" . }}{{- end -}}
-{{- if .Name -}}{{- .Name -}}{{ else if .Page -}}{{- partial "docs/title" .Page -}}{{- end -}}
 {{ end }}

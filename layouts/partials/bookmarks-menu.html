@@ -1,59 +1,59 @@
 {{ with hugo.Data.bookmarks.sections }}
 {{ $sections := . }}
 {{ $order := slice "inspo" "lounge" "utility" "dev" "lifestyle" }}
-<div class="sb-bookmarks" data-sb-bookmarks>
-  <button class="sb-bookmarks-trigger" type="button" aria-expanded="false" aria-controls="sb-bookmarks-popover" data-sb-toggle>网址收藏</button>
+<div class="jw-bookmarks" data-jw-bookmarks>
+  <button class="jw-bookmarks-trigger" type="button" aria-expanded="false" aria-controls="jw-bookmarks-popover" data-jw-toggle>网址收藏</button>
 
-  <div class="sb-bookmarks-backdrop" data-sb-backdrop hidden></div>
-  <div class="sb-bookmarks sb-bookmarks-popover" id="sb-bookmarks-popover" data-sb-popover hidden>
-    <div class="sb-bookmarks-mobile-bar">
-      <a href="#" class="sb-bookmarks-back" data-sb-back hidden aria-label="返回上一级" title="返回上一级">
-        <svg class="sb-bookmarks-control-icon" aria-hidden="true">{{ partial "docs/icon" "backward" }}</svg>
+  <div class="jw-bookmarks-backdrop" data-jw-backdrop hidden></div>
+  <div class="jw-bookmarks jw-bookmarks-popover" id="jw-bookmarks-popover" data-jw-popover hidden>
+    <div class="jw-bookmarks-mobile-bar">
+      <a href="#" class="jw-bookmarks-back" data-jw-back hidden aria-label="返回上一级" title="返回上一级">
+        <svg class="jw-bookmarks-control-icon" aria-hidden="true">{{ partial "docs/icon" "backward" }}</svg>
       </a>
-      <a href="#" class="sb-bookmarks-close" data-sb-close aria-label="关闭网址收藏菜单" title="关闭网址收藏菜单">
-        <span class="sb-bookmarks-close-icon" aria-hidden="true">×</span>
+      <a href="#" class="jw-bookmarks-close" data-jw-close aria-label="关闭网址收藏菜单" title="关闭网址收藏菜单">
+        <span class="jw-bookmarks-close-icon" aria-hidden="true">×</span>
       </a>
     </div>
 
-    <div class="sb-bookmarks-grid">
-      <ul class="sb-bookmarks-column sb-bookmarks-sections" data-sb-level="sections" role="menu">
+    <div class="jw-bookmarks-grid">
+      <ul class="jw-bookmarks-column jw-bookmarks-sections" data-jw-level="sections" role="menu">
         {{ range $order }}
           {{ $section := index (where $sections "id" .) 0 }}
-          <li><a href="#" class="sb-bookmarks-row" data-sb-section="{{ $section.id }}" role="menuitem">{{ $section.name }}</a></li>
+          <li><a href="#" class="jw-bookmarks-row" data-jw-section="{{ $section.id }}" role="menuitem">{{ $section.name }}</a></li>
         {{ end }}
       </ul>
 
-      <div class="sb-bookmarks-column sb-bookmarks-categories" data-sb-level="categories">
+      <div class="jw-bookmarks-column jw-bookmarks-categories" data-jw-level="categories">
         {{ range $order }}
           {{ $section := index (where $sections "id" .) 0 }}
-          <ul class="sb-bookmarks-category-list" data-sb-section-panel="{{ $section.id }}" role="menu" hidden>
+          <ul class="jw-bookmarks-category-list" data-jw-section-panel="{{ $section.id }}" role="menu" hidden>
             {{ range $section.categories }}
               {{ if gt (len .items) 0 }}
-                <li><a href="#" class="sb-bookmarks-row" data-sb-category="{{ $section.id }}-{{ .id }}" data-sb-parent-section="{{ $section.id }}" role="menuitem">{{ .name }}</a></li>
+                <li><a href="#" class="jw-bookmarks-row" data-jw-category="{{ $section.id }}-{{ .id }}" data-jw-parent-section="{{ $section.id }}" role="menuitem">{{ .name }}</a></li>
               {{ end }}
             {{ end }}
           </ul>
         {{ end }}
       </div>
 
-      <div class="sb-bookmarks-column sb-bookmarks-items" data-sb-level="items">
+      <div class="jw-bookmarks-column jw-bookmarks-items" data-jw-level="items">
         {{ range $order }}
           {{ $section := index (where $sections "id" .) 0 }}
           {{ range $section.categories }}
             {{ if gt (len .items) 0 }}
-              <ul class="sb-bookmarks-item-list" data-sb-category-panel="{{ $section.id }}-{{ .id }}" role="menu" hidden>
+              <ul class="jw-bookmarks-item-list" data-jw-category-panel="{{ $section.id }}-{{ .id }}" role="menu" hidden>
                 {{ range .items }}
                   {{ $item := . }}
                   <li>
-                    <a href="{{ .url }}" class="sb-bookmarks-item" target="_blank" rel="noopener" role="menuitem">
+                    <a href="{{ .url }}" class="jw-bookmarks-item" target="_blank" rel="noopener" role="menuitem">
                       {{ partial "bookmark/icon.html" . }}
-                      <span class="sb-bookmarks-item-copy">
-                        <span class="sb-bookmarks-item-name">{{ .name }}</span>
+                      <span class="jw-bookmarks-item-copy">
+                        <span class="jw-bookmarks-item-name">{{ .name }}</span>
                         {{ with .description }}<small>{{ . }}</small>{{ end }}
                       </span>
                     </a>
                     {{ with .links }}
-                      <div class="sb-bookmarks-extra" aria-label="{{ $item.name }} 的附加链接">
+                      <div class="jw-bookmarks-extra" aria-label="{{ $item.name }} 的附加链接">
                         {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}
                       </div>
                     {{ end }}

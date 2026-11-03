@@ -1,15 +1,15 @@
 {{ define "main" }}
   {{ range sort .Pages "Date" "desc" }}
-  <article class="book-post book-post-list markdown">
+  <article class="jw-post jw-post-list markdown">
     <h3><a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a></h3>
-    <div class="book-post-container flex gap">
+    <div class="jw-post-container">
       <div>
         {{ partial "docs/post-meta" . }}
-        <div class="book-post-content markdown-inner">{{- .Summary | truncate 256 -}}</div>
+        <div class="jw-post-content markdown-inner">{{- .Summary | truncate 256 -}}</div>
       </div>
       {{- $thumbnail := default "thumbnail.*" .Params.BookPostThumbnail -}}
       {{- with or (.Resources.GetMatch $thumbnail) (resources.GetMatch $thumbnail) -}}
-      <div class="book-post-thumbnail"><img src="{{ .RelPermalink }}" alt="{{ partial "docs/text/i18n" "Thumbnail" }}" /></div>
+      <div class="jw-post-thumbnail"><img src="{{ .RelPermalink }}" alt="{{ partial "docs/text/i18n" "Thumbnail" }}" /></div>
       {{- end -}}
     </div>
   </article>
@@ -17,7 +17,9 @@
 {{ end }}
 
 {{ define "toc-container" }}
-<aside class="book-toc"><div class="book-toc-content">{{ template "toc" . }}</div></aside>
+{{ if .Param "BookToC" | default true }}
+<aside class="jw-toc jw-taxonomy-nav" id="page-toc" aria-label="分类导航" tabindex="-1"><button class="jw-panel-close" type="button" data-close-panel aria-label="关闭分类导航">关闭 ×</button><div class="jw-toc-heading">分类</div><div class="jw-toc-content">{{ template "toc" . }}</div></aside>
+{{ end }}
 {{ end }}
 
 {{ define "breadcrumbs" }}<!-- --><!-- -->{{ end }}

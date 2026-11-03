@@ -1,11 +1,11 @@
 {{- if default true .Site.Params.BookSearch -}}
-<div class="book-search hidden">
+<div class="jw-search hidden">
   <input id="book-search-input" type="text" role="searchbox" enterkeyhint="search"
     placeholder="{{ partial "docs/text/i18n" "Search" }}"
     aria-label="{{ partial "docs/text/i18n" "Search" }}"
     maxlength="64" />
-  <div class="book-search-spinner hidden"></div>
+  <div class="jw-search-spinner hidden"></div>
   <div id="book-search-results" role="listbox" aria-live="polite" hidden></div>
 </div>
-<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+<script>document.currentScript.previousElementSibling.classList.remove("hidden")</script>
 {{- end -}}

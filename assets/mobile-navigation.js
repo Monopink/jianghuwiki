@@ -1,68 +1,106 @@
 const menuButton = document.querySelector("#menu-toggle");
-const menuPanel = document.querySelector(".book-menu");
-const menuBackdrop = document.querySelector(".mobile-menu-backdrop");
+const menuPanel = document.querySelector(".jw-primary-nav");
+const menuBackdrop = document.querySelector(".jw-menu-backdrop");
 const tocButton = document.querySelector("#toc-toggle");
-const tocPanel = document.querySelector(".book-toc");
-const tocClose = document.querySelector(".book-toc-close");
-const tocBackdrop = document.querySelector(".mobile-toc-backdrop");
-const header = document.querySelector(".book-header");
-const articleTitle = document.querySelector(".book-article h1");
+const tocPanel = document.querySelector(".jw-toc");
+const tocBackdrop = document.querySelector(".jw-toc-backdrop");
+const closeButtons = document.querySelectorAll("[data-close-panel]");
+const mobileQuery = window.matchMedia("(max-width: 56rem)");
+let returnFocus = null;
+let lockedScrollY = 0;
+let inerted = new Map();
 
-const setMenuOpen = (open) => {
-  if (!menuButton || !menuPanel) return;
+const panelFor = (kind) => kind === "menu" ? menuPanel : tocPanel;
+const backdropFor = (kind) => kind === "menu" ? menuBackdrop : tocBackdrop;
+const activeKind = () => document.body.classList.contains("jw-menu-open") ? "menu" : document.body.classList.contains("jw-toc-open") ? "toc" : null;
 
-  menuPanel.id = "mobile-menu-panel";
-  document.body.classList.toggle("menu-open", open);
-  menuButton.setAttribute("aria-expanded", String(open));
-  if (menuBackdrop) menuBackdrop.hidden = !open;
+const setBackgroundInert = (enabled) => {
+  if (enabled) {
+    const active = activeKind();
+    const candidates = [document.querySelector(".jw-main"), active === "menu" ? tocPanel : menuPanel, ...[...document.body.children].filter((node) => !node.matches(".jw-shell, .jw-menu-backdrop, .jw-toc-backdrop"))].filter(Boolean);
+    inerted = new Map(candidates.map((node) => [node, node.inert]));
+    inerted.forEach((_, node) => { node.inert = true; });
+  } else {
+    inerted.forEach((wasInert, node) => { node.inert = wasInert; });
+    inerted.clear();
+  }
 };
 
-const setTocOpen = (open) => {
-  if (!tocButton || !tocPanel) return;
-
-  tocPanel.id = "mobile-toc-panel";
-  document.body.classList.toggle("toc-open", open);
-  tocButton.setAttribute("aria-expanded", String(open));
-  if (tocBackdrop) tocBackdrop.hidden = !open;
-}
-
-const syncTitleState = () => {
-  if (!header) return;
-
-  const threshold = articleTitle
-    ? articleTitle.getBoundingClientRect().bottom - header.offsetHeight
-    : 96;
-
-  document.body.classList.toggle("page-title-visible", threshold <= 0);
+const unlockScroll = () => {
+  document.body.classList.remove("jw-panel-scroll-locked");
+  document.body.style.removeProperty("top");
+  window.scrollTo(0, lockedScrollY);
 };
 
-menuButton?.addEventListener("click", () => {
-  setTocOpen(false);
-  setMenuOpen(!document.body.classList.contains("menu-open"));
-});
-menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
-tocButton?.addEventListener("click", () => {
-  setMenuOpen(false);
-  setTocOpen(!document.body.classList.contains("toc-open"));
-});
-tocClose?.addEventListener("click", () => setTocOpen(false));
-tocBackdrop?.addEventListener("click", () => setTocOpen(false));
+const closePanels = ({ restore = false, unlock = true } = {}) => {
+  document.body.classList.remove("jw-menu-open", "jw-toc-open");
+  [menuButton, tocButton].filter(Boolean).forEach((button) => button.setAttribute("aria-expanded", "false"));
+  [menuBackdrop, tocBackdrop].filter(Boolean).forEach((backdrop) => { backdrop.hidden = true; });
+  setBackgroundInert(false);
+  if (unlock && document.body.classList.contains("jw-panel-scroll-locked")) unlockScroll();
+  if (restore && returnFocus?.isConnected) returnFocus.focus();
+  returnFocus = null;
+};
+
+const openPanel = (kind, trigger) => {
+  closePanels();
+  returnFocus = trigger;
+  const panel = panelFor(kind);
+  document.body.classList.add(kind === "menu" ? "jw-menu-open" : "jw-toc-open");
+  trigger.setAttribute("aria-expanded", "true");
+  const backdrop = backdropFor(kind);
+  if (backdrop) backdrop.hidden = false;
+  if (mobileQuery.matches) {
+    lockedScrollY = window.scrollY;
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.classList.add("jw-panel-scroll-locked");
+    setBackgroundInert(true);
+  }
+  if (mobileQuery.matches) panel?.querySelector("a[href], button:not([disabled]), input:not([disabled])")?.focus({ preventScroll: true });
+};
+
+menuButton?.addEventListener("click", () => activeKind() === "menu" ? closePanels() : openPanel("menu", menuButton));
+tocButton?.addEventListener("click", () => activeKind() === "toc" ? closePanels() : openPanel("toc", tocButton));
+menuBackdrop?.addEventListener("click", () => closePanels({ restore: true }));
+tocBackdrop?.addEventListener("click", () => closePanels({ restore: true }));
+closeButtons.forEach((button) => button.addEventListener("click", () => closePanels({ restore: true })));
+
 document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") return;
-
-  setMenuOpen(false);
-  setTocOpen(false);
+  const kind = activeKind();
+  if (!kind) return;
+  if (event.key === "Escape") {
+    closePanels({ restore: true });
+    return;
+  }
+  if (event.key !== "Tab") return;
+  const panel = panelFor(kind);
+  const focusable = [...(panel?.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])') || [])].filter((item) => !item.hidden && item.getClientRects().length);
+  if (!focusable.length) { event.preventDefault(); panel?.focus(); return; }
+  const first = focusable[0];
+  const last = focusable.at(-1);
+  if (event.shiftKey && (document.activeElement === first || !panel.contains(document.activeElement))) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && (document.activeElement === last || !panel.contains(document.activeElement))) { event.preventDefault(); first.focus(); }
 });
 
-let scrollFrame = 0;
-window.addEventListener("scroll", () => {
-  if (scrollFrame) return;
+tocPanel?.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href^='#']");
+  if (!link) return;
+  let target;
+  try { target = document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return; }
+  if (target) {
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    const destination = target.getBoundingClientRect().top + window.scrollY;
+    closePanels({ unlock: false });
+    if (document.body.classList.contains("jw-panel-scroll-locked")) {
+      document.body.classList.remove("jw-panel-scroll-locked");
+      document.body.style.removeProperty("top");
+      window.scrollTo(0, destination);
+    }
+    target.focus({ preventScroll: true });
+  } else closePanels();
+});
 
-  scrollFrame = window.requestAnimationFrame(() => {
-    scrollFrame = 0;
-    syncTitleState();
-  });
-}, { passive: true });
-
-setMenuOpen(false);
-syncTitleState();
+mobileQuery.addEventListener?.("change", (event) => {
+  if (!event.matches) closePanels();
+});
+if (!mobileQuery.matches) closePanels();

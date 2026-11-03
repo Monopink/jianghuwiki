@@ -1,19 +1,19 @@
 'use strict';
 
 (function () {
-  const root = document.querySelector('[data-sb-bookmarks]');
+  const root = document.querySelector('[data-jw-bookmarks]');
   if (!root) return;
 
-  const trigger = root.querySelector('[data-sb-toggle]');
-  const popover = root.querySelector('[data-sb-popover]');
-  const backdrop = root.querySelector('[data-sb-backdrop]');
-  const sections = [...root.querySelectorAll('[data-sb-section]')];
-  const categories = [...root.querySelectorAll('[data-sb-category]')];
-  const sectionPanels = [...root.querySelectorAll('[data-sb-section-panel]')];
-  const itemPanels = [...root.querySelectorAll('[data-sb-category-panel]')];
-  const columns = [...root.querySelectorAll('[data-sb-level]')];
-  const back = root.querySelector('[data-sb-back]');
-  const closeButton = root.querySelector('[data-sb-close]');
+  const trigger = root.querySelector('[data-jw-toggle]');
+  const popover = root.querySelector('[data-jw-popover]');
+  const backdrop = root.querySelector('[data-jw-backdrop]');
+  const sections = [...root.querySelectorAll('[data-jw-section]')];
+  const categories = [...root.querySelectorAll('[data-jw-category]')];
+  const sectionPanels = [...root.querySelectorAll('[data-jw-section-panel]')];
+  const itemPanels = [...root.querySelectorAll('[data-jw-category-panel]')];
+  const columns = [...root.querySelectorAll('[data-jw-level]')];
+  const back = root.querySelector('[data-jw-back]');
+  const closeButton = root.querySelector('[data-jw-close]');
   // iPadOS Safari may report hover/fine-pointer support, especially in
   // landscape mode or with a keyboard/trackpad attached. Touch capability
   // should take precedence so the menu keeps using the touch interaction.
@@ -34,8 +34,8 @@
   document.body.appendChild(backdrop);
 
   function firstCategory(sectionId) {
-    const sectionIndex = sections.findIndex((section) => section.dataset.sbSection === sectionId);
-    const sectionCategories = categories.filter((category) => category.dataset.sbParentSection === sectionId);
+    const sectionIndex = sections.findIndex((section) => section.dataset.jwSection === sectionId);
+    const sectionCategories = categories.filter((category) => category.dataset.jwParentSection === sectionId);
 
     if (sectionIndex < 0 || sectionCategories.length === 0) return undefined;
 
@@ -43,28 +43,28 @@
   }
 
   function activateCategory(categoryId) {
-    categories.forEach((category) => category.classList.toggle('is-active', category.dataset.sbCategory === categoryId));
+    categories.forEach((category) => category.classList.toggle('is-active', category.dataset.jwCategory === categoryId));
     itemPanels.forEach((panel) => {
-      const active = panel.dataset.sbCategoryPanel === categoryId;
+      const active = panel.dataset.jwCategoryPanel === categoryId;
       panel.hidden = !active;
       panel.classList.toggle('is-active', active);
     });
   }
 
   function activateSection(sectionId) {
-    sections.forEach((section) => section.classList.toggle('is-active', section.dataset.sbSection === sectionId));
+    sections.forEach((section) => section.classList.toggle('is-active', section.dataset.jwSection === sectionId));
     sectionPanels.forEach((panel) => {
-      const active = panel.dataset.sbSectionPanel === sectionId;
+      const active = panel.dataset.jwSectionPanel === sectionId;
       panel.hidden = !active;
       panel.classList.toggle('is-active', active);
     });
     const category = firstCategory(sectionId);
-    if (category) activateCategory(category.dataset.sbCategory);
+    if (category) activateCategory(category.dataset.jwCategory);
   }
 
   function setMobileLevel(level) {
     mobileLevel = level;
-    columns.forEach((column) => column.classList.toggle('is-mobile-active', column.dataset.sbLevel === level));
+    columns.forEach((column) => column.classList.toggle('is-mobile-active', column.dataset.jwLevel === level));
     back.hidden = level === 'sections';
   }
 
@@ -82,15 +82,15 @@
     popover.hidden = true;
     backdrop.hidden = true;
     setMobileLevel('sections');
-    document.body.classList.remove('sb-bookmarks-open');
+    document.body.classList.remove('jw-bookmarks-open');
   }
 
   function openMenu() {
     trigger.setAttribute('aria-expanded', 'true');
     popover.hidden = false;
     backdrop.hidden = !compactLayout.matches;
-    document.body.classList.toggle('sb-bookmarks-open', compactLayout.matches);
-    if (sections[0]) activateSection(sections[0].dataset.sbSection);
+    document.body.classList.toggle('jw-bookmarks-open', compactLayout.matches);
+    if (sections[0]) activateSection(sections[0].dataset.jwSection);
     setMobileLevel('sections');
     if (portalActive && !compactLayout.matches) window.requestAnimationFrame(placePopover);
   }
@@ -108,9 +108,9 @@
   });
 
   sections.forEach((section) => {
-    activateFromHover(section, () => activateSection(section.dataset.sbSection));
+    activateFromHover(section, () => activateSection(section.dataset.jwSection));
     section.addEventListener('click', function (event) {
-      activateSection(section.dataset.sbSection);
+      activateSection(section.dataset.jwSection);
       setMobileLevel('categories');
       event.preventDefault();
       event.stopPropagation();
@@ -118,9 +118,9 @@
   });
 
   categories.forEach((category) => {
-    activateFromHover(category, () => activateCategory(category.dataset.sbCategory));
+    activateFromHover(category, () => activateCategory(category.dataset.jwCategory));
     category.addEventListener('click', function (event) {
-      activateCategory(category.dataset.sbCategory);
+      activateCategory(category.dataset.jwCategory);
       setMobileLevel('items');
       event.preventDefault();
       event.stopPropagation();
@@ -141,7 +141,7 @@
 
   backdrop.addEventListener('click', closeMenu);
 
-  popover.querySelectorAll('.sb-bookmarks-item, .sb-bookmarks-extra a').forEach((link) => link.addEventListener('click', closeMenu));
+  popover.querySelectorAll('.jw-bookmarks-item, .jw-bookmarks-extra a').forEach((link) => link.addEventListener('click', closeMenu));
   document.addEventListener('click', (event) => {
     if (!root.contains(event.target) && !popover.contains(event.target)) closeMenu();
   });

@@ -3,7 +3,7 @@
   {{ $core := resources.Get "vendor/xrazor/index.global.js" | resources.Fingerprint }}
   {{ $script := resources.Get "tools/xrazor.js" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  <article class="markdown book-article xrazor-page" data-xrazor>
+  <article class="markdown jw-article xrazor-page" data-xrazor>
     <header class="xrazor-header">
       <h1>{{ .Title }}</h1>
       <label class="xrazor-file-input">

@@ -10,7 +10,7 @@
 {{ partial "docs/inject/menu-after" . }}
 
 {{ with .Site.Params.menuFooter }}
-<div class="book-menu-footer">
+<div class="jw-menu-footer">
   <ul class="footer-links">
     {{ range .links }}
     <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></li>
@@ -20,8 +20,7 @@
 {{ end }}
 </nav>
 
-{{ $script := resources.Get "menu-reset.js" | resources.Minify }}
-{{ with $script.Content }}<script>{{ . | safeJS }}</script>{{ end }}
+
 {{ with resources.Get "bookmarks-menu.js" | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ .RelPermalink }}"></script>
 {{ end }}

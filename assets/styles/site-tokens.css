@@ -27,6 +27,18 @@
   --jw-radius-control: 0;
   --jw-nav-width: 15rem;
   --jw-font-body: Inter, system-ui, sans-serif;
+  --jw-font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --jw-text-xs: .75rem;
+  --jw-text-small: .875rem;
+  --jw-text-body: 1rem;
+  --jw-text-large: 1.125rem;
+  --jw-text-heading-small: 1.25rem;
+  --jw-text-heading-medium: 1.5rem;
+  --jw-text-heading-large: 2rem;
+  --jw-text-control: var(--jw-text-small);
+  --jw-text-navigation: var(--jw-text-small);
+  --jw-text-caption: var(--jw-text-small);
+  --jw-leading-control: 1.5;
   --jw-leading-body: 1.8;
 
   /* Content/shortcode compatibility tokens; shell ownership is independent. */
@@ -136,4 +148,10 @@
     --gray-500: #969899;
     --icon-filter: brightness(0) invert(0.93);
   }
+}
+
+/* Mobile roles change together; component rules consume these variables. */
+@media (max-width: 56rem) {
+  :root,
+  :root[data-theme] { --jw-text-control: var(--jw-text-body); --jw-text-navigation: var(--jw-text-body); }
 }

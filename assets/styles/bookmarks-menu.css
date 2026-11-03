@@ -14,13 +14,12 @@
   position: relative;
   z-index: 1000;
   color: var(--body-font-color);
-  font: var(--body-font-weight) var(--font-size-smaller) / 1.4 system-ui, sans-serif;
+  font-family: var(--jw-font-body);
+  font-size: var(--jw-text-navigation);
+  line-height: var(--jw-leading-control);
 }
 
-.jw-bookmarks button,
-.jw-bookmarks a,
-.jw-bookmarks ul,
-.jw-bookmarks li {
+:where(.jw-bookmarks) :where(button, a, ul, li) {
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -63,34 +62,10 @@
   cursor: pointer;
 }
 
-.jw-bookmarks-trigger {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 44px;
-  border: 1px solid var(--jw-color-border) !important;
-  padding: 0.5rem 0.75rem !important;
-  background: var(--jw-color-canvas) !important;
-  color: var(--jw-color-muted) !important;
-  font-weight: 650;
-  text-align: left;
-}
-
-.jw-bookmarks-trigger:hover,
-.jw-bookmarks-trigger:focus-visible {
-  border-color: var(--jw-color-bookmarks-hover) !important;
-  color: var(--jw-color-bookmarks-hover) !important;
-}
-
-.jw-bookmarks-trigger[aria-expanded="true"] {
-  border-color: var(--jw-color-border) !important;
-  background: var(--jw-color-nav-hover) !important;
-  color: var(--jw-color-text) !important;
-}
-
-.jw-bookmarks-trigger:focus-visible {
-  outline: 2px solid var(--jw-color-focus);
-}
+.jw-nav-action.jw-bookmarks-trigger { border: 1px solid var(--jw-color-border); }
+.jw-nav-action.jw-bookmarks-trigger:is(:hover, :focus-visible) { border-color: var(--jw-color-bookmarks-hover); color: var(--jw-color-bookmarks-hover); }
+.jw-nav-action.jw-bookmarks-trigger[aria-expanded="true"] { border-color: var(--jw-color-border); background: var(--jw-color-nav-hover); color: var(--jw-color-text); }
+.jw-nav-action.jw-bookmarks-trigger:focus-visible { outline: 2px solid var(--jw-color-focus); }
 
 .jw-bookmarks-popover {
   position: fixed;
@@ -193,7 +168,7 @@
 .jw-bookmarks-item-copy small {
   overflow: hidden;
   color: var(--gray-50);
-  font-size: 0.8em;
+  font-size: var(--jw-text-caption);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -208,7 +183,7 @@
 .jw-bookmarks-extra a {
   padding: 0.25rem 0 !important;
   color: var(--body-font-color) !important;
-  font-size: 0.82em;
+  font-size: var(--jw-text-caption);
 }
 
 .jw-bookmarks-mobile-bar {
@@ -224,10 +199,6 @@ body.jw-bookmarks-open {
 }
 
 @media screen and (max-width: 56rem) {
-  .jw-bookmarks {
-    font-size: 1rem;
-  }
-
   .jw-bookmarks-backdrop {
     display: block;
     position: fixed;

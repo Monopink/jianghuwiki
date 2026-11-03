@@ -7,10 +7,12 @@
   font-display: swap;
   src: url("/fonts/InterVariable.woff2") format("woff2");
 }
+html { font-size: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--body-background);
   color: var(--body-font-color);
   font-family: var(--jw-font-body);
+  font-size: var(--jw-text-body);
 }
 
 body.jw-kind-section.jw-type-posts .jw-footer {
@@ -136,8 +138,12 @@ a.book-btn[href]:focus-visible {
   font-weight: bolder;
 }
 
-.markdown h5 { font-size: 0.875em; }
-.markdown h6 { font-size: 0.75em; }
+.markdown h1 { font-size: var(--jw-text-heading-large); }
+.markdown h2 { font-size: var(--jw-text-heading-medium); }
+.markdown h3 { font-size: var(--jw-text-heading-small); }
+.markdown h4 { font-size: var(--jw-text-large); }
+.markdown h5 { font-size: var(--jw-text-body); }
+.markdown h6 { font-size: var(--jw-text-small); }
 
 .markdown a {
   color: var(--jw-color-text);
@@ -499,7 +505,7 @@ a.book-btn[href]:focus-visible {
 .home-search-result small,
 .home-search-empty {
   color: var(--gray-60);
-  font-size: 0.8rem;
+  font-size: var(--jw-text-caption);
 }
 
 .home-search-result small {

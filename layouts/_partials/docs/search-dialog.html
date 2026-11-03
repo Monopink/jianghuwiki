@@ -1,8 +1,8 @@
 {{ if default true .Site.Params.BookSearch }}
 <dialog class="jw-search-dialog" id="jw-site-search" aria-labelledby="jw-site-search-title">
-  <header><h2 id="jw-site-search-title">站内搜索</h2><button type="button" data-search-close aria-label="关闭站内搜索">关闭 ×</button></header>
-  <form role="search"><label class="jw-search-label" for="jw-site-search-input">搜索文档、书签和应用</label><input id="jw-site-search-input" type="search" placeholder="输入关键词" maxlength="128" autocomplete="off" autofocus /></form>
-  <p class="jw-search-status" role="status" aria-live="polite">输入关键词搜索本站内容</p>
+  <header><h2 id="jw-site-search-title">站内搜索</h2><button class="jw-close-icon" type="button" data-search-close aria-label="关闭站内搜索">{{ partial "docs/close-icon" . }}</button></header>
+  <form role="search"><input id="jw-site-search-input" type="search" aria-label="站内搜索关键词" maxlength="128" autocomplete="off" autofocus /></form>
+  <p class="jw-search-status" role="status" aria-live="polite"></p>
   <ol class="jw-search-results" aria-label="站内搜索结果"></ol>
 </dialog>
 {{ end }}

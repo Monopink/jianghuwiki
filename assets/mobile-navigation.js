@@ -33,11 +33,12 @@ const unlockScroll = () => {
 };
 
 const closePanels = ({ restore = false, unlock = true } = {}) => {
+  const wasScrollLocked = document.body.classList.contains("jw-panel-scroll-locked");
   document.body.classList.remove("jw-menu-open", "jw-toc-open");
   [menuButton, tocButton].filter(Boolean).forEach((button) => button.setAttribute("aria-expanded", "false"));
   [menuBackdrop, tocBackdrop].filter(Boolean).forEach((backdrop) => { backdrop.hidden = true; });
   setBackgroundInert(false);
-  if (unlock && document.body.classList.contains("jw-panel-scroll-locked")) unlockScroll();
+  if (unlock && wasScrollLocked) unlockScroll();
   if (restore && returnFocus?.isConnected) returnFocus.focus();
   returnFocus = null;
 };
@@ -90,7 +91,7 @@ tocPanel?.addEventListener("click", (event) => {
   try { target = document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return; }
   if (target) {
     if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
-    const destination = target.getBoundingClientRect().top + window.scrollY;
+    const destination = target.getBoundingClientRect().top + (document.body.classList.contains("jw-panel-scroll-locked") ? lockedScrollY : window.scrollY);
     closePanels({ unlock: false });
     if (document.body.classList.contains("jw-panel-scroll-locked")) {
       document.body.classList.remove("jw-panel-scroll-locked");

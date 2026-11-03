@@ -10,8 +10,8 @@
       <a href="#" class="jw-bookmarks-back" data-jw-back hidden aria-label="返回上一级" title="返回上一级">
         <svg class="jw-bookmarks-control-icon" aria-hidden="true">{{ partial "docs/icon" "backward" }}</svg>
       </a>
-      <a href="#" class="jw-bookmarks-close" data-jw-close aria-label="关闭网址收藏菜单" title="关闭网址收藏菜单">
-        <span class="jw-bookmarks-close-icon" aria-hidden="true">×</span>
+      <a href="#" class="jw-bookmarks-close jw-close-icon" data-jw-close aria-label="关闭网址收藏菜单" title="关闭网址收藏菜单">
+        {{ partial "docs/close-icon" . }}
       </a>
     </div>
 

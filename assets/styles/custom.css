@@ -113,6 +113,7 @@ a.book-btn[href]:focus-visible {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
+  color: var(--jw-color-text);
   font-weight: bold;
   line-height: 1.4;
 }
@@ -175,12 +176,19 @@ a.book-btn[href]:focus-visible {
   text-decoration: none;
 }
 
+.markdown { color: var(--jw-color-body); }
+
 .markdown code {
   padding: 0 0.25rem;
   border: 0;
   border-radius: 0;
   background: var(--gray-90);
 }
+
+.jw-code-block { position: relative; }
+.jw-code-copy { position: absolute; top: .5rem; right: .5rem; z-index: 1; font-size: .75rem; }
+.jw-code-block pre { padding-top: 2.75rem; }
+.markdown pre:focus { outline: none; box-shadow: none; }
 
 .markdown pre {
   border: 0;
@@ -417,10 +425,8 @@ a.book-btn[href]:focus-visible {
   box-sizing: border-box;
   max-height: 30rem;
   overflow-y: auto;
-  border: 1px solid var(--gray-80);
-  border-top: 1px solid var(--gray-80);
+  border: 0;
   background: var(--body-background);
-
 }
 
 .home-search-result,
@@ -430,6 +436,8 @@ a.book-btn[href]:focus-visible {
   color: var(--body-font-color) !important;
   text-decoration: none;
 }
+
+.markdown .home-search-result[href]:hover { text-decoration: none; }
 
 .home-search-result {
   display: flex;
@@ -494,7 +502,7 @@ a.book-btn[href]:focus-visible {
   align-items: center;
   align-self: stretch;
   padding: 0.5rem 0.65rem;
-  border: 1px solid var(--gray-80);
+  border: 1px solid var(--jw-color-border);
   border-radius: 0;
   color: var(--body-font-color);
   white-space: nowrap;
@@ -542,11 +550,13 @@ a.book-btn[href]:focus-visible {
   text-align: center;
 }
 
+.markdown .home-search-script-link[href]:hover { text-decoration: none; }
+
 .home-search-link:hover,
 .home-search-link:focus-visible {
-  border-color: var(--jw-color-accent);
+  border-color: var(--search-color);
   background: var(--button-hover-background);
-  color: var(--jw-color-accent);
+  color: var(--search-color);
   outline: none;
 }
 
@@ -747,4 +757,4 @@ a.book-btn[href]:focus-visible {
   }
 }
 
-a[role="button"], .button-secondary, .home-search-script-link { text-shadow: none; -webkit-text-stroke: 0; }
+a[role="button"], .button-secondary, .home-search-script-link { text-decoration: none; text-shadow: none; -webkit-text-stroke: 0; }

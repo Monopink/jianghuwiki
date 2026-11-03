@@ -4,7 +4,7 @@
   {{ partial "docs/html-head" . }}
   {{ partial "docs/inject/head" . }}
 </head>
-<body dir="{{ default "ltr" .Site.Language.Direction }}" class="jw-page jw-kind-{{ .Kind }} jw-type-{{ .Type }}{{ with .Layout }} jw-layout-{{ . }}{{ end }}">
+<body dir="{{ default "ltr" .Site.Language.Direction }}" class="jw-page{{ if eq .Section "toolbox" }} jw-width-wide{{ end }} jw-kind-{{ .Kind }} jw-type-{{ .Type }}{{ with .Layout }} jw-layout-{{ . }}{{ end }}">
   <a class="jw-skip-link" href="#main-content">跳至正文</a>
   <div class="jw-shell">
     <header class="jw-mobile-header">
@@ -22,13 +22,13 @@
         {{ template "comments" . }}
         {{ partial "docs/inject/footer" . }}
         {{ template "copyright" . }}
-        {{ template "clipboard" . }}
       </footer>
       {{ end }}
     </main>
     {{ template "toc-container" . }}
   </div>
   {{ partial "docs/search-dialog" . }}
+  {{ with resources.Get "code-copy.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ partial "docs/inject/body" . }}
   {{ with resources.Get "toc-navigation.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
   {{ with resources.Get "external-links.js" | resources.Minify | resources.Fingerprint }}<script defer src="{{ .RelPermalink }}"></script>{{ end }}
@@ -37,7 +37,6 @@
 
 {{ define "menu-container" }}
 <aside class="jw-primary-nav" id="primary-navigation" aria-label="主导航" tabindex="-1">
-  <button class="jw-panel-close" type="button" data-close-panel aria-label="关闭主导航">关闭 ×</button>
   <div class="jw-primary-nav-content">{{ template "menu" . }}</div>
 </aside>
 {{ end }}
@@ -45,7 +44,6 @@
 {{ define "header" }}{{ partial "docs/header" . }}{{ end }}
 {{ define "breadcrumbs" }}{{ if .Param "BookBreadcrumbs" | default false }}{{ partial "docs/breadcrumbs" . }}{{ end }}{{ end }}
 {{ define "footer" }}{{ partial "docs/footer" . }}{{ end }}
-{{ define "clipboard" }}{{ with resources.Get "clipboard.js" | resources.Minify }}<script>{{ .Content | safeJS }}</script>{{ end }}{{ end }}
 {{ define "copyright" }}{{ if or .Site.Copyright .Params.Copyright }}<div class="jw-copyright">{{ partial "docs/copyright" . }}</div>{{ end }}{{ end }}
 {{ define "comments" }}{{ if and .Content (.Param "BookComments") }}<div class="jw-comments">{{ partial "docs/comments" . }}</div>{{ end }}{{ end }}
 {{ define "main" }}<article class="markdown jw-article" data-reading-content>{{ .Content }}</article>{{ end }}
@@ -58,7 +56,7 @@
   {{ $hasRelated := or (.Scratch.Get "bookBacklinks") (.Scratch.Get "bookLinks") }}
   {{ if or $hasHeadings $hasCustomToc $hasRelated $isTaxonomyList }}
   <aside class="jw-toc" id="page-toc" aria-label="章节导航" tabindex="-1">
-    <button class="jw-panel-close" type="button" data-close-panel aria-label="关闭目录">关闭 ×</button>
+    <button class="jw-panel-close jw-close-icon" type="button" data-close-panel aria-label="关闭目录">{{ partial "docs/close-icon" . }}</button>
     <div class="jw-toc-content">{{ template "toc" . }}</div>
   </aside>
   {{ end }}

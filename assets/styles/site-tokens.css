@@ -6,10 +6,11 @@
   color-scheme: light;
   --jw-color-accent: #f04f2f;
   --jw-color-canvas: #fff;
-  --jw-color-surface: #f0f0ee;
-  --jw-color-surface-hover: #dededb;
+  --jw-color-surface: #f7f7f6;
+  --jw-color-surface-hover: #eeeeec;
   --jw-color-text: #202429;
-  --jw-color-muted: #626560;
+  --jw-color-body: #50545a;
+  --jw-color-muted: #73777c;
   --jw-color-border: #929491;
   --jw-color-selection: #fbe8e3;
   --jw-color-focus: var(--jw-color-accent);
@@ -17,7 +18,7 @@
   --jw-color-warning: #795400;
   --jw-color-danger: #a32d22;
   --jw-radius-control: 0;
-  --jw-nav-width: 17rem;
+  --jw-nav-width: 15rem;
   --jw-font-body: Inter, system-ui, sans-serif;
   --jw-leading-body: 1.8;
 
@@ -56,7 +57,8 @@
   --jw-color-surface: #2d3033;
   --jw-color-surface-hover: #42464a;
   --jw-color-text: #e9ecef;
-  --jw-color-muted: #a2a7ab;
+  --jw-color-body: #c0c4c8;
+  --jw-color-muted: #969ca2;
   --jw-color-border: #626560;
   --jw-color-selection: #49312b;
   --jw-color-focus: var(--jw-color-accent);
@@ -88,7 +90,8 @@
     --jw-color-surface: #2d3033;
     --jw-color-surface-hover: #42464a;
     --jw-color-text: #e9ecef;
-    --jw-color-muted: #a2a7ab;
+    --jw-color-body: #c0c4c8;
+    --jw-color-muted: #969ca2;
     --jw-color-border: #626560;
     --jw-color-selection: #49312b;
     --jw-color-focus: var(--jw-color-accent);

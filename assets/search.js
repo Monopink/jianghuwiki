@@ -38,7 +38,7 @@
   async function search() {
     const query = input.value.trim();
     results.replaceChildren();
-    if (!query) { status.textContent = '输入关键词搜索本站内容'; return; }
+    if (!query) { status.textContent = ''; return; }
     status.textContent = '正在搜索…';
     try {
       await init();
@@ -79,7 +79,7 @@
   input.addEventListener('input', () => {
     clearTimeout(debounce);
     results.replaceChildren();
-    status.textContent = input.value.trim() ? '正在搜索…' : '输入关键词搜索本站内容';
+    status.textContent = input.value.trim() ? '正在搜索…' : '';
     debounce = setTimeout(search, 180);
   });
   dialog.querySelector('form').addEventListener('submit', event => {

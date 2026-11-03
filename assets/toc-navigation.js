@@ -1,8 +1,34 @@
 (() => {
   const panel = document.querySelector(".jw-toc");
-  const links = [...(panel?.querySelectorAll('#TableOfContents a[href*="#"]') || [])];
+  const desktop = panel?.querySelector(".jw-toc-desktop");
+  const mobile = panel?.querySelector(".jw-toc-mobile");
+  const desktopQuery = window.matchMedia("(min-width: 56.001rem)");
+  if (desktop && mobile) {
+    const source = desktop.querySelector("#TableOfContents");
+    const root = source?.querySelector(":scope > ul");
+    if (root) {
+      const list = document.createElement("ul");
+      root.querySelectorAll(":scope > li").forEach((item) => {
+        const link = item.querySelector(":scope > a");
+        if (!link) return;
+        const row = document.createElement("li");
+        row.append(link.cloneNode(true));
+        list.append(row);
+        const children = item.querySelector(":scope > ul");
+        children?.querySelectorAll(":scope > li > a").forEach((childLink) => {
+          const child = document.createElement("li");
+          child.className = "jw-toc-mobile-child";
+          child.append(childLink.cloneNode(true));
+          list.append(child);
+        });
+      });
+      mobile.replaceChildren(list);
+      mobile.hidden = false;
+    }
+  }
+  const links = [...(desktop?.querySelectorAll('#TableOfContents a[href*="#"]') || [])];
   const content = document.querySelector("[data-reading-content]");
-  if (!panel || !links.length || !content) return;
+  if (!panel || !desktop || !links.length || !content || !desktopQuery.matches) return;
 
   const entries = [];
   for (const link of links) {
@@ -18,16 +44,35 @@
     entries.push({ link, target });
   }
   if (!entries.length) return;
+  let current = null;
+  let applyBranches = () => {};
+
+  const rootList = desktop.querySelector("#TableOfContents > ul");
+  const branches = [];
+  if (rootList) {
+    rootList.querySelectorAll("li").forEach((item, index) => {
+      const childList = [...item.children].find((child) => child.tagName === "UL");
+      const link = [...item.children].find((child) => child.tagName === "A");
+      if (!childList || !link) return;
+      branches.push({ item, childList, link });
+    });
+  }
+  applyBranches = () => {
+    const active = current?.link;
+    branches.forEach((branch) => {
+      const autoOpen = Boolean(active && branch.item.contains(active));
+      branch.childList.hidden = !autoOpen;
+    });
+  };
 
   let bottom = 0;
   let frame = 0;
-  let current = null;
   let pointerInside = false;
-  panel.addEventListener("pointerenter", () => { pointerInside = true; });
-  panel.addEventListener("pointerleave", () => { pointerInside = false; alignCurrent(); });
-  panel.addEventListener("focusin", () => { pointerInside = true; });
-  panel.addEventListener("focusout", (event) => {
-    if (!panel.contains(event.relatedTarget)) { pointerInside = false; alignCurrent(); }
+  desktop.addEventListener("pointerenter", () => { pointerInside = true; });
+  desktop.addEventListener("pointerleave", () => { pointerInside = false; alignCurrent(); });
+  desktop.addEventListener("focusin", () => { pointerInside = true; });
+  desktop.addEventListener("focusout", (event) => {
+    if (!desktop.contains(event.relatedTarget)) { pointerInside = false; alignCurrent(); }
   });
 
   const offset = () => document.querySelector(".jw-mobile-header")?.getBoundingClientRect().height || 0;
@@ -40,9 +85,9 @@
   const alignCurrent = () => {
     if (!current || pointerInside) return;
     const box = current.link.getBoundingClientRect();
-    const area = panel.querySelector(".jw-toc-content").getBoundingClientRect();
-    if (box.top < area.top) panel.querySelector(".jw-toc-content").scrollTop -= area.top - box.top;
-    else if (box.bottom > area.bottom) panel.querySelector(".jw-toc-content").scrollTop += box.bottom - area.bottom;
+    const area = desktop.getBoundingClientRect();
+    if (box.top < area.top) desktop.scrollTop -= area.top - box.top;
+    else if (box.bottom > area.bottom) desktop.scrollTop += box.bottom - area.bottom;
   };
   const update = () => {
     frame = 0;
@@ -62,6 +107,7 @@
         else entry.link.removeAttribute("aria-current");
       }
       current = selected;
+      applyBranches();
       alignCurrent();
     }
   };
@@ -79,5 +125,5 @@
   document.querySelectorAll("[data-reading-content] img").forEach((img) => {
     if (!img.complete) img.addEventListener("load", () => { measure(); schedule(); }, { once: true });
   });
-  panel.querySelectorAll('#TableOfContents a[href*="#"]').forEach((link) => link.addEventListener("click", () => setTimeout(schedule, 0)));
+  desktop.querySelectorAll('#TableOfContents a[href*="#"]').forEach((link) => link.addEventListener("click", () => setTimeout(schedule, 0)));
 })();

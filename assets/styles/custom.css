@@ -420,13 +420,14 @@ a.book-btn[href]:focus-visible {
 .home-search-results {
   position: absolute;
   z-index: 20;
-  top: calc(100% + 3px);
+  top: calc(100% + 0.25rem);
   inset-inline: 0;
   box-sizing: border-box;
   max-height: 30rem;
   overflow-y: auto;
-  border: 0;
+  border: 2px solid var(--jw-color-border);
   background: var(--body-background);
+  box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 16%);
 }
 
 .home-search-result,
@@ -437,7 +438,13 @@ a.book-btn[href]:focus-visible {
   text-decoration: none;
 }
 
-.markdown .home-search-result[href]:hover { text-decoration: none; }
+.markdown .home-search a[href],
+.markdown .home-search a[href]:visited,
+.markdown .home-search a[href]:hover,
+.markdown .home-search a[href]:focus-visible {
+  text-decoration-line: none;
+  text-decoration-color: transparent;
+}
 
 .home-search-result {
   display: flex;
@@ -550,12 +557,10 @@ a.book-btn[href]:focus-visible {
   text-align: center;
 }
 
-.markdown .home-search-script-link[href]:hover { text-decoration: none; }
-
 .home-search-link:hover,
 .home-search-link:focus-visible {
   border-color: var(--search-color);
-  background: var(--button-hover-background);
+  background: color-mix(in srgb, var(--search-color) 12%, var(--home-surface));
   color: var(--search-color);
   outline: none;
 }
@@ -579,6 +584,7 @@ a.book-btn[href]:focus-visible {
 }
 
 .quick-dial-label {
+  color: var(--jw-color-text);
   font-weight: bolder;
   padding-top: 0.1rem;
 }
@@ -595,7 +601,7 @@ a.book-btn[href]:focus-visible {
   display: block;
   min-width: 0;
   padding: 0.1rem 0.3rem;
-  color: var(--jw-color-text) !important;
+  color: var(--jw-color-body) !important;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
@@ -714,6 +720,10 @@ a.book-btn[href]:focus-visible {
   .home-search-groups,
   .home-search-links {
     display: block;
+  }
+
+  .home-search-group + .home-search-group {
+    margin-top: 1.25rem;
   }
 
   .home-search-link {

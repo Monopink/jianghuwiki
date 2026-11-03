@@ -57,7 +57,16 @@
   {{ if or $hasHeadings $hasCustomToc $hasRelated $isTaxonomyList }}
   <aside class="jw-toc" id="page-toc" aria-label="章节导航" tabindex="-1">
     <button class="jw-panel-close jw-close-icon" type="button" data-close-panel aria-label="关闭目录">{{ partial "docs/close-icon" . }}</button>
-    <div class="jw-toc-content">{{ template "toc" . }}</div>
+    <div class="jw-toc-content">
+      {{ $isTaxonomyList := and (eq .Kind "section") (eq .Type "posts") }}
+      {{ $hasHeadings := or (findRE `href="#` .TableOfContents) (eq .Layout "apps") }}
+      {{ if and (not $isTaxonomyList) $hasHeadings }}
+      <div class="jw-toc-desktop">{{ template "toc" . }}</div>
+      <nav class="jw-toc-mobile" aria-label="章节导航（移动端）" hidden></nav>
+      {{ else }}
+      {{ template "toc" . }}
+      {{ end }}
+    </div>
   </aside>
   {{ end }}
   {{ end }}

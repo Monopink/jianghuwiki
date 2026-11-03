@@ -85,7 +85,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 tocPanel?.addEventListener("click", (event) => {
-  const link = event.target.closest("a[href^='#']");
+  const link = event.target.closest(".jw-toc-mobile a[href^='#']");
   if (!link) return;
   let target;
   try { target = document.getElementById(decodeURIComponent(link.hash.slice(1))); } catch { return; }

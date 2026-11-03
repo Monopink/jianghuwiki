@@ -8,6 +8,7 @@
   --jw-color-canvas: #fff;
   --jw-color-surface: #f7f7f6;
   --jw-color-surface-hover: #eeeeec;
+  --jw-color-nav-hover: #e9e9e7;
   --jw-color-text: #202429;
   --jw-color-body: #50545a;
   --jw-color-muted: #73777c;
@@ -56,6 +57,7 @@
   --jw-color-canvas: #202429;
   --jw-color-surface: #2d3033;
   --jw-color-surface-hover: #42464a;
+  --jw-color-nav-hover: #383c40;
   --jw-color-text: #e9ecef;
   --jw-color-body: #c0c4c8;
   --jw-color-muted: #969ca2;
@@ -89,6 +91,7 @@
     --jw-color-canvas: #202429;
     --jw-color-surface: #2d3033;
     --jw-color-surface-hover: #42464a;
+    --jw-color-nav-hover: #383c40;
     --jw-color-text: #e9ecef;
     --jw-color-body: #c0c4c8;
     --jw-color-muted: #969ca2;

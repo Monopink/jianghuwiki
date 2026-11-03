@@ -14,7 +14,6 @@
   const searchDataURL = '{{ partial "docs/links/resource-precache" $searchData }}';
   const searchEngineURL = '{{ "minisearch.min.js" | relURL }}';
   let index, loading, debounce, returnFocus;
-  trigger.parentElement.hidden = false;
   async function init() {
     if (index) return;
     if (!loading) loading = Promise.all([

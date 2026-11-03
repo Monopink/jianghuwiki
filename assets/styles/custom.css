@@ -185,9 +185,12 @@ a.book-btn[href]:focus-visible {
   background: var(--gray-90);
 }
 
-.jw-code-block { position: relative; }
-.jw-code-copy { position: absolute; top: .5rem; right: .5rem; z-index: 1; font-size: .75rem; }
-.jw-code-block pre { padding-top: 2.75rem; }
+.jw-code-block { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2.75rem; margin-block: 1rem; background: var(--gray-95); }
+.markdown .jw-code-block pre { min-width: 0; margin: 0; padding: 1rem; }
+.jw-code-copy { position: absolute; inset-block-start: .5rem; inset-inline-end: .375rem; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: .375rem; border: 1px solid transparent; background: transparent; color: var(--jw-color-muted); }
+.jw-code-copy svg { display: block; width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.jw-code-copy:is(:hover, :focus-visible) { color: var(--jw-color-accent); background: transparent; border-color: var(--jw-color-border); }
+.jw-code-copy:focus-visible { outline: 2px solid var(--jw-color-focus); outline-offset: 2px; }
 .markdown pre:focus { outline: none; box-shadow: none; }
 
 .markdown pre {

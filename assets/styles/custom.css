@@ -791,3 +791,7 @@ a.book-btn[href]:focus-visible {
 }
 
 a[role="button"], .button-secondary, .home-search-script-link { text-decoration: none; text-shadow: none; -webkit-text-stroke: 0; }
+
+@media (max-width: 56rem) {
+  .home-search-results { box-shadow: var(--jw-shadow-mobile-popover); }
+}

@@ -57,7 +57,7 @@
 ## Visual direction
 
 - Maintain a serious, flat, sharp retro-futuristic style: square corners, clear grids, deliberate borders, grayscale text hierarchy, and restrained neon interactions.
-- Avoid generic rounded cards, bevels, glow, decorative textures, and heavy shadows. Microblog entries intentionally use separate flat background blocks; homepage brand/decorative colors and overflow text masks are intentional exceptions.
+- Avoid generic rounded cards, bevels, glow, and decorative textures. Mobile interfaces may use modern glass backgrounds, backdrop blur, and soft shadows; mobile header, sidebar, and TOC intentionally use translucent backgrounds. Desktop interfaces must not use glass or blurred UI shadows: Jianghu search results and bookmark popovers share the solid offset block shadow token. Microblog entries intentionally use separate flat background blocks; homepage brand/decorative colors and overflow text masks are intentional exceptions.
 - Normal text and links use grayscale; hover/focus uses the single brand accent unless the component has an explicitly specified color role. Do not invent lighter/darker versions of the brand accent.
 - Use icons sparingly and consistently; preserve meaningful section emoji where they are part of the site's identity.
 

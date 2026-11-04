@@ -74,7 +74,7 @@
   overflow: hidden;
   border: 1px solid var(--jw-color-border-strong);
   background: var(--jw-color-canvas);
-  box-shadow: none;
+  box-shadow: var(--jw-shadow-popover);
 }
 
 .jw-bookmarks-popover[hidden],

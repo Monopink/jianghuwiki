@@ -10,3 +10,9 @@
 - Vendored theme styles, optional disabled DocSearch, syntax highlighting, and standalone static applications are separate integration scopes. Do not rewrite their palettes as incidental site UI changes.
 
 Validate explicit light/dark themes and automatic theme selection, plus homepage brand colors and color-picker controls, after changing tokens.
+
+## Desktop and mobile effects
+
+- Desktop UI uses opaque surfaces. Jianghu search results and bookmark popovers share `--jw-shadow-popover`: a gray offset block with zero blur and zero spread. Its color adapts to light/dark themes through `--jw-color-shadow-block`.
+- Mobile UI may use translucent glass, backdrop blur, and soft shadows. Use `--jw-color-glass` and `--jw-shadow-mobile-popover`; keep these effects inside the mobile breakpoint. Full-screen bookmark menus retain no outer shadow.
+- The color-picker label shadow is a functional readability exception over user-selected colors, not desktop popover styling.

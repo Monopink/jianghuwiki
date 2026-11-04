@@ -1,4 +1,5 @@
 {
+  "buildCommand": "node scripts/build-vercel.cjs",
   "build": {
     "env": {
       "HUGO_VERSION": "0.169.0"

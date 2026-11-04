@@ -43,7 +43,7 @@
   }
 
   function activateCategory(categoryId) {
-    categories.forEach((category) => category.classList.toggle('is-active', category.dataset.jwCategory === categoryId));
+    categories.forEach((category) => category.classList.toggle('is-active', !compactLayout.matches && category.dataset.jwCategory === categoryId));
     itemPanels.forEach((panel) => {
       const active = panel.dataset.jwCategoryPanel === categoryId;
       panel.hidden = !active;
@@ -52,7 +52,7 @@
   }
 
   function activateSection(sectionId) {
-    sections.forEach((section) => section.classList.toggle('is-active', section.dataset.jwSection === sectionId));
+    sections.forEach((section) => section.classList.toggle('is-active', !compactLayout.matches && section.dataset.jwSection === sectionId));
     sectionPanels.forEach((panel) => {
       const active = panel.dataset.jwSectionPanel === sectionId;
       panel.hidden = !active;
@@ -97,7 +97,10 @@
     popover.hidden = false;
     backdrop.hidden = !compactLayout.matches;
     document.body.classList.toggle('jw-bookmarks-open', compactLayout.matches);
-    if (sections[0]) activateSection(sections[0].dataset.jwSection);
+    if (!compactLayout.matches && sections[0]) activateSection(sections[0].dataset.jwSection);
+    if (compactLayout.matches) {
+      sections.concat(categories).forEach(item => item.classList.remove('is-active'));
+    }
     setMobileLevel('sections');
     if (portalActive && !compactLayout.matches) window.requestAnimationFrame(placePopover);
   }

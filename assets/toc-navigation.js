@@ -20,6 +20,12 @@
       mobile.hidden = false;
     }
   }
+  const toggle = document.querySelector('#toc-toggle');
+  if (toggle) {
+    const mobileLinks = mobile ? mobile.querySelector('a[href]') : panel?.querySelector('.jw-toc-content a[href]');
+    toggle.toggleAttribute('data-mobile-empty', !mobileLinks);
+    toggle.hidden = false;
+  }
   const tocRoot = desktop?.querySelector("#TableOfContents > ul");
   const links = [...(tocRoot?.querySelectorAll(":scope > li > a, :scope > li > ul > li > a") || [])];
   const content = document.querySelector("[data-reading-content]");

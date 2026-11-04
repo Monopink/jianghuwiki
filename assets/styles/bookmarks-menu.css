@@ -214,6 +214,10 @@ body.jw-bookmarks-open {
     height: 100dvh;
     max-height: none;
     overflow: auto;
+    overscroll-behavior: contain;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+
     border: 0;
     box-shadow: none;
   }
@@ -291,8 +295,21 @@ body.jw-bookmarks-open {
     display: block;
   }
 
-  .jw-bookmarks-item {
-    min-height: 3rem;
-    padding-block: 0.65rem !important;
-  }
+  .jw-bookmarks-popover { font-size: var(--jw-text-body); line-height: var(--jw-leading-body); }
+  .jw-bookmarks-popover .jw-bookmarks-row,
+  .jw-bookmarks-popover .jw-bookmarks-item { min-height: 3rem; padding: .75rem 1rem !important; }
+  .jw-bookmarks-popover .jw-bookmarks-item { gap: .75rem; }
+  .jw-bookmarks-popover .jw-bookmarks-item-name,
+  .jw-bookmarks-popover .jw-bookmarks-item-copy small { white-space: normal; overflow: visible; text-overflow: clip; }
+  .jw-bookmarks-popover .jw-bookmarks-item-copy small { font-size: var(--jw-text-caption); }
+  .jw-bookmarks-popover .jw-bookmarks-extra { margin: 0 1rem .75rem 3.125rem; gap: .5rem 1rem; }
+  .jw-bookmarks-popover .jw-bookmarks-extra a { font-size: var(--jw-text-body); min-height: 2.75rem; align-content: center; }
+
+}
+
+@media (max-width: 56rem) {
+ .jw-bookmarks-popover .jw-bookmarks-row:is(:hover, :focus-visible, .is-active),
+ .jw-bookmarks-popover .jw-bookmarks-item:is(:hover, :focus-visible) { background: transparent; }
+ .jw-bookmarks-popover .jw-bookmarks-row:active,
+ .jw-bookmarks-popover .jw-bookmarks-item:active { background: var(--jw-color-nav-hover); }
 }

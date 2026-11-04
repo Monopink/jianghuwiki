@@ -1,36 +1,37 @@
 'use strict';
 
-(function () {
+(() => {
   const nav = document.querySelector('.jw-primary-nav');
   if (!nav) return;
-
-  nav.addEventListener('click', (event) => {
+  const states = new WeakMap();
+  nav.addEventListener('click', event => {
     const summary = event.target.closest('.jw-section summary');
     if (!summary || event.target.closest('a')) return;
-
     const details = summary.parentElement;
-    if (!details || !details.matches('details')) return;
-
-    event.preventDefault();
-    if (!details.open) {
-      details.open = true;
-      details.classList.add('is-collapsing');
-      requestAnimationFrame(() => details.classList.remove('is-collapsing'));
-      return;
-    }
-
     const branch = details.querySelector(':scope > .jw-nav-branch');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !branch) {
-      details.open = false;
+    if (!branch) return;
+    event.preventDefault();
+    const previous = states.get(details);
+    const opening = previous ? !previous.opening : !details.open;
+    const height = details.open ? branch.getBoundingClientRect().height : 0;
+    previous?.animation.cancel();
+    details.open = true;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      details.open = opening;
+      states.delete(details);
       return;
     }
-
-    details.classList.add('is-collapsing');
-    branch.addEventListener('transitionend', function finishClose(transitionEvent) {
-      if (transitionEvent.propertyName !== 'grid-template-rows') return;
-      branch.removeEventListener('transitionend', finishClose);
-      details.open = false;
-      details.classList.remove('is-collapsing');
-    });
+    const animation = branch.animate([
+      { height: `${height}px`, opacity: height ? 1 : 0 },
+      { height: `${opening ? branch.scrollHeight : 0}px`, opacity: opening ? 1 : 0 }
+    ], { duration: 180, easing: 'ease', fill: 'both' });
+    const state = { opening, animation };
+    states.set(details, state);
+    animation.finished.then(() => {
+      if (states.get(details) !== state) return;
+      details.open = opening;
+      animation.cancel();
+      states.delete(details);
+    }).catch(() => {});
   });
 })();

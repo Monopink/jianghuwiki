@@ -23,6 +23,7 @@
   --jw-color-border-subtle: var(--jw-color-surface-hover);
   --jw-color-border-strong: #747872;
   --jw-color-text-subtle: #777b75;
+  --jw-color-glass: rgb(255 255 255 / 82%);
   --jw-color-overlay: rgb(0 0 0 / 40%);
   --jw-color-overlay-strong: rgb(0 0 0 / 60%);
   --jw-shadow-popover: 0 .4rem 1rem rgb(0 0 0 / 16%);
@@ -76,6 +77,7 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
   --jw-color-canvas: #202429;
+  --jw-color-glass: rgb(32 36 41 / 82%);
   --jw-color-surface: #2d3033;
   --jw-color-surface-hover: #42464a;
   --jw-color-nav-hover: #383c40;
@@ -108,6 +110,7 @@
   :root[data-theme="auto"] {
     color-scheme: dark;
     --jw-color-canvas: #202429;
+  --jw-color-glass: rgb(32 36 41 / 82%);
     --jw-color-surface: #2d3033;
     --jw-color-surface-hover: #42464a;
     --jw-color-nav-hover: #383c40;

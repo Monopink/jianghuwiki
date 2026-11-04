@@ -57,7 +57,7 @@ const openPanel = (kind, trigger) => {
     document.body.classList.add("jw-panel-scroll-locked");
     setBackgroundInert(true);
   }
-  if (mobileQuery.matches) panel?.querySelector("a[href], button:not([disabled]), input:not([disabled])")?.focus({ preventScroll: true });
+  if (mobileQuery.matches) panel?.querySelector("[data-close-panel]")?.focus({ preventScroll: true });
 };
 
 menuButton?.addEventListener("click", () => activeKind() === "menu" ? closePanels() : openPanel("menu", menuButton));

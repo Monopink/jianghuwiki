@@ -21,7 +21,9 @@
 .jw-search-dialog input { color: var(--jw-color-text); appearance: none; -webkit-appearance: none; border-radius: 0; }
 .jw-search-dialog input::-webkit-search-decoration, .jw-search-dialog input::-webkit-search-cancel-button { -webkit-appearance: none; }
 .jw-search-trigger kbd { font-size: var(--jw-text-xs); font-family: inherit; }
-.jw-search-trigger:hover, .jw-search-trigger:focus-visible { border-color: var(--jw-color-search-hover); color: var(--jw-color-search-hover); }
+.jw-search-trigger:active, .jw-search-trigger:focus-visible { border-color: var(--jw-color-search-hover); color: var(--jw-color-search-hover); }
+@media (hover: hover) and (pointer: fine) {
+.jw-search-trigger:hover, .jw-search-trigger:focus-visible { border-color: var(--jw-color-search-hover); color: var(--jw-color-search-hover); }}
 .jw-search-dialog input:focus { border-color: var(--jw-color-accent); }
 .jw-search-dialog { margin: 8dvh auto 0; height: min(80dvh, 48rem); overflow: hidden; width: min(44rem, calc(100vw - 2rem)); max-height: min(80dvh, 48rem); padding: 1.5rem; border: var(--jw-search-dialog-border-width) solid var(--jw-search-border-color); border-radius: 0; background: var(--jw-color-canvas); color: var(--jw-color-text); }
 .jw-search-dialog[open] { display: flex; flex-direction: column; }
@@ -34,7 +36,9 @@
 .jw-search-results { overflow-y: auto; min-height: 0; list-style: none; padding: 0; margin: 0; }
 .jw-search-results li:nth-child(odd) { background: var(--jw-color-surface); }
 .jw-search-results a { display: block; padding: .875rem; text-decoration: none; }
-.jw-search-results a:hover, .jw-search-results a:focus-visible { background: var(--jw-color-surface-hover); color: var(--jw-color-accent); }
+.jw-search-results a:active, .jw-search-results a:focus-visible { background: var(--jw-color-surface-hover); color: var(--jw-color-accent); }
+@media (hover: hover) and (pointer: fine) {
+.jw-search-results a:hover, .jw-search-results a:focus-visible { background: var(--jw-color-surface-hover); color: var(--jw-color-accent); }}
 .jw-search-results strong, .jw-search-results small { display: block; }
 .jw-search-results small { font-size: var(--jw-text-caption); margin-top: .25rem; color: var(--jw-color-muted); }
 .jw-search-snippet { margin: .5rem 0 0; color: var(--jw-color-body); font-size: var(--jw-text-caption); line-height: 1.65; overflow-wrap: anywhere; }
@@ -75,7 +79,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 .jw-primary-nav a.jw-nav-link[aria-current="page"] { background: transparent; color: var(--jw-color-text); text-decoration: none; font-weight: 750; }
 .jw-menu-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--jw-color-border); color: var(--jw-color-nav-nested); font-size: var(--jw-text-caption); line-height: 1.5; }
 .jw-menu-footer a { display: block; padding: .375rem .75rem; color: inherit; }
-.jw-menu-footer .footer-links a:is(:hover, :focus-visible) { color: var(--jw-color-accent); opacity: 1; }
+.jw-menu-footer .footer-links a:is(:active, :focus-visible) { color: var(--jw-color-accent); opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+.jw-menu-footer .footer-links a:is(:hover, :focus-visible) { color: var(--jw-color-accent); opacity: 1; }}
 .jw-toc { display: flex; flex-direction: column; justify-content: center; padding-block: 1.5rem 6.5rem; font-size: var(--jw-text-caption); line-height: 1.5; }
 .jw-toc-content { overflow: hidden; max-height: 100%; min-height: 0; padding: .25rem; }
 .jw-toc-desktop { overflow-y: auto; max-height: 100%; min-height: 0; scrollbar-width: thin; }
@@ -90,7 +96,10 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 .jw-toc a { display: block; min-width: 0; overflow: hidden; white-space: nowrap; padding: .375rem .75rem; color: var(--jw-color-muted); text-decoration: none; }
 .jw-toc a[aria-current="location"] { color: var(--jw-color-text); font-weight: 700; background: transparent; }
 /* Shared navigation interaction; selection remains specific to each navigation. */
-.jw-primary-nav .jw-nav-link[href]:is(:hover, :focus-visible), .jw-section summary:is(:hover, :focus-visible), .jw-toc a[href]:is(:hover, :focus-visible) { color: var(--jw-color-accent); background: var(--jw-color-nav-hover); opacity: 1; }
+.jw-primary-nav .jw-nav-link[href]:is(:active, :focus-visible), .jw-section summary:is(:active, :focus-visible), .jw-toc a[href]:is(:active, :focus-visible) { color: var(--jw-color-accent); background: var(--jw-color-nav-hover); opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+/* Shared navigation interaction; selection remains specific to each navigation. */
+.jw-primary-nav .jw-nav-link[href]:is(:hover, :focus-visible), .jw-section summary:is(:hover, :focus-visible), .jw-toc a[href]:is(:hover, :focus-visible) { color: var(--jw-color-accent); background: var(--jw-color-nav-hover); opacity: 1; }}
 .jw-toc li:has(> a[aria-current="location"])::before { content: ""; position: absolute; inset: .25rem auto .25rem 0; width: 3px; background: var(--jw-color-accent); }
 .jw-toc-related { border-top: 1px solid var(--jw-color-border); margin-top: 1rem; padding-top: 1rem; }
 .jw-mobile-header { display: none; }
@@ -100,7 +109,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 .jw-close-icon, .jw-mobile-header button { background: transparent; border: 0; color: var(--jw-color-text); }
 .jw-close-icon { width: 44px; height: 44px; padding: 10px; flex-shrink: 0; }
 .jw-close-icon svg { display: block; width: 100%; height: 100%; }
-.jw-close-icon:hover, .jw-close-icon:focus-visible, .jw-mobile-header button:hover, .jw-mobile-header button:focus-visible { background: transparent; color: var(--jw-color-accent); border: 0; }
+.jw-close-icon:active, .jw-close-icon:focus-visible, .jw-mobile-header button:active, .jw-mobile-header button:focus-visible { background: transparent; color: var(--jw-color-accent); border: 0; }
+@media (hover: hover) and (pointer: fine) {
+.jw-close-icon:hover, .jw-close-icon:focus-visible, .jw-mobile-header button:hover, .jw-mobile-header button:focus-visible { background: transparent; color: var(--jw-color-accent); border: 0; }}
 .jw-skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 3000; padding: .75rem; background: var(--jw-color-canvas); transform: translateY(-200%); }
 .jw-skip-link:focus { transform: none; }
 :focus-visible { outline: 2px solid var(--jw-color-focus); outline-offset: 3px; }
@@ -153,7 +164,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
  .jw-toc { display: none; position: fixed; inset: 0; width: 100%; height: 100dvh; max-height: none; padding: 1rem; z-index: 700; border: 0; justify-content: flex-start; }
  .jw-primary-nav, .jw-toc { height: 100dvh; padding: calc(1rem + env(safe-area-inset-top)) calc(1rem + env(safe-area-inset-right)) calc(1rem + env(safe-area-inset-bottom)) calc(1rem + env(safe-area-inset-left)); }
  .jw-menu-open .jw-primary-nav, .jw-toc-open .jw-toc { display: flex; flex-direction: column; }
- .jw-primary-nav-content { flex: 1; }
+ .jw-primary-nav-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+ .jw-primary-nav-content > .jw-brand { flex-shrink: 0; }
+ .jw-primary-nav-content > nav { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; }
  .jw-toc-content { flex: 1; }
  .jw-brand a { -webkit-tap-highlight-color: transparent; }
  .jw-toc-content { width: 100%; min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
@@ -163,7 +176,7 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
  .jw-toc-mobile ul { display: grid; grid-template-columns: 1fr; gap: 0; }
  .jw-toc-mobile li { margin: 0; padding-inline-start: 0; }
  .jw-toc-mobile a { min-height: 44px; align-content: center; padding: .25rem .75rem; font-size: var(--jw-text-navigation); line-height: 1.5; }
- .jw-primary-nav-content { min-height: 0; overflow-y: auto; }
+ .jw-primary-nav-content { min-height: 0; }
  .jw-panel-close { display: block; align-self: end; min-width: 44px; min-height: 44px; }
  .jw-nav-link, .jw-section summary, .jw-toc a { min-height: 44px; }
  .jw-menu-backdrop:not([hidden]), .jw-toc-backdrop:not([hidden]) { display: block; position: fixed; inset: 0; background: var(--jw-color-overlay); z-index: 600; }
@@ -186,3 +199,5 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
  .jw-mobile-header:not(.jw-header-shows-title) .jw-header-brand { animation: jw-brand-enter 280ms ease both; }
  .jw-toc-toggle[data-mobile-empty] { display: none; }
 }
+
+@media (hover: none) { .jw-primary-nav a[href], .jw-toc a[href] { opacity: 1; } }

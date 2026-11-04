@@ -79,6 +79,7 @@
 - Sidebar first-level expanded groups retain an inset guide line; deeper groups have no additional lines. Third-level entries receive a small indent; deeper levels do not accumulate indentation. Current-page links use text emphasis without an underline or filled background.
 - On the homepage, configured default-open sidebar groups expand. Elsewhere, expand only the current page's ancestor path by default.
 - Mobile panels must preserve page scroll position on close, support touch scrolling, keyboard focus containment, Escape, and focus restoration without scrolling. Only an intentional TOC link activation may navigate to a heading.
+- Gate hover effects with `(hover: hover) and (pointer: fine)`. Touch interactions use `:active`, while keyboard navigation retains `:focus-visible`; do not use persistent pointer focus as touch feedback. Keep the mobile sidebar brand outside the scrollable navigation region.
 - Keep mobile control icons consistent in visual size and stroke weight, with accessible names and adequate touch targets. Desktop search expansion animation must not run on mobile or when reduced motion is requested.
 - Global tables have transparent headers, a strong header underline, and even body rows filled. Application tables on `/drafts/apps/` independently fill odd rows; their legend follows global rules.
 

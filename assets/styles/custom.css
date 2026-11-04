@@ -34,11 +34,18 @@ a[href]:not([role="button"]) {
   text-underline-offset: 0.16em;
 }
 
-a[href]:not([role="button"]):hover,
+a[href]:not([role="button"]):active,
 a[href]:not([role="button"]):focus-visible {
   color: var(--jw-color-accent);
   text-decoration-color: currentColor;
 }
+@media (hover: hover) and (pointer: fine) {
+
+a[href]:not([role="button"]):hover,
+a[href]:not([role="button"]):focus-visible {
+  color: var(--jw-color-accent);
+  text-decoration-color: currentColor;
+}}
 
 button,
 input[type="button"],
@@ -56,6 +63,22 @@ input[type="submit"],
   padding: 0.18rem 0.5rem;
 }
 
+button:active,
+button:focus-visible,
+input[type="button"]:active,
+input[type="button"]:focus-visible,
+input[type="submit"]:active,
+input[type="submit"]:focus-visible,
+.button-secondary:active,
+.button-secondary:focus-visible {
+  background: var(--jw-color-surface-hover);
+  border-color: var(--jw-color-border-strong);
+  color: var(--jw-color-text);
+  opacity: 1;
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
+
 button:hover,
 button:focus-visible,
 input[type="button"]:hover,
@@ -69,7 +92,7 @@ input[type="submit"]:focus-visible,
   color: var(--jw-color-text);
   opacity: 1;
   outline: none;
-}
+}}
 
 .button-primary,
 .book-btn[href],
@@ -86,6 +109,20 @@ a.book-btn[href] {
   padding: 0.18rem 0.5rem;
 }
 
+.button-primary:active,
+.button-primary:focus-visible,
+.book-btn[href]:active,
+.book-btn[href]:focus-visible,
+a.book-btn[href]:active,
+a.book-btn[href]:focus-visible {
+  background: var(--jw-color-accent);
+  border-color: var(--jw-color-accent);
+  color: var(--jw-color-canvas);
+  opacity: 1;
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
+
 .button-primary:hover,
 .button-primary:focus-visible,
 .book-btn[href]:hover,
@@ -97,7 +134,7 @@ a.book-btn[href]:focus-visible {
   color: var(--jw-color-canvas);
   opacity: 1;
   outline: none;
-}
+}}
 
 .markdown {
   margin-top: 2rem;
@@ -154,11 +191,18 @@ a.book-btn[href]:focus-visible {
   color: var(--jw-color-text);
 }
 
-.markdown a[href]:hover {
+.markdown a[href]:active {
   color: var(--jw-color-accent);
   opacity: 1;
   text-decoration-color: currentColor;
 }
+@media (hover: hover) and (pointer: fine) {
+
+.markdown a[href]:hover {
+  color: var(--jw-color-accent);
+  opacity: 1;
+  text-decoration-color: currentColor;
+}}
 
 .markdown h1 a.anchor,
 .markdown h2 a.anchor,
@@ -171,6 +215,18 @@ a.book-btn[href]:focus-visible {
   font-size: 0.75em;
 }
 
+.markdown h1:active a.anchor,
+.markdown h2:active a.anchor,
+.markdown h3:active a.anchor,
+.markdown h4:active a.anchor,
+.markdown h5:active a.anchor,
+.markdown h6:active a.anchor,
+.markdown a.anchor:focus-visible {
+  opacity: 1;
+  text-decoration: none;
+}
+@media (hover: hover) and (pointer: fine) {
+
 .markdown h1:hover a.anchor,
 .markdown h2:hover a.anchor,
 .markdown h3:hover a.anchor,
@@ -180,7 +236,7 @@ a.book-btn[href]:focus-visible {
 .markdown a.anchor:focus-visible {
   opacity: 1;
   text-decoration: none;
-}
+}}
 
 .markdown { color: var(--jw-color-body); }
 
@@ -191,19 +247,28 @@ a.book-btn[href]:focus-visible {
   background: var(--jw-color-content-inset);
 }
 
-.jw-code-block { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2.75rem; margin-block: 1rem; background: var(--jw-color-content-surface); }
+.jw-code-block { position: relative; display: grid; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr) 2.75rem; margin-block: 1rem; background: var(--jw-color-content-surface); }
 .markdown .jw-code-block pre { min-width: 0; margin: 0; padding: 1rem; }
 .jw-code-copy { position: absolute; inset-block-start: .5rem; inset-inline-end: .375rem; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: .375rem; border: 1px solid transparent; background: transparent; color: var(--jw-color-muted); }
 .jw-code-copy svg { display: block; width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
-.jw-code-copy:is(:hover, :focus-visible) { color: var(--jw-color-accent); background: transparent; border-color: var(--jw-color-border); }
+.jw-code-copy:is(:active, :focus-visible) { color: var(--jw-color-accent); background: transparent; border-color: var(--jw-color-border); }
+@media (hover: hover) and (pointer: fine) {
+.jw-code-copy:is(:hover, :focus-visible) { color: var(--jw-color-accent); background: transparent; border-color: var(--jw-color-border); }}
 .jw-code-copy:focus-visible { outline: 2px solid var(--jw-color-focus); outline-offset: 2px; }
 .markdown pre:focus { outline: none; box-shadow: none; }
 
 .markdown pre {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   border: 0;
   border-radius: 0;
   background: var(--jw-color-content-surface);
 }
+
+.markdown .highlight, .markdown-inner, .jw-post-container > div { min-width: 0; max-width: 100%; }
+.markdown :not(pre) > code { overflow-wrap: anywhere; }
 
 .markdown blockquote {
   margin: 1rem 0;
@@ -412,9 +477,14 @@ a.book-btn[href]:focus-visible {
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.home-search .home-search-toggle:hover {
+.home-search .home-search-toggle:active {
   background: var(--jw-color-content-surface);
 }
+@media (hover: hover) and (pointer: fine) {
+
+.home-search .home-search-toggle:hover {
+  background: var(--jw-color-content-surface);
+}}
 
 .home-search .home-search-toggle[aria-expanded="true"] {
   background: var(--jw-color-surface-hover);
@@ -457,11 +527,20 @@ a.book-btn[href]:focus-visible {
 
 .markdown .home-search a[href],
 .markdown .home-search a[href]:visited,
-.markdown .home-search a[href]:hover,
+.markdown .home-search a[href]:active,
 .markdown .home-search a[href]:focus-visible {
   text-decoration-line: none;
   text-decoration-color: transparent;
 }
+@media (hover: hover) and (pointer: fine) {
+
+.markdown .home-search a[href],
+.markdown .home-search a[href]:visited,
+.markdown .home-search a[href]:hover,
+.markdown .home-search a[href]:focus-visible {
+  text-decoration-line: none;
+  text-decoration-color: transparent;
+}}
 
 .home-search-result {
   display: flex;
@@ -486,11 +565,18 @@ a.book-btn[href]:focus-visible {
   outline: none;
 }
 
-.home-search-result:hover,
+.home-search-result:active,
 .home-search-result:focus-visible {
   background: var(--jw-color-surface-hover);
   outline: none;
 }
+@media (hover: hover) and (pointer: fine) {
+
+.home-search-result:hover,
+.home-search-result:focus-visible {
+  background: var(--jw-color-surface-hover);
+  outline: none;
+}}
 
 .home-search-result strong,
 .home-search-result small {
@@ -533,12 +619,20 @@ a.book-btn[href]:focus-visible {
   text-decoration: none;
 }
 
-.home-search-script-link:hover,
+.home-search-script-link:active,
 .home-search-script-link:focus-visible {
   border-color: var(--jw-color-accent);
   color: var(--jw-color-accent);
   outline: none;
 }
+@media (hover: hover) and (pointer: fine) {
+
+.home-search-script-link:hover,
+.home-search-script-link:focus-visible {
+  border-color: var(--jw-color-accent);
+  color: var(--jw-color-accent);
+  outline: none;
+}}
 
 .home-search-groups {
   display: grid;
@@ -570,9 +664,19 @@ a.book-btn[href]:focus-visible {
 .home-search-icon {
   display: inline-block;
   width: 1.4em;
+  flex: 0 0 1.4em;
   margin-inline-end: 0.35em;
   text-align: center;
 }
+
+.home-search-link:active,
+.home-search-link:focus-visible {
+  border-color: var(--search-color);
+  background: color-mix(in srgb, var(--search-color) 12%, var(--jw-color-surface));
+  color: var(--search-color);
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
 
 .home-search-link:hover,
 .home-search-link:focus-visible {
@@ -580,7 +684,7 @@ a.book-btn[href]:focus-visible {
   background: color-mix(in srgb, var(--search-color) 12%, var(--jw-color-surface));
   color: var(--search-color);
   outline: none;
-}
+}}
 
 .quick-dial-group h3 {
   margin-bottom: 0.5rem;
@@ -624,22 +728,42 @@ a.book-btn[href]:focus-visible {
   transition: color 160ms ease;
 }
 
-.quick-dial-links a[href]:is(:hover, :focus-visible) {
+.quick-dial-links a[href]:is(:active, :focus-visible) {
   color: var(--quick-dial-color);
   transition-duration: 0s;
 }
+@media (hover: hover) and (pointer: fine) {
 
-.quick-dial-row:hover,
-.quick-dial-row:focus-within {
+.quick-dial-links a[href]:is(:hover, :focus-visible) {
+  color: var(--quick-dial-color);
+  transition-duration: 0s;
+}}
+
+.quick-dial-row:active,
+.quick-dial-row:has(:focus-visible) {
   border-color: var(--quick-dial-color, var(--jw-color-text));
   background: var(--jw-color-surface-hover);
 }
+@media (hover: hover) and (pointer: fine) {
+
+.quick-dial-row:hover,
+.quick-dial-row:has(:focus-visible) {
+  border-color: var(--quick-dial-color, var(--jw-color-text));
+  background: var(--jw-color-surface-hover);
+}}
+
+/* Enter immediately; the base transition preserves the fade on exit. */
+.home-search-link:is(:active, :focus-visible),
+.quick-dial-row:is(:active, :has(:focus-visible)) {
+  transition-duration: 0s;
+}
+@media (hover: hover) and (pointer: fine) {
 
 /* Enter immediately; the base transition preserves the fade on exit. */
 .home-search-link:is(:hover, :focus-visible),
-.quick-dial-row:is(:hover, :focus-within) {
+.quick-dial-row:is(:hover, :has(:focus-visible)) {
   transition-duration: 0s;
-}
+}}
 
 .quick-dial-more {
   margin-top: 0.5rem;
@@ -731,7 +855,9 @@ a.book-btn[href]:focus-visible {
   }
 
   .home-search-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
     width: auto;
     margin: 0.12rem 0.18rem 0.12rem 0;
     vertical-align: top;

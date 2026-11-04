@@ -117,13 +117,22 @@
   line-height: 1;
 }
 
+.color-picker-page .color-picker-palette-add:active,
+.color-picker-page .color-picker-palette-add:focus-visible,
+.color-picker-page .color-picker-palette-remove:active,
+.color-picker-page .color-picker-palette-remove:focus-visible {
+  color: var(--jw-color-accent);
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
+
 .color-picker-page .color-picker-palette-add:hover,
 .color-picker-page .color-picker-palette-add:focus-visible,
 .color-picker-page .color-picker-palette-remove:hover,
 .color-picker-page .color-picker-palette-remove:focus-visible {
   color: var(--jw-color-accent);
   outline: none;
-}
+}}
 
 .color-picker-page .color-picker-palette-list {
   display: flex;

@@ -63,7 +63,9 @@
 }
 
 .jw-nav-action.jw-bookmarks-trigger { border: 1px solid var(--jw-color-border); }
-.jw-nav-action.jw-bookmarks-trigger:is(:hover, :focus-visible) { border-color: var(--jw-color-bookmarks-hover); color: var(--jw-color-bookmarks-hover); }
+.jw-nav-action.jw-bookmarks-trigger:is(:active, :focus-visible) { border-color: var(--jw-color-bookmarks-hover); color: var(--jw-color-bookmarks-hover); }
+@media (hover: hover) and (pointer: fine) {
+.jw-nav-action.jw-bookmarks-trigger:is(:hover, :focus-visible) { border-color: var(--jw-color-bookmarks-hover); color: var(--jw-color-bookmarks-hover); }}
 .jw-nav-action.jw-bookmarks-trigger[aria-expanded="true"] { border-color: var(--jw-color-border); background: var(--jw-color-nav-hover); color: var(--jw-color-text); }
 .jw-nav-action.jw-bookmarks-trigger:focus-visible { outline: 2px solid var(--jw-color-focus); }
 
@@ -121,13 +123,22 @@
   white-space: normal !important;
 }
 
-.jw-bookmarks-row:hover,
+.jw-bookmarks-row:active,
 .jw-bookmarks-row:focus-visible,
 .jw-bookmarks-row.is-active {
   background: var(--jw-color-nav-hover);
   color: inherit;
   outline: none;
 }
+@media (hover: hover) and (pointer: fine) {
+
+.jw-bookmarks-row:hover,
+.jw-bookmarks-row:focus-visible,
+.jw-bookmarks-row.is-active {
+  background: var(--jw-color-nav-hover);
+  color: inherit;
+  outline: none;
+}}
 
 .jw-bookmarks-item {
   display: flex !important;
@@ -137,13 +148,22 @@
   padding: 0.45rem 0.65rem !important;
 }
 
+.jw-bookmarks-item:active,
+.jw-bookmarks-item:focus-visible,
+.jw-bookmarks-extra a:active,
+.jw-bookmarks-extra a:focus-visible {
+  background: var(--jw-color-nav-hover);
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
+
 .jw-bookmarks-item:hover,
 .jw-bookmarks-item:focus-visible,
 .jw-bookmarks-extra a:hover,
 .jw-bookmarks-extra a:focus-visible {
   background: var(--jw-color-nav-hover);
   outline: none;
-}
+}}
 
 .jw-bookmarks-item img {
   flex: 0 0 auto;
@@ -308,8 +328,11 @@ body.jw-bookmarks-open {
 }
 
 @media (max-width: 56rem) {
+ .jw-bookmarks-popover .jw-bookmarks-row:is(:active, :focus-visible, .is-active),
+ .jw-bookmarks-popover .jw-bookmarks-item:is(:active, :focus-visible) { background: transparent; }
+@media (hover: hover) and (pointer: fine) {
  .jw-bookmarks-popover .jw-bookmarks-row:is(:hover, :focus-visible, .is-active),
- .jw-bookmarks-popover .jw-bookmarks-item:is(:hover, :focus-visible) { background: transparent; }
+ .jw-bookmarks-popover .jw-bookmarks-item:is(:hover, :focus-visible) { background: transparent; }}
  .jw-bookmarks-popover .jw-bookmarks-row:active,
  .jw-bookmarks-popover .jw-bookmarks-item:active { background: var(--jw-color-nav-hover); }
 }

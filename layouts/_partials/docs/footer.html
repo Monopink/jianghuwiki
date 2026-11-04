@@ -1,18 +1,16 @@
 <div class="flex flex-wrap justify-between">
   <div>
-    {{ if and .GitInfo .Site.Params.BookLastChangeLink }}
+    {{ if .GitInfo }}
       {{- $date := partial "docs/date" (dict "Date" .GitInfo.CommitDate "Format" .Site.Params.BookDateFormat) -}}
-      <a class="flex align-center" href="{{ partial "docs/links/commit" . }}" title="{{ partial "docs/text/i18n" "Last modified by" }} {{ .GitInfo.AuthorName }} | {{ $date }}" target="_blank" rel="noopener">
-        <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "calendar" }}</svg>
-        <span>{{ $date }}</span>
-      </a>
+      <span class="flex align-center">
+        <time datetime="{{ .GitInfo.CommitDate.Format "2006-01-02T15:04:05Z07:00" }}">{{ $date }}</time>
+      </span>
     {{ end }}
   </div>
 
   <div>
     {{ if and .File .Site.Params.BookEditLink }}
       <a class="flex align-center" href="{{ partial "docs/links/edit" . }}" target="_blank" rel="noopener edit">
-        <svg class="book-icon" aria-hidden="true">{{ partial "docs/icon" "edit" }}</svg>
         <span>{{ partial "docs/text/i18n" "Edit this page" }}</span>
       </a>
     {{ end }}

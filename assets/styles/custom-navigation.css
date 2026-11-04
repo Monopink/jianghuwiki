@@ -117,8 +117,7 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 :focus-visible { outline: 2px solid var(--jw-color-focus); outline-offset: 3px; }
 [id] { scroll-margin-top: calc(var(--jw-header-height) + 24px); }
 .jw-footer { border-top: 1px solid var(--jw-color-border); margin-top: 3rem; padding-top: 1.5rem; color: var(--jw-color-muted); font-size: var(--jw-text-caption); }
-.jw-footer, .jw-footer a { color: var(--jw-color-muted); }
-.jw-footer svg { fill: currentColor; }
+.jw-footer a { color: inherit; }
 .jw-post-list.markdown { padding: 1.5rem; margin: 0 0 1rem; background: var(--jw-color-surface); }
 .jw-post-heading.markdown { margin: 0 0 1.5rem; }
 .jw-post-meta { color: var(--jw-color-muted); font-size: var(--jw-text-caption); line-height: 1.5; }

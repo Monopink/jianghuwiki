@@ -97,7 +97,6 @@ defaultContentLanguageInSubdir = false
   BookSection = "*"
 
   # Links used by the current theme for page metadata actions.
-  BookLastChangeLink = "https://github.com/Monopink/jianghuwiki/commit/{{ .GitInfo.Hash }}"
   BookEditLink = "https://github.com/Monopink/jianghuwiki/blob/master/{{ .Path }}"
 
   # Configure the date format used on the pages

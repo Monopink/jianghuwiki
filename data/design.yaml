@@ -1,10 +1,10 @@
 # Syntax-inspired, alternating cool/warm hues; readable in both themes.
 # Search-engine brand colors remain in data/home/search-engines.yaml.
 quickDialPalette:
-  - { light: "#6946ba", dark: "#c4b2ff" }
-  - { light: "#08735b", dark: "#42dbb4" }
-  - { light: "#ae306d", dark: "#ffadd8" }
-  - { light: "#176ca6", dark: "#64baff" }
-  - { light: "#975100", dark: "#ffb347" }
-  - { light: "#086d79", dark: "#66e0e7" }
-  - { light: "#796000", dark: "#ffe66d" }
+  - { light: "#8050cf", dark: "#c4b2ff" }
+  - { light: "#087b60", dark: "#42dbb4" }
+  - { light: "#c13078", dark: "#ffadd8" }
+  - { light: "#246bc6", dark: "#64baff" }
+  - { light: "#ac5218", dark: "#ffb347" }
+  - { light: "#087783", dark: "#66e0e7" }
+  - { light: "#866800", dark: "#ffe66d" }

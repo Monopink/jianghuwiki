@@ -712,7 +712,7 @@ a.book-btn[href]:focus-visible {
 
 .quick-dial-links {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 0.25rem 0.35rem;
   min-width: 0;
 }
@@ -743,6 +743,7 @@ a.book-btn[href]:focus-visible {
 .quick-dial-row:has(:focus-visible) {
   border-color: var(--quick-dial-color, var(--jw-color-text));
   background: var(--jw-color-surface-hover);
+  transition-duration: 0s;
 }
 @media (hover: hover) and (pointer: fine) {
 
@@ -750,18 +751,17 @@ a.book-btn[href]:focus-visible {
 .quick-dial-row:has(:focus-visible) {
   border-color: var(--quick-dial-color, var(--jw-color-text));
   background: var(--jw-color-surface-hover);
+  transition-duration: 0s;
 }}
 
 /* Enter immediately; the base transition preserves the fade on exit. */
-.home-search-link:is(:active, :focus-visible),
-.quick-dial-row:is(:active, :has(:focus-visible)) {
+.home-search-link:is(:active, :focus-visible) {
   transition-duration: 0s;
 }
 @media (hover: hover) and (pointer: fine) {
 
 /* Enter immediately; the base transition preserves the fade on exit. */
-.home-search-link:is(:hover, :focus-visible),
-.quick-dial-row:is(:hover, :has(:focus-visible)) {
+.home-search-link:is(:hover, :focus-visible) {
   transition-duration: 0s;
 }}
 

@@ -172,11 +172,24 @@ if (input) {
       .replace(/%7Bquery%7D/gi, encodedQuery);
   };
 
+  const buildEmptySearchUrl = (template, fallback) => {
+    try {
+      const url = new URL(template || fallback, document.baseURI);
+      [...url.searchParams.keys()].forEach((key) => {
+        if (/\{query\}/i.test(url.searchParams.get(key) || '')) url.searchParams.delete(key);
+      });
+      url.pathname = url.pathname.replace(/%7Bquery%7D|\{query\}/gi, '');
+      return url.href;
+    } catch {
+      return (fallback || template).replace(/%7Bquery%7D|\{query\}/gi, '');
+    }
+  };
+
   document.querySelectorAll("[data-search-url]").forEach((button) => {
     button.addEventListener("click", () => {
       const query = input.value.trim();
       if (!query) {
-        window.open(button.dataset.homeUrl || button.dataset.searchUrl, "_blank", "noopener,noreferrer");
+        window.open(buildEmptySearchUrl(button.dataset.homeUrl, button.dataset.searchUrl), "_blank", "noopener,noreferrer");
         return;
       }
 

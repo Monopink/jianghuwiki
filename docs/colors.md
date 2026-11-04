@@ -16,3 +16,5 @@ Validate explicit light/dark themes and automatic theme selection, plus homepage
 - Desktop UI uses opaque surfaces. Jianghu search results and bookmark popovers share `--jw-shadow-popover`: a gray offset block with zero blur and zero spread. Its color adapts to light/dark themes through `--jw-color-shadow-block`.
 - Mobile UI may use translucent glass, backdrop blur, and soft shadows. Use `--jw-color-glass` and `--jw-shadow-mobile-popover`; keep these effects inside the mobile breakpoint. Full-screen bookmark menus retain no outer shadow.
 - The color-picker label shadow is a functional readability exception over user-selected colors, not desktop popover styling.
+
+- Quick-dial palette entries define `light`/`dark` pairs. The row border and individual link hover/focus use the same row color through `light-dark()`, following the root color scheme. Light tones must retain readable contrast on the hovered row surface; dark tones may use brighter neon hues.

@@ -618,18 +618,15 @@ a.book-btn[href]:focus-visible {
   display: block;
   min-width: 0;
   padding: 0.1rem 0.3rem;
-  color: var(--jw-color-body) !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--jw-color-body);
   text-align: center;
   white-space: nowrap;
   transition: color 160ms ease;
 }
 
-.quick-dial-links a:hover,
-.quick-dial-links a:focus-visible {
-  color: var(--jw-color-accent) !important;
-  outline: none;
+.quick-dial-links a[href]:is(:hover, :focus-visible) {
+  color: var(--quick-dial-color);
+  transition-duration: 0s;
 }
 
 .quick-dial-row:hover,
@@ -721,22 +718,6 @@ a.book-btn[href]:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .quick-dial-row {
-    grid-template-columns: 4em minmax(0, 1fr);
-    gap: 0.4rem;
-  }
-
-  .quick-dial-links {
-    display: block;
-  }
-
-  .quick-dial-links a,
-  .quick-dial-links a:visited {
-    display: inline-block;
-    padding: 0.28rem 0.35rem;
-    text-align: start;
-    white-space: normal;
-  }
 }
 
 @media screen and (max-width: 56rem) {
@@ -757,7 +738,7 @@ a.book-btn[href]:focus-visible {
   }
 
   .quick-dial-row {
-    display: block;
+    grid-template-columns: 4rem minmax(0, 1fr);
   }
 
   .quick-dial-label {
@@ -768,14 +749,16 @@ a.book-btn[href]:focus-visible {
   }
 
   .quick-dial-links {
-    display: inline;
-    vertical-align: top;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .quick-dial-links a,
   .quick-dial-links a:visited {
-    display: inline-block;
-    vertical-align: top;
+    display: block;
+    padding: .375rem .25rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    align-content: center;
   }
 }
 
@@ -794,4 +777,12 @@ a[role="button"], .button-secondary, .home-search-script-link { text-decoration:
 
 @media (max-width: 56rem) {
   .home-search-results { box-shadow: var(--jw-shadow-mobile-popover); }
+}
+
+.quick-dial-name { display: block; min-width: 0; overflow: hidden; white-space: nowrap; }
+.quick-dial-name.is-overflowing { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 1rem), transparent); }
+.jw-quick-dial-tooltip { position: fixed; z-index: 1300; max-width: min(24rem, calc(100vw - 2rem)); padding: .5rem .75rem; border: 1px solid var(--jw-color-border); background: var(--jw-color-canvas); color: var(--jw-color-text); box-shadow: var(--jw-shadow-popover); font: inherit; font-size: var(--jw-text-small); line-height: 1.5; overflow-wrap: anywhere; pointer-events: none; }
+@media (max-width: 56rem) {
+ .quick-dial-name { overflow: visible; white-space: normal; -webkit-mask-image: none; mask-image: none; }
+ .jw-quick-dial-tooltip { display: none; }
 }

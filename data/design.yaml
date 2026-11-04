@@ -1,9 +1,10 @@
-# Decorative homepage palette. Brand colors remain in search-engines.yaml.
+# Syntax-inspired, alternating cool/warm hues; readable in both themes.
+# Search-engine brand colors remain in data/home/search-engines.yaml.
 quickDialPalette:
-  - "#ff7048"
-  - "#ffb347"
-  - "#ffe66d"
-  - "#35c9a5"
-  - "#45aaf2"
-  - "#8f7cff"
-  - "#ff6fb5"
+  - { light: "#6946ba", dark: "#c4b2ff" }
+  - { light: "#08735b", dark: "#42dbb4" }
+  - { light: "#ae306d", dark: "#ffadd8" }
+  - { light: "#176ca6", dark: "#64baff" }
+  - { light: "#975100", dark: "#ffb347" }
+  - { light: "#086d79", dark: "#66e0e7" }
+  - { light: "#796000", dark: "#ffe66d" }

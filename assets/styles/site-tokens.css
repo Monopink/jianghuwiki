@@ -36,8 +36,8 @@
   --jw-color-focus: var(--jw-color-accent);
   --jw-search-dialog-border-width: 3px;
   --jw-search-border-color: var(--jw-color-border);
-  --jw-color-search-hover: #1769c2;
-  --jw-color-bookmarks-hover: #c43b35;
+  --jw-color-search-hover: #3984ed;
+  --jw-color-bookmarks-hover: #e34b9f;
   --jw-color-success: #286b46;
   --jw-color-warning: #795400;
   --jw-color-danger: #a32d22;

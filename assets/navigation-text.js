@@ -6,7 +6,7 @@
       update(target);
     }
   });
-  document.querySelectorAll('.jw-primary-nav .jw-nav-link, .jw-section summary > span, .jw-toc a').forEach((element) => {
+  document.querySelectorAll('.jw-primary-nav .jw-nav-link, .jw-section summary > span, .jw-toc a, .jw-toc-group-label').forEach((element) => {
     const text = element.matches('summary > span') ? element : document.createElement('span');
     if (text !== element) {
       text.append(...element.childNodes);

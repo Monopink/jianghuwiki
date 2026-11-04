@@ -88,7 +88,9 @@ html:has(.jw-search-dialog[open]) { overflow: hidden; }
 .jw-toc-mobile { display: none; }
 .jw-toc li { position: relative; }
 .jw-toc ul ul { padding-inline-start: 0; margin-inline-start: .75rem; }
-.jw-toc #TableOfContents > ul > li > a, .jw-toc-mobile a { font-weight: 700; }
+.jw-toc a[data-toc-level="2"] { font-weight: 700; }
+.jw-toc-group:not(:first-child) { margin-top: 1.25rem; }
+.jw-toc-group-label { display: block; overflow: hidden; white-space: nowrap; padding: .375rem .75rem; color: var(--jw-color-nav-nested); font-size: var(--jw-text-xs); font-weight: 400; }
 .jw-toc-branch { display: grid; grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows 180ms ease, opacity 180ms ease; }
 .jw-toc-branch.is-collapsed { grid-template-rows: 0fr; opacity: 0; }
 .jw-toc .jw-toc-branch > ul { min-height: 0; overflow: hidden; margin-inline-start: 0; }

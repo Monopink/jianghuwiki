@@ -9,7 +9,11 @@
     if (root) {
       const list = document.createElement("ul");
       root.querySelectorAll(":scope > li").forEach((item) => {
-        const link = item.querySelector(":scope > a");
+        if (item.matches('.jw-toc-group')) {
+          list.append(item.cloneNode(true));
+          return;
+        }
+        const link = item.querySelector(':scope > a[data-toc-level="2"]');
         if (!link) return;
         const row = document.createElement("li");
         row.className = "jw-toc-mobile-level-2";
@@ -27,9 +31,9 @@
     toggle.hidden = false;
   }
   const tocRoot = desktop?.querySelector("#TableOfContents > ul");
-  const links = [...(tocRoot?.querySelectorAll(":scope > li > a, :scope > li > ul > li > a") || [])];
+  const links = [...(tocRoot?.querySelectorAll("a[data-toc-level]") || [])];
   const content = document.querySelector("[data-reading-content]");
-  if (!panel || !desktop || !links.length || !content || !desktopQuery.matches) return;
+  if (!panel || !desktop || !links.length || !content) return;
 
   const entries = [];
   for (const link of links) {
@@ -45,13 +49,16 @@
     entries.push({ link, target });
   }
   if (!entries.length) return;
+  tocRoot.querySelectorAll('[data-toc-group]').forEach((group) => {
+    const target = document.getElementById(group.dataset.tocGroup);
+    if (target && content.contains(target)) entries.push({ link: null, target });
+  });
   let current = null;
-  let applyBranches = () => {};
 
   const rootList = tocRoot;
   const branches = [];
   if (rootList) {
-    rootList.querySelectorAll(":scope > li").forEach((item) => {
+    rootList.querySelectorAll(":scope > .jw-toc-section").forEach((item) => {
       const childList = [...item.children].find((child) => child.tagName === "UL");
       if (!childList) return;
       const branch = document.createElement("div");
@@ -61,7 +68,7 @@
       branches.push({ item, branch });
     });
   }
-  applyBranches = () => {
+  const applyBranches = () => {
     const active = current?.link;
     branches.forEach((branch) => {
       const autoOpen = Boolean(active && branch.item.contains(active));
@@ -88,7 +95,7 @@
     bottom = content.getBoundingClientRect().bottom + scrollY;
   };
   const alignCurrent = () => {
-    if (!current || pointerInside) return;
+    if (!current?.link || pointerInside) return;
     const box = current.link.getBoundingClientRect();
     const area = desktop.getBoundingClientRect();
     if (box.top < area.top) desktop.scrollTop -= area.top - box.top;
@@ -96,6 +103,7 @@
   };
   const update = () => {
     frame = 0;
+    if (!desktopQuery.matches) return;
     const y = window.scrollY;
     const line = y + offset() + 24;
     let selected = null;
@@ -108,6 +116,7 @@
     if (y + window.innerHeight >= bottom - 1) selected = entries.at(-1);
     if (selected !== current) {
       for (const entry of entries) {
+        if (!entry.link) continue;
         if (entry === selected) entry.link.setAttribute("aria-current", "location");
         else entry.link.removeAttribute("aria-current");
       }

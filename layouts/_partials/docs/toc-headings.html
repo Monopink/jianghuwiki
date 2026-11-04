@@ -1,0 +1,10 @@
+{{- $headings := slice -}}
+{{- range . -}}
+  {{- if and (ge .Level 1) (le .Level 3) -}}
+    {{- $headings = $headings | append . -}}
+  {{- end -}}
+  {{- with .Headings -}}
+    {{- $headings = $headings | append (partial "docs/toc-headings" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $headings -}}

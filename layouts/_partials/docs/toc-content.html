@@ -1,8 +1,32 @@
 {{ partial "docs/inject/toc-before" . }}
 {{ if eq .Layout "apps" }}
-  <nav id="TableOfContents"><ul>{{ range hugo.Data.apps.groups }}{{ if gt (len .items) 0 }}{{ $anchor := default (.name | urlize) .id }}<li><a href="#{{ $anchor }}">{{ .name }}</a></li>{{ end }}{{ end }}</ul></nav>
+  <nav id="TableOfContents"><ul>{{ range hugo.Data.apps.groups }}{{ if gt (len .items) 0 }}{{ $anchor := default (.name | urlize) .id }}<li class="jw-toc-section"><a data-toc-level="2" href="#{{ $anchor }}">{{ .name }}</a></li>{{ end }}{{ end }}</ul></nav>
 {{ else }}
-  {{ .Fragments.ToHTML 2 3 false | safeHTML }}
+  {{- $headings := partial "docs/toc-headings" .Fragments.Headings -}}
+  {{- $grouped := gt (len (where $headings "Level" 1)) 1 -}}
+  {{- $sectionOpen := false -}}
+  {{- $childrenOpen := false -}}
+  <nav id="TableOfContents"><ul>
+  {{- range $headings -}}
+    {{- if le .Level 2 -}}
+      {{- if $childrenOpen }}</ul>{{ $childrenOpen = false }}{{ end -}}
+      {{- if $sectionOpen }}</li>{{ $sectionOpen = false }}{{ end -}}
+    {{- end -}}
+    {{- if eq .Level 1 -}}
+      {{- if $grouped -}}
+        <li class="jw-toc-group" data-toc-group="{{ .ID }}"><span class="jw-toc-group-label">{{ .Title | plainify | htmlUnescape }}</span></li>
+      {{- end -}}
+    {{- else if eq .Level 2 -}}
+      <li class="jw-toc-section"><a data-toc-level="2" href="#{{ .ID }}">{{ .Title | safeHTML }}</a>
+      {{- $sectionOpen = true -}}
+    {{- else if and (eq .Level 3) $sectionOpen -}}
+      {{- if not $childrenOpen }}<ul>{{ $childrenOpen = true }}{{ end -}}
+      <li><a data-toc-level="3" href="#{{ .ID }}">{{ .Title | safeHTML }}</a></li>
+    {{- end -}}
+  {{- end -}}
+  {{- if $childrenOpen }}</ul>{{ end -}}
+  {{- if $sectionOpen }}</li>{{ end -}}
+  </ul></nav>
 {{ end }}
 {{ partial "docs/inject/toc-after" . }}
 

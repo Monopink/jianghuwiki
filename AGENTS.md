@@ -22,7 +22,7 @@
 - `assets/styles/site-tokens.css`: Site-owned typography, colors, shadows, and theme compatibility aliases.
 - `assets/styles/index.yaml`: Shared CSS bundle order; theme foundations precede site tokens and component styles.
 - `data/design.yaml`: Decorative homepage palette; search-engine brand colors remain in `data/home/search-engines.yaml`.
-- `docs/`: Permanent maintenance specifications; `docs/plans/` contains disposable plans.
+- `docs/`: Maintenance specifications.
 - `themes/hugo-book/`: Vendored theme; do not edit directly.
 
 ## Bookmarks
@@ -34,7 +34,6 @@
 - Use lowercase kebab-case IDs based on the item's name or domain, for example `streetvoice`, `mail-yandex`, or `vox-news`.
 - Do not create opaque IDs such as `bookmark-<hash>`, numeric-only IDs, IDs containing spaces, or IDs containing status notes.
 - When the same category or item name appears in multiple sections, add a meaningful context prefix or suffix, such as `utility-email` or `vox-font-classification`.
-- Preserve existing IDs when editing bookmark metadata; only assign a new ID when adding an item or deliberately repairing an invalid ID.
 - Keep URLs, names, descriptions, and optional fields aligned with the surrounding entries. Put presentation logic in templates, not in data files.
 - After editing structured data, parse the YAML and check for duplicate IDs before handing off the change.
 
@@ -51,7 +50,6 @@
 - Do not restore the old Markdown-table-based bookmark source.
 - Site search and homepage Jianghu search are separate interfaces. Site search uses the sidebar trigger, a desktop dialog, and a full-screen mobile interface; do not place its results inside the sidebar.
 - `assets/search.js` owns site search and dialog interaction; `assets/search-preview.js` owns contextual snippets and highlighting. Use actual matched terms, including prefix/fuzzy expansions, and render text safely with text nodes and `mark`, not content interpolated into `innerHTML`.
-- Algolia DocSearch configuration and styles are retained as an optional alternative search implementation.
 - DocSearch is disabled by default; keep `params.DocSearch.enabled = false` unless deliberately switching search implementations.
 
 ## Visual direction
@@ -65,9 +63,7 @@
 
 - Use `jw-*` classes and `--jw-*` site tokens. Do not introduce or restore `sb-*` names, duplicate implementations, or unused compatibility rules.
 - Shared typography and UI colors must come from `site-tokens.css`. Component variables may reference semantic tokens; do not create independent palettes in component CSS or JavaScript.
-- Use `rem` and shared size roles for text, unitless line heights, and `px` where appropriate for borders. Keep the root font size at `100%`; do not force a fixed pixel root size. Compare computed font family, size, weight, and line height when investigating inconsistencies.
-- `.jw-nav-action` owns shared search/bookmark trigger typography, spacing, and alignment. Preserve their intentional border difference: search is 3px, bookmarks 1px. Dialog border width is independent of trigger width.
-- Desktop control/navigation text uses `.875rem`, mobile uses `1rem`, and supporting text uses `.875rem`, through the shared semantic roles. Do not add competing parent font shorthands or per-component mobile size patches.
+- `.jw-nav-action` owns shared search/bookmark trigger typography, spacing, and alignment. Keep trigger and dialog border rules independent.
 - Site-owned CSS consumes `--jw-color-*` and `--jw-shadow-*`; legacy theme aliases belong only at the integration boundary. Search-engine colors, decorative palette data, and color-picker output are intentional data-driven exceptions. See the color specification for third-party and static application boundaries.
 - Consolidate changes in the owning rule instead of appending overrides. Remove superseded declarations; avoid new `!important` rules to fight specificity.
 - Portaled menus must explicitly inherit site typography roles and participate in mobile inert, focus, and Escape handling. A higher z-index does not make an inert element interactive.
@@ -76,12 +72,12 @@
 
 - The mobile breakpoint is 56rem. Preserve desktop/mobile separation in TOC behavior: H2 entries stay visible, H3 branches follow scrolling on desktop; mobile shows a simple H2 list with independent scrolling. Do not restore a TOC progress bar or manual branch toggles.
 - Sidebar and TOC labels stay on one line. Apply fading only to overflowing text, never to the whole link or its hover background.
-- Sidebar first-level expanded groups retain an inset guide line; deeper groups have no additional lines. Third-level entries receive a small indent; deeper levels do not accumulate indentation. Current-page links use text emphasis without an underline or filled background.
+- Sidebar nesting must not accumulate indentation indefinitely or repeat guide lines at every level.
 - On the homepage, configured default-open sidebar groups expand. Elsewhere, expand only the current page's ancestor path by default.
 - Mobile panels must preserve page scroll position on close, support touch scrolling, keyboard focus containment, Escape, and focus restoration without scrolling. Only an intentional TOC link activation may navigate to a heading.
 - Gate hover effects with `(hover: hover) and (pointer: fine)`. Touch interactions use `:active`, while keyboard navigation retains `:focus-visible`; do not use persistent pointer focus as touch feedback. Keep the mobile sidebar brand outside the scrollable navigation region.
 - Keep mobile control icons consistent in visual size and stroke weight, with accessible names and adequate touch targets. Desktop search expansion animation must not run on mobile or when reduced motion is requested.
-- Global tables have transparent headers, a strong header underline, and even body rows filled. Application tables on `/drafts/apps/` independently fill odd rows; their legend follows global rules.
+- Application table striping on `/drafts/apps/` is independent of global tables; its legend follows global rules.
 
 ## Windows constraints
 
@@ -107,7 +103,7 @@ The current development environment is Windows 11 / PowerShell 7. Apply these ru
 
 - Development: `hugo server`
 - Production build: `hugo --gc --minify`
-- Vercel build: `node scripts/build-vercel.cjs`. Build from the source repository; the script attempts to complete shallow Git history directly from the public source repository's HTTPS URL, without relying on checkout remote credentials. If history cannot be verified, build with Git metadata disabled and omit article modification dates; do not fail deployment or substitute build timestamps. Keep the source URL aligned when renaming or transferring the repository. Footer modification dates use the article's Git record and render as plain text; only the edit-page action is linked. GitHub Pages checks out full history and retains article dates independently.
+- Vercel build: `node scripts/build-vercel.cjs`. Its checkout may lack a usable `origin`; fetch history from the public source HTTPS URL and keep that URL aligned when moving the repository. Article modification dates require complete Git history; never substitute build timestamps. GitHub Pages obtains full history through checkout.
 - Run production validation with `hugo --gc --minify` when Hugo is available.
 - If Hugo is unavailable, still run a YAML parse and targeted consistency checks, and report the limitation.
 - Use `git diff --check` for edits and JavaScript syntax checks when changing scripts. Hugo-templated JavaScript must be checked after template expansion.

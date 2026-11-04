@@ -1,0 +1,10 @@
+{{- if not .Ordinal -}}
+  {{- .Parent.Store.Set "id" (partial "docs/text/shortcode-id" .Parent) -}}
+{{- end -}}
+{{- $group := printf "tabs-%d" (.Parent.Store.Get "id") -}}
+{{- $tab := printf "%s-%d" $group .Ordinal -}}
+<input type="radio" class="toggle" name="{{ $group }}" id="{{ $tab }}" {{ if not .Ordinal }}checked="checked"{{ end }} />
+<label for="{{ $tab }}">{{ .Get 0 }}</label>
+<div class="book-tabs-content markdown-inner">
+  {{- .Page.RenderString (dict "display" "block") .Inner -}}
+</div>

@@ -111,6 +111,10 @@ sections:
       - id: cloud-tools
         name: 云工具
         items:
+          - id: neon-console
+            name: Neon
+            url: https://console.neon.tech/
+            description: 云原生 PostgreSQL 数据库平台
           - id: browser-use
             name: Browser Use
             url: https://cloud.browser-use.com/
@@ -499,6 +503,10 @@ sections:
             url: https://github.com/adobe-fonts/source-han-serif
             description: 开源字体
             iconHost: source.typekit.com
+          - id: chilldin-chilldingothic
+            name: ChillDIN
+            url: https://github.com/Warren2060/ChillDIN-ChillDINGothic
+            description: D-DIN 结合寒蝉端黑体的开源字体
           - id: jikasei-me
             name: 自家製フォント工房
             url: https://jikasei.me/
@@ -702,6 +710,10 @@ sections:
       - id: travel
         name: 出行
         items:
+          - id: geocaching
+            name: Geocaching
+            url: https://www.geocaching.com/
+            description: 全球地理藏宝游戏社区
           - id: "12306"
             name: "12306"
             url: https://www.12306.cn/
@@ -816,6 +828,14 @@ sections:
             name: DI.FM
             url: https://www.di.fm/
             description: 根据类型找电子音乐
+          - id: last-fm
+            name: Last.fm
+            url: https://www.last.fm/
+            description: 音乐收听记录与推荐社区
+          - id: musixmatch
+            name: Musixmatch
+            url: https://www.musixmatch.com/
+            description: 歌词数据库与音乐识别服务
           - id: 5sing
             name: 5SING
             url: https://5sing.kugou.com/
@@ -884,6 +904,10 @@ sections:
             name: 轉角國際
             url: https://global.udn.com/
             description: 转角国际
+          - id: chinese-pen
+            name: 獨立中文筆會
+            url: https://www.chinesepen.org/
+            description: 强调写作自由与人权的作家组织
           - id: www-patreon-com
             name: 追新闻
             url: https://www.patreon.com
@@ -1012,6 +1036,10 @@ sections:
             name: 如有乐享
             url: https://51ruyo.net/
             description: 如有乐享社区
+          - id: shuzijumin
+            name: 数字居民论坛
+            url: https://shuzijumin.com/
+            description: 数字居民论坛
       - id: lounge-learning
         name: 学习
         items:
@@ -1074,6 +1102,10 @@ sections:
       - id: film-reviews
         name: 影剧点评
         items:
+          - id: letterboxd
+            name: Letterboxd
+            url: https://letterboxd.com/
+            description: 电影记录、评分与评论社区
           - id: douban-movie
             name: 豆瓣电影
             url: https://movie.douban.com/
@@ -1435,6 +1467,21 @@ sections:
             name: TurboScribe
             url: https://turboscribe.ai/dashboard
             description: AI 音频转录
+      - id: utility-business
+        name: 商业
+        items:
+          - id: snov
+            name: Snov.io
+            url: https://app.snov.io/
+            description: 销售线索与邮件营销平台
+          - id: snipcart
+            name: Snipcart
+            url: https://snipcart.com/
+            description: 面向开发者的电商购物车服务
+          - id: superthread
+            name: Superthread
+            url: https://app.superthread.com/
+            description: 项目管理与团队协作工具
       - id: utility-email
         name: 邮箱
         items:
@@ -1450,6 +1497,10 @@ sections:
             name: Proton Mail
             url: https://proton.me/mail
             description: 端到端加密邮箱服务 一年不用删除账号
+          - id: firefox-relay
+            name: Firefox Relay
+            url: https://relay.firefox.com/
+            description: Firefox 隐私邮箱别名服务
           - id: simplelogin
             name: SimpleLogin
             url: https://app.simplelogin.io/dashboard/
@@ -1505,6 +1556,10 @@ sections:
       - id: utility-file-transfer
         name: 文件传输
         items:
+          - id: infini-cloud
+            name: InfiniCLOUD
+            url: https://infini-cloud.net/
+            description: 云存储与文件分享服务
           - id: wormhole
             name: Wormhole
             url: https://wormhole.app/
@@ -1664,18 +1719,6 @@ sections:
       - id: games-platforms
         name: 游戏&平台
         items:
-          - id: sonkwo
-            name: 杉果游戏
-            url: https://www.sonkwo.hk/
-            description: 游戏购买平台
-          - id: fanatical
-            name: Fanatical
-            url: https://www.fanatical.com/
-            description: 游戏捆绑包
-          - id: humble-store
-            name: The Humble Store
-            url: https://www.humblebundle.com/
-            description: 游戏捆绑包
           - id: nexusmods
             name: Nexusmods
             url: https://www.nexusmods.com/
@@ -1700,6 +1743,22 @@ sections:
             name: Steam library filters
             url: https://www.lorenzostanco.com/lab/steam/
             description: Steam 库存分析导出
+          - id: sonkwo
+            name: 杉果游戏
+            url: https://www.sonkwo.hk/
+            description: 游戏购买平台
+          - id: fanatical
+            name: Fanatical
+            url: https://www.fanatical.com/
+            description: 游戏捆绑包
+          - id: humble-store
+            name: The Humble Store
+            url: https://www.humblebundle.com/
+            description: 游戏捆绑包
+          - id: etail-market
+            name: eTail
+            url: https://cn.etail.market/
+            description: 游戏与数字商品交易平台
       - id: government
         name: 政务
         items:

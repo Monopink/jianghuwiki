@@ -87,6 +87,12 @@ groups:
   - id: utilities
     name: 实用
     items:
+      - id: lyricify
+        name: Lyricify
+        url: https://lyricify.app/
+        description: 音乐播放器歌词显示软件
+        platforms:
+          - windows
       - id: photodemon
         name: PhotoDemon
         url: https://photodemon.org/

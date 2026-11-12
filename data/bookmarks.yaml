@@ -796,26 +796,30 @@ sections:
       - id: listening
         name: 收听
         items:
-          - id: soundcloud
-            name: SoundCloud
-            url: https://soundcloud.com/feed
-            description: 音乐上传分享平台
           - id: hype-machine
             name: Hype Machine
             url: https://hypem.com/
-            description: 音乐博客与热门歌曲聚合
+            description: 独立音乐博客的聚合流
           - id: bandcamp
             name: Bandcamp
             url: https://bandcamp.com/
             description: 独立音乐发行与购买
-          - id: streetvoice
-            name: 街声
-            url: https://www.streetvoice.cn/
-            description: 独立音乐作品平台
+          - id: everynoise
+            name: Every Noise at Once
+            url: https://everynoise.com/
+            description: 按音乐类型的 Spotify 清单
           - id: fmstream
             name: FMSTREAM
             url: https://fmstream.org/
             description: 收听全世界的电台
+          - id: somafm
+            name: SomaFM
+            url: https://somafm.com/
+            description: 独立网络音乐电台
+          - id: radiooooo
+            name: Radiooooo
+            url: https://app.radiooooo.com/
+            description: 按年代和国家探索音乐
           - id: radio-garden
             name: Radio Garden
             url: https://radio.garden/
@@ -824,10 +828,13 @@ sections:
             name: RoamDial
             url: https://roamdial.com/
             description: 收听全世界的电台 网页很占资源
-          - id: di-fm
-            name: DI.FM
-            url: https://www.di.fm/
-            description: 根据类型找电子音乐
+          - id: soundcloud
+            name: SoundCloud
+            url: https://soundcloud.com/feed
+            description: 音乐上传分享平台
+      - id: music
+        name: 音乐
+        items:
           - id: last-fm
             name: Last.fm
             url: https://www.last.fm/
@@ -835,7 +842,11 @@ sections:
           - id: musixmatch
             name: Musixmatch
             url: https://www.musixmatch.com/
-            description: 歌词数据库与音乐识别服务
+            description: 同步音乐平台展示歌词
+          - id: streetvoice
+            name: 街声
+            url: https://www.streetvoice.cn/
+            description: 独立音乐作品平台
           - id: 5sing
             name: 5SING
             url: https://5sing.kugou.com/

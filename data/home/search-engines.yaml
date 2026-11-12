@@ -16,9 +16,9 @@ groups:
       - { name: Google NCR, icon: "🔎", color: "#4285f4", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q={query}" }
       - { name: DuckDuckGo, icon: "🦆", color: "#de5833", url: "https://duckduckgo.com/?q={query}" }
       - { name: Bing, icon: "🅱️", color: "#0060df", url: "https://www.bing.com/search?q={query}" }
-      - { name: Yandex, icon: "🔴", color: "#fc3f1d", url: "https://yandex.com/search/?text={query}" }
+      - { name: 元宝搜索, icon: "🧿", color: "#005CFF", url: "https://so.qq.com/isearch?query={query}" }
       - { name: 百度, icon: "🐾", color: "#4e6ef2", url: "https://www.baidu.com/s?wd={query}" }
-      - { name: 千问, icon: "🧶", color: "#2B47FE", url: "https://www.qianwen.com/", searchUrl: "https://www.qianwen.com/chat/?q={query}" }
+      - { name: 千问, icon: "🧊", color: "#2B47FE", url: "https://www.qianwen.com/", searchUrl: "https://www.qianwen.com/chat/?q={query}" }
       - { name: 豆包, icon: "🙍🏻‍♀️", color: "#5d93df", url: "https://www.doubao.com/", searchUrl: "https://www.doubao.com/chat/?q={query}" }
       - { name: DeepSeek, icon: "🐋", color: "#446EFF", url: "https://chat.deepseek.com/", searchUrl: "https://chat.deepseek.com/?q={query}" }
       - { name: 智谱清言, icon: "𝙕", color: "#1141F2", url: "https://chatglm.cn/", searchUrl: "https://chatglm.cn/main?q={query}" }
@@ -46,7 +46,7 @@ groups:
   - name: 中文搜索
     items:
       - { name: V2EX, icon: "💬", color: "#aab0c6", url: "https://www.google.com/search?pws=0&gl=us&gws_rd=cr&q=site:v2ex.com/t+{query}" }
-      - { name: 淘宝PC, icon: "🛒", color: "#ff4400", url: "https://s.taobao.com/search?q={query}" }
+      - { name: 淘宝, icon: "淘", color: "#ff4400", url: "https://s.taobao.com/search?q={query}" }
       - { name: 知乎, icon: "知", color: "#056de8", url: "https://www.zhihu.com/search?q={query}" }
       - { name: 360搜索, icon: "🦠", color: "#0fb264", url: "https://www.so.com/s?q={query}" }
       - { name: 搜狗, icon: "🐶", color: "#fd6853", url: "https://www.sogou.com/web?query={query}" }
